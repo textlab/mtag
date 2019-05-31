@@ -1,0 +1,897 @@
+lab:lab.:fork subst mask appell ent fl ub be unormert
+lab.:lab.:fork subst mask appell ent fl ub be normert
+jf:jf.:fork verb pres @FV unormert
+jf.:jf.:fork verb pres @FV normert
+jfr:jf.:fork verb pres @FV unormert
+jfr.:jf.:fork verb pres @FV unormert
+jvf:jf.:fork verb pres @FV unormert
+jvf.:jf.:fork verb pres @FV unormert
+q. e. d.:q.e.d.:fork adv @ADV unormert
+q.e.d.:q.e.d.:fork adv @ADV normert
+q. s.:q.s.:fork adv @ADV unormert
+q.s.:q.s.:fork adv @ADV normert
+resp:resp.:fork adv @ADV unormert
+resp.:resp.:fork adv @ADV normert
+mva:mva.:fork subst appell unormert
+mva.:mva.:fork subst appell normert
+omkr:omkr.:fork prep unormert
+omkr.:omkr.:fork prep normert
+nkr.:nkr:fork subst unormert
+op:op.:fork subst appell unormert
+op.:op.:fork subst appell normert
+op. cit.:op.cit.:fork adv @ADV unormert
+op.cit.:op.cit.:fork adv @ADV normert
+nr:nr.:fork subst appell unormert
+nr.:nr.:fork subst appell normert
+stk:stk.:fork subst unormert
+stk.:stk.:fork subst normert
+pron:pron.:fork subst appell unormert
+pron.:pron.:fork subst appell normert
+pr:pr.:fork prep @ADV unormert
+pr.:pr.:fork prep @ADV normert
+cos:cos:fork subst normert
+p. g. a.:pga.:fork prep @ADV unormert
+p.g.a.:pga.:fork prep @ADV unormert
+pga:pga.:fork prep @ADV unormert
+pga.:pga.:fork prep @ADV normert
+Lg:lg:fork subst mask appell  unormert
+lg:lg:fork subst mask appell normert
+lg.:lg:fork subst mask appell unormert
+log:lg:fork subst mask appell normert
+log.:lg:fork subst mask appell unormert
+o. a.:o.a.:fork konj+adj adv @ADV unormert
+o.a.:o.a.:fork konj+adj adv @ADV normert
+o. h.:o.h.:fork prep+subst adv @ADV unormert
+o.h.:o.h.:fork prep+subst adv @ADV normert
+o. l.:o.l.:fork konj+adj adv @ADV unormert
+o. lign.:o.l.:fork konj+adj adv @ADV unormert
+o. likn:o.l.:fork konj+adj adv @ADV unormert
+o.l.:o.l.:fork konj+adj adv @ADV normert
+o.lign.:o.l.:fork konj+adj adv @ADV unormert
+o.likn:o.l.:fork konj+adj adv @ADV unormert
+o. m.:o.m.:fork konj+adj adv @ADV unormert
+o.m.:o.m.:fork konj+adj adv @ADV normert
+o.m.a:o.m.a.:fork konj+det+adj adv @ADV unormert
+o.m.a.:o.m.a.:fork konj+det+adj adv @ADV normert
+sc:sc.:fork adv @ADV unormert
+sc.:sc.:fork adv @ADV normert
+mots:mots.:fork adj @ADV unormert
+mots.:mots.:fork adj @ADV normert
+p:p.:fork subst appell normert
+p.:p.:fork subst appell normert
+p a:p.a.:fork adv @ADV unormert
+p. a.:p.a.:fork adv @ADV unormert
+p.a.:p.a.:fork adv @ADV normert
+p. m.:p.m.:fork adv @ADV unormert
+p.m.:p.m.:fork adv @ADV normert
+p. p.:p.p.:fork adv @ADV unormert
+p.p.:p.p.:fork adv @ADV normert
+p. p. m.:p.p.m.:fork subst unormert
+p.p.m.:p.p.m.:fork subst normert
+ppm.:p.p.m.:fork subst unormert
+p r:p.r.:fork prep @ADV unormert
+p. r.:p.r.:fork prep @ADV unormert
+p.r.:p.r.:fork prep @ADV normert
+p.t.:p.t.:fork adv @ADV normert
+pa:pa.:fork subst appell unormert
+pa.:pa.:fork subst appell normert
+o. s. v.:osv.:fork konj+adv+adj adv @ADV unormert
+o.s.v.:osv.:fork konj+adv+adj adv @ADV unormert
+osv:osv.:fork konj+adv+adj adv @ADV unormert
+osv.:osv.:fork konj+adv+adj adv @ADV normert
+s a:s.a.:fork adv @ADV unormert
+s. a.:s.a.:fork adv @ADV unormert
+s.a.:s.a.:fork adv @ADV normert
+S u:s.u.:fork subst+verb @INTERJ unormert
+S. u.:s.u.:fork subst+verb @INTERJ unormert
+S.u.:s.u.:fork subst+verb @INTERJ unormert
+Su.:s.u.:fork subst+verb @INTERJ unormert
+s u:s.u.:fork subst+verb @INTERJ unormert
+s. u.:s.u.:fork subst+verb @INTERJ unormert
+s.u.:s.u.:fork subst+verb @INTERJ normert
+su.:s.u.:fork subst+verb @INTERJ unormert
+s å:s.å.:fork det+subst adv @ADV unormert
+s. å.:s.å.:fork det+subst adv @ADV unormert
+s.å.:s.å.:fork det+subst adv @ADV normert
+enøk:enøk:fork subst mask appell normert
+pl:pl.:fork subst appell unormert
+pl.:pl.:fork subst appell normert
+pst:pst.:fork subst normert
+pst.:pst.:fork subst normert
+UHF:UHF:fork subst normert
+v. s. a.:vsa.:fork prep @ADV unormert
+v.s.a.:vsa.:fork prep @ADV unormert
+vsa:vsa.:fork prep @ADV unormert
+vsa.:vsa.:fork prep @ADV normert
+tbc:tbc:fork subst appell normert
+v:v.:fork subst unormert
+v.:v.:fork subst normert
+vn.:v.:fork subst unormert
+t forskj fra:t.forskj.fra:fork prep+subst+prep prep @ADV unormert
+t. forskj. fra:t.forskj.fra:fork prep+subst+prep prep @ADV unormert
+t.forskj.fra:t.forskj.fra:fork prep+subst+prep prep @ADV unormert
+t. h.:t.h.:fork prep+subst adv @ADV unormert
+t.h.:t.h.:fork prep+subst adv @ADV normert
+th.:t.h.:fork prep+subst adv @ADV unormert
+t. v.:t.v.:fork prep+subst adv @ADV unormert
+t.v.:t.v.:fork prep+subst adv @ADV normert
+tv.:t.v.:fork prep+subst adv @ADV unormert
+T/R:t/r:fork adv @ADV unormert
+t/r:t/r:fork adv @ADV normert
+tekn:tekn.:fork adj unormert
+tekn.:tekn.:fork adj normert
+tidl:tidl.:fork adj unormert
+tidl.:tidl.:fork adj normert
+tils:tils.:fork adv @ADV unormert
+tils.:tils.:fork adv @ADV normert
+tilsv.:tilsv.:fork det normert
+tlf:tlf.:fork subst appell unormert
+tlf.:tlf.:fork subst appell normert
+toe:toe.:fork subst unormert
+toe.:toe.:fork subst normert
+ts:ts.:fork subst unormert
+ts.:ts.:fork subst normert
+ty.:ty.:fork adj normert
+ty.:ty.:fork subst appell normert
+u s:u.s.:fork prep+subst adv unormert
+u. s.:u.s.:fork prep+subst adv unormert
+u.s.:u.s.:fork prep+subst adv normert
+us.:u.s.:fork prep+subst adv unormert
+u å:u.å.:fork prep+subst adv unormert
+u. å.:u.å.:fork prep+subst adv unormert
+u.å.:u.å.:fork prep+subst adv normert
+uå.:u.å.:fork prep+subst adv unormert
+ub:ub.:fork adj unormert
+ub.:ub.:fork adj normert
+ubest:ubest.:fork adj unormert
+ubest.:ubest.:fork adj normert
+UK:UK:fork subst prop normert
+UNESCO:UNESCO:fork subst prop normert
+USA:USA:fork subst prop normert
+utg:utg.:fork subst appell unormert
+utg:utg.:fork verb perf-part @IV unormert
+utg.:utg.:fork subst appell normert
+utg.:utg.:fork verb perf-part @IV normert
+utt:utt.:fork subst appell unormert
+utt:utt.:fork verb perf-part @IV unormert
+utt.:utt.:fork subst appell normert
+utt.:utt.:fork verb perf-part @IV normert
+uttr:uttr.:fork subst appell unormert
+uttr.:uttr.:fork subst appell normert
+v. h. a.:v.h.a.:fork prep @ADV unormert
+v.h.a.:v.h.a.:fork prep @ADV normert
+vha:v.h.a.:fork prep @ADV unormert
+vha.:v.h.a.:fork prep @ADV unormert
+vedk:vedk.:fork adj unormert
+vedk:vedk.:fork subst appell unormert
+vedk.:vedk.:fork adj normert
+vedk.:vedk.:fork subst appell normert
+årg:årg.:fork subst appell unormert
+årg.:årg.:fork subst appell normert
+årh:årh.:fork subst appell unormert
+årh.:årh.:fork subst appell normert
+c:c:fork subst normert
+CD:CD:fork subst normert
+f:f:fork adj normert
+f:f:fork subst normert
+g:g:fork subst normert
+g.:g:fork subst unormert
+gt:g:fork subst unormert
+gt.:g:fork subst unormert
+t:t:fork subst normert
+t.:t:fork subst unormert
+YAP:YAP:fork subst mask appell normert
+adj:adj.:fork subst appell unormert
+adj.:adj.:fork subst appell normert
+adr:adr.:fork subst appell unormert
+adr.:adr.:fork subst appell normert
+adv:adv.:fork subst appell unormert
+adv.:adv.:fork subst appell normert
+akk:akk.:fork subst appell unormert
+akk.:akk.:fork subst appell normert
+am:am.:fork adj unormert
+am.:am.:fork adj normert
+AP:Ap.:fork subst prop normert
+Ap:Ap.:fork subst prop normert
+Ap.:Ap.:fork subst prop normert
+apr:apr.:fork subst appell unormert
+apr.:apr.:fork subst appell normert
+att.:att.:fork prep normert
+aug:aug.:fork subst appell unormert
+aug.:aug.:fork subst appell normert
+aut:aut.:fork adj unormert
+aut.:aut.:fork adj normert
+avs.:avs.:fork subst appell normert
+bib:bib.:fork adj unormert
+bib.:bib.:fork adj normert
+biol:biol.:fork adj unormert
+biol:biol.:fork subst appell unormert
+biol.:biol.:fork adj normert
+biol.:biol.:fork subst appell normert
+bto:bto.:fork adj unormert
+bto:bto.:fork adv unormert
+bto:bto.:fork subst appell unormert
+bto.:bto.:fork adj normert
+bto.:bto.:fork adv normert
+bto.:bto.:fork subst appell normert
+cif:cif.:fork subst appell unormert
+cif.:cif.:fork subst appell normert
+d. s.:d.s.:fork subst appell unormert
+d.s.:d.s.:fork subst appell normert
+d. m.:d.m.:fork det+subst adv @ADV unormert
+d.m:d.m.:fork det+subst adv @ADV unormert
+d.m.:d.m.:fork det+subst adv @ADV normert
+dB:dB:fork subst normert
+db:dB:fork subst normert
+des:des.:fork subst appell unormert
+des.:des.:fork subst appell normert
+e:e.:fork adj unormert
+e:e.:fork prep @ADV unormert
+e.:e.:fork adj normert
+e.:e.:fork prep @ADV normert
+EEC:EEC:fork subst prop normert
+ekskl.:ekskl.:fork adv @ADV normert
+EU:EU:fork subst prop normert
+f m:f.m.:fork det+subst adv @ADV unormert
+f. m.:f.m.:fork det+subst adv @ADV unormert
+f.m.:f.m.:fork det+subst adv @ADV normert
+fm:f.m.:fork det+subst adv @ADV unormert
+f t:f.t.:fork prep+subst adv unormert
+f. t.:f.t.:fork prep+subst adv unormert
+f.t.:f.t.:fork prep+subst adv normert
+ft:f.t.:fork prep+subst adv unormert
+f å:f.å.:fork det+subst adv @ADV unormert
+f. å.:f.å.:fork det+subst adv @ADV unormert
+f.å.:f.å.:fork det+subst adv @ADV normert
+feb:feb.:fork subst appell unormert
+feb.:feb.:fork subst appell normert
+fig:fig.:fork subst appell unormert
+fig.:fig.:fork subst appell normert
+fob:fob.:fork adv @ADV normert
+fob.:fob.:fork adv @ADV normert
+forb.:forb.:fork subst appell normert
+GATT:GATT:fork subst prop normert
+geogr:geogr.:fork adj unormert
+AUF:AUF:subst prop normert
+geogr:geogr.:fork subst appell unormert
+geogr.:geogr.:fork adj normert
+geogr.:geogr.:fork subst appell normert
+geom:geom.:fork adj unormert
+geom:geom.:fork subst appell unormert
+geom.:geom.:fork adj normert
+geom.:geom.:fork subst appell normert
+gno:gno.:fork adj unormert
+gno:gno.:fork subst appell unormert
+gno.:gno.:fork adj normert
+gno.:gno.:fork subst appell normert
+gr:gr.:fork adj unormert
+gr.:gr.:fork adj normert
+Grl.:Grl.:fork subst appell normert
+hist.:hist.:fork adj unormert
+hist.:hist.:fork subst appell normert
+IT:IT:fork subst mask appell ent ub be normert
+jnr:jnr.:fork subst appell unormert
+jnr.:jnr.:fork subst appell normert
+kat.:kat.:fork adj normert
+Kbh:Kbh.:fork subst prop unormert
+Kbh.:Kbh.:fork subst prop normert
+kjem.:kjem.:fork adj normert
+kjem.:kjem.:fork subst appell normert
+konj:konj.:fork subst appell unormert
+konj.:konj.:fork subst appell normert
+lnr:lnr.:fork subst appell unormert
+lnr.:lnr.:fork subst appell normert
+m:m.:fork subst appell unormert
+m.:m.:fork subst normert
+mask.:m.:fork subst appell normert
+m. v.:mv.:fork prep+adj adv @ADV normert
+m.v.:mv.:fork prep+adj adv @ADV normert
+mv:mv.:fork prep+adj adv @ADV normert
+mv.:mv.:fork prep+adj adv @ADV normert
+maks:maks.:fork adv @ADV unormert
+maks:maks.:fork subst appell unormert
+maks.:maks.:fork adv @ADV normert
+maks.:maks.:fork subst appell normert
+md:md.:fork subst appell unormert
+md.:md.:fork subst appell normert
+mnd:md.:fork subst appell unormert
+mnd.:md.:fork subst appell unormert
+mno:mno.:fork adj unormert
+mno:mno.:fork subst appell unormert
+mno.:mno.:fork adj normert
+mno.:mno.:fork subst appell normert
+motsv:motsv.:fork adj @ADV unormert
+motsv.:motsv.:fork adj @ADV normert
+MV:MV:fork subst normert
+n:n.:fork subst appell unormert
+n.:n.:fork subst appell normert
+ndfr.:ndfr.:fork adj normert
+no.:no.:fork adj normert
+no.:no.:fork subst appell normert
+nom:nom.:fork subst appell unormert
+nom.:nom.:fork subst appell normert
+nov:nov.:fork subst appell unormert
+nov.:nov.:fork subst appell normert
+NT:NT:fork subst appell normert
+num:num.:fork subst appell unormert
+num.:num.:fork subst appell normert
+OAS:OAS:fork subst prop normert
+obj:obj.:fork subst appell unormert
+obj.:obj.:fork subst appell normert
+obs:obs.:fork verb pres @FV unormert
+obs.:obs.:fork verb pres @FV normert
+OECD:OECD:fork subst prop normert
+okt:okt.:fork subst appell unormert
+okt.:okt.:fork subst appell normert
+ovfr:ovfr.:fork adv @ADV unormert
+ovfr.:ovfr.:fork adv @ADV normert
+pass.:pass.:fork adj normert
+pkt:pkt.:fork subst appell unormert
+pkt.:pkt.:fork subst appell normert
+pol.:pol.:fork subst appell normert
+pop.:pop.:fork adj normert
+pr. pr.:pr.pr.:fork adv @ADV unormert
+pr.pr.:pr.pr.:fork adv @ADV normert
+refl:refl.:fork adj unormert
+refl:refl.:fork subst appell unormert
+refl.:refl.:fork adj normert
+refl.:refl.:fork subst appell normert
+s d:s.d.:fork verb+det @INTERJ unormert
+s. d.:s.d.:fork verb+det @INTERJ unormert
+s.d.:s.d.:fork verb+det @INTERJ normert
+sd.:s.d.:fork verb+det @INTERJ unormert
+s.:s.:fork subst appell normert
+sannsynl:sannsynl.:fork adj unormert
+sannsynl.:sannsynl.:fork adj normert
+sedv:sedv.:fork adj unormert
+sedv.:sedv.:fork adj normert
+sep:sep.:fork subst appell unormert
+sep.:sep.:fork subst appell normert
+sj.:sj.:fork adj normert
+sm:sm.:fork det unormert
+sm.:sm.:fork det normert
+SM:SM:fork subst appell normert
+smh:smh.:fork subst appell unormert
+smh.:smh.:fork subst appell normert
+smst:sst.:fork prep unormert
+smst.:sst.:fork prep normert
+sst:sst.:fork prep unormert
+sst.:sst.:fork prep normert
+ss:ss.:fork subst unormert
+ss.:ss.:fork subst normert
+St meld:st.meld.:fork subst appell unormert
+St. meld.:st.meld.:fork subst appell unormert
+St.meld.:st.meld.:fork subst appell unormert
+st meld:st.meld.:fork subst appell unormert
+st. meld.:st.meld.:fork subst appell unormert
+st.meld.:st.meld.:fork subst appell normert
+Sth:Sth.:fork subst prop unormert
+Sth.:Sth.:fork subst prop normert
+strl:strl.:fork subst appell unormert
+strl.:strl.:fork subst appell normert
+subj:subj.:fork subst appell unormert
+subj.:subj.:fork subst appell normert
+subst:subst.:fork subst appell unormert
+subst.:subst.:fork subst appell normert
+SUS:SUS:fork subst prop normert
+sv:sv.:fork adj unormert
+sv:sv.:fork subst unormert
+sv.:sv.:fork adj normert
+sv.:sv.:fork subst normert
+NHO:NHO:subst prop normert
+LO:LO:subst prop normert
+IBM:IBM:subst prop normert
+FRP:Frp.:fork subst prop normert
+Fr. p.:Frp.:fork subst prop normert
+Fr.p.:Frp.:fork subst prop normert
+FrP:Frp.:fork subst prop normert
+Frp:Frp.:fork subst prop normert
+Frp.:Frp.:fork subst prop normert
+fr. p.:Frp.:fork subst prop normert
+fr.p.:Frp.:fork subst prop normert
+frp:Frp.:fork subst prop normert
+SV:Sv:fork subst prop normert
+Sv:Sv:fork subst prop normert
+Sv.:Sv:fork subst prop normert
+sv:Sv:fork subst prop normert
+man.:man.:fork subst mask appell normert
+tir.:tir.:fork subst mask appell normert
+ons.:ons.:fork subst mask appell normert
+tors.:tors.:fork subst mask appell normert
+fre.:fre.:fork subst mask appell normert
+lør.:lør.:fork subst mask appell normert
+søn.:søn.:fork subst mask appell normert
+RV:Rv:fork subst prop normert
+Rv:Rv:fork subst prop normert
+Rv.:Rv:fork subst prop normert
+rv:Rv:fork subst prop normert
+rv.:Rv:fork subst prop normert
+UV-filteret:UV-filter:subst nøyt appell ent be normert
+UV-filtre:UV-filter:subst nøyt appell fl ub normert
+UV-filtre:UV-filter:subst nøyt appell fl ub normert
+UV-filter:UV-filter:subst nøyt appell fl ub normert
+UV-filter:UV-filter:subst nøyt appell fl ub normert
+UV-filtrene:UV-filter:subst nøyt appell fl be normert
+UV-filtra:UV-filter:subst nøyt appell fl be normert
+UV-filtrene:UV-filter:subst nøyt appell fl be normert
+UV-filtra:UV-filter:subst nøyt appell fl be normert
+GPS:GPS:subst mask appell ent ub normert
+GPS-en:GPS:subst mask appell ent be normert
+GPS-er:GPS:subst mask appell fl ub normert
+GPS-ene:GPS:subst mask appell fl be normert
+pgf:pgf.:fork subst mask appell unormert
+pgf.:pgf.:fork subst mask appell normert
+s br:s.br.:fork adj+subst adv unormert
+s. br.:s.br.:fork adj+subst adv unormert
+s.br.:s.br.:fork adj+subst adv normert
+sbr:s.br.:fork adj+subst adv unormert
+sbr.:s.br.:fork adj+subst adv unormert
+n br:n.br.:fork adj+subst adv unormert
+n. br.:n.br.:fork adj+subst adv unormert
+n.br.:n.br.:fork adj+subst adv normert
+nbr:n.br.:fork adj+subst adv unormert
+nbr.:n.br.:fork adj+subst adv unormert
+ordf:ordf.:fork subst appell unormert
+ordf.:ordf.:fork subst appell normert
+IL:IL:fork subst nøyt appell ent ub normert
+IL.:IL:fork subst nøyt appell ent ub unormert
+STI:STI:fork subst prop normert
+STI.:STI:fork subst prop unormert
+HMS:HMS:fork subst prop normert
+HMS.:HMS:fork subst prop unormert
+Edv:Edv.:fork subst mask prop unormert
+Edv.:Edv.:fork subst mask prop normert
+Eftf:Eftf.:fork subst mask appell unormert
+Eftf.:Eftf.:fork subst mask appell unormert
+eftf:Eftf.:fork subst mask appell unormert
+eftf.:Eftf.:fork subst mask appell normert
+Joh:Joh.:fork subst mask prop unormert
+Joh.:Joh.:fork subst mask prop normert
+Johs:Johs.:fork subst mask prop unormert
+Johs.:Johs.:fork subst mask prop normert
+Seb:Seb.:fork subst mask prop unormert
+Seb.:Seb.:fork subst mask prop normert
+m:m/:fork prep unormert
+m.:m/:fork prep normert
+m/:m/:fork prep normert
+avd:avd.:fork subst appell unormert
+avd.:avd.:fork subst appell normert
+red. anm.:red. anm.:fork subst unormert
+red.anm.:red. anm.:fork subst normert
+fred.:fred.:fork subst mask appell normert
+mand.:mand.:fork subst mask appell normert
+tirsd.:tirsd.:fork subst mask appell normert
+onsd.:onsd.:fork subst mask appell normert
+torsd.:torsd.:fork subst mask appell normert
+lørd.:lørd.:fork subst mask appell normert
+sønd.:sønd.:fork subst mask appell normert
+v.g.s.:v.g.s.:fork subst mask appell normert
+fung.:fung.:fork adj normert
+fam.:fam.:fork subst mask appell ent normert
+iflg.:iflg.:fork prep unormert
+hverd.:hverd.:fork subst mask appell normert
+VG:VG:subst prop normert
+prof.:prof.:fork subst mask appell normert
+DVD:DVD:subst mask appell ent ub normert
+DVDen:DVD:subst mask appell ent be normert
+DVDer:DVD:subst mask appell fl ub normert
+DVDene:DVD:subst mask appell fl be normert
+DV:DV:subst mask appell ent ub normert
+DVen:DV:subst mask appell ent be normert
+DVer:DV:subst mask appell fl ub normert
+DVene:DV:subst mask appell fl be normert
+f.v:f.v.:fork prep+subst @ADV unormert
+f.v.:f.v.:fork prep+subst @ADV normert
+fv:f.v.:fork prep+subst @ADV unormert
+f.h:f.h.:fork prep+subst @ADV unormert
+f.h.:f.h.:fork prep+subst @ADV normert
+fh:f.h.:fork prep+subst @ADV unormert
+m/s:m/sek:fork subst normert
+m/sek:m/sek:fork subst normert
+m/sek.:m/sek:fork subst unormert
+km/t:km/t:fork subst normert
+km/t.:km/t:fork subst unormert
+km/time:km/t:fork subst unormert
+eks:eks.:fork prep @ADV unormert
+eks.:eks.:fork prep @ADV normert
+siv. ing.:siv.ing.:fork subst <tittel> unormert
+siv.ing.:siv.ing.:fork subst <tittel> normert
+ex. phil.:ex. phil.:fork subst appell normert
+v.:v/:fork prep normert
+v/:v/:fork prep normert
+etg.:etg.:fork subst mask appell normert
+prod. nr.:prod.nr.:fork subst nøyt appell unormert unormert
+prod.nr.:prod.nr.:fork subst nøyt appell unormert normert
+dat:dat.:fork subst appell unormert
+dat.:dat.:fork subst appell normert
+dv:dv.:fork subst unormert
+dv.:dv.:fork subst normert
+UD:UD:subst prop normert
+d. v. s.:dvs.:fork pron+verb+verb adv @ADV unormert
+d.v.s.:dvs.:fork pron+verb+verb adv @ADV unormert
+dvs:dvs.:fork pron+verb+verb adv @ADV unormert
+dvs.:dvs.:fork pron+verb+verb adv @ADV normert
+eg.:eg.:fork adj @ADV normert
+UiO:UiO:subst prop normert
+CP:CP:fork subst mask appell ent ub be normert
+cp:CP:fork subst mask appell ent ub be normert
+Co.:Co.:fork subst appell normert
+co.:Co.:fork subst appell normert
+EDB:EDB:fork subst mask appell ent ub be normert
+edb:EDB:fork subst mask appell ent ub be normert
+EF:EF:fork subst prop normert
+EKG:EKG:fork subst mask appell ent fl ub be normert
+ekg:EKG:fork subst mask appell ent fl ub be normert
+TCDD:TCDD:fork subst appell normert
+TIR:TIR:fork subst appell normert
+TNT:TNT:fork subst mask appell ent ub be normert
+V5:V5:fork subst appell normert
+V6:V6:fork subst appell normert
+VCM:VCM:fork subst appell normert
+VVS:VVS:fork subst normert
+bl a:bl.a.:fork prep+adj prep @ADV unormert
+bl. a.:bl.a.:fork prep+adj prep @ADV unormert
+bl.a.:bl.a.:fork prep+adj prep @ADV normert
+HB:HB:fork subst mask appell ent ub be normert
+hb:HB:fork subst mask appell ent ub be unormert
+HF:HF:fork subst appell normert
+hf:HF:fork subst appell unormert
+bfr:bfr:fork subst normert
+bfr.:bfr:fork subst unormert
+ev:ev.:fork adv unormert
+ev.:ev.:fork adv normert
+ev.:ev.:fork subst appell normert
+evt.:ev.:fork adv unormert
+eflg.:eflg.:fork subst appell normert
+bnr:bnr.:fork subst nøyt appell ent fl ub be unormert
+bnr.:bnr.:fork subst nøyt appell ent fl ub be normert
+AD:AD:fork prep @ADV normert
+a. D:AD:fork prep @ADV unormert
+a.D.:AD:fork prep @ADV normert
+aD:AD:fork prep @ADV unormert
+ad:AD:fork prep @ADV unormert
+ADB:ADB:fork subst mask appell ent ub be normert
+adb:ADB:fork subst mask appell ent ub be normert
+A.L.:AL:fork subst nøyt appell ent fl ub be @<SUBST unormert
+A/L:AL:fork subst nøyt appell ent fl ub be @<SUBST unormert
+AL:AL:fork subst nøyt appell ent fl ub be @<SUBST normert
+a.l.:AL:fork subst nøyt appell ent fl ub be @<SUBST unormert
+a/l:AL:fork subst nøyt appell ent fl ub be @<SUBST unormert
+AM:AM:fork subst appell normert
+A.S:AS:fork subst nøyt appell ent fl ub be @<SUBST unormert
+A/S:AS:fork subst nøyt appell ent fl ub be @<SUBST unormert
+AS:AS:fork subst nøyt appell ent fl ub be @<SUBST normert
+a.s.:AS:fork subst nøyt appell ent fl ub be @<SUBST unormert
+a/s:AS:fork subst nøyt appell ent fl ub be @<SUBST unormert
+as:AS:fork subst nøyt appell ent fl ub be @<SUBST unormert
+AV:AV:fork adj normert
+av:AV:fork adj normert
+HV:HV:fork subst appell normert
+hv:HV:fork subst appell unormert
+I. N. D.:I.N.D.:fork adv @ADV unormert
+I.N.D.:I.N.D.:fork adv @ADV normert
+IQ:IQ:fork subst mask appell ent fl ub be normert
+K/S:KS:fork subst nøyt appell ent fl ub be @<SUBST unormert
+KS:KS:fork subst nøyt appell ent fl ub be @<SUBST normert
+k.s.:KS:fork subst nøyt appell ent fl ub be @<SUBST unormert
+k/s:KS:fork subst nøyt appell ent fl ub be @<SUBST unormert
+ks:KS:fork subst nøyt appell ent fl ub be @<SUBST unormert
+Lg:Lg:fork subst mask appell ent fl ub be normert
+Lt.:Lt.:fork subst prop normert
+MP:MP:fork subst mask appell ent fl ub be normert
+mp:MP:fork subst mask appell ent fl ub be unormert
+NATO:NATO:fork subst appell normert
+Nato:NATO:fork subst appell normert
+NB:NB:fork interj @INTERJ normert
+NN:NN:fork subst appell normert
+NRF:NRF:fork subst prop normert
+NS:NS:fork subst appell normert
+ns:NS:fork subst appell unormert
+Ng:Ng:fork subst mask appell ent fl ub be normert
+ng:Ng:fork subst mask appell ent fl ub be normert
+Ot.:Ot.:fork subst prop normert
+ds:ds.:fork adv @ADV unormert
+ds.:ds.:fork adv @ADV normert
+dss:dss.:fork prep @ADV unormert
+dss.:dss.:fork prep @ADV normert
+ab:ab:fork subst normert
+div:div.:fork adj unormert
+div.:div.:fork adj normert
+ff:ff:fork adv @ADV normert
+fff:fff:fork adv @ADV normert
+fhv:fhv.:fork adj unormert
+fhv.:fhv.:fork adj normert
+dept:dept.:fork subst nøyt appell ent ub be unormert
+dept.:dept.:fork subst nøyt appell ent ub be normert
+db:db:fork subst appell normert
+fr:fr:fork subst normert
+fr.:fr:fork subst unormert
+fr:fr.:fork adj unormert
+fr:fr.:fork subst @TITTEL unormert
+fr.:fr.:fork adj normert
+fr.:fr.:fork subst @TITTEL normert
+f.:f.:fork prep @ADV normert
+f.:f.:fork verb @IV normert
+f Kr:f.Kr.:fork prep+prop adv @ADV unormert
+f. Kr.:f.Kr.:fork prep+prop adv @ADV unormert
+f.Kr:f.Kr.:fork prep+prop adv @ADV unormert
+f.Kr.:f.Kr.:fork prep+prop adv @ADV normert
+f eks:f.eks.:fork prep+subst adv @ADV unormert
+f. eks:f.eks.:fork prep+subst adv @ADV unormert
+f. eks.:f.eks.:fork prep+subst adv @ADV unormert
+f.eks:f.eks.:fork prep+subst adv @ADV unormert
+f.eks.:f.eks.:fork prep+subst adv @ADV normert
+feks:f.eks.:fork prep+subst adv @ADV unormert
+feks.:f.eks.:fork prep+subst adv @ADV unormert
+f. o. r.:f.o.r.:fork adv @ADV normert
+f.o.r.:f.o.r.:fork adv @ADV normert
+gg:gg:fork subst normert
+gg.:gg:fork subst unormert
+gl:gl.:fork adj unormert
+gl.:gl.:fork adj normert
+gml:gl.:fork adj unormert
+gml.:gl.:fork adj unormert
+e. l.:e.l.:fork konj+adj adv @ADV unormert
+e. lign.:e.l.:fork konj+adj adv @ADV unormert
+e. likn.:e.l.:fork konj+adj adv @ADV unormert
+e.l.:e.l.:fork konj+adj adv @ADV normert
+e.lign.:e.l.:fork konj+adj adv @ADV unormert
+e.likn.:e.l.:fork konj+adj adv @ADV unormert
+ell. lign.:e.l.:fork konj+adj adv @ADV unormert
+ell. likn.:e.l.:fork konj+adj adv @ADV unormert
+ell.lign.:e.l.:fork konj+adj adv @ADV unormert
+ell.likn.:e.l.:fork konj+adj adv @ADV unormert
+jr:jr.:fork subst @<SUBST unormert
+jr.:jr.:fork subst @<SUBST normert
+jun:jr.:fork subst @<SUBST unormert
+ib.:ibid.:fork adv @ADV normert
+ibid:ibid.:fork adv @ADV unormert
+ibid.:ibid.:fork adv @ADV normert
+flg:flg.:fork adj unormert
+flg.:flg.:fork adj normert
+fut.:fut.:fork subst appell normert
+fol:fol.:fork subst appell unormert
+fol.:fol.:fork subst appell normert
+inkl.:inkl.:fork @ADV normert
+kl:kl.:fork subst appell unormert
+kl.:kl.:fork subst appell normert
+jun.:jr.:fork subst @<SUBST normert
+NOK:nkr:fork subst unormert
+Nkr:nkr:fork subst unormert
+Nkr.:nkr:fork subst unormert
+nkr:nkr:fork subst normert
+mek:mek.:fork adj unormert
+mek.:mek.:fork adj normert
+m o.h.:m o.h.:fork subst @ADV normert
+m. o. h.:m o.h.:fork subst @ADV unormert
+m.o.h.:m o.h.:fork subst @ADV unormert
+moh.:m o.h.:fork subst @ADV unormert
+m u.h.:m u.h.:fork subst @ADV normert
+m. u. h.:m u.h.:fork subst @ADV unormert
+m.u.h.:m u.h.:fork subst @ADV unormert
+muh.:m u.h.:fork subst @ADV unormert
+M-L:m-l:fork subst appell unormert
+m-l:m-l:fork subst appell normert
+m. a. o.:m.a.o.:fork prep+det+subst adv @ADV unormert
+m.a.o.:m.a.o.:fork prep+det+subst adv @ADV normert
+m m:m.m.:fork prep+adj adv @ADV unormert
+m. m.:m.m.:fork prep+adj adv @ADV unormert
+m.m.:m.m.:fork prep+adj adv @ADV normert
+m. o. t.:m.o.t.:fork prep+subst+prep prep @ADV unormert
+m.o.t.:m.o.t.:fork prep+subst+prep prep @ADV normert
+m. p. p.:m.p.p.:fork prep+perf-part+subst adv @ADV unormert
+m.p.p.:m.p.p.:fork prep+perf-part+subst adv @ADV normert
+sg:sg.:fork subst appell unormert
+sg.:sg.:fork subst appell normert
+sing:sg.:fork subst appell unormert
+sing.:sg.:fork subst appell normert
+lign.:likn.:fork adj normert
+likn.:likn.:fork adj normert
+kr:kr:fork subst normert
+kr.:kr:fork subst unormert
+o. s. fr.:osfr.:fork konj+adv+prep adv @ADV unormert
+o.s.fr.:osfr.:fork konj+adv+prep adv @ADV unormert
+osfr:osfr.:fork konj+adv+prep adv @ADV unormert
+osfr.:osfr.:fork konj+adv+prep adv @ADV normert
+fec.:fec.:fork subst normert
+gnr:gnr.:fork subst appell unormert
+gnr.:gnr.:fork subst appell normert
+fork:fork.:fork subst appell unormert
+fork:fork.:fork verb perf-part @IV unormert
+fork.:fork.:fork subst appell normert
+fork.:fork.:fork verb perf-part @IV normert
+Lim.:ltd.:fork adj @<SUBST unormert
+Ltd:ltd.:fork adj @<SUBST unormert
+Ltd.:ltd.:fork adj @<SUBST unormert
+lim.:ltd.:fork adj @<SUBST normert
+ltd:ltd.:fork adj @<SUBST unormert
+ltd.:ltd.:fork adj @<SUBST normert
+ln:ln.:fork subst appell normert
+ln.:ln.:fork subst appell unormert
+prep:prep.:fork subst appell unormert
+prep.:prep.:fork subst appell normert
+prp:prp.:fork subst appell unormert
+prp.:prp.:fork subst appell normert
+mrd:mrd.:fork subst unormert
+mrd.:mrd.:fork subst normert
+tan:tan:fork subst mask appell normert
+UV-filter:UV-filter:subst nøyt appell ent ub normert
+UV-filter:UV-filter:subst nøyt appell ent ub normert
+UV-filter:UV-filter:subst nøyt appell ent ub normert
+UV-filter:UV-filter:subst nøyt appell ent ub normert
+UV-filtret:UV-filter:subst nøyt appell ent be normert
+UV-filtret:UV-filter:subst nøyt appell ent be normert
+UV-filteret:UV-filter:subst nøyt appell ent be normert
+ASA:ASA:fork subst nøyt appell ent fl ub be @<SUBST normert
+c.c.:c.c.:fork prep @ADV unormert
+Dep:Dep:fork subst normert
+forts.:forts.:fork subst normert
+forts.:forts.:fork verb pres normert
+h.o.h.:hoh.:fork subst unormert
+hoh.:hoh.:fork subst normert
+kfr:kfr.:fork verb pres @FV unormert
+kfr.:kfr.:fork verb pres @FV unormert
+km/h:km/h:fork subst normert
+kto:kto.:fork subst unormert
+kto.:kto.:fork subst normert
+m.a.:m.a.:adv @ADV normert
+m.o.h.:moh.:fork subst unormert
+moh.:moh.:fork subst normert
+osb:osb.:fork adv @ADV unormert
+osb.:osb.:fork adv @ADV normert
+ref.:ref.:fork subst normert
+ill.:ill.:fork subst mask appell normert
+P.b.:pb:fork subst appell normert
+Pb:pb:fork subst appell normert
+Pb.:pb:fork subst appell normert
+p.b.:pb:fork subst appell normert
+pb:pb:fork subst appell normert
+pb.:pb:fork subst appell normert
+st:st.:fork subst appell unormert
+st.:st.:fork subst appell normert
+St prp:st.prp.:fork subst mask appell unormert
+St. prp:st.prp.:fork subst mask appell unormert
+St. prp.:st.prp.:fork subst mask appell unormert
+St.prp.:st.prp.:fork subst mask appell unormert
+st prp:st.prp.:fork subst mask appell unormert
+st. prp.:st.prp.:fork subst mask appell unormert
+st.prp.:st.prp.:fork subst mask appell normert
+PVC:PVC:fork subst ent ub be normert
+PVRK:PVRK:fork subst mask appell ent fl ub be normert
+pvrk:PVRK:fork subst mask appell ent fl ub be normert
+Pf:Pf:fork subst appell normert
+Pf.:Pf:fork subst appell unormert
+Pfg:Pfg:fork subst appell normert
+Pfg.:Pfg:fork subst appell unormert
+pfg:Pfg:fork subst appell unormert
+pfg.:Pfg:fork subst appell unormert
+a-:a-:fork subst normert
+ES:ES:fork subst nøyt appell ent fl ub be normert
+es:ES:fork subst nøyt appell ent fl ub be unormert
+EØS:EØS:fork subst appell normert
+eøs:EØS:fork subst appell unormert
+FM:FM:fork subst appell normert
+fm:FM:fork subst appell unormert
+FN:FN:fork subst prop normert
+GMT:GMT:fork subst appell normert
+gmt:GMT:fork subst appell unormert
+GT:GT:fork subst appell normert
+SI:SI:fork subst appell normert
+Sg:Sg:fork subst mask appell ent fl ub be normert
+e Kr:e.Kr.:fork prep+prop adv @ADV unormert
+e. Kr.:e.Kr.:fork prep+prop adv @ADV unormert
+e.Kr:e.Kr.:fork prep+prop adv @ADV unormert
+e.Kr.:e.Kr.:fork prep+prop adv @ADV normert
+e f:e.f.:fork prep+subst adv @ADV unormert
+e. f.:e.f.:fork prep+subst adv @ADV unormert
+e.f.:e.f.:fork prep+subst adv @ADV normert
+e l:e.l.:fork konj+adj adv @ADV unormert
+etc:etc.:fork adv @ADV unormert
+etc.:etc.:fork adv @ADV normert
+d. c.:d.c.:fork adv @ADV unormert
+d.c.:d.c.:fork adv @ADV normert
+d. d.:d.d.:fork subst+subst adv @ADV unormert
+d.d.:d.d.:fork subst+subst adv @ADV normert
+d. e.:d.e.:fork det+adj subst @<SUBST unormert
+d.e.:d.e.:fork det+adj subst @<SUBST normert
+d. y.:d.y.:fork det+adj subst @<SUBST unormert
+d.y.:d.y.:fork det+adj subst @<SUBST normert
+dy.:d.y.:fork det+adj subst @<SUBST unormert
+d. å.:d.å.:fork det+subst adv @ADV unormert
+d.å.:d.å.:fork det+subst adv @ADV normert
+pret:pret.:fork subst appell unormert
+pret.:pret.:fork subst appell normert
+hhv:hhv.:fork adv @ADV unormert
+hhv.:hhv.:fork adv @ADV normert
+mill:mill.:fork subst unormert
+mill.:mill.:fork subst normert
+istf:istf.:fork prep @ADV unormert
+istf.:istf.:fork prep @ADV normert
+ovf:ovf.:fork adv @ADV unormert
+ovf.:ovf.:fork adv @ADV normert
+sek:sek:fork subst unormert
+sek.:sek:fork subst normert
+o. fl:ofl.:fork konj+adj adv @ADV unormert
+o. fl.:ofl.:fork konj+adj adv @ADV unormert
+o.fl:ofl.:fork konj+adj adv @ADV unormert
+o.fl.:ofl.:fork konj+adj adv @ADV unormert
+ofl.:ofl.:fork konj+adj adv @ADV normert
+m. fl:mfl.:fork prep+adj adv @ADV unormert
+m. fl.:mfl.:fork prep+adj adv @ADV unormert
+m.fl:mfl.:fork prep+adj adv @ADV unormert
+m.fl.:mfl.:fork prep+adj adv @ADV unormert
+mfl:mfl.:fork prep+adj adv @ADV unormert
+mfl.:mfl.:fork prep+adj adv @ADV normert
+m. h. t.:mht.:fork prep+subst+subst prep @ADV unormert
+m.h.t.:mht.:fork prep+subst+subst prep @ADV unormert
+mht.:mht.:fork prep+subst+subst prep @ADV normert
+oppg.:oppg.:fork subst mask appell ent ub normert
+KRF:Krf.:fork subst prop normert
+Kr. F.:Krf.:fork subst prop normert
+Kr. f.:Krf.:fork subst prop normert
+KrF:Krf.:fork subst prop normert
+KrF.:Krf.:fork subst prop normert
+Krf:Krf.:fork subst prop normert
+kr. f.:Krf.:fork subst prop normert
+kr.f.:Krf.:fork subst prop normert
+krf:Krf.:fork subst prop normert
+medl.:medl.:fork subst nøyt appell normert
+SP:Sp.:fork subst prop normert
+Sp:Sp.:fork subst prop normert
+Sp.:Sp.:fork subst prop normert
+sp:Sp.:fork subst prop normert
+sp.:Sp.:fork subst prop normert
+repr.:repr.:subst mask appell normert
+Mbit:mbit:fork subst unormert
+mbit:mbit:fork subst normert
+A.:A.:fork subst prop normert
+B.:B.:fork subst prop normert
+C.:C.:fork subst prop normert
+D.:D.:fork subst prop normert
+E.:E.:fork subst prop normert
+F.:F.:fork subst prop normert
+G.:G.:fork subst prop normert
+H.:H.:fork subst prop normert
+I.:I.:fork subst prop normert
+J.:J.:fork subst prop normert
+K.:K.:fork subst prop normert
+L.:L.:fork subst prop normert
+M.:M.:fork subst prop normert
+N.:N.:fork subst prop normert
+O.:O.:fork subst prop normert
+P.:P.:fork subst prop normert
+Q.:Q.:fork subst prop normert
+R.:R.:fork subst prop normert
+S.:S.:fork subst prop normert
+T.:T.:fork subst prop normert
+U.:U.:fork subst prop normert
+V.:V.:fork subst prop normert
+W.:W.:fork subst prop normert
+X.:X.:fork subst prop normert
+Y.:Y.:fork subst prop normert
+Z.:Z.:fork subst prop normert
+Æ.:Æ.:fork subst prop normert
+Ø.:Ø.:fork subst prop normert
+Å.:Å.:fork subst prop normert
+c/o:c/o:fork prep @ADV unormert
+ca:ca.:fork adv @ADV> unormert
+ca.:ca.:fork adv @ADV> normert
+fl:fl:fork subst normert
+fl.:fl:fork subst normert
+fl.:fl.:fork adj normert
+fl.:fl.:fork subst nøyt appell normert
+flt.:fl.:fork subst nøyt appell normert
+i. e.:i.e.:fork adv @ADV unormert
+i.e.:i.e.:fork adv @ADV normert
+cot:cot:fork subst normert
+kgl:kgl.:fork adj unormert
+kgl.:kgl.:fork adj normert
+kgl res:kgl.res.:fork subst appell unormert
+kgl. res.:kgl.res.:fork subst appell unormert
+kgl.res.:kgl.res.:fork subst appell normert
+off:off.:fork adj normert
+t d:t.d.:fork prep+subst adv @ADV unormert
+t. d.:t.d.:fork prep+subst adv @ADV unormert
+t.d.:t.d.:fork prep+subst adv @ADV normert
+t. o. m.:t.o.m.:fork prep+konj+prep prep @ADV unormert
+t.o.m.:t.o.m.:fork prep+konj+prep prep @ADV normert
