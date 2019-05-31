@@ -630,7 +630,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode):
             periode = konverterSkilleteikn(periode)
             periodeFullstendig = True
 
-            continue
+            break
 
     print("end of gaaGjennomPeriodeElementer", file=sys.stderr)
     print("periode = '{periode}'".format(**vars()), file=sys.stderr)
