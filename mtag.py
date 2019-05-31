@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
+from __future__ import print_function
+from collections import defaultdict
+from io import open
 import os
 import sys
 import re
 import time
 import argparse
 import logging
-from collections import defaultdict
-from io import open
-from __future__ import print_function
 
 #=head1 Multitagger
 #Multitagger er eit program som setter inn grammatiske merker i ein tekst.
@@ -186,17 +186,15 @@ def q(string):
     return string.format(**globals())
 ####################################
 def erGenitiv(oppslag, tag):
-   # Returnerer modifisert tag dersom oppslagsordet kan ta genitiv.
-   # Verb i imperativsform og konjunksjoner kan ikkje ta genitiv
+    # Returnerer modifisert tag dersom oppslagsordet kan ta genitiv.
+    # Verb i imperativsform og konjunksjoner kan ikkje ta genitiv
 
-   resultat = None
-
-   if tag != "" and
-      not re.search(r'(verb.*imp)|(konj)|(pron)|(interj)|(prep)', tag) and
-      not re.search(r' %s ' % re.escape(GEN), tag):
-       resultat = "%s %s" % (tag, GEN)
-   return resultat
-
+    resultat = None
+    unwantedPOS = re.search(r'(verb.*imp)|(konj)|(pron)|(interj)|(prep)', tag)
+    alreadyGenitive = re.search(r' %s ' % re.escape(GEN), tag)
+    if tag != "" and not unwantedPOS and not alreadyGenitive:
+        resultat = "%s %s" % (tag, GEN)
+    return resultat
 ####################################
 def databaseSearch(key):
     tag = ''
@@ -277,8 +275,8 @@ def initDB():
                 grunnform = re.sub(r'\s+$', '', grunnform)
                 grunnform = stor2stjerne(grunnform)
                 spesialTabKey = '%d#%s ' % (len(oppslag)+1, oppslag)
-                spesialTab[spesialTabKey] = spesialTab.get(spesialTabKey, '') +
-                                            '\t"{grunnform}" {tag}\n'.format(**vars())
+                spesialTab[spesialTabKey] = (spesialTab.get(spesialTabKey, '') +
+                                             '\t"{grunnform}" {tag}\n'.format(**vars()))
                 if len(oppslag) < spesialTabMin:
                     spesialTabMin = len(oppslag)
                 if len(oppslag) > spesialTabMax:
@@ -287,13 +285,13 @@ def initDB():
                 if net_type == "abbreviations" and oppslag.endswith('.'): # Dersom forkortinga endar med punktum
                     oppslag = " " + oppslag
                     ikkjeTerminerForkKey = '%d#%s' % (len(oppslag), oppslag)
-                    ikkjeTerminerFork[ikkjeTerminerForkKey] = ikkjeTerminerFork.get(ikkjeTerminerForkKey, '') +
-                                                              oppslag
+                    ikkjeTerminerFork[ikkjeTerminerForkKey] = (ikkjeTerminerFork.get(ikkjeTerminerForkKey, '') +
+                                                               oppslag)
                     if len(oppslag) < ikkjeTerminerForkMin:
                         ikkjeTerminerForkMin = len(oppslag)
                     if len(oppslag) > ikkjeTerminerForkMax:
                         ikkjeTerminerForkMax = len(oppslag)
-                if net_type == "titles" and oppslag.endswith('.') # Dersom tittel endar med punktum
+                if net_type == "titles" and oppslag.endswith('.'): # Dersom tittel endar med punktum
                     oppslag = re.sub(r'(\W)', r'\\\1', oppslag)
                     spesialTittel.insert(0, oppslag)
 ####################################
@@ -418,7 +416,7 @@ elif SPRAAK == "nn":
     from fullform_nn import fullformHash
     from root_nn import rootHash
     from compounds_nn import compoundHash
-else
+else:
     assert False, 'Ukjent språk ' + SPRAAK
 
 if UTFIL is not None:
@@ -434,7 +432,7 @@ if UTFIL is not None:
 logging.basicConfig(filename=LOGGFIL, filemode='w')
 if UTFIL is not None:
     tag_utfil = open(UTFIL, "w", encoding="utf-8") # FIXME: with open ... as
-else
+else:
     tag_utfil = sys.stdout
 
 if PERIODEFIL is not None:
@@ -491,8 +489,8 @@ while inputOK:
     # paa ei ny linje. Daa kan denne vere ein mellomtittel.
 
     muligOverskrift = ""
-    if periode != "" and sisteLesteLinje == periode and
-       not re.search(q(r'[{terminator}\,]'), sisteLesteLinje):
+    terminatorInLastLine = re.search(q(r'[{terminator}\,]'), sisteLesteLinje)
+    if periode != "" and sisteLesteLinje == periode and not terminatorInLastLine:
         overskriftElementer = re.split(r'\s+', periode)
         if len(overskriftElementer) <= 7:
             muligOverskrift = periode
@@ -567,8 +565,8 @@ while inputOK:
                 periode += ' END OF FILE'
             elif not re.search(r'\S', line): # Dersom blank linje
                 # Periode som mangler punktum på slutten er overskrift
-                if periode != "" and
-                   not re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), line):
+                terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), line)
+                if periode != "" and not terminatorQuoteInLine:
                     periode += "|"
             else:
                 # Fortsett bygginga av ein periode
@@ -633,11 +631,11 @@ def allcap2lower(string):
    return string.lower()
 ####################################
 def konverterSkilleteikn(periode):
-   konvertertPeriode = ""
-   periodeDeltPaaSGML = re.split(r'(<.*?>)', periode)
+    konvertertPeriode = ''
+    periodeDeltPaaSGML = re.split(r'(<.*?>)', periode)
 
     for periodeDel in periodeDeltPaaSGML:
-        if not re.search(/^<.*>$/, periodeDel): # ikkje konverter innsiden av SGML-taggene
+        if not re.search(r'^<.*>$', periodeDel): # ikkje konverter innsiden av SGML-taggene
             # Konverter alle skilleteikn
             # legg inn ein blank foer og etter teiknet for aa sikre
             # at teiknet vert rekna for eit ord
@@ -684,8 +682,8 @@ def sjekkNamn(key, sterkSjekk=False):
        key = key.replace('-', '')           # Fjern bindestrek
        smallkey = smallkey.replace('-', '') # Fjern bindestrek
        tag = databaseSearch(key) + databaseSearch(smallkey)
-        if (tag == "" and not sterkSjekk) or re.search(r'\bprop\b', tag):
-            erNamn = True
+       if (tag == "" and not sterkSjekk) or re.search(r'\bprop\b', tag):
+           erNamn = True
 
     return erNamn
 ####################################
@@ -769,8 +767,8 @@ def gaaGjennomPeriodeElementer(periode, inputOK):
 
         if erPeriodeSlutt:
             for tittel in spesialTittel:
-                if re.search(q(r' {tittel}$'), muligReinPeriode) or
-                   re.search(q(r'^{tittel}$'), initcap2lower(muligReinPeriode)):
+                if (re.search(q(r' {tittel}$'), muligReinPeriode) or
+                    re.search(q(r'^{tittel}$'), initcap2lower(muligReinPeriode))):
 
                     # Les neste ord.
                     # Eit ord kan vere samasett av to periodeelement
@@ -924,7 +922,7 @@ def finnTal(periode, periodeStart):
     if m:
         word = m.group(1)
         if m.group(2) >= 0 and m.group(2) < 24 and m.group(3) >= 0 and m.group(3) < 60:
-            if (len(word)+1 > antal:
+            if len(word)+1 > antal:
                 tagTekst = TAG_LINE.format(word, SUBST_KLOKKE)
                 antal = len(word)+1
             elif len(word)+1 == antal:
@@ -962,7 +960,7 @@ def finnTal(periode, periodeStart):
                 tagTekst = TAG_LINE.format(word, DET_ROMER)
             elif len(word)+1 == antal:
                 word = re.sub(r'\s*\$([.)])$', r'\1', word)
-                $tagTekst += TAG_LINE.format(word, DET_ROMER)
+                tagTekst += TAG_LINE.format(word, DET_ROMER)
 
     return (tagTekst, antal)
 ####################################
@@ -977,7 +975,7 @@ def finnUttrykk(periode, periodeStart):
     periodeLiten = initcap2lower(periode)
 
     for antal in range(spesialTabMax, spesialTabMin-1, -1):
-        if antal > len(periode)
+        if antal > len(periode):
             continue
 
         periode = re.sub(r'^\s*', '', periode)
@@ -1047,8 +1045,9 @@ def sokEtterledd(etterledd, sokOrd):
     for grammatikk in re.split(r'\n\t', tagTekstOrig):
         grammatikk = grammatikk.strip()
         grammatikk = re.sub(r'^"(.*)"', r'"{}\1"'.format(forledd), grammatikk)
-        if re.search(r'^".*"\s+(subst|verb(?! imp)|adj|det\s+kvant\s+fl|prep|sbu|adv)\b', grammatikk) and
-           not re.search(r'^".*"\s+verb\b.*\bperf-part\b', grammatikk):
+        wantedPOS = re.search(r'^".*"\s+(subst|verb(?! imp)|adj|det\s+kvant\s+fl|prep|sbu|adv)\b', grammatikk)
+        unwantedPOS = re.search(r'^".*"\s+verb\b.*\bperf-part\b', grammatikk)
+        if wantedPOS and not unwantedPOS:
             if tagTekst == "":
                tagTekst += "\t"
             else:
@@ -1126,8 +1125,10 @@ def analyserForledd(forledd):
 
         ledd1Analyse = analyserForledd(ledd1)
         ledd2Analyse = analyserForledd(ledd2)
+        ledd1OK = ledd1Analyse and ledd1Analyse[0]
+        ledd2OK = ledd2Analyse and ledd2Analyse[0]
 
-        if ledd1Analyse and ledd2Analyse and ledd1Analyse[0] and ledd2Analyse[0]:
+        if ledd1OK and ledd2OK:
             print('{} + {}'.foromat(ledd1, ledd2), file=sys.stderr)
             print(ledd1Analyse, file=sys.stderr)
             print(ledd2Analyse, file=sys.stderr)
@@ -1137,12 +1138,12 @@ def analyserForledd(forledd):
 #            print([numLedd, rootOrdklasser(ledd2)], file=sys.stderr)
             resultater.append([numLedd, rootOrdklasser(ledd2)])
 
-        fugeFormativ = forledd[i-1]
         ledd1kortAnalyse = analyserForledd(ledd1kort)
+        ledd1kortOK = ledd1kortAnalyse and ledd1kortAnalyse[0]
+        fugeFormativ = forledd[i-1]
+        fugeFormativOK = re.search(r'^[es-]$', fugeFormativ)
 
-        if ledd1kortAnalyse and ledd1kortAnalyse[0] and
-           re.search(r'^[es-]$', fugeFormativ) and
-           ledd2Analyse and ledd2Analyse[0]:
+        if ledd1kortOK and fugeFormativOK and ledd2OK:
             print("{} + fuge + {}".format(ledd1kort, ledd2), file=sys.stderr)
             print(ledd1kortAnalyse, file=sys.stderr)
             print(ledd2Analyse, file=sys.stderr)
@@ -1182,8 +1183,8 @@ def analyserForleddOgEtterledd(sokOrd):
         if not (forleddAnalyse and forleddAnalyse[0]):
             continue
         etterleddOK = len(etterledd) > 1 and databaseSearchForSuffixOrWord(etterledd)
-        kortEtterleddOK = re.search(r'^[es-]', etterledd) and len(kortEtterledd) > 1 and
-                          databaseSearchForSuffixOrWord(kortEtterledd)
+        kortEtterleddOK = (re.search(r'^[es-]', etterledd) and len(kortEtterledd) > 1 and
+                           databaseSearchForSuffixOrWord(kortEtterledd))
 
         if etterledd.startswith('s') and kortEtterleddOK:
             # Lexical compounding is preferable to compounding with epenthetic phones.
@@ -1194,25 +1195,28 @@ def analyserForleddOgEtterledd(sokOrd):
             if 'subst' not in forleddAnalyse:
                 kortEtterleddOK = False
             # Epenthetic -s- cannot occur after a sibilant or a final consonant sequence containing a sibilant (Akø 1989)
-            if re.search(q(r's[{konsonanter}]*$'), forledd) and
-               # ... except when the consonant sequence belongs to a compound
-               forleddAnalyse[0] == 1:
+            forleddFinalSibilant = re.search(q(r's[{konsonanter}]*$'), forledd)
+            # ... except when the consonant sequence belongs to a compound
+            if forleddFinalSibilant and forleddAnalyse[0] == 1:
                 kortEtterleddOK = False
 
         if etterledd.startswith('e') and kortEtterleddOK:
             # Epenthetic -e- can only be attached to a stem that is monosyllabic.
-            # Other possible stems can be prior to the stem preceding the -e-, if they do not form a compound with that stem.
-            # "Flyktning" is apparently an exception.
-            if not re.search(q(r'^[{konsonanter}]*[^{konsonanter}]+[{konsonanter}]*$'), forledd, flags=re.I) and
-               forledd != 'flyktning':
+            forleddMonosyllabic = re.search(q(r'^[{konsonanter}]*[^{konsonanter}]+[{konsonanter}]*$'),
+                                            forledd, flags=re.I)
+            # Other possible stems can be prior to the stem preceding the -e-,
+            # if they do not form a compound with that stem. (FIXME: not implemented)
+
+            # "Flyktning" is apparently an exception (cf. "flyktningerett").
+            if not forleddMonosyllabic and forledd != 'flyktning':
                 kortEtterleddOK = False
 
         if etterleddOK and kortEtterleddOK:
             print('sokEtterledd1({}, {})'.format(etterledd, sokOrd), file=sys.stderr)
             etterleddTagger = sokEtterledd(etterledd, sokOrd)
-            if re.search(r'\bverb\b', etterleddTagger) and
-               not re.search(r'\bsubst\b', etterleddTagger) and
-               etterledd.startswith('s'):
+            verbalEtterledd = re.search(r'\bverb\b', etterleddTagger)
+            substantiviskEtterledd = re.search(r'\bsubst\b', etterleddTagger)
+            if verbalEtterledd and not substantiviskEtterledd and etterledd.startswith('s'):
                 # Epenthetic -s- is preferred to lexical compounding
                 # when the -s- can be ambiguous between epenthetic use
                 # and the first letter of a verbal last member.
@@ -1270,9 +1274,8 @@ def analyserForleddOgEtterledd(sokOrd):
                 # If two analyses have the same number of members and
                 # there is no epenthesis involved, choose the one, if
                 # any, that is a noun.
-                if re.search(r'^\s*".*"(\s*<.*?>)?\s+subst\b', tagger, re.MULTILINE) and
-                   not (kortEtterleddOK and etterledd.startswith('e')) and
-                   numEtterledd < 1.5:
+                isNoun = re.search(r'^\s*".*"(\s*<.*?>)?\s+subst\b', tagger, flags=re.MULTILINE)
+                if isNoun and not (kortEtterleddOK and etterledd.startswith('e')) and numEtterledd < 1.5:
                     break
     return resultater
 
@@ -1364,8 +1367,8 @@ def sort_feat(line):
         for suffix in suffixes:
             if re.search(r'\S+{}$'.format(re.escape(suffix)), word, flags=re.IGNORECASE):
                 f.append("<*{}>".format(suffix))
-    if re.search(q(r'^[{lettersla}]'), word) and not periodeStart and
-       ('prop' in f or not 'fork' in f):
+    startsWithCapitalLetter = re.search(q(r'^[{lettersla}]'), word)
+    if startsWithCapitalLetter and not periodeStart and ('prop' in f or not 'fork' in f):
         f.append("<*>")
     result = '\t"{}" '.format(word)
     if SPRAAK == 'bm':
@@ -1579,21 +1582,19 @@ def taggPeriode(periode):
             if m:
                 word = m.group(1) # Plukk ut sammensetninger med og eller eller
                 periode = re.sub(ogEllerCompoundRegex, '', periode)
-            } else {
+            else:
                 m = re.search(r'(\S*)\s*', periode)
                 if m:
                     word = m.group(1)
                     periode = re.sub(r'(\S*)\s*', '', periode, count=1)
                 else:
                     word = ''
-            }
-        }
         wordOrig = word
 
         # Sjekk om ordet er eit skilleteikn
         if not tagTekst:
             tagTekstSkilleStr = tagTekstSkille(word, periode)
-             if tagTekstSkilleStr != "":
+            if tagTekstSkilleStr != "":
                 ferdig = True
             tagTekst += tagTekstSkille
 
@@ -1614,9 +1615,9 @@ def taggPeriode(periode):
                 # dersom det ikkje vert funne i fullformslistene
 
                 logLine = '{:16}%s (omtrent linje %d)' % (word, linjeNr)
-                if (not periodeStart or propHash[sokOrd]) and
-                   re.search(q(r'^[{lettersla}]'), sokOrd) and
-                   not re.search(q(r'-[{letterssm}]'), sokOrd):
+                if ((not periodeStart or propHash[sokOrd]) and
+                    re.search(q(r'^[{lettersla}]'), sokOrd) and
+                    not re.search(q(r'-[{letterssm}]'), sokOrd)):
 
                     # Sjekk om namnet kan vere genitiv
                     genOrd = finnGenitivRot(sokOrd)
@@ -1648,7 +1649,7 @@ def taggPeriode(periode):
                             propHash[sokOrd] = True
                             substProp += 1
                             # Sjekk om mogleg genitiv
-                            genOrd = finnGenitivRot(sokOrd))
+                            genOrd = finnGenitivRot(sokOrd)
                             if genOrd:
                                 tagTekst += TAG_LINE.format(stor2stjerne(genOrd), q("{SUBST_PROP} {GEN}"))
                                 logging.info(logLine.format('SUBST PROP GEN:'))
