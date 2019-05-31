@@ -557,7 +557,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode):
 
         # Les neste ord. Trengs for å avgjere periodeslutt
         # Eit ord kan vere samasett av to periodeelement
-        nesteOrd = restAvMulig + periodeElementer[0] + periodeElementer[1]
+        nesteOrd = restAvMulig + ''.join(periodeElementer[0:2])
         nesteOrd = re.sub(q(r'\s*([^\s$terminator]+).*'), r'\1', nesteOrd)
 
 
@@ -609,7 +609,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode):
 
                     # Les neste ord.
                     # Eit ord kan vere samasett av to periodeelement
-                    nesteOrd = restAvMulig + periodeElementer[0] + periodeElementer[1]
+                    nesteOrd = restAvMulig + ''.join(periodeElementer[0:2])
                     nesteOrd = re.sub(q(r'\s*([^\s{terminator}]+).*'), r'\1', nesteOrd)
 
                     erNamn = sjekkNamn(nesteOrd)
