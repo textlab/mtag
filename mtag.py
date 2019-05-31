@@ -181,135 +181,6 @@ suffixes = ['avtale', 'berg', 'blad', 'bok', 'bolig', 'bre', 'bukt', 'by',
             'misjon', 'museum', 'område', 'produsent', 'sal', 'selskap', 'sjef',
             'spesialist', 'styre', 'bedrift', 'foretak', 'institutt']
 
-####################################
-def q(string):
-    return string.format(**globals())
-####################################
-def erGenitiv(oppslag, tag):
-    # Returnerer modifisert tag dersom oppslagsordet kan ta genitiv.
-    # Verb i imperativsform og konjunksjoner kan ikkje ta genitiv
-
-    resultat = None
-    unwantedPOS = re.search(r'(verb.*imp)|(konj)|(pron)|(interj)|(prep)', tag)
-    alreadyGenitive = re.search(r' %s ' % re.escape(GEN), tag)
-    if tag != "" and not unwantedPOS and not alreadyGenitive:
-        resultat = "%s %s" % (tag, GEN)
-    return resultat
-####################################
-def databaseSearch(key):
-    tag = ''
-
-    if key in fullformHash:
-        for funne in fullformHash[key].split("\n\t"):
-            funne = re.sub(r'^\s*', '', funne)
-            funne = re.sub(r'\s*$', '', funne)
-            m = re.search(r'"(.*)"', funne)
-            stjerneMarkert = stor2stjerne(m.group(1))
-            funne = re.sub(r'^"(.*)"', '"{}"'.format(stjerneMarkert), funne)
-            if stjerneMarkert in compoundHash:
-                funne = re.sub(r'$', ' samset-leks', funne, flags=re.MULTILINE)
-            tag += "\t" + funne + "\n"
-
-    genKey = finnGenitivRot(key)
-    if genKey and genKey in fullformHash:
-        for funne in fullformHash[genKey].split("\n\t"):
-            funne = re.sub(r'^\s*', '', funne)
-            funne = re.sub(r'\s*$', '', funne)
-            m = re.search(r'"(.*)"', funne)
-            stjerneMarkert = stor2stjerne(m.group(1))
-            funne = re.sub(r'^"(.*)"', '"{}"'.format(stjerneMarkert), funne)
-            funne = erGenitiv(genKey, funne)
-#            if stjerneMarkert in compoundHash:
-#                funne = re.sub(r'$', ' samset-leks', funne, flags=re.MULTILINE)
-            if funne:
-                tag += "\t" + funne + "\n"
-
-    return tag
-####################################
-def sok(key):
-    res = ''
-
-    if key != '':
-        res = memBuffer.get(key)
-        if res is None:
-            res = databaseSearch(key)
-            if memBufferCount < MAXMEMBUF and res is not None:
-                memBuffer[key] = res
-                memBufferCount += 1
-
-    if res is None:
-        key = re.sub(q(r"[^'{letters}\d]+$"), '', key) # Delete non-letter at the end
-        if key != '':
-            res = memBuffer.get(key)
-            if res is None:
-                res = databaseSearch(key)
-                if memBufferCount < MAXMEMBUF and res is not None:
-                    memBuffer[key] = res
-                    memBufferCount += 1
-
-    if res is None:
-        key = re.sub(q(r"^[^{letters}\d]+"), '', key) # Delete non-letter at the start
-        if key != '':
-            res = memBuffer.get(key)
-            if res is None:
-                res = databaseSearch(key)
-                if memBufferCount < MAXMEMBUF and res is not None:
-                    memBuffer[key] = res
-                    memBufferCount += 1
-
-    return res
-####################################
-def initDB():
-    global spesialTabMin, spesialTabMax, ikkjeTerminerForkMin, ikkjeTerminerForkMax
-    for net_type in ["abbreviations", "expressions", "symbols", "titles", "word-like-abbreviations"]:
-        nets_dir = DIR + '/data'
-        nets_spraak = 'nny' if SPRAAK == 'nn' else 'nbo'
-        with open("{nets_dir}/{nets_spraak}-{net_type}.txt".format(**vars()), "r", encoding="utf-8") as db:
-            for linje in db:
-                linje = linje.rstrip("\n")
-                felt = linje.split(':')
-                oppslag, grunnform, tag = felt
-                oppslag = re.sub(r'^\s+', '', oppslag)
-                oppslag = re.sub(r'\s+$', '', oppslag)
-                grunnform = re.sub(r'^\s+', '', grunnform)
-                grunnform = re.sub(r'\s+$', '', grunnform)
-                grunnform = stor2stjerne(grunnform)
-                spesialTabKey = '%d#%s ' % (len(oppslag)+1, oppslag)
-                spesialTab[spesialTabKey] = (spesialTab.get(spesialTabKey, '') +
-                                             '\t"{grunnform}" {tag}\n'.format(**vars()))
-                if len(oppslag) < spesialTabMin:
-                    spesialTabMin = len(oppslag)
-                if len(oppslag) > spesialTabMax:
-                    spesialTabMax = len(oppslag)
-
-                if net_type == "abbreviations" and oppslag.endswith('.'): # Dersom forkortinga endar med punktum
-                    oppslag = " " + oppslag
-                    ikkjeTerminerForkKey = '%d#%s' % (len(oppslag), oppslag)
-                    ikkjeTerminerFork[ikkjeTerminerForkKey] = (ikkjeTerminerFork.get(ikkjeTerminerForkKey, '') +
-                                                               oppslag)
-                    if len(oppslag) < ikkjeTerminerForkMin:
-                        ikkjeTerminerForkMin = len(oppslag)
-                    if len(oppslag) > ikkjeTerminerForkMax:
-                        ikkjeTerminerForkMax = len(oppslag)
-                if net_type == "titles" and oppslag.endswith('.'): # Dersom tittel endar med punktum
-                    oppslag = re.sub(r'(\W)', r'\\\1', oppslag)
-                    spesialTittel.insert(0, oppslag)
-####################################
-def registrerStatistikk():
-    # Rutina oppdaterer ein del globale variable, og skriv eventuelt ut
-    # forloepsindikator
-    # Rutina må kallast ein gong for kvart tagga ord
-
-    ordTellar += 1
-    if UTFIL is not None:
-        grenseTellar += 1
-        if (time.time() - mellomTidStart) > 30:
-            mellomTidSlutt = time.time()
-            print("%d ord tagget, %.0f ord pr sekund" %
-                  (ordTellar, grenseTellar/(mellomTidSlutt-mellomTidStart)))
-            mellomTidStart = time.time()
-            grenseTellar = 0
-####################################
 omTagger = """\
 Multitagger versjon 0.1a20, 9. februar 1999
 Programmert av Lars Jørgen Tvedt
@@ -320,7 +191,6 @@ For feilmeldingar og kommentarar, ta kontakt på e-post
 l.j.tvedt\@dokpro.uio.no, eller telefon 22 85 49 84
 ADVARSEL: Nye versjonar av programmet vil bli
 installert utan varsel"""
-####################################
 
 PROG = os.path.basename(__file__)
 DIR = os.path.dirname(os.path.realpath(__file__))
@@ -438,185 +308,22 @@ else:
 if PERIODEFIL is not None:
     tag_periodefil = open(PERIODEFIL, "w")
 
-inputfile = fileinput.input()
-
-# Les data inn i spesialtabellane
-# (forkortingar, forkortingar som ser ut som ord med punktum etter, titlar, symboler, uttrykk)
-# Rutinane endrar følgande globale variable:
-#    spesialTabMin
-#    spesialTabMax
-#    spesialTab
-#    ikkjeTerminerForkMin
-#    ikkjeTerminerForkMax
-#    ikkjeTerminerFork
-#    spesialTittel
-initDB()
-
-spesialTabMin += 1
-spesialTabMax += 1
-if ikkjeTerminerForkMin < 1:
-    ikkjeTerminerForkMin = 1
-
-#######################################
-# Saa starter vi tagginga
-#######################################
-if UTFIL is not None:
-    print("Initialisering ferdig. Starter tagging ...")
-
-ordTellar = 0
-grenseTellar = 0
-startTid = time.time()
-mellomTidStart = time.time()
-periode = ""
-nestePeriode = ""
-sisteLesteLinje = ""
-periodeFullstendig = False
-inputOK = True
-needMoreData = True
-substProp = 0
-ukjent = 0
-fuge = 0
-linjeNr = 0
-
-while inputOK:
-    periodeFullstendig = False
-    periode = nestePeriode
-    print(q("(neste)periode = <<<{periode}>>>"), file=sys.stderr);
-
-    # Ein vil alltid ha lest ei linje meir enn naudsynt.
-    # Dersom linja som sist er lest er identisk med den perioden
-    # vi no skal jobbe med, tyder det på at denne neste perioden startar
-    # paa ei ny linje. Daa kan denne vere ein mellomtittel.
-
-    muligOverskrift = ""
-    terminatorInLastLine = re.search(q(r'[{terminator}\,]'), sisteLesteLinje)
-    if periode != "" and sisteLesteLinje == periode and not terminatorInLastLine:
-        overskriftElementer = re.split(r'\s+', periode)
-        if len(overskriftElementer) <= 7:
-            muligOverskrift = periode
-        # Sett inn backslash foer eventuelle meta-teikn.
-        #Variabelen skal brukast i regulaere uttrykk
-        muligOverskrift = re.sub(r'(\W)', r'\\\1', muligOverskrift)
-
-    periode = re.sub(r'\n', ' ', periode)
-    periode = re.sub(r'\s+', ' ', periode)
-    periode = re.sub(r'^\s*', '', periode)
-    periode = re.sub(r'\s*$', '', periode)
-
-    # Finn ein periode
-    while not periodeFullstendig:
-        # Bygg opp det som skal bli ein periode
-        if needMoreData: # Treng meir data fraa fila
-            line = inputfile.readline()
-            linjeNr += 1
-
-            while re.search(r'/\*', line): # Les heile kommentarar
-                if re.search(r'/\*.*\*/', line):
-                    break
-                line = re.sub(r'\n', ' ', line)
-                line += inputfile.readline()
-                linjeNr += 1
-
-            line = re.sub(q(r'[{remove}]'), ' ', line) # Fjern ulovlege teikn
-
-            sisteLesteLinje = line # Hold dette for aa sjekke titlar
-            sisteLesteLinje = re.sub(r'^\s*', '', sisteLesteLinje)
-            sisteLesteLinje = sisteLesteLinje.rstrip("\n")
-
-            if not line:
-                inputOK = False
-
-            # Ta hand om bindestreker paa slutten av linje
-            while line:
-                line, subst_count = re.subn(r'(\S)-\s*$', r'\1', line)
-                if subst_count == 0:
-                    break
-                m = re.search(r'(\S+)$', line)
-                word = m.group(1)
-                holdLinje = line
-                line = inputfile.readline()
-                linjeNr += 1
-
-                if not line:
-                    inputOK = False
-                if not inputOK:
-                    break
-
-                # Sjekk om koordinert frase
-                if re.search(r'(^\s*og\s)|(^\s*eller\s)', line):
-                    line = holdLinje + '- ' + line # Koordinert frase
-                else:
-                    m = re.search(r'^(\S*)\s', line) # Sett saman ord
-                    word += m.group(1)
-                    tagTekst = sok(word) # Sjekk om ordet finns
-                    word = initcap2lower(word)
-                    tagTekst += sok(word) # Sjekk om ordet finns
-                    if tagTekst is not None:
-                        line = holdLinje + line # Ordet finns i basen
-                    else:
-                        line = holdLinje + '-' + line
-
-            if not line or not inputOK: # Slutten av fila
-                inputOK = False
-
-                # Terminer siste periode som mangler punktum
-                if periode != "" and not re.search(q(r'[{terminator}]\s*$'), periode):
-                    periode += '.'
-                periode += ' END OF FILE'
-            elif not re.search(r'\S', line): # Dersom blank linje
-                # Periode som mangler punktum på slutten er overskrift
-                terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), line)
-                if periode != "" and not terminatorQuoteInLine:
-                    periode += "|"
-            else:
-                # Fortsett bygginga av ein periode
-                periode += " " + line
-                periode = re.sub(r'\n', ' ', periode)
-                periode = re.sub(r'\s+', ' ', periode)
-                periode = re.sub(r'^\s*', '', periode)
-                periode = re.sub(r'\s*$', '', periode)
-
-        periode = re.sub(r'/\*.*?\*/', ' ', periode) # Fjern kommentarer
-
-        # Sjekk overskrift
-        if muligOverskrift != "":
-            periode = re.sub(q(r'({muligOverskrift})\s+([{quotsParantes}]*[-{lettersla}\d{specletters}])'),
-                             r'\1| \2', periode);
-
-        print(q("(before gaaGjennom)periode = <<<{periode}>>>"), file=sys.stderr)
-        needMoreData, periode, nestePeriode = gaaGjennomPeriodeElementer(periode, inputOK)
-
-    print(q("taggPeriode({periode})"), file=sys.stderr)
-    taggPeriode(periode)
-
-sluttTid = time.time()
-tidBrukt = (sluttTid-startTid)/60
-
-msg = q("""
-Tagga {ordTellar} ord
-Fann {fuge} ukjende ord som vart tolka av samansetningsmodulen
-Fann {ukjent} ukjende ord
-Fann {substProp} ukjente ord som vart tolka som "{SUBST_PROP}"
-Buffra {memBufferCount} ordformer. Max bufferstorleik er {MAXMEMBUF}
-Tid brukt: {tidBrukt:10.2f} minutt
-""")
-
-for logline in msg.split("\n"):
-    logging.info(logline)
-
-if UTFIL is not None:
-    print(msg, end='')
-    print(q("Liste over problemorda ligg i fila {LOGGFIL}"));
-
-sys.exit(0)
-#########################################
-#
-# Subrutiner
-#
-#########################################
-def uniq(l):
-    return list(set(l))
 ####################################
+#
+# Functions
+#
+####################################
+# Shortcut for poor man's templates with global variables,
+# compatible with older versions of Python
+def q(string):
+    return string.format(**globals())
+####################################
+def allcap2lower(string):
+   return string.lower()
+####################################
+def initcap2lower(string):
+    return re.sub(r'^.', lambda m: m.group(0).lower(), string)
+#########################################
 def stor2stjerne(word):
     # Rutina bytter ut alle store bokstaver med stjerne og liten bokstav
 
@@ -624,11 +331,140 @@ def stor2stjerne(word):
     #word = allcap2lower(word)
     return word
 ####################################
-def initcap2lower(string):
-    return re.sub(r'^.', lambda m: m.group(0).lower(), string)
+def initDB():
+    # Les data inn i spesialtabellane
+    # (forkortingar, forkortingar som ser ut som ord med punktum etter, titlar, symboler, uttrykk)
+    # Rutinane endrar følgande globale variable:
+    #    spesialTabMin
+    #    spesialTabMax
+    #    spesialTab
+    #    ikkjeTerminerForkMin
+    #    ikkjeTerminerForkMax
+    #    ikkjeTerminerFork
+    #    spesialTittel
+    global spesialTabMin, spesialTabMax, ikkjeTerminerForkMin, ikkjeTerminerForkMax
+    for net_type in ["abbreviations", "expressions", "symbols", "titles", "word-like-abbreviations"]:
+        nets_dir = DIR + '/data'
+        nets_spraak = 'nny' if SPRAAK == 'nn' else 'nbo'
+        with open("{nets_dir}/{nets_spraak}-{net_type}.txt".format(**vars()), "r", encoding="utf-8") as db:
+            for linje in db:
+                linje = linje.rstrip("\n")
+                felt = linje.split(':')
+                oppslag, grunnform, tag = felt
+                oppslag = re.sub(r'^\s+', '', oppslag)
+                oppslag = re.sub(r'\s+$', '', oppslag)
+                grunnform = re.sub(r'^\s+', '', grunnform)
+                grunnform = re.sub(r'\s+$', '', grunnform)
+                grunnform = stor2stjerne(grunnform)
+                spesialTabKey = '%d#%s ' % (len(oppslag)+1, oppslag)
+                spesialTab[spesialTabKey] = (spesialTab.get(spesialTabKey, '') +
+                                             '\t"{grunnform}" {tag}\n'.format(**vars()))
+                if len(oppslag) < spesialTabMin:
+                    spesialTabMin = len(oppslag)
+                if len(oppslag) > spesialTabMax:
+                    spesialTabMax = len(oppslag)
+
+                if net_type == "abbreviations" and oppslag.endswith('.'): # Dersom forkortinga endar med punktum
+                    oppslag = " " + oppslag
+                    ikkjeTerminerForkKey = '%d#%s' % (len(oppslag), oppslag)
+                    ikkjeTerminerFork[ikkjeTerminerForkKey] = (ikkjeTerminerFork.get(ikkjeTerminerForkKey, '') +
+                                                               oppslag)
+                    if len(oppslag) < ikkjeTerminerForkMin:
+                        ikkjeTerminerForkMin = len(oppslag)
+                    if len(oppslag) > ikkjeTerminerForkMax:
+                        ikkjeTerminerForkMax = len(oppslag)
+                if net_type == "titles" and oppslag.endswith('.'): # Dersom tittel endar med punktum
+                    oppslag = re.sub(r'(\W)', r'\\\1', oppslag)
+                    spesialTittel.insert(0, oppslag)
 ####################################
-def allcap2lower(string):
-   return string.lower()
+def registrerStatistikk():
+    # Rutina oppdaterer ein del globale variable, og skriv eventuelt ut
+    # forloepsindikator
+    # Rutina må kallast ein gong for kvart tagga ord
+
+    ordTellar += 1
+    if UTFIL is not None:
+        grenseTellar += 1
+        if (time.time() - mellomTidStart) > 30:
+            mellomTidSlutt = time.time()
+            print("%d ord tagget, %.0f ord pr sekund" %
+                  (ordTellar, grenseTellar/(mellomTidSlutt-mellomTidStart)))
+            mellomTidStart = time.time()
+            grenseTellar = 0
+####################################
+def erGenitiv(oppslag, tag):
+    # Returnerer modifisert tag dersom oppslagsordet kan ta genitiv.
+    # Verb i imperativsform og konjunksjoner kan ikkje ta genitiv
+
+    resultat = None
+    unwantedPOS = re.search(r'(verb.*imp)|(konj)|(pron)|(interj)|(prep)', tag)
+    alreadyGenitive = re.search(r' %s ' % re.escape(GEN), tag)
+    if tag != "" and not unwantedPOS and not alreadyGenitive:
+        resultat = "%s %s" % (tag, GEN)
+    return resultat
+####################################
+def databaseSearch(key):
+    tag = ''
+
+    if key in fullformHash:
+        for funne in fullformHash[key].split("\n\t"):
+            funne = re.sub(r'^\s*', '', funne)
+            funne = re.sub(r'\s*$', '', funne)
+            m = re.search(r'"(.*)"', funne)
+            stjerneMarkert = stor2stjerne(m.group(1))
+            funne = re.sub(r'^"(.*)"', '"{}"'.format(stjerneMarkert), funne)
+            if stjerneMarkert in compoundHash:
+                funne = re.sub(r'$', ' samset-leks', funne, flags=re.MULTILINE)
+            tag += "\t" + funne + "\n"
+
+    genKey = finnGenitivRot(key)
+    if genKey and genKey in fullformHash:
+        for funne in fullformHash[genKey].split("\n\t"):
+            funne = re.sub(r'^\s*', '', funne)
+            funne = re.sub(r'\s*$', '', funne)
+            m = re.search(r'"(.*)"', funne)
+            stjerneMarkert = stor2stjerne(m.group(1))
+            funne = re.sub(r'^"(.*)"', '"{}"'.format(stjerneMarkert), funne)
+            funne = erGenitiv(genKey, funne)
+#            if stjerneMarkert in compoundHash:
+#                funne = re.sub(r'$', ' samset-leks', funne, flags=re.MULTILINE)
+            if funne:
+                tag += "\t" + funne + "\n"
+
+    return tag
+####################################
+def sok(key):
+    res = ''
+
+    if key != '':
+        res = memBuffer.get(key)
+        if res is None:
+            res = databaseSearch(key)
+            if memBufferCount < MAXMEMBUF and res is not None:
+                memBuffer[key] = res
+                memBufferCount += 1
+
+    if res is None:
+        key = re.sub(q(r"[^'{letters}\d]+$"), '', key) # Delete non-letter at the end
+        if key != '':
+            res = memBuffer.get(key)
+            if res is None:
+                res = databaseSearch(key)
+                if memBufferCount < MAXMEMBUF and res is not None:
+                    memBuffer[key] = res
+                    memBufferCount += 1
+
+    if res is None:
+        key = re.sub(q(r"^[^{letters}\d]+"), '', key) # Delete non-letter at the start
+        if key != '':
+            res = memBuffer.get(key)
+            if res is None:
+                res = databaseSearch(key)
+                if memBufferCount < MAXMEMBUF and res is not None:
+                    memBuffer[key] = res
+                    memBufferCount += 1
+
+    return res
 ####################################
 def konverterSkilleteikn(periode):
     konvertertPeriode = ''
@@ -1667,3 +1503,170 @@ def taggPeriode(periode):
 
         periodeStart = periodeStart and bool(re.search(q(r'^\$([{quots}])'), word) or
                                              re.search(q(r'^\$[{stroke}]'), word))
+####################################
+#
+# Main
+#
+####################################
+
+inputfile = fileinput.input()
+
+initDB()
+
+spesialTabMin += 1
+spesialTabMax += 1
+if ikkjeTerminerForkMin < 1:
+    ikkjeTerminerForkMin = 1
+
+#######################################
+# Saa starter vi tagginga
+#######################################
+if UTFIL is not None:
+    print("Initialisering ferdig. Starter tagging ...")
+
+ordTellar = 0
+grenseTellar = 0
+startTid = time.time()
+mellomTidStart = time.time()
+periode = ""
+nestePeriode = ""
+sisteLesteLinje = ""
+periodeFullstendig = False
+inputOK = True
+needMoreData = True
+substProp = 0
+ukjent = 0
+fuge = 0
+linjeNr = 0
+
+while inputOK:
+    periodeFullstendig = False
+    periode = nestePeriode
+    print(q("(neste)periode = <<<{periode}>>>"), file=sys.stderr);
+
+    # Ein vil alltid ha lest ei linje meir enn naudsynt.
+    # Dersom linja som sist er lest er identisk med den perioden
+    # vi no skal jobbe med, tyder det på at denne neste perioden startar
+    # paa ei ny linje. Daa kan denne vere ein mellomtittel.
+
+    muligOverskrift = ""
+    terminatorInLastLine = re.search(q(r'[{terminator}\,]'), sisteLesteLinje)
+    if periode != "" and sisteLesteLinje == periode and not terminatorInLastLine:
+        overskriftElementer = re.split(r'\s+', periode)
+        if len(overskriftElementer) <= 7:
+            muligOverskrift = periode
+        # Sett inn backslash foer eventuelle meta-teikn.
+        #Variabelen skal brukast i regulaere uttrykk
+        muligOverskrift = re.sub(r'(\W)', r'\\\1', muligOverskrift)
+
+    periode = re.sub(r'\n', ' ', periode)
+    periode = re.sub(r'\s+', ' ', periode)
+    periode = re.sub(r'^\s*', '', periode)
+    periode = re.sub(r'\s*$', '', periode)
+
+    # Finn ein periode
+    while not periodeFullstendig:
+        # Bygg opp det som skal bli ein periode
+        if needMoreData: # Treng meir data fraa fila
+            line = inputfile.readline()
+            linjeNr += 1
+
+            while re.search(r'/\*', line): # Les heile kommentarar
+                if re.search(r'/\*.*\*/', line):
+                    break
+                line = re.sub(r'\n', ' ', line)
+                line += inputfile.readline()
+                linjeNr += 1
+
+            line = re.sub(q(r'[{remove}]'), ' ', line) # Fjern ulovlege teikn
+
+            sisteLesteLinje = line # Hold dette for aa sjekke titlar
+            sisteLesteLinje = re.sub(r'^\s*', '', sisteLesteLinje)
+            sisteLesteLinje = sisteLesteLinje.rstrip("\n")
+
+            if not line:
+                inputOK = False
+
+            # Ta hand om bindestreker paa slutten av linje
+            while line:
+                line, subst_count = re.subn(r'(\S)-\s*$', r'\1', line)
+                if subst_count == 0:
+                    break
+                m = re.search(r'(\S+)$', line)
+                word = m.group(1)
+                holdLinje = line
+                line = inputfile.readline()
+                linjeNr += 1
+
+                if not line:
+                    inputOK = False
+                if not inputOK:
+                    break
+
+                # Sjekk om koordinert frase
+                if re.search(r'(^\s*og\s)|(^\s*eller\s)', line):
+                    line = holdLinje + '- ' + line # Koordinert frase
+                else:
+                    m = re.search(r'^(\S*)\s', line) # Sett saman ord
+                    word += m.group(1)
+                    tagTekst = sok(word) # Sjekk om ordet finns
+                    word = initcap2lower(word)
+                    tagTekst += sok(word) # Sjekk om ordet finns
+                    if tagTekst is not None:
+                        line = holdLinje + line # Ordet finns i basen
+                    else:
+                        line = holdLinje + '-' + line
+
+            if not line or not inputOK: # Slutten av fila
+                inputOK = False
+
+                # Terminer siste periode som mangler punktum
+                if periode != "" and not re.search(q(r'[{terminator}]\s*$'), periode):
+                    periode += '.'
+                periode += ' END OF FILE'
+            elif not re.search(r'\S', line): # Dersom blank linje
+                # Periode som mangler punktum på slutten er overskrift
+                terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), line)
+                if periode != "" and not terminatorQuoteInLine:
+                    periode += "|"
+            else:
+                # Fortsett bygginga av ein periode
+                periode += " " + line
+                periode = re.sub(r'\n', ' ', periode)
+                periode = re.sub(r'\s+', ' ', periode)
+                periode = re.sub(r'^\s*', '', periode)
+                periode = re.sub(r'\s*$', '', periode)
+
+        periode = re.sub(r'/\*.*?\*/', ' ', periode) # Fjern kommentarer
+
+        # Sjekk overskrift
+        if muligOverskrift != "":
+            periode = re.sub(q(r'({muligOverskrift})\s+([{quotsParantes}]*[-{lettersla}\d{specletters}])'),
+                             r'\1| \2', periode);
+
+        print(q("(before gaaGjennom)periode = <<<{periode}>>>"), file=sys.stderr)
+        needMoreData, periode, nestePeriode = gaaGjennomPeriodeElementer(periode, inputOK)
+
+    print(q("taggPeriode({periode})"), file=sys.stderr)
+    taggPeriode(periode)
+
+sluttTid = time.time()
+tidBrukt = (sluttTid-startTid)/60
+
+msg = q("""
+Tagga {ordTellar} ord
+Fann {fuge} ukjende ord som vart tolka av samansetningsmodulen
+Fann {ukjent} ukjende ord
+Fann {substProp} ukjente ord som vart tolka som "{SUBST_PROP}"
+Buffra {memBufferCount} ordformer. Max bufferstorleik er {MAXMEMBUF}
+Tid brukt: {tidBrukt:10.2f} minutt
+""")
+
+for logline in msg.split("\n"):
+    logging.info(logline)
+
+if UTFIL is not None:
+    print(msg, end='')
+    print(q("Liste over problemorda ligg i fila {LOGGFIL}"));
+
+sys.exit(0)
