@@ -9,6 +9,7 @@ import re
 import time
 import argparse
 import logging
+import fileinput
 
 #=head1 Multitagger
 #Multitagger er eit program som setter inn grammatiske merker i ein tekst.
