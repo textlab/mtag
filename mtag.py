@@ -524,8 +524,8 @@ def sjekkNamn(key, sterkSjekk=False):
 
     return erNamn
 ####################################
-def gaaGjennomPeriodeElementer(periode, inputOK):
-    # global: periode (rw), inputOK (ro), nestePeriode (wo!)
+def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode):
+    # global: periode (rw), inputOK (ro), nestePeriode (rw)
     # my (outside the loop): periodeElementer, muligPeriode, periodeFullstendig, needMoreData
     # my (inside the loop): muligReinPeriode, restAvMulig, erPeriodeSlutt, nesteOrd
 
@@ -1646,7 +1646,7 @@ while inputOK:
                              r'\1| \2', periode);
 
         print(q("(before gaaGjennom)periode = <<<{periode}>>>"), file=sys.stderr)
-        needMoreData, periode, nestePeriode = gaaGjennomPeriodeElementer(periode, inputOK)
+        needMoreData, periode, nestePeriode = gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode)
 
     print(q("taggPeriode({periode})"), file=sys.stderr)
     taggPeriode(periode)
