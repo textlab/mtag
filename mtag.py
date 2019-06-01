@@ -265,7 +265,8 @@ remove = "\xA0"
 romartalU = 'IVXLCDM'
 romartalL = 'ivxlcdm'
 
-memBuffer = None
+memBuffer = {}
+memBufferCount = 0
 MAXMEMBUF = 20000
 
 SAMSET_LEKS_WEIGHT = 0.75
@@ -1360,6 +1361,7 @@ def taggPeriode(periode):
     #Spesialbehamndling av samantrekningar
     periode = re.sub(q(r'(\s[{letters}]/)([{letters}]{{2}})'), r'\1 \2', periode)
     periodeStart = True
+    forrigeAnf = False
     periode = re.sub(r'\s+', ' ', periode.lstrip()) # FIXME: count=1 ?
 
     if PERIODEFIL is not None:
