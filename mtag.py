@@ -384,6 +384,7 @@ def registrerStatistikk():
     # forloepsindikator
     # Rutina må kallast ein gong for kvart tagga ord
 
+    global ordTellar, grenseTellar
     ordTellar += 1
     if UTFIL is not None:
         grenseTellar += 1
@@ -436,6 +437,7 @@ def databaseSearch(key):
     return tag
 ####################################
 def sok(key):
+    global memBufferCount
     res = ''
 
     if key != '':
@@ -1358,6 +1360,7 @@ def sokVarianter(sokOrd, periodeStart, forrigeAnf):
     return tagTekst
 ####################################
 def taggPeriode(periode):
+    global substProp, fuge, ukjent
     #Spesialbehamndling av samantrekningar
     periode = re.sub(q(r'(\s[{letters}]/)([{letters}]{{2}})'), r'\1 \2', periode)
     periodeStart = True
