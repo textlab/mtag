@@ -665,7 +665,7 @@ def finnGenitivRot(key):
             if sub_count == 0:
                 genRot, sub_count = re.subn(r"([^'])s$", r'\1', genRot)
                 if sub_count == 0:
-                    genRot = re.subn(r"'s$", '', genRot)
+                    genRot = re.sub(r"'s$", '', genRot)
 
     if genRot != key:
         return genRot
