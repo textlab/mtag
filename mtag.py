@@ -527,7 +527,7 @@ def sjekkNamn(key, sterkSjekk=False):
 
     return erNamn
 ####################################
-def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode):
+def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendig):
     # global: periode (rw), inputOK (ro), nestePeriode (rw)
     # my (outside the loop): periodeElementer, muligPeriode, periodeFullstendig, needMoreData
     # my (inside the loop): muligReinPeriode, restAvMulig, erPeriodeSlutt, nesteOrd
@@ -637,7 +637,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode):
 
     print("end of gaaGjennomPeriodeElementer", file=sys.stderr)
     print("periode = '{periode}'".format(**vars()), file=sys.stderr)
-    return (needMoreData, periode, nestePeriode)
+    return (needMoreData, periode, nestePeriode, periodeFullstendig)
 ####################################
 def sjekkInterjeksjon(key):
     # Rutine returnerer med tag dersom ordet bestaar av tre eller
@@ -1197,7 +1197,7 @@ def uniq_prefix(lines):
             result.append(line)
     return result
 
-def sort_feat(line):
+def sort_feat(line, periodeStart):
     wordPattern = r'^\s*"(.*)"\s+'
     m = re.search(wordPattern, line)
     line = re.sub(wordPattern, '', line)
@@ -1219,7 +1219,7 @@ def sort_feat(line):
         assert False, 'Ukjent språk'
     return result
 
-def prepareTagTekst(tagTekst):
+def prepareTagTekst(tagTekst, periodeStart):
     tagTekst = abbrFeat("ditrans", "d", tagTekst)
     tagTekst = abbrFeat("intrans", "i", tagTekst)
     tagTekst = abbrFeat("kaus", "k", tagTekst)
@@ -1240,7 +1240,7 @@ def prepareTagTekst(tagTekst):
     tagTekst = re.sub(r'^(\t".*".*)\s\@DET>\b', r'\1 @det>', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\bCLB\b', r'\1clb', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\s+(normert|unormert|klammeform)\b', r'\1', tagTekst, flags=re.M | re.I)
-    tagTekst = "\n".join(sort_feat(tagLine) for tagLine in tagTekst.split("\n")) + "\n"
+    tagTekst = "\n".join(sort_feat(tagLine, periodeStart) for tagLine in tagTekst.split("\n")) + "\n"
 
     nyTagTekst = tagTekst
     for m in re.finditer(r'^\s*"(.*)"\s+adj\b.*\b(nøyt|adv)\b', tagTekst, flags=re.M):
@@ -1504,7 +1504,7 @@ def taggPeriode(periode):
         forrigeAnf = bool(re.search(q(r'({CONSTanfoersel}|{CONSTparstart})( <<<)?$'),
                                     tagTekst))
 
-        outTagTekst = prepareTagTekst(tagTekst)
+        outTagTekst = prepareTagTekst(tagTekst, periodeStart)
         printTag(word, wordOrig, outTagTekst)
 
         periodeStart = periodeStart and bool(re.search(q(r'^\$([{quots}])'), word) or
@@ -1651,7 +1651,8 @@ while inputOK:
                              r'\1| \2', periode);
 
         print(q("(before gaaGjennom)periode = <<<{periode}>>>"), file=sys.stderr)
-        needMoreData, periode, nestePeriode = gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode)
+        needMoreData, periode, nestePeriode, periodeFullstendig = \
+            gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendig)
 
     print(q("taggPeriode({periode})"), file=sys.stderr)
     taggPeriode(periode)
