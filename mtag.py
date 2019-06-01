@@ -369,8 +369,8 @@ def initDB():
                 if net_type == "abbreviations" and oppslag.endswith('.'): # Dersom forkortinga endar med punktum
                     oppslag = " " + oppslag
                     ikkjeTerminerForkKey = '%d#%s' % (len(oppslag), oppslag)
-                    ikkjeTerminerFork[ikkjeTerminerForkKey] = (ikkjeTerminerFork.get(ikkjeTerminerForkKey, '') +
-                                                               oppslag)
+                    ikkjeTerminerFork[ikkjeTerminerForkKey] = \
+                        (ikkjeTerminerFork.get(ikkjeTerminerForkKey, '') + oppslag)
                     if len(oppslag) < ikkjeTerminerForkMin:
                         ikkjeTerminerForkMin = len(oppslag)
                     if len(oppslag) > ikkjeTerminerForkMax:
@@ -533,7 +533,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
     # my (inside the loop): muligReinPeriode, restAvMulig, erPeriodeSlutt, nesteOrd
 
     # Del opp det vi har i sine einskilde element
-    periodeElementer = re.split(q(r'([{letterssm}\d{specLetters}]|[{letters}\d{specLetters}]\s*[{lettersla}])([{quotsParantes}]*[{terminator}][{quotsParantes}]*\s+[{quotsParantes}]*[{stroke}{lettersla}\d{specLetters}])'), periode);
+    periodeElementer = re.split(q(r'([{letterssm}\d{specLetters}]|[{letters}\d{specLetters}]\s*[{lettersla}])([{quotsParantes}]*[{terminator}][{quotsParantes}]*\s+[{quotsParantes}]*[{stroke}{lettersla}\d{specLetters}])'), periode)
 
     muligPeriode = ""
     needMoreData = len(periodeElementer) <= 1
@@ -624,7 +624,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
 
         if erPeriodeSlutt:
             # Start neste periode med dei overfloedige elementa
-            periode = muligReinPeriode;
+            periode = muligReinPeriode
             nestePeriode = restAvMulig + ' '.join(periodeElementer)
             periodeElementer = []
 
@@ -665,7 +665,7 @@ def finnGenitivRot(key):
             if sub_count == 0:
                 genRot, sub_count = re.subn(r"([^'])s$", r'\1', genRot)
                 if sub_count == 0:
-                    genRot = re.subn(r"'s$", r'', genRot)
+                    genRot = re.subn(r"'s$", '', genRot)
 
     if genRot != key:
         return genRot
@@ -679,7 +679,7 @@ def finnTal(periode, periodeStart):
     # antal teikn i perioden som utgjer talet
     # Rutina finn den lengste strengen som kan vere eit tal
 
-    periode = re.sub(r'^\s*', r'', periode)
+    periode = re.sub(r'^\s*', '', periode)
     tagTekst = ''
     antal = 0
 
@@ -889,7 +889,7 @@ def sokEtterledd(etterledd, sokOrd):
                tagTekst += "\t"
             else:
                tagTekst += "\n\t"
-            grammatikk = re.sub(r'\s+samset-leks\b', r'', grammatikk)
+            grammatikk = re.sub(r'\s+samset-leks\b', '', grammatikk)
             tagTekst += grammatikk + " samset-analyse"
 
     return tagTekst
@@ -926,9 +926,8 @@ def analyserForledd(forledd):
         numLedd, *rootOrdklasseList = rootVal
 
     rootOrdklasseList.extend(rootOrdklasser(normalisertForledd))
-    rootOrdklasseList = [ pos
-                          for pos in rootOrdklasseList
-                          if pos != 'interj' and pos != 'symb' ]
+    rootOrdklasseList = [pos for pos in rootOrdklasseList
+                             if pos != 'interj' and pos != 'symb']
 
     if forledd in compoundHash:
         numLedd = compoundHash[forledd][0] * SAMSET_LEKS_WEIGHT
@@ -1150,8 +1149,9 @@ def analyserSammensetning(sokOrd, periodeStart):
     if resultater:
         # Choose the analysis (or analyses) with the fewest compound members
         sortedeResultater = sorted(resultater, key=lambda k: k[0])
-        forleddSamsetFugeSResultater = [ result for result in sortedeResultater
-                                                if re.search(r'\bforledd-samset\b.*\bfuge-s\b', result[3]) ]
+        forleddSamsetFugeSResultater = [result for result in sortedeResultater
+                                               if re.search(r'\bforledd-samset\b.*\bfuge-s\b',
+                                                            result[3])]
         greppedeResultater = []
         if forleddSamsetFugeSResultater:
             greppedeResultater += [ result for result in forleddSamsetFugeSResultater
@@ -1320,7 +1320,7 @@ def sokVarianter(sokOrd, periodeStart, forrigeAnf):
     wordAllLower = allcap2lower(sokOrd)
 
     # Soek etter ordet slik det er
-    tagTekst += sok(sokOrd);
+    tagTekst += sok(sokOrd)
 
     # Periodestart eller foerste ord etter hermeteikn
     if (wordLower != sokOrd) and (periodeStart or forrigeAnf):
@@ -1544,7 +1544,7 @@ linjeNr = 0
 while inputOK:
     periodeFullstendig = False
     periode = nestePeriode
-    print(q("(neste)periode = <<<{periode}>>>"), file=sys.stderr);
+    print(q("(neste)periode = <<<{periode}>>>"), file=sys.stderr)
 
     # Ein vil alltid ha lest ei linje meir enn naudsynt.
     # Dersom linja som sist er lest er identisk med den perioden
@@ -1644,7 +1644,7 @@ while inputOK:
         # Sjekk overskrift
         if muligOverskrift != "":
             periode = re.sub(q(r'({muligOverskrift})\s+([{quotsParantes}]*[-{lettersla}\d{specLetters}])'),
-                             r'\1| \2', periode);
+                             r'\1| \2', periode)
 
         print(q("(before gaaGjennom)periode = <<<{periode}>>>"), file=sys.stderr)
         needMoreData, periode, nestePeriode, periodeFullstendig = \
@@ -1670,6 +1670,6 @@ for logline in msg.split("\n"):
 
 if UTFIL is not None:
     print(msg, end='')
-    print(q("Liste over problemorda ligg i fila {LOGGFIL}"));
+    print(q("Liste over problemorda ligg i fila {LOGGFIL}"))
 
 sys.exit(0)
