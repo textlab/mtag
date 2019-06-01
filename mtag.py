@@ -1196,8 +1196,10 @@ def uniq_prefix(lines):
         otherLines = lines[0:i] + lines[i+1:]
         supersetLines = (otherLine for otherLine in otherLines
                                    if re.search(r'^{}\b(?!\sclb$)'.format(lineRegex), otherLine))
+        print(f'line = <<<{line}>>>, supersetLines = <<<{list(supersetLines)}>>>', file=sys.stderr)
         if not any(supersetLines):
             result.append(line)
+    print(f'result = <<<{result}>>>', file=sys.stderr)
     return result
 
 def sort_feat(line, periodeStart):
@@ -1249,8 +1251,10 @@ def prepareTagTekst(tagTekst, periodeStart):
     tagTekst = re.sub(r'^(\t".*".*)\s\@DET>\b', r'\1 @det>', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\bCLB\b', r'\1clb', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\s+(normert|unormert|klammeform)\b', r'\1', tagTekst, flags=re.M | re.I)
+    print(f'tagTekstBeforeSort = {tagTekst}', file=sys.stderr)
     tagTekst = ''.join(sort_feat(tagLine, periodeStart) + "\n"
                        for tagLine in tagTekst.rstrip("\n").split("\n"))
+    print(f'tagTekstAfterSort = {tagTekst}', file=sys.stderr)
 
     nyTagTekst = tagTekst
     for m in re.finditer(r'^\s*"(.*)"\s+adj\b.*\b(nøyt|adv)\b', tagTekst, flags=re.M):
@@ -1271,7 +1275,9 @@ def prepareTagTekst(tagTekst, periodeStart):
             if subst_count == 0:
                 break
 
+    print(f'tagTekstBefore = <<<{tagTekst}>>>', file=sys.stderr)
     tagTekst = "\n".join(sorted(uniq_prefix(tagTekst.rstrip("\n").split("\n")))) + "\n"
+    print(f'tagTekstAfter = <<<{tagTekst}>>>', file=sys.stderr)
     return tagTekst
 
 def printTag(word, wordOrig, tagTekst):
