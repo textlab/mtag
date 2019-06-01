@@ -577,7 +577,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
                 muligReinPeriodeLower = ' ' + muligReinPeriodeLower
 
                 ikkjeTerminerForkKey = '%d#%s' % (count, muligReinPeriodeLower[len(muligReinPeriodeLower)-count:])
-                if ikkjeTerminerFork[ikkjeTerminerForkKey]:
+                if ikkjeTerminerFork.get(ikkjeTerminerForkKey, None):
                     erNamn = sjekkNamn(nesteOrd)
                     if erNamn:
                         erPeriodeSlutt = False
@@ -587,7 +587,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
 
             sjekkFork = muligReinPeriode[len(muligReinPeriode)-count:]
             sjekkFork = re.sub(q(r'^[{quotsParantes}]'), ' ', sjekkFork)
-            if ikkjeTerminerFork['%d#%s' % (count, sjekkFork)]:
+            if ikkjeTerminerFork.get('%d#%s' % (count, sjekkFork), None):
                 erNamn = sjekkNamn(nesteOrd)
 
                 # Sjekk om ordet framfor forkortinga er eit namn. I så fall er
@@ -820,10 +820,10 @@ def finnUttrykk(periode, periodeStart):
 
         periode = re.sub(r'^\s*', '', periode)
         sjekkTekst = '%d#%s' % (antal, periode[0:antal])
-        tagTekst += spesialTab[sjekkTekst]
+        tagTekst += spesialTab.get(sjekkTekst, '')
         if periodeStart:
             sjekkTekst = '%d#%s' % (antal, periodeLiten[0:antal])
-            tagTekst += spesialTab[sjekkTekst]
+            tagTekst += spesialTab.get(sjekkTekst, '')
         if tagTekst != '':
             break
     return (tagTekst, antal)
@@ -1087,10 +1087,10 @@ def analyserForleddOgEtterledd(sokOrd):
                         assert False, '!etterleddOK && !kortEtterleddOK'
                     etterleddRoots.add(etterleddRoot)
                 print(etterleddRoots, file=sys.stderr)
-                sortedEtterleddRoots = sorted(etterleddRoots, key=lambda k: compoundHash[k][0])
+                sortedEtterleddRoots = sorted(etterleddRoots, key=lambda k: compoundHash.get(k, [1])[0])
                 numForledd = forleddAnalyse[0]
                 if len(sortedEtterleddRoots) > 0:
-                    numEtterledd = compoundHash[sortedEtterleddRoots[0]][0] * SAMSET_LEKS_WEIGHT
+                    numEtterledd = compoundHash.get(sortedEtterleddRoots[0], [1])[0] * SAMSET_LEKS_WEIGHT
                 else:
                     numEtterledd = 1
                 print("numEtterledd = {}\n".format(numEtterledd), file=sys.stderr)
@@ -1132,7 +1132,7 @@ def analyserBareEtterledd(sokOrd):
                 print("sokEtterledd3({}, {})".format(etterledd, sokOrd), file=sys.stderr)
                 tagger = sokEtterledd(etterledd, sokOrd)
                 if tagger:
-                    if compoundHash[etterledd]:
+                    if etterledd in compoundHash:
                         numEtterledd = compoundHash[etterledd][0] * SAMSET_LEKS_WEIGHT
                     else:
                         numEtterledd = 1
