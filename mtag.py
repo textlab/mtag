@@ -758,7 +758,7 @@ def finnTal(periode, periodeStart):
     m = re.search(r'^((\d{1,2})\.(\d\d))', periode)
     if m:
         word = m.group(1)
-        if m.group(2) >= 0 and m.group(2) < 24 and m.group(3) >= 0 and m.group(3) < 60:
+        if int(m.group(2)) >= 0 and int(m.group(2)) < 24 and int(m.group(3)) >= 0 and int(m.group(3)) < 60:
             if len(word)+1 > antal:
                 tagTekst = TAG_LINE.format(word, SUBST_KLOKKE)
                 antal = len(word)+1
