@@ -1311,7 +1311,7 @@ def tagTekstSkille(word, periode):
         tagTekstSkille = ''
 
     if re.search(r'^\s*$', periode):
-        tagTekstSkille = re.sub(r'$', r' <<<', tagTekstSkille, flags=re.MULTILINE)
+        tagTekstSkille = re.sub(r'(.)$', r'\1 <<<', tagTekstSkille, flags=re.MULTILINE)
     return tagTekstSkille
 ####################################
 def sokVarianter(sokOrd, periodeStart, forrigeAnf):
