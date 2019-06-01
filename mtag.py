@@ -1208,19 +1208,24 @@ def sort_feat(line, periodeStart):
     m = re.search(wordPattern, line)
     line = re.sub(wordPattern, '', line)
     word = m.group(1)
-    f = list(set(re.split(r'\s+', line)))
+    feats = list(set(re.split(r'\s+', line)))
     if SPRAAK == "bm":
         for suffix in suffixes:
             if re.search(r'\S+{}$'.format(re.escape(suffix)), word, flags=re.IGNORECASE):
-                f.append("<*{}>".format(suffix))
+                feats.append("<*{}>".format(suffix))
     startsWithCapitalLetter = re.search(q(r'^[{lettersla}]'), word)
-    if startsWithCapitalLetter and not periodeStart and ('prop' in f or not 'fork' in f):
-        f.append("<*>")
+    # FIXME: not sure what the condition for outputting <*> should be.
+    # According to multi-tagger.lisp it should be something more like:
+    # startsWithCapitalLetter and (not periodeStart or 'prop' in feats)
+    addStar = (startsWithCapitalLetter and not periodeStart and
+               ('prop' in feats or not 'fork' in feats))
+    if addStar:
+        feats.append("<*>")
     result = '\t"{}" '.format(word)
     if SPRAAK == 'bm':
-        result += ' '.join(sorted(f, key=lambda k: feat_idx.get(k, float('inf'))))
+        result += ' '.join(sorted(feats, key=lambda k: feat_idx.get(k, float('inf'))))
     elif SPRAAK == 'nn':
-        result += ' '.join(sorted(f, key=lambda k: feat_idx_nn.get(k, float('inf'))))
+        result += ' '.join(sorted(feats, key=lambda k: feat_idx_nn.get(k, float('inf'))))
     else:
         assert False, 'Ukjent språk'
     return result
