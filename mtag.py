@@ -1391,11 +1391,11 @@ def taggPeriode(periode):
         # uttrykk eller uforståeleg tekst i hermeteikn
 
         tagTekstTal, lengdeTal = finnTal(periode, periodeStart)
-        if COMPAT: #FIXME: default values for lengdeUttrykk and LengdeUforstaeleg
+        if COMPAT:
             tagTekstUttrykk, lengdeUttrykk = finnUttrykk(periode, periodeStart)
             tagTekstUforstaeleg, lengdeUforstaeleg = finnUforstaeleg(periode, periodeStart)
 
-        if lengdeTal >= lengdeUttrykk and lengdeTal >= lengdeUforstaeleg:
+        if not COMPAT or (lengdeTal >= lengdeUttrykk and lengdeTal >= lengdeUforstaeleg):
             tagTekst += tagTekstTal
             count = lengdeTal
 
