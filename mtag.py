@@ -607,8 +607,8 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode):
 
         if erPeriodeSlutt:
             for tittel in spesialTittel:
-                if (re.search(q(r' {tittel}$'), muligReinPeriode) or
-                    re.search(q(r'^{tittel}$'), initcap2lower(muligReinPeriode))):
+                if (re.search(r' {tittel}$'.format(**vars()), muligReinPeriode) or
+                    re.search(r'^{tittel}$'.format(**vars()), initcap2lower(muligReinPeriode))):
 
                     # Les neste ord.
                     # Eit ord kan vere samasett av to periodeelement
@@ -892,7 +892,7 @@ def sokEtterledd(etterledd, sokOrd):
                tagTekst += "\t"
             else:
                tagTekst += "\n\t"
-            grammatikk =~ re.sub(r'\s+samset-leks\b', r'', grammatikk)
+            grammatikk = re.sub(r'\s+samset-leks\b', r'', grammatikk)
             tagTekst += grammatikk + " samset-analyse"
 
     return tagTekst
@@ -969,7 +969,7 @@ def analyserForledd(forledd):
         ledd2OK = ledd2Analyse and ledd2Analyse[0]
 
         if ledd1OK and ledd2OK:
-            print('{} + {}'.foromat(ledd1, ledd2), file=sys.stderr)
+            print('{} + {}'.format(ledd1, ledd2), file=sys.stderr)
             print(ledd1Analyse, file=sys.stderr)
             print(ledd2Analyse, file=sys.stderr)
 
@@ -1019,7 +1019,7 @@ def analyserForleddOgEtterledd(sokOrd):
         kortEtterledd = sokOrd[i+1:]
         print("forledd+etterledd = {} + {}\n".format(forledd, etterledd), file=sys.stderr)
         forleddAnalyse = analyserForledd(forledd)
-        print("@forleddAnalyse = " + forleddAnalyse + "\n", file=sys.stderr)
+        print("@forleddAnalyse = {}".format(forleddAnalyse), file=sys.stderr)
         if not (forleddAnalyse and forleddAnalyse[0]):
             continue
         etterleddOK = len(etterledd) > 1 and databaseSearchForSuffixOrWord(etterledd)
@@ -1438,7 +1438,7 @@ def taggPeriode(periode):
             tagTekstSkilleStr = tagTekstSkille(word, periode)
             if tagTekstSkilleStr != "":
                 ferdig = True
-            tagTekst += tagTekstSkille
+            tagTekst += tagTekstSkilleStr
 
         # Soek i databasen etter ordet
         if not ferdig:
@@ -1498,7 +1498,7 @@ def taggPeriode(periode):
                         elif re.search(r'^\P{Letter}+$', word):
                             tagTekst += TAG_LINE.format(stor2stjerne(word), 'symb')
                         else:
-                            tagTekst += TAG_LINE.format(tor2stjerne(word), 'ukjent')
+                            tagTekst += TAG_LINE.format(stor2stjerne(word), 'ukjent')
                             logging.info(logLine.format('UKJENT'))
                             ukjent += 1
         forrigeAnf = bool(re.search(q(r'({CONSTanfoersel}|{CONSTparstart})( <<<)?$'),
@@ -1647,7 +1647,7 @@ while inputOK:
 
         # Sjekk overskrift
         if muligOverskrift != "":
-            periode = re.sub(q(r'({muligOverskrift})\s+([{quotsParantes}]*[-{lettersla}\d{specletters}])'),
+            periode = re.sub(q(r'({muligOverskrift})\s+([{quotsParantes}]*[-{lettersla}\d{specLetters}])'),
                              r'\1| \2', periode);
 
         print(q("(before gaaGjennom)periode = <<<{periode}>>>"), file=sys.stderr)
