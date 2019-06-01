@@ -1195,6 +1195,8 @@ def uniq_prefix(lines):
     return result
 
 def sort_feat(line, periodeStart):
+    if line == '':
+        return ''
     wordPattern = r'^\s*"(.*)"\s+'
     m = re.search(wordPattern, line)
     line = re.sub(wordPattern, '', line)
