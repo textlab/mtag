@@ -906,7 +906,7 @@ def rootOrdklasser(root):
 
 def alleOrdklasser(root):
     result = databaseSearch(root)
-    tags = result.split("\n")
+    tags = result.rstrip("\n").split("\n")
     wordClasses = map(lambda s: re.sub(r'^\s*".*?"\s+(\S+).*$', r'\1', s), tags)
     return wordClasses
 
@@ -1112,7 +1112,7 @@ def analyserForleddOgEtterledd(sokOrd):
                     tagger = re.sub(r'$', ' fuge-s', tagger, flags=re.MULTILINE)
                 resultater += ([ numForledd+numEtterledd, minEtterledd,
                                  etterleddOrdklasse, tagLine ]
-                               for tagLine in tagger.split("\n"))
+                               for tagLine in tagger.rstrip("\n").split("\n"))
                 # If two analyses have the same number of members and
                 # there is no epenthesis involved, choose the one, if
                 # any, that is a noun.
@@ -1143,7 +1143,7 @@ def analyserBareEtterledd(sokOrd):
                     etterleddOrdklasse = ", ".join(set(alleOrdklasser(etterledd)))
                     resultater += ([ numEtterledd+1, etterledd,
                                      etterleddOrdklasse, tagLine ]
-                                   for tagLine in tagger.split("\n"))
+                                   for tagLine in tagger.rstrip("\n").split("\n"))
                     break
     return resultater
 
@@ -1201,8 +1201,6 @@ def uniq_prefix(lines):
     return result
 
 def sort_feat(line, periodeStart):
-    if line == '':
-        return ''
     print(f'sort_feat({line}, {periodeStart})', file=sys.stderr)
     wordPattern = r'^\s*"(.*)"\s+'
     m = re.search(wordPattern, line)
@@ -1251,7 +1249,8 @@ def prepareTagTekst(tagTekst, periodeStart):
     tagTekst = re.sub(r'^(\t".*".*)\s\@DET>\b', r'\1 @det>', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\bCLB\b', r'\1clb', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\s+(normert|unormert|klammeform)\b', r'\1', tagTekst, flags=re.M | re.I)
-    tagTekst = "\n".join(sort_feat(tagLine, periodeStart) for tagLine in tagTekst.split("\n")) + "\n"
+    tagTekst = ''.join(sort_feat(tagLine, periodeStart) + "\n"
+                       for tagLine in tagTekst.rstrip("\n").split("\n"))
 
     nyTagTekst = tagTekst
     for m in re.finditer(r'^\s*"(.*)"\s+adj\b.*\b(nøyt|adv)\b', tagTekst, flags=re.M):
@@ -1272,7 +1271,7 @@ def prepareTagTekst(tagTekst, periodeStart):
             if subst_count == 0:
                 break
 
-    tagTekst = "\n".join(sorted(uniq_prefix(tagTekst.split("\n")))) + "\n"
+    tagTekst = "\n".join(sorted(uniq_prefix(tagTekst.rstrip("\n").split("\n")))) + "\n"
     return tagTekst
 
 def printTag(word, wordOrig, tagTekst):
@@ -1680,7 +1679,7 @@ Buffra {memBufferCount} ordformer. Max bufferstorleik er {MAXMEMBUF}
 Tid brukt: {tidBrukt:10.2f} minutt
 """)
 
-for logline in msg.split("\n"):
+for logline in msg.strip().split("\n"):
     logging.info(logline)
 
 if UTFIL is not None:
