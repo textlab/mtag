@@ -1518,8 +1518,8 @@ def taggPeriode(periode):
         outTagTekst = prepareTagTekst(tagTekst, periodeStart)
         printTag(word, wordOrig, outTagTekst)
 
-        periodeStart = periodeStart and bool(re.search(q(r'^\$([{quots}])'), word) or
-                                             re.search(q(r'^\$[{stroke}]'), word))
+        if not re.search(q(r'^\$[{stroke}{quots}]'), word):
+            periodeStart = False
 ####################################
 #
 # Main
