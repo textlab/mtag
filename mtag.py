@@ -625,7 +625,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
         if erPeriodeSlutt:
             # Start neste periode med dei overfloedige elementa
             periode = muligReinPeriode
-            nestePeriode = restAvMulig + ' '.join(periodeElementer)
+            nestePeriode = restAvMulig + ''.join(periodeElementer)
             periodeElementer = []
 
             print("before konverterSkilleteikn", file=sys.stderr)
