@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
+# Using Python 2 is not recommended, as it makes the tagger almost 3 times slower.
+# However, the code is still Python 2-compatible with the following declarations.
 from __future__ import print_function
+from __future__ import unicode_literals
 from collections import defaultdict
 from collections import OrderedDict
 from io import open
@@ -249,6 +252,7 @@ elif SPRAAK == 'nn':
     EINTAL = "eint"
     FLEIRTAL = "fl"
 
+# FIXME: use Unicode character classes here? need to import regex instead of re then
 specLetters = "\!\?\.<>§@£\$%&/=*-"
 #onlysmall="ÿ"
 letterssm="abcdefghijklmnopqrstuvwxyzæøåàáâãäçèéêëìíîïñòóôõöùúûüý"
@@ -373,7 +377,7 @@ def initDB():
                     if len(oppslag) > ikkjeTerminerForkMax:
                         ikkjeTerminerForkMax = len(oppslag)
                 if net_type == "titles" and oppslag.endswith('.'): # Dersom tittel endar med punktum
-                    oppslag = re.sub(r'(\W)', r'\\\1', oppslag)
+                    oppslag = re.sub(r'(\W)', r'\\\1', oppslag, flags=re.UNICODE)
                     spesialTittel.insert(0, oppslag)
 ####################################
 def registrerStatistikk():
@@ -895,7 +899,7 @@ def rootOrdklasser(root):
     result = databaseSearch(root)
     rootTags = [resultLine
                 for resultLine in result.split("\n")
-                if re.search('"{}"'.format(re.escape(root)), resultLine, flags=re.I)]
+                if re.search('"{}"'.format(re.escape(root)), resultLine, flags=re.I | re.U)]
     if not rootTags:
         rootTags.append('andre')
     rootWordClasses = map(lambda s: re.sub(r'^\s*".*?"\s+(\S+).*$', r'\1', s), rootTags)
@@ -1045,7 +1049,7 @@ def analyserForleddOgEtterledd(sokOrd):
         if etterledd.startswith('e') and kortEtterleddOK:
             # Epenthetic -e- can only be attached to a stem that is monosyllabic.
             forleddMonosyllabic = re.search(q(r'^[{konsonanter}]*[^{konsonanter}]+[{konsonanter}]*$'),
-                                            forledd, flags=re.I)
+                                            forledd, flags=re.IGNORECASE | re.UNICODE)
             # Other possible stems can be prior to the stem preceding the -e-,
             # if they do not form a compound with that stem. (FIXME: not implemented)
 
@@ -1211,7 +1215,7 @@ def sort_feat(line, periodeStart):
     feats = list(OrderedDict.fromkeys(re.split(r'\s+', line)))
     if SPRAAK == "bm":
         for suffix in suffixes:
-            if re.search(r'\S+{}$'.format(re.escape(suffix)), word, flags=re.IGNORECASE):
+            if re.search(r'\S+{}$'.format(re.escape(suffix)), word, flags=re.I | re.U):
                 feats.append("<*{}>".format(suffix))
     startsWithCapitalLetter = re.search(q(r'^[{lettersla}]'), word)
     # FIXME: not sure what the condition for outputting <*> should be.
@@ -1519,7 +1523,7 @@ def taggPeriode(periode):
                             if genOrd:
                                 tagTekst += TAG_LINE.format(stor2stjerne(genOrd), q("{SUBST_PROP} {GEN}"))
                                 logging.info(logLine.format('SUBST PROP GEN:'))
-                        elif re.search(r'^\P{Letter}+$', word):
+                        elif re.search(r'^[\W\d_]+$', word, flags=re.UNICODE):
                             tagTekst += TAG_LINE.format(stor2stjerne(word), 'symb')
                         else:
                             tagTekst += TAG_LINE.format(stor2stjerne(word), 'ukjent')
