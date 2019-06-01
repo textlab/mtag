@@ -1297,31 +1297,31 @@ def printTag(word, wordOrig, tagTekst):
 ####################################
 def tagTekstSkille(word, periode):
     if re.search(r'\$\.{2,20}$', word):
-        tagTekstSkille = q('\t"\$..." {CONSTsetningSlutt} {CONSTellipse}\n')
+        tagTekstSkille = q('\t"$..." {CONSTsetningSlutt} {CONSTellipse}\n')
     elif re.search(r'\$\|$', word):
-        tagTekstSkille = q('\t"\$|" {CONSTsetningSlutt} {CONSToverskrift}\n')
+        tagTekstSkille = q('\t"$|" {CONSTsetningSlutt} {CONSToverskrift}\n')
     elif re.search(r'\$\.$', word):
-        tagTekstSkille = q('\t"\$." {CONSTsetningSlutt} {CONSTpunktum}\n')
+        tagTekstSkille = q('\t"$." {CONSTsetningSlutt} {CONSTpunktum}\n')
     elif re.search(r'\$\,$', word):
-        tagTekstSkille = q('\t"\$," {CONSTsetningSlutt} {CONSTkomma}\n\t"\$," {CONSTkomma}\n')
+        tagTekstSkille = q('\t"$," {CONSTsetningSlutt} {CONSTkomma}\n\t"$," {CONSTkomma}\n')
     elif re.search(r'\$\!$', word):
-        tagTekstSkille = q('\t"\$!" {CONSTsetningSlutt} {CONSTutrop}\n')
+        tagTekstSkille = q('\t"$!" {CONSTsetningSlutt} {CONSTutrop}\n')
     elif re.search(r'\$\:$', word):
-        tagTekstSkille = q('\t"\$:" {CONSTsetningSlutt} {CONSTkolon}\n')
+        tagTekstSkille = q('\t"$:" {CONSTsetningSlutt} {CONSTkolon}\n')
     elif re.search(r'\$\;$', word):
-        tagTekstSkille = q('\t"\$;" {CONSTsetningSlutt} {CONSTsemi}\n')
+        tagTekstSkille = q('\t"$;" {CONSTsetningSlutt} {CONSTsemi}\n')
     elif re.search(r'\$\?$', word):
-        tagTekstSkille = q('\t"\$?" {CONSTsetningSlutt} {CONSTspoersmaal}\n')
+        tagTekstSkille = q('\t"$?" {CONSTsetningSlutt} {CONSTspoersmaal}\n')
     elif re.search(r'\$\--$', word):
-        tagTekstSkille = q('\t"\$--" {CONSTstrek}\n')
+        tagTekstSkille = q('\t"$--" {CONSTstrek}\n')
     elif re.search(q(r'\$[{stroke}]$'), word):
-        tagTekstSkille = q('\t"\$-" {CONSTstrek}\n')
+        tagTekstSkille = q('\t"$-" {CONSTstrek}\n')
     elif re.search(q(r'\$([{quots}])$'), word):
-        tagTekstSkille = q('\t"\$%s" {CONSTanfoersel}\n' % re.sub(r'^.*\$', '', word))
+        tagTekstSkille = q('\t"$%s" {CONSTanfoersel}\n' % re.sub(r'^.*\$', '', word))
     elif re.search(r'\$\($', word):
-        tagTekstSkille = q('\t"\$(" {CONSTparstart}\n')
+        tagTekstSkille = q('\t"$(" {CONSTparstart}\n')
     elif re.search(r'\$\)$', word):
-        tagTekstSkille = q('\t"\$)" {CONSTparslutt}\n')
+        tagTekstSkille = q('\t"$)" {CONSTparslutt}\n')
     else:
         tagTekstSkille = ''
 
