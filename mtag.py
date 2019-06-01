@@ -924,13 +924,10 @@ def analyserForledd(forledd):
     rootVal = rootHash.get(normalisertForledd)
     if rootVal:
         numLedd, *rootOrdklasseList = rootVal
-        print(f'rootOrdklasseList1 = {rootOrdklasseList}', file=sys.stderr)
 
     rootOrdklasseList.extend(rootOrdklasser(normalisertForledd))
-    print(f'rootOrdklasseList2 = {rootOrdklasseList}', file=sys.stderr)
     rootOrdklasseList = [pos for pos in rootOrdklasseList
                              if pos != 'interj' and pos != 'symb']
-    print(f'rootOrdklasseList3 = {rootOrdklasseList}', file=sys.stderr)
 
     if forledd in compoundHash:
         numLedd = compoundHash[forledd][0] * SAMSET_LEKS_WEIGHT
@@ -1196,10 +1193,8 @@ def uniq_prefix(lines):
         otherLines = lines[0:i] + lines[i+1:]
         supersetLines = (otherLine for otherLine in otherLines
                                    if re.search(r'^{}\b(?!\sclb$)'.format(lineRegex), otherLine))
-        print(f'line = <<<{line}>>>, supersetLines = <<<{list(supersetLines)}>>>', file=sys.stderr)
         if not any(supersetLines):
             result.append(line)
-    print(f'result = <<<{result}>>>', file=sys.stderr)
     return result
 
 def sort_feat(line, periodeStart):
