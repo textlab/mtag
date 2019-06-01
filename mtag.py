@@ -1110,9 +1110,9 @@ def analyserForleddOgEtterledd(sokOrd):
                     tagger = re.sub(r'$', ' forledd-samset', tagger, flags=re.MULTILINE)
                 if kortEtterleddOK and etterledd.startswith('s'):
                     tagger = re.sub(r'$', ' fuge-s', tagger, flags=re.MULTILINE)
-                nyeResultater = [ [ numForledd + numEtterledd, minEtterledd, etterleddOrdklasse, tagLine ]
-                                  for tagLine in tagger.split("\n") ]
-                resultater += nyeResultater
+                resultater += ([ numForledd+numEtterledd, minEtterledd,
+                                 etterleddOrdklasse, tagLine ]
+                               for tagLine in tagger.split("\n"))
                 # If two analyses have the same number of members and
                 # there is no epenthesis involved, choose the one, if
                 # any, that is a noun.
@@ -1141,9 +1141,9 @@ def analyserBareEtterledd(sokOrd):
                     if numEtterledd < 1:
                         numEtterledd = 1
                     etterleddOrdklasse = ", ".join(set(alleOrdklasser(etterledd)))
-                    nyeResultater = [ [ numEtterledd+1, etterledd, etterleddOrdklasse, tagLine ]
-                                      for tagLine in tagger.split("\n") ]
-                    resultater += nyeResultater
+                    resultater += ([ numEtterledd+1, etterledd,
+                                     etterleddOrdklasse, tagLine ]
+                                   for tagLine in tagger.split("\n"))
                     break
     return resultater
 
@@ -1163,10 +1163,10 @@ def analyserSammensetning(sokOrd, periodeStart):
                                                             result[3])]
         greppedeResultater = []
         if forleddSamsetFugeSResultater:
-            greppedeResultater += [ result for result in forleddSamsetFugeSResultater
-                                          if result[0] == forleddSamsetFugeSResultater[0][0] ]
-        greppedeResultater += [ result for result in sortedeResultater
-                                       if result[0] == sortedeResultater[0][0] ]
+            greppedeResultater += (result for result in forleddSamsetFugeSResultater
+                                          if result[0] == forleddSamsetFugeSResultater[0][0])
+        greppedeResultater += (result for result in sortedeResultater
+                                      if result[0] == sortedeResultater[0][0])
         resHash = defaultdict(list)
         for result in greppedeResultater:
             tekst = result[3]
