@@ -696,11 +696,8 @@ def finnTal(periode, periodeStart):
         if word.endswith('.'):
             tagTekst += TAG_LINE.format(word, ADJ_ORDEN)
         else:
-            tagTekst += TAG_LINE.format(word, DET_KVANT)
-            if word == "1":
-                tagTekst += q(" {EINTAL}\n")
-            else:
-                tagTekst += q(" {FLEIRTAL}\n")
+            tag = '{} {}'.format(DET_KVANT, EINTAL if word == '1' else FLEIRTAL)
+            tagTekst += TAG_LINE.format(word, tag)
 
     # Eit tal kan også vere eit spesialtall med punktum
     # som desimalskille
