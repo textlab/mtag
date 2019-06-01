@@ -924,10 +924,13 @@ def analyserForledd(forledd):
     rootVal = rootHash.get(normalisertForledd)
     if rootVal:
         numLedd, *rootOrdklasseList = rootVal
+        print(f'rootOrdklasseList1 = {rootOrdklasseList}', file=sys.stderr)
 
     rootOrdklasseList.extend(rootOrdklasser(normalisertForledd))
+    print(f'rootOrdklasseList2 = {rootOrdklasseList}', file=sys.stderr)
     rootOrdklasseList = [pos for pos in rootOrdklasseList
                              if pos != 'interj' and pos != 'symb']
+    print(f'rootOrdklasseList3 = {rootOrdklasseList}', file=sys.stderr)
 
     if forledd in compoundHash:
         numLedd = compoundHash[forledd][0] * SAMSET_LEKS_WEIGHT
@@ -947,6 +950,7 @@ def analyserForledd(forledd):
         return []
 
     if rootVal and rootOrdklasseList:
+        print(f'forledd={forledd}, numLedd = {numLedd}, rootOrdklasseList={rootOrdklasseList}', file=sys.stderr)
         rootHash[forledd] = [numLedd, *set(rootOrdklasseList)]
         return rootHash[forledd]
 
@@ -986,10 +990,15 @@ def analyserForledd(forledd):
 
     if resultater:
         resultater.sort(key=lambda result: result[0])
+        test = [result for result in resultater
+                                     if result[0] == resultater[0][0]]
+        print(f'test = {test}', file=sys.stderr)
         ordklasser = sum((result[1:] for result in resultater
                                      if result[0] == resultater[0][0]),
                          [])
+        print(f'ordklasser = {ordklasser}', file=sys.stderr)
         retVal = [resultater[0][0], *ordklasser]
+        print(f'retVal = {retVal}', file=sys.stderr)
         rootHash[forledd] = retVal
         return retVal
 
@@ -1194,6 +1203,7 @@ def uniq_prefix(lines):
 def sort_feat(line, periodeStart):
     if line == '':
         return ''
+    print(f'sort_feat({line}, {periodeStart})', file=sys.stderr)
     wordPattern = r'^\s*"(.*)"\s+'
     m = re.search(wordPattern, line)
     line = re.sub(wordPattern, '', line)
