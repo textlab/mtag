@@ -976,7 +976,7 @@ def analyserForledd(forledd):
             numLedd = ledd1Analyse[0] + ledd2Analyse[0]
 #            print("$rootHash{%s} = " % forledd, file=sys.stderr, end='')
 #            print([numLedd, rootOrdklasser(ledd2)], file=sys.stderr)
-            resultater.append([numLedd, rootOrdklasser(ledd2)])
+            resultater.append([numLedd, *rootOrdklasser(ledd2)])
 
         ledd1kortAnalyse = analyserForledd(ledd1kort)
         ledd1kortOK = ledd1kortAnalyse and ledd1kortAnalyse[0]
@@ -989,14 +989,14 @@ def analyserForledd(forledd):
             print(ledd2Analyse, file=sys.stderr)
 
             numLedd = ledd1kortAnalyse[0] + ledd2Analyse[0]
-            resultater.append([numLedd, rootOrdklasser(ledd2)])
+            resultater.append([numLedd, *rootOrdklasser(ledd2)])
 
     if resultater:
         resultater.sort(key=lambda result: result[0])
-        retVal = [resultater[0][0],
-                  [result[1:]
-                   for result in resultater
-                   if result[0] == resultater[0][0]]]
+        ordklasser = sum((result[1:] for result in resultater
+                                     if result[0] == resultater[0][0]),
+                         [])
+        retVal = [resultater[0][0], *ordklasser]
         rootHash[forledd] = retVal
         return retVal
 
