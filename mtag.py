@@ -1645,7 +1645,7 @@ while inputOK:
                 periode += ' END OF FILE'
             elif not re.search(r'\S', line): # Dersom blank linje
                 # Periode som mangler punktum på slutten er overskrift
-                terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), line)
+                terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), periode)
                 if periode != "" and not terminatorQuoteInLine:
                     periode += "|"
             else:
