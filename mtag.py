@@ -492,7 +492,7 @@ def konverterSkilleteikn(periode):
             periodeDel = re.sub(q(r"([{letters}])'([{letters}])"), r'\1<MIDL GENITIV APOSTROF>\2', periodeDel)
             periodeDel = re.sub(q(r'([{quots}])([^{quots}\s]+)([{quots}])'), r'<HERMETEIKNMIDL\1> \2<HERMETEIKNMIDL\3> ', periodeDel)
             periodeDel = re.sub(q(r'([{quots}])'), r' $\1 ', periodeDel)
-            periodeDel = re.sub(q(r'<HERMETEIKNMIDL \$([{quots}]) >'), r'\1', periodeDel)
+            periodeDel = re.sub(q(r'<HERMETEIKNMIDL \$([{quots}]) > '), r'\1', periodeDel)
             periodeDel = re.sub(r'<MIDL GENITIV APOSTROF>', "'", periodeDel)
         konvertertPeriode += periodeDel
 
