@@ -482,7 +482,8 @@ def konverterSkilleteikn(periode):
 
             periodeDel = re.sub(q(r'([^$])(\.{{2,20}})([{quotsParantes}]*)'), r'\1 $\2\3 ', periodeDel)
             periodeDel = re.sub(q(r'([.|][{quotsParantes}]*)$'), r' $\1 ', periodeDel)
-            periodeDel = re.sub(q(r'([?:!,;][{quotsParantes}]*)'), r' $\1 ', periodeDel)
+            periodeDel = re.sub(q(r'([?:!][{quotsParantes}]*)'), r' $\1 ', periodeDel)
+            periodeDel = re.sub(q(r'([,;][{quotsParantes}]*)\s'), r' $\1 ', periodeDel)
             periodeDel = re.sub(q(r'\s--([{quotsParantes}]*)\s|^--([{quotsParantes}]*)'), r' $--\1 ', periodeDel)
             periodeDel = re.sub(q(r'\s([{stroke}][{quotsParantes}]*)\s|^([{stroke}][{quotsParantes}]*)'), r' $\1\2 ', periodeDel)
             periodeDel = re.sub(q(r'([()][{quots}]*)'), r' $\1 ', periodeDel)
