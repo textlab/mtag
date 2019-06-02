@@ -2,6 +2,7 @@
 
 from __future__ import print_function
 from collections import defaultdict
+from collections import OrderedDict
 from io import open
 import os
 import sys
@@ -1205,7 +1206,7 @@ def sort_feat(line, periodeStart):
     m = re.search(wordPattern, line)
     line = re.sub(wordPattern, '', line)
     word = m.group(1)
-    feats = list(set(re.split(r'\s+', line)))
+    feats = list(OrderedDict.fromkeys(re.split(r'\s+', line)))
     if SPRAAK == "bm":
         for suffix in suffixes:
             if re.search(r'\S+{}$'.format(re.escape(suffix)), word, flags=re.IGNORECASE):
