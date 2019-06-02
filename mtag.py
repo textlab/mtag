@@ -266,10 +266,6 @@ remove = "\xA0"
 romartalU = 'IVXLCDM'
 romartalL = 'ivxlcdm'
 
-memBuffer = {}
-memBufferCount = 0
-MAXMEMBUF = 20000
-
 SAMSET_LEKS_WEIGHT = 0.75
 TAG_LINE = '\t"{}" {}\n'
 
@@ -438,36 +434,22 @@ def databaseSearch(key):
     return tag
 ####################################
 def sok(key):
-    global memBufferCount
     res = ''
 
     if key != '':
-        res = memBuffer.get(key)
-        if not res:
-            res = databaseSearch(key)
-            if memBufferCount < MAXMEMBUF and res:
-                memBuffer[key] = res
-                memBufferCount += 1
+        res = databaseSearch(key)
 
     if not res:
-        key = re.sub(q(r"[^'{letters}\d]+$"), '', key) # Delete non-letter at the end
-        if key != '':
-            res = memBuffer.get(key)
-            if not res:
-                res = databaseSearch(key)
-                if memBufferCount < MAXMEMBUF and res:
-                    memBuffer[key] = res
-                    memBufferCount += 1
+        # Delete non-letter at the end
+        key_rstrip = re.sub(q(r"[^'{letters}\d]+$"), '', key)
+        if key_rstrip and key_rstrip != key:
+            res = databaseSearch(key_rstrip)
 
     if not res:
-        key = re.sub(q(r"^[^{letters}\d]+"), '', key) # Delete non-letter at the start
-        if key != '':
-            res = memBuffer.get(key)
-            if not res:
-                res = databaseSearch(key)
-                if memBufferCount < MAXMEMBUF and res:
-                    memBuffer[key] = res
-                    memBufferCount += 1
+        # Delete non-letter at the start
+        key_lstrip = re.sub(q(r"^[^{letters}\d]+"), '', key)
+        if key_lstrip and key_lstrip != key:
+            res = databaseSearch(key_lstrip)
 
     return res
 ####################################
@@ -1679,7 +1661,6 @@ Tagga {ordTellar} ord
 Fann {fuge} ukjende ord som vart tolka av samansetningsmodulen
 Fann {ukjent} ukjende ord
 Fann {substProp} ukjente ord som vart tolka som "{SUBST_PROP}"
-Buffra {memBufferCount} ordformer. Max bufferstorleik er {MAXMEMBUF}
 Tid brukt: {tidBrukt:10.2f} minutt
 """)
 
