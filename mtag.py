@@ -1190,9 +1190,10 @@ def uniq_prefix(lines):
     for i in range(len(lines_uniq)):
         line = lines_uniq[i]
         lineRegex = re.sub(r'([()])', r'\\\1', line)
-        otherLines = lines[0:i] + lines[i+1:]
-        supersetLines = (otherLine for otherLine in otherLines
-                                   if re.search(r'^{}\b(?!\sclb$)'.format(lineRegex), otherLine))
+        otherLines = lines_uniq[0:i] + lines_uniq[i+1:]
+        supersetLines = [otherLine for otherLine in otherLines
+                                   if re.search(r'^{}\b(?!\sclb$)'.format(lineRegex),
+                                                otherLine)]
         if not any(supersetLines):
             result.append(line)
     return result
