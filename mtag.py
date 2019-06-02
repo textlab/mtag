@@ -1506,169 +1506,169 @@ def taggPeriode(periode):
         if not re.search(q(r'^\$[{stroke}{quots}]'), word):
             periodeStart = False
 ####################################
-#
-# Main
-#
-####################################
-
-inputfile = fileinput.input()
-
-initDB()
-
-spesialTabMin += 1
-spesialTabMax += 1
-if ikkjeTerminerForkMin < 1:
-    ikkjeTerminerForkMin = 1
+def main():
+    inputfile = fileinput.input()
+    initDB()
+    global spesialTabMin, spesialTabMax, ikkjeTerminerForkMin
+    spesialTabMin += 1
+    spesialTabMax += 1
+    if ikkjeTerminerForkMin < 1:
+        ikkjeTerminerForkMin = 1
 
 #######################################
 # Saa starter vi tagginga
 #######################################
-if UTFIL is not None:
-    print("Initialisering ferdig. Starter tagging ...")
+    if UTFIL is not None:
+        print("Initialisering ferdig. Starter tagging ...")
 
-ordTellar = 0
-grenseTellar = 0
-startTid = time.time()
-mellomTidStart = time.time()
-periode = ""
-nestePeriode = ""
-sisteLesteLinje = ""
-periodeFullstendig = False
-inputOK = True
-needMoreData = True
-substProp = 0
-ukjent = 0
-fuge = 0
-linjeNr = 0
+    global ordTellar, grenseTellar, startTid, mellomTidStart
+    ordTellar = 0
+    grenseTellar = 0
+    startTid = time.time()
+    mellomTidStart = time.time()
 
-while inputOK:
+    periode = ""
+    nestePeriode = ""
+    sisteLesteLinje = ""
     periodeFullstendig = False
-    periode = nestePeriode
-    print(q("(neste)periode = <<<{periode}>>>"), file=sys.stderr)
+    inputOK = True
+    needMoreData = True
 
-    # Ein vil alltid ha lest ei linje meir enn naudsynt.
-    # Dersom linja som sist er lest er identisk med den perioden
-    # vi no skal jobbe med, tyder det på at denne neste perioden startar
-    # paa ei ny linje. Daa kan denne vere ein mellomtittel.
+    global substProp, ukjent, fuge, linjeNr
+    substProp = 0
+    ukjent = 0
+    fuge = 0
+    linjeNr = 0
 
-    muligOverskrift = ""
-    terminatorInLastLine = re.search(q(r'[{terminator}\,]'), sisteLesteLinje)
-    if periode != "" and sisteLesteLinje == periode and not terminatorInLastLine:
-        overskriftElementer = re.split(r'\s+', periode)
-        if len(overskriftElementer) <= 7:
-            muligOverskrift = periode
-        # Sett inn backslash foer eventuelle meta-teikn.
-        #Variabelen skal brukast i regulaere uttrykk
-        muligOverskrift = re.sub(r'(\W)', r'\\\1', muligOverskrift)
+    while inputOK:
+        periodeFullstendig = False
+        periode = nestePeriode
+        print(f"(neste)periode = <<<{periode}>>>", file=sys.stderr)
 
-    periode = re.sub(r'\n', ' ', periode)
-    periode = re.sub(r'\s+', ' ', periode)
-    periode = re.sub(r'^\s*', '', periode)
-    periode = re.sub(r'\s*$', '', periode)
+        # Ein vil alltid ha lest ei linje meir enn naudsynt.
+        # Dersom linja som sist er lest er identisk med den perioden
+        # vi no skal jobbe med, tyder det på at denne neste perioden startar
+        # paa ei ny linje. Daa kan denne vere ein mellomtittel.
 
-    # Finn ein periode
-    while not periodeFullstendig:
-        # Bygg opp det som skal bli ein periode
-        if needMoreData: # Treng meir data fraa fila
-            line = inputfile.readline()
-            linjeNr += 1
+        muligOverskrift = ""
+        terminatorInLastLine = re.search(q(r'[{terminator}\,]'), sisteLesteLinje)
+        if periode != "" and sisteLesteLinje == periode and not terminatorInLastLine:
+            overskriftElementer = re.split(r'\s+', periode)
+            if len(overskriftElementer) <= 7:
+                muligOverskrift = periode
+            # Sett inn backslash foer eventuelle meta-teikn.
+            #Variabelen skal brukast i regulaere uttrykk
+            muligOverskrift = re.sub(r'(\W)', r'\\\1', muligOverskrift, flags=re.UNICODE)
 
-            while re.search(r'/\*', line): # Les heile kommentarar
-                if re.search(r'/\*.*\*/', line):
-                    break
-                line = re.sub(r'\n', ' ', line)
-                line += inputfile.readline()
-                linjeNr += 1
+        periode = re.sub(r'\n', ' ', periode)
+        periode = re.sub(r'\s+', ' ', periode)
+        periode = re.sub(r'^\s*', '', periode)
+        periode = re.sub(r'\s*$', '', periode)
 
-            line = re.sub(q(r'[{remove}]'), ' ', line) # Fjern ulovlege teikn
-
-            sisteLesteLinje = line # Hold dette for aa sjekke titlar
-            sisteLesteLinje = re.sub(r'^\s*', '', sisteLesteLinje)
-            sisteLesteLinje = sisteLesteLinje.rstrip("\n")
-
-            if not line:
-                inputOK = False
-
-            # Ta hand om bindestreker paa slutten av linje
-            while line:
-                line, subst_count = re.subn(r'(\S)-\s*$', r'\1', line)
-                if subst_count == 0:
-                    break
-                m = re.search(r'(\S+)$', line)
-                word = m.group(1)
-                holdLinje = line
+        # Finn ein periode
+        while not periodeFullstendig:
+            # Bygg opp det som skal bli ein periode
+            if needMoreData: # Treng meir data fraa fila
                 line = inputfile.readline()
                 linjeNr += 1
 
+                while re.search(r'/\*', line): # Les heile kommentarar
+                    if re.search(r'/\*.*\*/', line):
+                        break
+                    line = re.sub(r'\n', ' ', line)
+                    line += inputfile.readline()
+                    linjeNr += 1
+
+                line = re.sub(q(r'[{remove}]'), ' ', line) # Fjern ulovlege teikn
+
+                sisteLesteLinje = line # Hold dette for aa sjekke titlar
+                sisteLesteLinje = re.sub(r'^\s*', '', sisteLesteLinje)
+                sisteLesteLinje = sisteLesteLinje.rstrip("\n")
+
                 if not line:
                     inputOK = False
-                if not inputOK:
-                    break
 
-                # Sjekk om koordinert frase
-                if re.search(r'(^\s*og\s)|(^\s*eller\s)', line):
-                    line = holdLinje + '- ' + line # Koordinert frase
-                else:
-                    m = re.search(r'^(\S*)\s', line) # Sett saman ord
-                    word += m.group(1)
-                    tagTekst = sok(word) # Sjekk om ordet finns
-                    word = initcap2lower(word)
-                    tagTekst += sok(word) # Sjekk om ordet finns
-                    if tagTekst:
-                        line = holdLinje + line # Ordet finns i basen
+                # Ta hand om bindestreker paa slutten av linje
+                while line:
+                    line, subst_count = re.subn(r'(\S)-\s*$', r'\1', line)
+                    if subst_count == 0:
+                        break
+                    m = re.search(r'(\S+)$', line)
+                    word = m.group(1)
+                    holdLinje = line
+                    line = inputfile.readline()
+                    linjeNr += 1
+
+                    if not line:
+                        inputOK = False
+                    if not inputOK:
+                        break
+
+                    # Sjekk om koordinert frase
+                    if re.search(r'(^\s*og\s)|(^\s*eller\s)', line):
+                        line = holdLinje + '- ' + line # Koordinert frase
                     else:
-                        line = holdLinje + '-' + line
+                        m = re.search(r'^(\S*)\s', line) # Sett saman ord
+                        word += m.group(1)
+                        tagTekst = sok(word) # Sjekk om ordet finns
+                        word = initcap2lower(word)
+                        tagTekst += sok(word) # Sjekk om ordet finns
+                        if tagTekst:
+                            line = holdLinje + line # Ordet finns i basen
+                        else:
+                            line = holdLinje + '-' + line
 
-            if not line or not inputOK: # Slutten av fila
-                inputOK = False
+                if not line or not inputOK: # Slutten av fila
+                    inputOK = False
 
-                # Terminer siste periode som mangler punktum
-                if periode != "" and not re.search(q(r'[{terminator}]\s*$'), periode):
-                    periode += '.'
-                periode += ' END OF FILE'
-            elif not re.search(r'\S', line): # Dersom blank linje
-                # Periode som mangler punktum på slutten er overskrift
-                terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), periode)
-                if periode != "" and not terminatorQuoteInLine:
-                    periode += "|"
-            else:
-                # Fortsett bygginga av ein periode
-                periode += " " + line
-                periode = re.sub(r'\n', ' ', periode)
-                periode = re.sub(r'\s+', ' ', periode)
-                periode = re.sub(r'^\s*', '', periode)
-                periode = re.sub(r'\s*$', '', periode)
+                    # Terminer siste periode som mangler punktum
+                    if periode != "" and not re.search(q(r'[{terminator}]\s*$'), periode):
+                        periode += '.'
+                    periode += ' END OF FILE'
+                elif not re.search(r'\S', line): # Dersom blank linje
+                    # Periode som mangler punktum på slutten er overskrift
+                    terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), periode)
+                    if periode != "" and not terminatorQuoteInLine:
+                        periode += "|"
+                else:
+                    # Fortsett bygginga av ein periode
+                    periode += " " + line
+                    periode = re.sub(r'\n', ' ', periode)
+                    periode = re.sub(r'\s+', ' ', periode)
+                    periode = re.sub(r'^\s*', '', periode)
+                    periode = re.sub(r'\s*$', '', periode)
 
-        periode = re.sub(r'/\*.*?\*/', ' ', periode) # Fjern kommentarer
+            periode = re.sub(r'/\*.*?\*/', ' ', periode) # Fjern kommentarer
 
-        # Sjekk overskrift
-        if muligOverskrift != "":
-            periode = re.sub(q(r'({muligOverskrift})\s+([{quotsParantes}]*[-{lettersla}\d{specLetters}])'),
-                             r'\1| \2', periode)
+            # Sjekk overskrift
+            if muligOverskrift != "":
+                periode = re.sub(q(r'(%s)\s+([{quotsParantes}]*[-{lettersla}\d{specLetters}])' % muligOverskrift),
+                                 r'\1| \2', periode)
 
-        print(q("(before gaaGjennom)periode = <<<{periode}>>>"), file=sys.stderr)
-        needMoreData, periode, nestePeriode, periodeFullstendig = \
-            gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendig)
+            print(f"(before gaaGjennom)periode = <<<{periode}>>>", file=sys.stderr)
+            needMoreData, periode, nestePeriode, periodeFullstendig = \
+                gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendig)
 
-    print(q("taggPeriode({periode})"), file=sys.stderr)
-    taggPeriode(periode)
+        print(f"taggPeriode({periode})", file=sys.stderr)
+        taggPeriode(periode)
 
-sluttTid = time.time()
-tidBrukt = (sluttTid-startTid)/60
+    sluttTid = time.time()
+    tidBrukt = (sluttTid-startTid)/60
 
-msg = q("""
-Tagga {ordTellar} ord
-Fann {fuge} ukjende ord som vart tolka av samansetningsmodulen
-Fann {ukjent} ukjende ord
-Fann {substProp} ukjente ord som vart tolka som "{SUBST_PROP}"
-Tid brukt: {tidBrukt:10.2f} minutt
-""")
+    msg = q("""
+    Tagga {ordTellar} ord
+    Fann {fuge} ukjende ord som vart tolka av samansetningsmodulen
+    Fann {ukjent} ukjende ord
+    Fann {substProp} ukjente ord som vart tolka som "{SUBST_PROP}"
+    Tid brukt: {tidBrukt:10.2f} minutt
+    """)
 
-for logline in msg.strip().split("\n"):
-    logging.info(logline)
+    for logline in msg.strip().split("\n"):
+        logging.info(logline)
 
-if UTFIL is not None:
-    print(msg, end='')
-    print(q("Liste over problemorda ligg i fila {LOGGFIL}"))
+    if UTFIL is not None:
+        print(msg, end='')
+        print(q("Liste over problemorda ligg i fila {LOGGFIL}"))
 
-sys.exit(0)
+if __name__ == '__main__':
+    main()
