@@ -577,7 +577,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
                 muligReinPeriodeLower = ' ' + muligReinPeriodeLower
 
                 ikkjeTerminerForkKey = '%d#%s' % (count, muligReinPeriodeLower[len(muligReinPeriodeLower)-count:])
-                if ikkjeTerminerFork.get(ikkjeTerminerForkKey, None):
+                if ikkjeTerminerFork.get(ikkjeTerminerForkKey):
                     erNamn = sjekkNamn(nesteOrd)
                     if erNamn:
                         erPeriodeSlutt = False
@@ -587,7 +587,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
 
             sjekkFork = muligReinPeriode[len(muligReinPeriode)-count:]
             sjekkFork = re.sub(q(r'^[{quotsParantes}]'), ' ', sjekkFork)
-            if ikkjeTerminerFork.get('%d#%s' % (count, sjekkFork), None):
+            if ikkjeTerminerFork.get('%d#%s' % (count, sjekkFork)):
                 erNamn = sjekkNamn(nesteOrd)
 
                 # Sjekk om ordet framfor forkortinga er eit namn. I så fall er
@@ -914,7 +914,6 @@ def alleOrdklasser(root):
     return wordClasses
 
 def analyserForledd(forledd):
-    rootVal = None
     rootOrdklasseList = []
     normalisertForledd = forledd
 
@@ -925,9 +924,7 @@ def analyserForledd(forledd):
     elif allcap2lower(forledd) in rootHash:
         normalisertForledd = allcap2lower(forledd)
 
-    if normalisertForledd in rootHash:
-        rootVal = rootHash[normalisertForledd]
-
+    rootVal = rootHash.get(normalisertForledd)
     if rootVal:
         numLedd, *rootOrdklasseList = rootVal
 
