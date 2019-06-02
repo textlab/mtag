@@ -402,7 +402,7 @@ def erGenitiv(oppslag, tag):
     resultat = None
     unwantedPOS = re.search(r'(verb.*imp)|(konj)|(pron)|(interj)|(prep)', tag)
     alreadyGenitive = re.search(r' %s ' % re.escape(GEN), tag)
-    if tag != "" and not unwantedPOS and not alreadyGenitive:
+    if tag != '' and not unwantedPOS and not alreadyGenitive:
         resultat = "%s %s" % (tag, GEN)
     return resultat
 ####################################
@@ -442,29 +442,29 @@ def sok(key):
 
     if key != '':
         res = memBuffer.get(key)
-        if res is None:
+        if not res:
             res = databaseSearch(key)
-            if memBufferCount < MAXMEMBUF and res is not None:
+            if memBufferCount < MAXMEMBUF and res:
                 memBuffer[key] = res
                 memBufferCount += 1
 
-    if res is None:
+    if not res:
         key = re.sub(q(r"[^'{letters}\d]+$"), '', key) # Delete non-letter at the end
         if key != '':
             res = memBuffer.get(key)
-            if res is None:
+            if not res:
                 res = databaseSearch(key)
-                if memBufferCount < MAXMEMBUF and res is not None:
+                if memBufferCount < MAXMEMBUF and res:
                     memBuffer[key] = res
                     memBufferCount += 1
 
-    if res is None:
+    if not res:
         key = re.sub(q(r"^[^{letters}\d]+"), '', key) # Delete non-letter at the start
         if key != '':
             res = memBuffer.get(key)
-            if res is None:
+            if not res:
                 res = databaseSearch(key)
-                if memBufferCount < MAXMEMBUF and res is not None:
+                if memBufferCount < MAXMEMBUF and res:
                     memBuffer[key] = res
                     memBufferCount += 1
 
@@ -1631,7 +1631,7 @@ while inputOK:
                     tagTekst = sok(word) # Sjekk om ordet finns
                     word = initcap2lower(word)
                     tagTekst += sok(word) # Sjekk om ordet finns
-                    if tagTekst is not None:
+                    if tagTekst:
                         line = holdLinje + line # Ordet finns i basen
                     else:
                         line = holdLinje + '-' + line
