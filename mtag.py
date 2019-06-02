@@ -1331,7 +1331,7 @@ def tagTekstSkille(word, periode):
         tagTekstSkille = re.sub(r'(.)$', r'\1 <<<', tagTekstSkille, flags=re.MULTILINE)
     return tagTekstSkille
 ####################################
-def sokVarianter(sokOrd, periodeStart, forrigeAnf):
+def sokVarianter(sokOrd, periode, periodeStart, forrigeAnf):
     tagTekst = ''
     wordLower = initcap2lower(sokOrd)
     wordAllLower = allcap2lower(sokOrd)
@@ -1460,7 +1460,7 @@ def taggPeriode(periode):
             sokOrd = re.sub(q(r'^[{quots}](.*)[{quots}]$'), r'\1', word)
 #            sokOrd = re.sub(r"'([^s]+)", r'\1', sokOrd) # Dersom fnutt, og ikkje genitiv, ta bort
 
-            tagTekst += sokVarianter(sokOrd, periodeStart, forrigeAnf)
+            tagTekst += sokVarianter(sokOrd, periode, periodeStart, forrigeAnf)
 
             # Vi har saa langt ikkje funne ordet
             if tagTekst == '':
