@@ -205,8 +205,8 @@ parser.add_argument("-bm", dest='spraak', action='store_const', const='bm', defa
 parser.add_argument("-nn", dest='spraak', action='store_const', const='nn', default='bm')
 parser.add_argument('-wxml', action='store_true')
 parser.add_argument('-compat', action='store_true')
-parser.add_argument('input_files', metavar='textfile', nargs='*')
-args = parser.parse_args()
+args, input_files = parser.parse_known_args()
+sys.argv = sys.argv[:1] + input_files
 
 UTFIL = args.o
 LOGGFIL = args.l
