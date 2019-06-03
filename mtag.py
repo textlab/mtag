@@ -1618,7 +1618,7 @@ def main():
                     line += inputfile.readline()
                     linjeNr += 1
 
-                line = re.sub(q(r'[{remove}]'), ' ', line) # Fjern ulovlege teikn
+                line = line.replace(remove, ' ') # Fjern ulovlege teikn (\xA0)
 
                 sisteLesteLinje = line # Hold dette for aa sjekke titlar
                 sisteLesteLinje = re.sub(r'^\s*', '', sisteLesteLinje)
