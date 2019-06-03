@@ -1384,7 +1384,8 @@ def taggPeriode(periode):
     periode = re.sub(q(r'(\s[{letters}]/)([{letters}]{{2}})'), r'\1 \2', periode)
     periodeStart = True
     forrigeAnf = False
-    periode = re.sub(r'\s+', ' ', periode.lstrip()) # FIXME: count=1 ?
+    # FIXME: count=1 is compatible with Perl mtag, but looks like a bug
+    periode = re.sub(r'\s+', ' ', periode.lstrip(), count=1)
 
     if PERIODEFIL is not None:
         print(periode + "\n", file=tag_periodefil)
@@ -1641,7 +1642,10 @@ def main():
                         tagTekst = sok(word) # Sjekk om ordet finns
                         word = initcap2lower(word)
                         tagTekst += sok(word) # Sjekk om ordet finns
-                        if tagTekst:
+                        # FIXME: bug-for-bug implementation of the Perl code,
+                        # tagTekst is never None
+                        # We should probably check for compounds above
+                        if tagTekst is not None:
                             line = holdLinje + line # Ordet finns i basen
                         else:
                             line = holdLinje + '-' + line
