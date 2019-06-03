@@ -1339,7 +1339,7 @@ def tagTekstSkille(word, periode):
     elif re.search(q(r'\$[{stroke}]$'), word):
         result = q('\t"$-" {CONSTstrek}\n')
     elif re.search(q(r'\$([{quots}])$'), word):
-        result = q('\t"$%s" {CONSTanfoersel}\n' % re.sub(r'^.*\$', '', word))
+        result = '\t"${}" {}\n'.format(re.sub(r'^.*\$', '', word), CONSTanfoersel)
     elif re.search(r'\$\($', word):
         result = q('\t"$(" {CONSTparstart}\n')
     elif re.search(r'\$\)$', word):
@@ -1497,7 +1497,8 @@ def taggPeriode(periode):
                 # og så liten bokstav , skal det markerast som eigenamn
                 # dersom det ikkje vert funne i fullformslistene
 
-                logLine = '{:16}%s (omtrent linje %d)' % (word, linjeNr)
+                logLine = '{:16}%s (omtrent linje %d)' % (re.sub(r'([{}])', r'\1\1', word),
+                                                          linjeNr)
                 if ((not periodeStart or propHash[sokOrd]) and
                     re.search(q(r'^[{lettersla}]'), sokOrd) and
                     not re.search(q(r'-[{letterssm}]'), sokOrd)):
@@ -1691,7 +1692,9 @@ def main():
 
             # Sjekk overskrift
             if muligOverskrift != "":
-                periode = re.sub(q(r'(%s)\s+([{quotsParantes}]*[-{lettersla}\d{specLetters}])' % muligOverskrift),
+                periode = re.sub(r'({muligOverskrift})\s+([{quotsParantes}]*[-{lettersla}\d{specLetters}])'.
+                                   format(muligOverskrift=muligOverskrift, quotsParantes=quotsParantes,
+                                          lettersla=lettersla, specLetters=specLetters),
                                  r'\1| \2', periode)
 
             if __debug__: logging.debug("(before gaaGjennom)periode = <<<%(periode)s>>>", vars())
