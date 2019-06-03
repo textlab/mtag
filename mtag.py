@@ -1585,7 +1585,7 @@ def main():
                 muligOverskrift = periode
             # Sett inn backslash foer eventuelle meta-teikn.
             #Variabelen skal brukast i regulaere uttrykk
-            muligOverskrift = re.sub(r'(\W)', r'\\\1', muligOverskrift, flags=re.UNICODE)
+            muligOverskrift = re.escape(muligOverskrift)
             if __debug__: logging.debug('muligOverskrift = <<<%(muligOverskrift)s>>>', vars())
 
         periode = re.sub(r'\n', ' ', periode)
