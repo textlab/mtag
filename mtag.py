@@ -5,11 +5,15 @@
 # However, the code is still Python 2-compatible with the following declarations.
 from __future__ import print_function
 from __future__ import unicode_literals
+import sys
+if sys.version_info.major < 3:
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+
 from collections import defaultdict
 from collections import OrderedDict
 from io import open
 import os
-import sys
 import re
 import time
 import argparse
