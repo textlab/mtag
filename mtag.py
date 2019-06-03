@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# vim: set fileencoding=utf-8 :
 
 # Using Python 2 is not recommended, as it makes the tagger almost 3 times slower.
 # However, the code is still Python 2-compatible with the following declarations.

@@ -7,7 +7,10 @@ for spraak in bm nn; do
 previous_fullform=
 previous_lemma_features=
 {
-  #echo "use utf8;"
+  echo "# vim: set fileencoding=utf-8 :"
+  echo "from __future__ import unicode_literals"
+} >../fullform_${spraak}.py
+{
   echo "fullformHash = {"
   xzcat ../data/fullform_${spraak}.txt.xz |iconv -f iso-8859-1 -t utf-8 |grep -v '^*' |\
       #LC_ALL=C sort -n -t: -k3,3 |\
@@ -35,5 +38,9 @@ previous_lemma_features=
     previous_lemma_features="$lemma_features"
   done
   echo -e "'}"
-} |ruby -ne 'print $_.gsub("\n", "\\n").gsub("'\'',\\n", "'\'',\n").gsub("{\\n", "{\n").gsub("'\''}\\n", "'\''\n}\n").gsub("\t", "\\t")'>../fullform_${spraak}.py
+} |ruby -ne 'print $_.gsub("\n", "\\n").
+                      gsub("'\'',\\n", "'\'',\n").
+                      gsub("{\\n", "{\n").
+                      gsub("'\''}\\n", "'\''\n}\n").
+                      gsub("\t", "\\t")' >>../fullform_${spraak}.py
 done

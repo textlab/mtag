@@ -6,6 +6,8 @@ cd "`dirname "$0"`"
 
 for spraak in bm nn; do
 {
+  echo "# vim: set fileencoding=utf-8 :"
+  echo "from __future__ import unicode_literals"
   echo "rootHash = {"
   xzcat ../data/fullform_${spraak}.txt.xz |iconv -f iso-8859-1 -t utf-8 |grep -v '^*' |\
   awk -F'\t' '{print $1":"$2; if ($4~"^adj.* (nøyt|komp|sup)") print $1":"$3;}' |while IFS=: read id lemma; do

@@ -9,6 +9,8 @@ for spraak in bm nn; do
   fi
   outfile=../compounds_${spraak}.py
   /bin/echo -n >$outfile
+  echo "# vim: set fileencoding=utf-8 :" >>$outfile
+  echo "from __future__ import unicode_literals" >>$outfile
   echo "compoundHash = {" >>$outfile
   xzcat $infile |awk -F'\t' '{print $2}' |\
     ruby -Ku -lne 'puts "    \"#{$_.gsub("*", "")}\": [#{$_.count("*-") + 1}],"' |\
