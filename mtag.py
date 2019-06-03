@@ -547,7 +547,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
         # Les neste ord. Trengs for å avgjere periodeslutt
         # Eit ord kan vere samasett av to periodeelement
         nesteOrd = restAvMulig + ''.join(periodeElementer[0:2])
-        nesteOrd = re.sub(q(r'\s*([^\s$terminator]+).*'), r'\1', nesteOrd)
+        nesteOrd = re.sub(q(r'\s*([^\s{terminator}]+).*'), r'\1', nesteOrd)
 
 
         # Sjekk om siste del av mulig periode er ei forkorting
