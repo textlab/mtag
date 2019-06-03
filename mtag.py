@@ -925,7 +925,7 @@ def analyserForledd(forledd):
 
     rootVal = rootHash.get(normalisertForledd)
     if rootVal:
-        numLedd, *rootOrdklasseList = rootVal
+        numLedd, rootOrdklasseList = rootVal[0], rootVal[1:]
 
     rootOrdklasseList.extend(rootOrdklasser(normalisertForledd))
     rootOrdklasseList = [pos for pos in rootOrdklasseList
@@ -953,7 +953,7 @@ def analyserForledd(forledd):
             logging.debug('forledd=%(forledd)s, numLedd = %(numLedd)s, ' +
                           'rootOrdklasseList=%(rootOrdklasseList)s',
                           vars())
-        rootHash[forledd] = [numLedd, *set(rootOrdklasseList)]
+        rootHash[forledd] = [numLedd] + list(set(rootOrdklasseList))
         return rootHash[forledd]
 
     resultater = []
@@ -977,7 +977,7 @@ def analyserForledd(forledd):
             rootOrdklasseList = rootOrdklasser(ledd2)
             if __debug__:
                 logging.debug("rootHash[%(forledd)s] = [%(numLedd)s, %(rootOrdklasseList)s]", vars())
-            resultater.append([numLedd, *rootOrdklasseList])
+            resultater.append([numLedd] + rootOrdklasseList)
 
         ledd1kortAnalyse = analyserForledd(ledd1kort)
         ledd1kortOK = ledd1kortAnalyse and ledd1kortAnalyse[0]
@@ -991,7 +991,7 @@ def analyserForledd(forledd):
                 logging.debug("%(ledd2Analyse)s", vars())
 
             numLedd = ledd1kortAnalyse[0] + ledd2Analyse[0]
-            resultater.append([numLedd, *rootOrdklasser(ledd2)])
+            resultater.append([numLedd] + rootOrdklasser(ledd2))
 
     if resultater:
         resultater.sort(key=lambda result: result[0])
@@ -999,7 +999,7 @@ def analyserForledd(forledd):
                                      if result[0] == resultater[0][0]),
                          [])
         if __debug__: logging.debug('ordklasser = %(ordklasser)s', vars())
-        retVal = [resultater[0][0], *ordklasser]
+        retVal = [resultater[0][0]] + ordklasser
         if __debug__: logging.debug('retVal = %(retVal)s', vars())
         rootHash[forledd] = retVal
         return retVal
