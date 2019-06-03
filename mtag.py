@@ -1371,7 +1371,8 @@ def sokVarianter(sokOrd, periode, periodeStart, forrigeAnf):
 
     # Spesialbehandle apostroftilfeller
     if tagTekst == "":
-        withoutApostrophe = sokOrd.translate(str.maketrans('ÓÉóé', 'OEoe'))
+        withoutApostrophe = sokOrd.translate({ord('Ó'): 'O', ord('É'): 'E',
+                                              ord('ó'): 'o', ord('é'): 'e'})
         if withoutApostrophe != sokOrd:
             tagTekst += sok(withoutApostrophe)
             if periodeStart or forrigeAnf:
