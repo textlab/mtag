@@ -612,15 +612,15 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
             nestePeriode = restAvMulig + ''.join(periodeElementer)
             periodeElementer = []
 
-            print("before konverterSkilleteikn", file=sys.stderr)
-            print("periode = '{periode}'".format(**vars()), file=sys.stderr)
+            logging.debug("before konverterSkilleteikn\n")
+            logging.debug("periode = '%(periode)s'", vars())
             periode = konverterSkilleteikn(periode)
             periodeFullstendig = True
 
             break
 
-    print("end of gaaGjennomPeriodeElementer", file=sys.stderr)
-    print("periode = '{periode}'".format(**vars()), file=sys.stderr)
+    logging.debug("end of gaaGjennomPeriodeElementer")
+    logging.debug("periode = '%(periode)s'", vars())
     return (needMoreData, periode, nestePeriode, periodeFullstendig)
 ####################################
 def sjekkInterjeksjon(key):
@@ -850,9 +850,9 @@ def sokEtterledd(etterledd, sokOrd):
     if etterledd.startswith('-'):
          etterledd = etterledd[1:]
          forledd += '-'
-    print("forledd = '" + forledd + "'", file=sys.stderr)
-    print("etterledd = '" + etterledd + "'", file=sys.stderr)
-    print("sokOrd = '" + sokOrd + "'", file=sys.stderr)
+    logging.debug("forledd = '%(forledd)s'", vars())
+    logging.debug("etterledd = '%(etterledd)s'", vars())
+    logging.debug("sokOrd = '%(sokOrd)s'", vars())
     tagTekstOrig = ''
     if not forledd.endswith('-'):
         tagTekstOrig = sok('-' + etterledd)
@@ -931,7 +931,9 @@ def analyserForledd(forledd):
         return []
 
     if rootVal and rootOrdklasseList:
-        print(f'forledd={forledd}, numLedd = {numLedd}, rootOrdklasseList={rootOrdklasseList}', file=sys.stderr)
+        logging.debug('forledd=%(forledd)s, numLedd = %(numLedd)s, ' +
+                      'rootOrdklasseList=%(rootOrdklasseList)s',
+                      vars())
         rootHash[forledd] = [numLedd, *set(rootOrdklasseList)]
         return rootHash[forledd]
 
@@ -947,14 +949,14 @@ def analyserForledd(forledd):
         ledd2OK = ledd2Analyse and ledd2Analyse[0]
 
         if ledd1OK and ledd2OK:
-            print('{} + {}'.format(ledd1, ledd2), file=sys.stderr)
-            print(ledd1Analyse, file=sys.stderr)
-            print(ledd2Analyse, file=sys.stderr)
+            logging.debug('%(ledd1)s + %(ledd2)s', vars())
+            logging.debug('%(ledd1Analyse)s', vars())
+            logging.debug('%(ledd2Analyse)s', vars())
 
             numLedd = ledd1Analyse[0] + ledd2Analyse[0]
-#            print("$rootHash{%s} = " % forledd, file=sys.stderr, end='')
-#            print([numLedd, rootOrdklasser(ledd2)], file=sys.stderr)
-            resultater.append([numLedd, *rootOrdklasser(ledd2)])
+            rootOrdklasseList = rootOrdklasser(ledd2)
+            logging.debug("rootHash[%(forledd)s] = [%(numLedd)s, %(rootOrdklasseList)s]", vars())
+            resultater.append([numLedd, *rootOrdklasseList])
 
         ledd1kortAnalyse = analyserForledd(ledd1kort)
         ledd1kortOK = ledd1kortAnalyse and ledd1kortAnalyse[0]
@@ -962,28 +964,25 @@ def analyserForledd(forledd):
         fugeFormativOK = re.search(r'^[es-]$', fugeFormativ)
 
         if ledd1kortOK and fugeFormativOK and ledd2OK:
-            print("{} + fuge + {}".format(ledd1kort, ledd2), file=sys.stderr)
-            print(ledd1kortAnalyse, file=sys.stderr)
-            print(ledd2Analyse, file=sys.stderr)
+            logging.debug("%(ledd1kort)s + fuge + %(ledd2)s", vars())
+            logging.debug("%(ledd1kortAnalyse)s", vars())
+            logging.debug("%(ledd2Analyse)s", vars())
 
             numLedd = ledd1kortAnalyse[0] + ledd2Analyse[0]
             resultater.append([numLedd, *rootOrdklasser(ledd2)])
 
     if resultater:
         resultater.sort(key=lambda result: result[0])
-        test = [result for result in resultater
-                                     if result[0] == resultater[0][0]]
-        print(f'test = {test}', file=sys.stderr)
         ordklasser = sum((result[1:] for result in resultater
                                      if result[0] == resultater[0][0]),
                          [])
-        print(f'ordklasser = {ordklasser}', file=sys.stderr)
+        logging.debug('ordklasser = %(ordklasser)s', vars())
         retVal = [resultater[0][0], *ordklasser]
-        print(f'retVal = {retVal}', file=sys.stderr)
+        logging.debug('retVal = %(retVal)s', vars())
         rootHash[forledd] = retVal
         return retVal
 
-#    print("didn't work after all", file=sys.stderr)
+    logging.debug("didn't work after all")
     rootHash[forledd] = []
     return []
 
@@ -1000,9 +999,9 @@ def analyserForleddOgEtterledd(sokOrd):
         forledd = sokOrd[0:i]
         etterledd = sokOrd[i:]
         kortEtterledd = sokOrd[i+1:]
-        print("forledd+etterledd = {} + {}\n".format(forledd, etterledd), file=sys.stderr)
+        logging.debug("forledd+etterledd = %(forledd)s + %(etterledd)s", vars())
         forleddAnalyse = analyserForledd(forledd)
-        print("@forleddAnalyse = {}".format(forleddAnalyse), file=sys.stderr)
+        logging.debug("forleddAnalyse = %(forleddAnalyse)s", vars())
         if not (forleddAnalyse and forleddAnalyse[0]):
             continue
         etterleddOK = len(etterledd) > 1 and databaseSearchForSuffixOrWord(etterledd)
@@ -1013,7 +1012,7 @@ def analyserForleddOgEtterledd(sokOrd):
             # Lexical compounding is preferable to compounding with epenthetic phones.
             lengreForleddAnalyse = analyserForledd(forledd + 's')
             if lengreForleddAnalyse and lengreForleddAnalyse[0] == 1:
-                continue
+                continue # FIXME: wouldn't "kortEtterleddOK = False" be better here?
             # Epenthetic -s- can only follow noun stems.
             if 'subst' not in forleddAnalyse:
                 kortEtterleddOK = False
@@ -1035,7 +1034,7 @@ def analyserForleddOgEtterledd(sokOrd):
                 kortEtterleddOK = False
 
         if etterleddOK and kortEtterleddOK:
-            print('sokEtterledd1({}, {})'.format(etterledd, sokOrd), file=sys.stderr)
+            logging.debug('sokEtterledd1(%(etterledd)s, %(sokOrd)s)', vars())
             etterleddTagger = sokEtterledd(etterledd, sokOrd)
             verbalEtterledd = re.search(r'\bverb\b', etterleddTagger)
             substantiviskEtterledd = re.search(r'\bsubst\b', etterleddTagger)
@@ -1054,11 +1053,11 @@ def analyserForleddOgEtterledd(sokOrd):
 
         if forleddAnalyse and forleddAnalyse[0] and (etterleddOK or kortEtterleddOK):
             minEtterledd = etterledd if etterleddOK else kortEtterledd
-            print("sokEtterledd2({}, {})".format(minEtterledd, sokOrd), file=sys.stderr)
+            logging.debug("sokEtterledd2(%(minEtterledd)s, %(sokOrd)s)", vars())
             tagger = sokEtterledd(minEtterledd, sokOrd)
 
             if tagger:
-                print("OK!", file=sys.stderr)
+                logging.debug("OK!")
                 etterleddRoots = set()
                 for m in re.finditer(r'^\s*"(.*?)"\s+', tagger, flags=re.MULTILINE):
                     etterleddRoot = m.group(1)
@@ -1069,15 +1068,15 @@ def analyserForleddOgEtterledd(sokOrd):
                     else:
                         assert False, '!etterleddOK && !kortEtterleddOK'
                     etterleddRoots.add(etterleddRoot)
-                print(etterleddRoots, file=sys.stderr)
+                logging.debug("%(etterleddRoots)s", vars())
                 sortedEtterleddRoots = sorted(etterleddRoots, key=lambda k: compoundHash.get(k, [1])[0])
                 numForledd = forleddAnalyse[0]
                 if len(sortedEtterleddRoots) > 0:
                     numEtterledd = compoundHash.get(sortedEtterleddRoots[0], [1])[0] * SAMSET_LEKS_WEIGHT
                 else:
                     numEtterledd = 1
-                print("numEtterledd = {}\n".format(numEtterledd), file=sys.stderr)
-                print(sortedEtterleddRoots, file=sys.stderr)
+                logging.debug("numEtterledd = %(numEtterledd)s", vars())
+                logging.debug("%(sortedEtterleddRoots)s", vars())
                 if numEtterledd < 1:
                     numEtterledd = 1
                 # If two analyses are equal with respect to epenthesis
@@ -1112,7 +1111,7 @@ def analyserBareEtterledd(sokOrd):
         if len(etterledd) > 2:
             searchResult = databaseSearchForSuffixOrWord(etterledd)
             if re.search(r'\b(subst|adj)\b', searchResult):
-                print("sokEtterledd3({}, {})".format(etterledd, sokOrd), file=sys.stderr)
+                logging.debug("sokEtterledd3(%(etterledd)s, %(sokOrd)s)", vars())
                 tagger = sokEtterledd(etterledd, sokOrd)
                 if tagger:
                     if etterledd in compoundHash:
@@ -1160,8 +1159,7 @@ def analyserSammensetning(sokOrd, periodeStart):
                 resHash[tekst].append("<+{}>".format(etterledd))
         for resultTekst in resHash.keys():
             resultTagTekst += "{} {}\n".format(resultTekst, ' '.join(resHash[resultTekst]))
-        print('resultater:', file=sys.stderr)
-        print(resultater, file=sys.stderr)
+        logging.debug('resultater: %(resultater)s', vars())
     return resultTagTekst
 ####################################
 def abbrFeat(fult, forkortet, tt):
@@ -1183,7 +1181,7 @@ def uniq_prefix(lines):
     return result
 
 def sort_feat(line, periodeStart):
-    print(f'sort_feat({line}, {periodeStart})', file=sys.stderr)
+    if __debug__: logging.debug('sort_feat(%(line)s, %(periodeStart)s)', vars())
     wordPattern = r'^\s*"(.*)"\s+'
     m = re.search(wordPattern, line)
     line = re.sub(wordPattern, '', line)
@@ -1231,10 +1229,10 @@ def prepareTagTekst(tagTekst, periodeStart):
     tagTekst = re.sub(r'^(\t".*".*)\s\@DET>\b', r'\1 @det>', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\bCLB\b', r'\1clb', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\s+(normert|unormert|klammeform)\b', r'\1', tagTekst, flags=re.M | re.I)
-    print(f'tagTekstBeforeSort = {tagTekst}', file=sys.stderr)
+    logging.debug('tagTekstBeforeSort = %(tagTekst)s', vars())
     tagTekst = ''.join(sort_feat(tagLine, periodeStart) + "\n"
                        for tagLine in tagTekst.rstrip("\n").split("\n"))
-    print(f'tagTekstAfterSort = {tagTekst}', file=sys.stderr)
+    logging.debug('tagTekstAfterSort = %(tagTekst)s', vars())
 
     nyTagTekst = tagTekst
     for m in re.finditer(r'^\s*"(.*)"\s+adj\b.*\b(nøyt|adv)\b', tagTekst, flags=re.M):
@@ -1255,9 +1253,9 @@ def prepareTagTekst(tagTekst, periodeStart):
             if subst_count == 0:
                 break
 
-    print(f'tagTekstBefore = <<<{tagTekst}>>>', file=sys.stderr)
+    logging.debug('tagTekstBefore = <<<%(tagTekst)s>>>', vars())
     tagTekst = "\n".join(sorted(uniq_prefix(tagTekst.rstrip("\n").split("\n")))) + "\n"
-    print(f'tagTekstAfter = <<<{tagTekst}>>>', file=sys.stderr)
+    logging.debug('tagTekstAfter = <<<%(tagTekst)s>>>', vars())
     return tagTekst
 
 def printTag(word, wordOrig, tagTekst):
@@ -1543,7 +1541,7 @@ def main():
     while inputOK:
         periodeFullstendig = False
         periode = nestePeriode
-        print(f"(neste)periode = <<<{periode}>>>", file=sys.stderr)
+        logging.debug("(neste)periode = <<<%(periode)s>>>", vars())
 
         # Ein vil alltid ha lest ei linje meir enn naudsynt.
         # Dersom linja som sist er lest er identisk med den perioden
@@ -1645,11 +1643,11 @@ def main():
                 periode = re.sub(q(r'(%s)\s+([{quotsParantes}]*[-{lettersla}\d{specLetters}])' % muligOverskrift),
                                  r'\1| \2', periode)
 
-            print(f"(before gaaGjennom)periode = <<<{periode}>>>", file=sys.stderr)
+            logging.debug("(before gaaGjennom)periode = <<<%(periode)s>>>", vars())
             needMoreData, periode, nestePeriode, periodeFullstendig = \
                 gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendig)
 
-        print(f"taggPeriode({periode})", file=sys.stderr)
+        logging.debug("taggPeriode(%(periode)s)", vars())
         taggPeriode(periode)
 
     sluttTid = time.time()
