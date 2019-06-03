@@ -1692,8 +1692,8 @@ def main():
     Fann {fuge} ukjende ord som vart tolka av samansetningsmodulen
     Fann {ukjent} ukjende ord
     Fann {substProp} ukjente ord som vart tolka som "{SUBST_PROP}"
-    Tid brukt: {tidBrukt:10.2f} minutt
-    """)
+    Tid brukt: %10.2f minutt
+    """ % tidBrukt)
 
     for logline in msg.strip().split("\n"):
         logging.info(logline)
