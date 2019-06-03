@@ -1193,7 +1193,10 @@ def analyserSammensetning(sokOrd, periodeStart):
             else:
                 resHash[tekst].append("<+{}>".format(etterledd))
         for resultTekst in resHash.keys():
-            resultTagTekst += "{} {}\n".format(resultTekst, ' '.join(resHash[resultTekst]))
+            resultTagTekst += ''.join([resultTekst,
+                                       ''.join(' ' + tag for tag in resHash[resultTekst]
+                                                         if tag),
+                                       "\n"])
         if __debug__: logging.debug('resultater: %(resultater)s', vars())
     return resultTagTekst
 ####################################
