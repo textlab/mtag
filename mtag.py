@@ -1582,7 +1582,7 @@ def main():
         terminatorInLastLine = re.search(q(r'[{terminator}\,]'), sisteLesteLinje)
         if periode != "" and sisteLesteLinje == periode and not terminatorInLastLine:
             overskriftElementer = re.split(r'\s+', periode)
-            if len(overskriftElementer) <= 7:
+            if len(overskriftElementer) <= 8:
                 muligOverskrift = periode
             # Sett inn backslash foer eventuelle meta-teikn.
             #Variabelen skal brukast i regulaere uttrykk
