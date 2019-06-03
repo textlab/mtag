@@ -434,6 +434,7 @@ def databaseSearch(key):
     return tag
 ####################################
 def sok(key):
+    if __debug__: logging.debug('sok(%(key)s)', vars())
     res = ''
 
     if key != '':
@@ -449,6 +450,7 @@ def sok(key):
         # Delete non-letter at the start
         key_lstrip = re.sub(q(r"^[^{letters}\d]+"), '', key)
         if key_lstrip and key_lstrip != key:
+            if __debug__: logging.debug('databaseSearch(%(key_lstrip)s)', vars())
             res = databaseSearch(key_lstrip)
 
     return res
@@ -561,17 +563,22 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
                 muligReinPeriodeLower = ' ' + muligReinPeriodeLower
 
                 ikkjeTerminerForkKey = '%d#%s' % (count, muligReinPeriodeLower[len(muligReinPeriodeLower)-count:])
+                if __debug__: logging.debug('ikkjeTerminerFork.get1(%(ikkjeTerminerForkKey)s)', vars())
                 if ikkjeTerminerFork.get(ikkjeTerminerForkKey):
+                    if __debug__: logging.debug(' == True!')
                     erNamn = sjekkNamn(nesteOrd)
                     if erNamn:
                         erPeriodeSlutt = False
                         break
                     else:
+                        if __debug__: logging.debug('Legg på terminering')
                         muligReinPeriode += ' .' # Legg paa terminering
 
             sjekkFork = muligReinPeriode[len(muligReinPeriode)-count:]
             sjekkFork = re.sub(q(r'^[{quotsParantes}]'), ' ', sjekkFork)
+            if __debug__: logging.debug('ikkjeTerminerFork.get2(%(count)s#%(sjekkFork)s)', vars())
             if ikkjeTerminerFork.get('%d#%s' % (count, sjekkFork)):
+                if __debug__: logging.debug(' == True!')
                 erNamn = sjekkNamn(nesteOrd)
 
                 # Sjekk om ordet framfor forkortinga er eit namn. I så fall er
@@ -580,6 +587,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
                     erPeriodeSlutt = False
                     break
                 else:
+                    if __debug__: logging.debug('Legg på terminering')
                     muligReinPeriode += ' .' # Legg paa terminering
 
         # Sjekk om siste ordet i perioden kan vere ein tittel
@@ -675,9 +683,11 @@ def finnTal(periode, periodeStart):
     # avslutta med komma og fleire desimaler etter komma.
     # Til slutt kan det foelge eit punktum eller eit prosentteikn.
 
+    if __debug__: logging.debug('periode = <<<%(periode)s>>>', vars())
     m = re.search(r'^(([+-]?\d{1,3}[. ]?(\d{3,3}[. ]?)*(,\d*)?[.%]?)([/-][+-]?\d{1,3}[. ]?(\d{3,3}[. ]?)*(,\d*)?[.%]?)?) ', periode)
     if m:
         word = m.group(1)
+        if __debug__: logging.debug('word = <<<%(word)s>>>', vars())
         antal = len(word)+1
         if word.endswith('.'):
             tagTekst += TAG_LINE.format(word, ADJ_ORDEN)
@@ -1018,6 +1028,9 @@ def analyserForleddOgEtterledd(sokOrd):
         if etterledd.startswith('s') and kortEtterleddOK:
             # Lexical compounding is preferable to compounding with epenthetic phones.
             lengreForleddAnalyse = analyserForledd(forledd + 's')
+            if __debug__:
+                logging.debug('lengreForledd = %(forledd)ss', vars())
+                logging.debug('lengreForleddAnalyse = %(lengreForleddAnalyse)s', vars())
             if lengreForleddAnalyse and lengreForleddAnalyse[0] == 1:
                 continue # FIXME: wouldn't "kortEtterleddOK = False" be better here?
             # Epenthetic -s- can only follow noun stems.
@@ -1075,7 +1088,7 @@ def analyserForleddOgEtterledd(sokOrd):
                     else:
                         assert False, '!etterleddOK && !kortEtterleddOK'
                     etterleddRoots.add(etterleddRoot)
-                if __debug__: logging.debug("%(etterleddRoots)s", vars())
+                if __debug__: logging.debug("etterleddRoots = %(etterleddRoots)s", vars())
                 sortedEtterleddRoots = sorted(etterleddRoots, key=lambda k: compoundHash.get(k, [1])[0])
                 numForledd = forleddAnalyse[0]
                 if len(sortedEtterleddRoots) > 0:
@@ -1084,7 +1097,7 @@ def analyserForleddOgEtterledd(sokOrd):
                     numEtterledd = 1
                 if __debug__:
                     logging.debug("numEtterledd = %(numEtterledd)s", vars())
-                    logging.debug("%(sortedEtterleddRoots)s", vars())
+                    logging.debug("sortedEtterleddRoots = %(sortedEtterleddRoots)s", vars())
                 if numEtterledd < 1:
                     numEtterledd = 1
                 # If two analyses are equal with respect to epenthesis
@@ -1106,6 +1119,7 @@ def analyserForleddOgEtterledd(sokOrd):
                 # any, that is a noun.
                 isNoun = re.search(r'^\s*".*"(\s*<.*?>)?\s+subst\b', tagger, flags=re.MULTILINE)
                 if isNoun and not (kortEtterleddOK and etterledd.startswith('e')) and numEtterledd < 1.5:
+                    if __debug__: logging.debug('break')
                     break
     return resultater
 
@@ -1208,6 +1222,7 @@ def sort_feat(line, periodeStart):
     if addStar:
         feats.append("<*>")
     result = '\t"{}" '.format(word)
+    if __debug__: logging.debug('feats = <<<%(feats)s>>>', vars())
     if SPRAAK == 'bm':
         result += ' '.join(sorted(feats, key=lambda k: feat_idx.get(k, float('inf'))))
     elif SPRAAK == 'nn':
@@ -1321,6 +1336,8 @@ def tagTekstSkille(word, periode):
     return result
 ####################################
 def sokVarianter(sokOrd, periode, periodeStart, forrigeAnf):
+    if __debug__:
+        logging.debug('sokVarianter(%(sokOrd)s, %(periode)s, %(periodeStart)s, %(forrigeAnf)s', vars())
     tagTekst = ''
     wordLower = initcap2lower(sokOrd)
     wordAllLower = allcap2lower(sokOrd)
@@ -1393,11 +1410,14 @@ def taggPeriode(periode):
         # uttrykk eller uforståeleg tekst i hermeteikn
 
         tagTekstTal, lengdeTal = finnTal(periode, periodeStart)
+        if __debug__:
+            logging.debug('tagTekstTal = %(tagTekstTal)s, lengdeTal = %(lengdeTal)s', vars())
         if COMPAT:
             tagTekstUttrykk, lengdeUttrykk = finnUttrykk(periode, periodeStart)
             tagTekstUforstaeleg, lengdeUforstaeleg = finnUforstaeleg(periode, periodeStart)
 
         if not COMPAT or (lengdeTal >= lengdeUttrykk and lengdeTal >= lengdeUforstaeleg):
+            if __debug__: logging.debug('going in')
             tagTekst += tagTekstTal
             count = lengdeTal
 
@@ -1439,6 +1459,7 @@ def taggPeriode(periode):
         if not tagTekst:
             tagTekstSkilleStr = tagTekstSkille(word, periode)
             if tagTekstSkilleStr != "":
+                if __debug__: logging.debug('ferdig = %(ferdig)s', vars())
                 ferdig = True
             tagTekst += tagTekstSkilleStr
 
@@ -1565,6 +1586,7 @@ def main():
             # Sett inn backslash foer eventuelle meta-teikn.
             #Variabelen skal brukast i regulaere uttrykk
             muligOverskrift = re.sub(r'(\W)', r'\\\1', muligOverskrift, flags=re.UNICODE)
+            if __debug__: logging.debug('muligOverskrift = <<<%(muligOverskrift)s>>>', vars())
 
         periode = re.sub(r'\n', ' ', periode)
         periode = re.sub(r'\s+', ' ', periode)
