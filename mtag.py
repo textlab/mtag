@@ -469,6 +469,7 @@ def sok(key):
         key_rstrip = re.sub(q(r"[^'{letters}\d]+$"), '', key)
         if key_rstrip and key_rstrip != key:
             res = databaseSearch(key_rstrip)
+            key = key_rstrip
 
     if not res:
         # Delete non-letter at the start
@@ -476,6 +477,7 @@ def sok(key):
         if key_lstrip and key_lstrip != key:
             if __debug__: logging.debug('databaseSearch(%(key_lstrip)s)', vars())
             res = databaseSearch(key_lstrip)
+            key = key_lstrip
 
     return res
 ####################################
