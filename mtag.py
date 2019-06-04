@@ -1244,11 +1244,15 @@ def sort_feat(line, periodeStart):
     m = re.search(wordPattern, line)
     line = re.sub(wordPattern, '', line)
     word = m.group(1)
+    wordLower = word.lower()
     feats = list(OrderedDict.fromkeys(re.split(r'\s+', line)))
     if SPRAAK == "bm":
         for suffix in suffixes:
-            if re.search(r'\S+{}$'.format(re.escape(suffix)), word, flags=re.I | re.U):
-                feats.append("<*{}>".format(suffix))
+            suffixLower = suffix.lower()
+            if (wordLower.endswith(suffixLower) and
+                wordLower != suffixLower and
+                not wordLower.endswith(' ' + suffixLower)):
+                    feats.append("<*{}>".format(suffix))
     startsWithCapitalLetter = re.search(q(r'^[{lettersla}]'), word)
     # FIXME: not sure what the condition for outputting <*> should be.
     # According to multi-tagger.lisp it should be something more like:
