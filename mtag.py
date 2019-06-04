@@ -492,7 +492,11 @@ def konverterSkilleteikn(periode):
             periodeDel = re.sub(q(r'([^$])(\.{{2,20}})([{quotsParantes}]*)'), r'\1 $\2\3 ', periodeDel)
             periodeDel = re.sub(q(r'([.|][{quotsParantes}]*)$'), r' $\1 ', periodeDel)
             periodeDel = re.sub(q(r'([?:!][{quotsParantes}]*)'), r' $\1 ', periodeDel)
-            periodeDel = re.sub(q(r'([,;][{quotsParantes}]*)\s'), r' $\1 ', periodeDel)
+            # FIXME: That's the way the Perl code does it, but it's very
+            # order-dependent: "word,; " is converted to "word $, $; ", and
+            # "word;," is converted to "word; $, "
+            periodeDel = re.sub(q(r'(,[{quotsParantes}]*)\s'), r' $\1 ', periodeDel)
+            periodeDel = re.sub(q(r'(;[{quotsParantes}]*)\s'), r' $\1 ', periodeDel)
             # FIXME: Should we have (m.group(1) or m.group(2)) here, just like in
             # the next re.sub? Currently we have an exact equivalent of the Perl code.
             periodeDel = re.sub(q(r'\s--([{quotsParantes}]*)\s|^--([{quotsParantes}]*)'),
