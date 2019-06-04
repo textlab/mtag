@@ -397,7 +397,6 @@ def initDB():
                     if len(oppslag) > ikkjeTerminerForkMax:
                         ikkjeTerminerForkMax = len(oppslag)
                 if net_type == "titles" and oppslag.endswith('.'): # Dersom tittel endar med punktum
-                    oppslag = re.sub(r'(\W)', r'\\\1', oppslag, flags=re.UNICODE)
                     spesialTittel.insert(0, oppslag)
 ####################################
 def registrerStatistikk():
@@ -633,8 +632,8 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
 
         if erPeriodeSlutt:
             for tittel in spesialTittel:
-                if (re.search(r' {tittel}$'.format(**vars()), muligReinPeriode) or
-                    re.search(r'^{tittel}$'.format(**vars()), initcap2lower(muligReinPeriode))):
+                if (muligReinPeriode.endswith(' ' + tittel) or
+                    initcap2lower(muligReinPeriode) == tittel):
 
                     # Les neste ord.
                     # Eit ord kan vere samasett av to periodeelement
