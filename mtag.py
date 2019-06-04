@@ -1229,7 +1229,7 @@ def uniq_prefix(lines):
     result = []
     for i in range(len(lines_uniq)):
         line = lines_uniq[i]
-        lineRegex = re.sub(r'([()])', r'\\\1', line)
+        lineRegex = re.escape(line)
         otherLines = lines_uniq[0:i] + lines_uniq[i+1:]
         supersetLines = [otherLine for otherLine in otherLines
                                    if re.search(r'^{}\b(?!\sclb$)'.format(lineRegex),
