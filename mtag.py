@@ -10,31 +10,45 @@ if sys.version_info.major < 3:
     reload(sys)
     sys.setdefaultencoding('utf-8')
 
-from collections import defaultdict
-from collections import OrderedDict
-from io import open
-import os
-import re
-import time
-import argparse
-import logging
-import fileinput
-import unicodedata
+omTagger = """\
+The Oslo-Bergen Multitagger for Norwegian Bokmål and Nynorsk, v. 1.0, 4 June 2019
+The Python version has been written by Michał Kosek (Text Laboratory, University of Oslo).
 
-#=head1 Multitagger
+The code is partially based on Perl Multitagger v. 0.1a20, 9 February 1999,
+written by Lars Jørgen Tvedt (Dokumentasjonsprosjektet, University of Oslo).
+
+The output of the multitagger reproduces the format used by the Lisp
+Multitagger written by Paul Meurer, University of Bergen. To produce an output
+that most resembles the Lisp version, use -compat in the command line.
+
+The compound analyser has been written by Michał Kosek, using rules formulated
+by Janne Bondi Johannessen and Helge Hauglin (1998).
+
+The code is freely available under the MIT licence. The associated grammatical
+information comes from Norsk Ordbank, National Library of Norway, and is
+available under the CC-BY licence.
+
+Bug reports and comments can be directed to tekstlab-post@iln.uio.no.
+
+Johannessen, J. B., & Hauglin, H. (1998). An automatic analysis of Norwegian compounds.
+"""
+
 #Multitagger er eit program som setter inn grammatiske merker i ein tekst.
-
-#=head1 Ide
 #Teksten som skal leses skal vere normalisert norsk.
 
-#head1 Versjon 0.1a21, 17. desember 1999
+#Versjon 1.0, 4. juni 2019
+#En helt ny versjon skrevet i Python. Programmet har en ny sammensetningsmodul,
+#produserer tagger i formatet brukt av Lisp-multitaggeren og bruker nyeste data
+#fra Ordbanken, som har blitt rengjort av Tekstlaboratoriet.
+
+#Versjon 0.1a21, 17. desember 1999
 #Endra databasekopling frå DOK til USDPROD
 
-#head1 Versjon 0.1a20, 9. februar 1999
+#Versjon 0.1a20, 9. februar 1999
 #Samasettingsmodulen: Startar oppatt samansettingsmodulen dersom
 #            modulen av ein eller annan grunn har stoppa.
 
-#head1 Versjon 0.1a19, 5. november 1998
+#Versjon 0.1a19, 5. november 1998
 #Kommentarar:Fleire kommentarar i same periode fungerer no.
 #            Kommentarar i periodar med delte ord fungerer
 #SGML-tagger:Endra litt på tolkinga av SGML-taggar slik at det
@@ -42,7 +56,7 @@ import unicodedata
 #Hermeteikn: Har tatt bort ' som mogleg hermeteikn
 
 
-#head1 Versjon 0.1a18, 3. november 1998
+#Versjon 0.1a18, 3. november 1998
 #Tal:        Problema med romartal og "VI" er retta opp.
 #Store bokstavar: Problema med at store bokstavar som einskildord ikkje
 #            vart tagga, er retta opp.
@@ -51,7 +65,7 @@ import unicodedata
 #Samantrekking. Samantrekkingar må bestå av minst to bokstavar etter
 #            skråstrek. Dette løyser a/s og c/o, men lar m/løk fungere
 
-#head1 Versjon 0.1a17, 30. oktober 1998
+#Versjon 0.1a17, 30. oktober 1998
 #Tal:        Problema med tal i samansettingar, og tal med spesialteikn
 #            etter seg er retta opp.
 #Hermeteikn: Problem med namn i hermeteikn er retta opp. Problema med
@@ -62,7 +76,7 @@ import unicodedata
 #Samatrekking: Samantrekkingar som td. m/løk vert berre analysert som
 #            samantrekking dersom det berre er eit teikn framfor skråstrek
 
-#head1 Versjon 0.1a16, 29. oktober 1998
+#Versjon 0.1a16, 29. oktober 1998
 #Hermeteikn: Hermeteikn rundt einskildord vert ikkje tagga med eigen tag.
 #            Dette bør løyse problemet med "vardre"-utstilling.
 #            Hermeteikn rundt fleire uforståelege ord vert tolka som eit
@@ -91,6 +105,17 @@ import unicodedata
 #Setningslutt: CLB er tatt bort for bindestrek og parantes
 
 #=cut
+
+from collections import defaultdict
+from collections import OrderedDict
+from io import open
+import os
+import re
+import time
+import argparse
+import logging
+import fileinput
+import unicodedata
 
 propHash = defaultdict(lambda: False)
 
@@ -191,17 +216,6 @@ suffixes = ['avtale', 'berg', 'blad', 'bok', 'bolig', 'bre', 'bukt', 'by',
             'klubb', 'koordinator', 'leder', 'leilighet', 'list', 'log', 'lokale',
             'misjon', 'museum', 'område', 'produsent', 'sal', 'selskap', 'sjef',
             'spesialist', 'styre', 'bedrift', 'foretak', 'institutt']
-
-omTagger = """\
-Multitagger versjon 0.1a20, 9. februar 1999
-Programmert av Lars Jørgen Tvedt
-Modul for sammensetningsanalyse programmert av Helge Hauglin,
-modifisert av Lars Jørgen Tvedt
-
-For feilmeldingar og kommentarar, ta kontakt på e-post
-l.j.tvedt\@dokpro.uio.no, eller telefon 22 85 49 84
-ADVARSEL: Nye versjonar av programmet vil bli
-installert utan varsel"""
 
 PROG = os.path.basename(__file__)
 DIR = os.path.dirname(os.path.realpath(__file__))
