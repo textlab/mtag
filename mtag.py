@@ -928,7 +928,7 @@ def rootOrdklasser(root):
     result = databaseSearch(root)
     rootTags = [resultLine
                 for resultLine in result.split("\n")
-                if re.search('"{}"'.format(re.escape(root)), resultLine, flags=re.I | re.U)]
+                if resultLine.lower().find('"%s"' % root.lower()) >= 0]
     if not rootTags:
         rootTags.append('andre')
     rootWordClasses = map(lambda s: re.sub(r'^\s*".*?"\s+(\S+).*$', r'\1', s), rootTags)
