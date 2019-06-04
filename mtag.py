@@ -19,6 +19,7 @@ import time
 import argparse
 import logging
 import fileinput
+import unicodedata
 
 #=head1 Multitagger
 #Multitagger er eit program som setter inn grammatiske merker i ein tekst.
@@ -1537,7 +1538,8 @@ def taggPeriode(periode):
                             if genOrd:
                                 tagTekst += TAG_LINE.format(stor2stjerne(genOrd), q("{SUBST_PROP} {GEN}"))
                                 logging.info(logLine.format('SUBST PROP GEN:'))
-                        elif re.search(r'^[\W\d_]+$', word, flags=re.UNICODE):
+                        elif all(unicodedata.category(char)[0] != 'L' for char in word):
+                            # Sequences of non-letters are symbols
                             tagTekst += TAG_LINE.format(stor2stjerne(word), 'symb')
                         else:
                             tagTekst += TAG_LINE.format(stor2stjerne(word), 'ukjent')
