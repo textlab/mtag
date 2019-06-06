@@ -872,8 +872,9 @@ def finnUforstaeleg(periode, periodeStart):
         omhylla = m.group(2)
         if periodeStart:
             omhylla = initcap2lower(omhylla)
-        elementer = re.split(r'\s+', omhylla.strip())
+        elementer = re.split(r'\s+', omhylla)
         for element in elementer:
+            if not element: continue
             tagTekst = sok(element) # Sjekk om ordet finns
             if tagTekst:
                 kjent += 1
