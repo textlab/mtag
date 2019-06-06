@@ -1,0 +1,113 @@
+467	D/S	tittel		
+386	A/S	fork		
+385	A/L	fork		
+865	absentia	lemma	subst	999
+5568	baste	lemma	v1	001 010 011
+5661	bede	lemma	v	159
+6033	beknip	lemma	subst	999
+6383	bero	lemma	subst	999
+13402	døde	lemma	v1	001 010 011
+13600	edder	lemma	m1#n	700 800
+12924	duce	lemma	subst	999
+10333	cand.	fork	fork	1001
+8613	brast	lemma	subst	999
+6813	bidig	lemma	a2	518
+10600	contra	lemma	prep	691
+6947	bildille	lemma	f1#m1	702 902
+8931	briste	lemma	v	271 272
+9618	bulter	lemma	subst	999
+18826	forfjor	lemma	subst	999
+18907	forgårs	lemma	subst	999
+18914	forhand	lemma	subst	999
+21266	fromme	lemma	subst	999
+17785	fleng	lemma	subst	999
+14381	eleison	lemma	subst	999
+17511	fjor	lemma	subst	999
+16305	favne	lemma	v1	001 010 011
+16908	filetere	lemma	v2	020
+16919	filiokus	lemma	interj	694
+26238	happ	lemma	subst	999
+27917	hjel	lemma	subst	999
+27010	hekt	lemma	f1#m1	700 900
+28874	hulter	lemma	adv	695
+27765	hilse	lemma	v2	020
+23385	gjøren	lemma	subst	790
+23394	gjørs	lemma	subst	999
+23395	gjørs	lemma	v	427
+23453	glasere	lemma	v2	020
+23601	glede	lemma	v1#v3	001 010 011 030
+23769	gløde	lemma	v1#v3	001 010 011 030
+23822	gnikke	lemma	v1	001 010 011
+33731	kanari	lemma	subst	999
+33239	juris	lemma	subst	999
+30704	ilde	lemma	v1	001 010 011
+29031	hurten	lemma	m	791
+31226	inklusiv	lemma	a1	507
+29857	høgd	lemma	f1#m1	700 900
+29860	høgde	lemma	f1#m1	702 902
+29176	hutaheiti	lemma	subst	999
+31788	innstevne	lemma	v1#v2	001 010 011 020
+30039	høgtidsfull	lemma	a1	507
+29554	hytt	lemma	subst	999
+30383	høytidsfull	lemma	a1	507
+30395	høytlønt	lemma	a2	518
+29625	håndhilse	lemma	v2	020
+41349	ljuge	lemma	v	251
+43641	mask	lemma	subst	999
+40988	likstrå	lemma	n1	800 810
+42062	lyge	lemma	v	245 246
+42286	lyve	lemma	v	245 246
+37665	kreti	lemma	subst	999
+39846	laten	lemma	subst	790
+39151	kynnere	lemma	m	749
+48652	nøde	lemma	v1#v3	001 010 011 030
+48899	odont.	fork	fork	1001
+48905	oecon.	fork	fork	1001
+49185	omfavne	lemma	v1	001 010 011
+46603	måfå	lemma	subst	999
+43986	medfør	lemma	subst	890
+57697	scient.	fork	fork	1001
+56794	rømmen	lemma	m	791
+57576	santen	lemma	subst	999
+54457	rams	lemma	subst	999
+54503	ranke	lemma	subst	999
+56266	rubb	lemma	subst	999
+56268	rubbel	lemma	subst	999
+56584	rå	lemma	v4	040
+56598	råde	lemma	v#v3	010 011 030
+52231	pleti	lemma	subst	999
+52435	polit.	fork	fork	1001
+50817	paed.	fork	fork	1001
+53798	psychol.	fork	fork	1001
+51704	pers	lemma	subst	999
+51809	pharm.	fork	fork	1001
+51810	philol.	fork	fork	1001
+51811	philos.	fork	fork	1001
+63177	smitt	lemma	subst	790
+61840	skru	lemma	v4	040
+60399	skade	lemma	v1#v3	001 010 011 030
+69626	tilnærme	lemma	v1	001 010 011
+70086	tjuvtitte	lemma	v1	001 010 011
+66328	sturten	lemma	m	791
+67103	sved	lemma	subst	790
+78752	vidvanke	lemma	subst	999
+78646	veum	lemma	subst	999
+73401	ulag	lemma	subst	890
+73402	ulage	lemma	subst	890
+72187	tverke	lemma	subst	999
+72477	tyvtitte	lemma	v1	001 010 011
+74435	ustand	lemma	subst	999
+83862	sultefôre	lemma	v1#v2	001 010 011 020
+83558	babb	lemma	subst	999
+81456	fersken	lemma	subst	999
+81780	pomp	lemma	subst	790
+82344	dra	lemma	v	354 355 367 368
+92875	ca	lemma	adv	695
+90828	blikke	lemma	v1	001 010 011
+135325	søvne	lemma	subst	999
+142110	sprøsteke	lemma	v2	020
+155849	kick	lemma	n1	800 810
+150591	unnslippe	lemma	v	257 258
+28976	hundretusenvis	lemma	adv	695
+72068	tusenvis	lemma	adv	695
+146806	titusenvis	lemma	a1#a2	507 518
