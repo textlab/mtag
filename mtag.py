@@ -1133,6 +1133,7 @@ def analyserForleddOgEtterledd(sokOrd):
                 resultater += ({'numLedd': numForledd+numEtterledd,
                                 'etterledd': minEtterledd,
                                 'etterleddOrdklasse': etterleddOrdklasse,
+                                'etterleddRoot': etterleddInfo['etterleddRoot'],
                                 'tagLine': etterleddInfo['tagLine'],
                                 'forledd-samset': (numForledd > 1),
                                 'fuge-s': kortEtterleddOK and etterledd.startswith('s')}
@@ -1170,6 +1171,7 @@ def analyserBareEtterledd(sokOrd):
                     resultater += ({'numLedd': numEtterledd+1,
                                     'etterledd': etterledd,
                                     'etterleddOrdklasse': etterleddOrdklasse,
+                                    'etterleddRoot': etterleddInfo['etterleddRoot'],
                                     'tagLine': etterleddInfo['tagLine'],
                                     'forledd-samset': False, 'fuge-s': False}
                                    for etterleddInfo in etterleddInfoList)
@@ -1204,7 +1206,9 @@ def analyserSammensetning(sokOrd, periodeStart):
             if COMPAT:
                 resHash[tekst].append('')
             else:
-                resHash[tekst].append("<+{}>".format(etterledd))
+                isSuffix = result['etterleddRoot'][0] == '-'
+                symbol = '-' if isSuffix else '+'
+                resHash[tekst].append("<{}{}>".format(symbol, etterledd))
         for resultTekst in resHash.keys():
             resultTagTekst += ''.join([resultTekst,
                                        ''.join(' ' + tag for tag in resHash[resultTekst]
