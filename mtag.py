@@ -903,27 +903,23 @@ def sokEtterledd(etterledd, sokOrd):
     tagTekstOrig = ''
     if not forledd.endswith('-'):
         tagTekstOrig = sok('-' + etterledd)
-        # Ta bort bindestrek fra evnt. suffiks
-        tagTekstOrig = re.sub(r'(\s*")-', r'\1', tagTekstOrig, flags=re.MULTILINE)
-        tagTekstOrig = tagTekstOrig.rstrip()
-        tagTekstOrig += "\n"
     tagTekstOrig += sok(etterledd)
 
-    tagTekst = ''
-    for grammatikk in re.split(r'\n\t', tagTekstOrig):
-        grammatikk = grammatikk.strip()
-        grammatikk = re.sub(r'^"(.*)"', r'"{}\1"'.format(forledd), grammatikk)
-        wantedPOS = re.search(r'^".*"\s+(subst|verb(?! imp)|adj|det\s+kvant\s+fl|prep|sbu|adv)\b', grammatikk)
-        unwantedPOS = re.search(r'^".*"\s+verb\b.*\bperf-part\b', grammatikk)
+    results = []
+    for tagLine in tagTekstOrig.split("\n\t"):
+        if not tagLine: continue
+        m = re.search(r'^\s*"(.*)"(?:\s*<.*?>)?\s+([^\s<>]+)\b', tagLine)
+        etterleddRoot, etterleddOrdklasse = m.groups()
+        # Ta bort bindestrek fra evnt. suffiks og legg til forleddet
+        tagLine = re.sub(r'^"-?(.*)"', r'"{}\1"'.format(forledd), tagLine.strip())
+        # FIXME: add (?:\s*<.*?>)? to the regex below, see how it changes the results
+        wantedPOS = re.search(r'^".*"\s+(subst|verb(?! imp)|adj|det\s+kvant\s+fl|prep|sbu|adv)\b', tagLine)
+        unwantedPOS = re.search(r'^".*"\s+verb\b.*\bperf-part\b', tagLine)
         if wantedPOS and not unwantedPOS:
-            if tagTekst == "":
-               tagTekst += "\t"
-            else:
-               tagTekst += "\n\t"
-            grammatikk = re.sub(r'\s+samset-leks\b', '', grammatikk)
-            tagTekst += grammatikk + " samset-analyse"
-
-    return tagTekst
+            resultTagLine = "\t" + re.sub(r'\s+samset-leks\b', '', tagLine) + " samset-analyse"
+            results.append({'tagLine': resultTagLine, 'etterleddRoot': etterleddRoot,
+                            'ordklasse': etterleddOrdklasse})
+    return results
 
 def rootOrdklasser(root):
     result = databaseSearch(root)
@@ -1089,9 +1085,11 @@ def analyserForleddOgEtterledd(sokOrd):
 
         if etterleddOK and kortEtterleddOK:
             if __debug__: logging.debug('sokEtterledd1(%(etterledd)s, %(sokOrd)s)', vars())
-            etterleddTagger = sokEtterledd(etterledd, sokOrd)
-            verbalEtterledd = re.search(r'\bverb\b', etterleddTagger)
-            substantiviskEtterledd = re.search(r'\bsubst\b', etterleddTagger)
+            etterleddInfoList = sokEtterledd(etterledd, sokOrd)
+            verbalEtterledd = any(etterleddInfo['ordklasse'] == 'verb'
+                                  for etterleddInfo in etterleddInfoList)
+            substantiviskEtterledd = any(etterleddInfo['ordklasse'] == 'subst'
+                                         for etterleddInfo in etterleddInfoList)
             if verbalEtterledd and not substantiviskEtterledd and etterledd.startswith('s'):
                 # Epenthetic -s- is preferred to lexical compounding
                 # when the -s- can be ambiguous between epenthetic use
@@ -1108,20 +1106,11 @@ def analyserForleddOgEtterledd(sokOrd):
         if forleddAnalyse and forleddAnalyse[0] and (etterleddOK or kortEtterleddOK):
             minEtterledd = etterledd if etterleddOK else kortEtterledd
             if __debug__: logging.debug("sokEtterledd2(%(minEtterledd)s, %(sokOrd)s)", vars())
-            tagger = sokEtterledd(minEtterledd, sokOrd)
+            etterleddInfoList = sokEtterledd(minEtterledd, sokOrd)
 
-            if tagger:
-                if __debug__: logging.debug("OK!")
-                etterleddRoots = set()
-                for m in re.finditer(r'^\s*"(.*?)"\s+', tagger, flags=re.MULTILINE):
-                    etterleddRoot = m.group(1)
-                    if etterleddOK:
-                        etterleddRoot = re.sub(r'^{}'.format(re.escape(forledd)), '', etterleddRoot)
-                    elif kortEtterleddOK:
-                        etterleddRoot = re.sub(r'^{}.'.format(re.escape(forledd)), '', etterleddRoot)
-                    else:
-                        assert False, '!etterleddOK && !kortEtterleddOK'
-                    etterleddRoots.add(etterleddRoot)
+            if etterleddInfoList:
+                etterleddRoots = set(etterleddInfo['etterleddRoot']
+                                     for etterleddInfo in etterleddInfoList)
                 if __debug__: logging.debug("etterleddRoots = %(etterleddRoots)s", vars())
                 sortedEtterleddRoots = sorted(etterleddRoots, key=lambda k: compoundHash.get(k, [1])[0])
                 numForledd = forleddAnalyse[0]
@@ -1141,17 +1130,18 @@ def analyserForleddOgEtterledd(sokOrd):
                     continue
                 forleddOrdklasse = ", ".join(set(forleddAnalyse[1:]))
                 etterleddOrdklasse = ", ".join(set(alleOrdklasser(minEtterledd)))
-                if numForledd > 1:
-                    tagger = re.sub(r'$', ' forledd-samset', tagger, flags=re.MULTILINE)
-                if kortEtterleddOK and etterledd.startswith('s'):
-                    tagger = re.sub(r'$', ' fuge-s', tagger, flags=re.MULTILINE)
-                resultater += ([ numForledd+numEtterledd, minEtterledd,
-                                 etterleddOrdklasse, tagLine ]
-                               for tagLine in tagger.rstrip("\n").split("\n"))
+                resultater += ({'numLedd': numForledd+numEtterledd,
+                                'etterledd': minEtterledd,
+                                'etterleddOrdklasse': etterleddOrdklasse,
+                                'tagLine': etterleddInfo['tagLine'],
+                                'forledd-samset': (numForledd > 1),
+                                'fuge-s': kortEtterleddOK and etterledd.startswith('s')}
+                               for etterleddInfo in etterleddInfoList)
                 # If two analyses have the same number of members and
                 # there is no epenthesis involved, choose the one, if
                 # any, that is a noun.
-                isNoun = re.search(r'^\s*".*"(\s*<.*?>)?\s+subst\b', tagger, flags=re.MULTILINE)
+                isNoun = any(etterleddInfo['ordklasse'] == 'subst'
+                             for etterleddInfo in etterleddInfoList)
                 if isNoun and not (kortEtterleddOK and etterledd.startswith('e')) and numEtterledd < 1.5:
                     if __debug__: logging.debug('break')
                     break
@@ -1168,8 +1158,8 @@ def analyserBareEtterledd(sokOrd):
             searchResult = databaseSearchForSuffixOrWord(etterledd)
             if re.search(r'\b(subst|adj)\b', searchResult):
                 if __debug__: logging.debug("sokEtterledd3(%(etterledd)s, %(sokOrd)s)", vars())
-                tagger = sokEtterledd(etterledd, sokOrd)
-                if tagger:
+                etterleddInfoList = sokEtterledd(etterledd, sokOrd)
+                if etterleddInfoList:
                     if etterledd in compoundHash:
                         numEtterledd = compoundHash[etterledd][0] * SAMSET_LEKS_WEIGHT
                     else:
@@ -1177,9 +1167,12 @@ def analyserBareEtterledd(sokOrd):
                     if numEtterledd < 1:
                         numEtterledd = 1
                     etterleddOrdklasse = ", ".join(set(alleOrdklasser(etterledd)))
-                    resultater += ([ numEtterledd+1, etterledd,
-                                     etterleddOrdklasse, tagLine ]
-                                   for tagLine in tagger.rstrip("\n").split("\n"))
+                    resultater += ({'numLedd': numEtterledd+1,
+                                    'etterledd': etterledd,
+                                    'etterleddOrdklasse': etterleddOrdklasse,
+                                    'tagLine': etterleddInfo['tagLine'],
+                                    'forledd-samset': False, 'fuge-s': False}
+                                   for etterleddInfo in etterleddInfoList)
                     break
     return resultater
 
@@ -1193,22 +1186,21 @@ def analyserSammensetning(sokOrd, periodeStart):
 
     if resultater:
         # Choose the analysis (or analyses) with the fewest compound members
-        sortedeResultater = sorted(resultater, key=lambda k: k[0])
+        sortedeResultater = sorted(resultater, key=lambda result: result['numLedd'])
         forleddSamsetFugeSResultater = [result for result in sortedeResultater
-                                               if re.search(r'\bforledd-samset\b.*\bfuge-s\b',
-                                                            result[3])]
-        greppedeResultater = []
+                                               if (result['forledd-samset'] and
+                                                   result['fuge-s'])]
+        filtrerteResultater = []
         if forleddSamsetFugeSResultater:
-            greppedeResultater += (result for result in forleddSamsetFugeSResultater
-                                          if result[0] == forleddSamsetFugeSResultater[0][0])
-        greppedeResultater += (result for result in sortedeResultater
-                                      if result[0] == sortedeResultater[0][0])
+            filtrerteResultater += \
+                (result for result in forleddSamsetFugeSResultater
+                        if result['numLedd'] == forleddSamsetFugeSResultater[0]['numLedd'])
+        filtrerteResultater += (result for result in sortedeResultater
+                                      if result['numLedd'] == sortedeResultater[0]['numLedd'])
         resHash = defaultdict(list)
-        for result in greppedeResultater:
-            tekst = result[3]
-            etterledd = result[1]
-            tekst = re.sub(r'\s+fuge-s\b', '', tekst)
-            tekst = re.sub(r'\s+forledd-samset\b', '', tekst)
+        for result in filtrerteResultater:
+            tekst = result['tagLine']
+            etterledd = result['etterledd']
             if COMPAT:
                 resHash[tekst].append('')
             else:
