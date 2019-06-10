@@ -1497,7 +1497,6 @@ def taggPeriode(periode):
             # Må jukse litt med perioden her for å få uttrykket rett
             periode = re.sub(q(r'^\$([{quots}]) ([^(${quots})]*) \$([{quots}])'), r'\1 \2 \3 ',
                              periode, count=1)
-            count -= 2
 
         if tagTekst != '':
             word = periode[0:count-1].strip()
