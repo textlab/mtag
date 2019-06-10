@@ -1281,7 +1281,7 @@ def prepareTagTekst(tagTekst, periodeStart):
     tagTekst = abbrFeat("refl", "rl", tagTekst)
     tagTekst = abbrFeat("trans", "tr", tagTekst)
     tagTekst = abbrFeat("adv", "a", tagTekst)
-    tagTekst = re.sub(r'^(\t".*".*)\ba\b', r'\1<adv>', tagTekst, flags=re.M | re.I)
+    tagTekst = re.sub(r'^(\t".*".*)\sa\b', r'\1 <adv>', tagTekst, flags=re.M | re.I)
     tagTekst = re.sub(r'^(\t".*".*)\s\@ADV\b', r'\1 @adv', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\s\@S-PRED\b', r'\1 @s-pred', tagTekst, flags=re.M)
     tagTekst = re.sub(r'^(\t".*".*)\s\@O-PRED\b', r'\1 @o-pred', tagTekst, flags=re.M)
