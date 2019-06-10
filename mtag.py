@@ -901,8 +901,7 @@ def sokEtterledd(etterledd, sokOrd):
         logging.debug("etterledd = '%(etterledd)s'", vars())
         logging.debug("sokOrd = '%(sokOrd)s'", vars())
     tagTekstOrig = ''
-    if not forledd.endswith('-'):
-        tagTekstOrig = sok('-' + etterledd)
+    tagTekstOrig = sok('-' + etterledd)
     tagTekstOrig += sok(etterledd)
 
     results = []
