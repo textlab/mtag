@@ -111,7 +111,6 @@ from collections import OrderedDict
 from io import open
 import os
 import re
-import itertools
 import time
 import argparse
 import logging
@@ -1341,16 +1340,29 @@ def printTag(word, tagTekst):
             lemmaList = re.split(r'(?<!\d) | (?!\d)', ' '.join(lemma.split()))
         if len(lemmaList) != len(wordElemList):
             lemmaList = [lemma] * len(wordElemList)
-        for wordElem, lemma, idx in zip(wordElemList, lemmaList, itertools.count(1)):
+        lastIdx = len(wordElemList)+1
+        left = []
+        right = []
+        if re.search(q(r'^\$?[{quots}]'), lemmaList[0]):
+            left = [0]
+            lastIdx -= 1
+        if re.search(q(r'^\$?[{quots}]'), lemmaList[-1]):
+            right = [0]
+            lastIdx -= 1
+        indices = left + list(range(1, lastIdx)) + right
+        for wordElem, lemma, idx in zip(wordElemList, lemmaList, indices):
             minWordOrig = escapeAmp(wordElem)
             minWord = allcap2lower(wordElem)
             if minWordOrig == 'og' or minWordOrig == 'eller':
                 tagTekstUttrykk = '\t"{minWord}" konj\n'.format(**vars())
+            elif re.search(q(r'^\$?[{quots}]$'), minWordOrig):
+                tagTekstUttrykk = '\t"{minWord}" <anf>\n'.format(**vars())
             else:
                 tagTekstUttrykk = tagTekst
-            if len(wordElemList) > 1:
+            if lastIdx > 2 and idx != 0:
                 tagTekstUttrykk = re.sub(r'(.)$', r'\1 flerord-ledd%d' % idx, tagTekstUttrykk,
                                          flags=re.M)
+            if len(wordElemList) > 1:
                 tagTekstUttrykk = re.sub(r'^(\s*)"(.*)"', r'\1"%s"' % lemma, tagTekstUttrykk,
                                          flags=re.M)
             if WXML:
