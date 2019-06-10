@@ -908,7 +908,7 @@ def sokEtterledd(etterledd, sokOrd):
     for tagLine in tagTekstOrig.split("\n\t"):
         if not tagLine: continue
         m = re.search(r'^\s*"(.*)"(?:\s*<.*?>)?\s+([^\s<>]+)\b', tagLine)
-        etterleddRoot, etterleddOrdklasse = m.groups()
+        root, ordklasse = m.groups()
         tagLine = tagLine.strip()
         # FIXME: add (?:\s*<.*?>)? to the regex below, see how it changes the results
         wantedPOS = re.search(r'^".*"\s+(subst|verb(?! imp)|adj|det\s+kvant\s+fl|prep|sbu|adv)\b', tagLine)
@@ -919,8 +919,8 @@ def sokEtterledd(etterledd, sokOrd):
         tagLine = re.sub(r'^"-?(.*)"', r'"{}\1"'.format(forledd), tagLine)
         if wantedPOS and not unwantedPOS and not toBe:
             resultTagLine = "\t" + re.sub(r'\s+samset-leks\b', '', tagLine) + " samset-analyse"
-            results.append({'tagLine': resultTagLine, 'etterleddRoot': etterleddRoot,
-                            'ordklasse': etterleddOrdklasse})
+            results.append({'tagLine': resultTagLine, 'root': root,
+                            'ordklasse': ordklasse})
     return results
 
 def rootOrdklasser(root):
@@ -932,12 +932,6 @@ def rootOrdklasser(root):
         rootTags.append('andre')
     rootWordClasses = map(lambda s: re.sub(r'^\s*".*"\s+(\S+).*$', r'\1', s), rootTags)
     return list(rootWordClasses)
-
-def alleOrdklasser(root):
-    result = databaseSearch(root)
-    tags = result.rstrip("\n").split("\n")
-    wordClasses = map(lambda s: re.sub(r'^\s*".*"\s+(\S+).*$', r'\1', s), tags)
-    return wordClasses
 
 def analyserForledd(forledd):
     rootOrdklasseList = []
@@ -1113,7 +1107,7 @@ def analyserForleddOgEtterledd(sokOrd):
             etterleddInfoList = sokEtterledd(minEtterledd, sokOrd)
 
             if etterleddInfoList:
-                etterleddRoots = set(etterleddInfo['etterleddRoot']
+                etterleddRoots = set(etterleddInfo['root']
                                      for etterleddInfo in etterleddInfoList)
                 if __debug__: logging.debug("etterleddRoots = %(etterleddRoots)s", vars())
                 sortedEtterleddRoots = sorted(etterleddRoots, key=lambda k: compoundHash.get(k, [1])[0])
@@ -1134,15 +1128,14 @@ def analyserForleddOgEtterledd(sokOrd):
                     continue
                 forleddOrdklasse = ", ".join(set(forleddAnalyse[1:]))
                 for etterleddInfo in etterleddInfoList:
-                    if minEtterledd[0] == '-' and etterleddInfo['etterleddRoot'][0] != '-':
+                    if minEtterledd[0] == '-' and etterleddInfo['root'][0] != '-':
                         fixDashEtterledd = minEtterledd[1:]
                     else:
                         fixDashEtterledd = minEtterledd
-                    etterleddOrdklasse = ", ".join(set(alleOrdklasser(fixDashEtterledd)))
                     resultater.append({'numLedd': numForledd+numEtterledd,
                                        'etterledd': fixDashEtterledd,
-                                       'etterleddOrdklasse': etterleddOrdklasse,
-                                       'etterleddRoot': etterleddInfo['etterleddRoot'],
+                                       'etterleddOrdklasse': etterleddInfo['ordklasse'],
+                                       'etterleddRoot': etterleddInfo['root'],
                                        'tagLine': etterleddInfo['tagLine'],
                                        'forledd-samset': (numForledd > 1),
                                        'fuge-s': kortEtterleddOK and etterledd.startswith('s')})
@@ -1175,11 +1168,10 @@ def analyserBareEtterledd(sokOrd):
                         numEtterledd = 1
                     if numEtterledd < 1:
                         numEtterledd = 1
-                    etterleddOrdklasse = ", ".join(set(alleOrdklasser(etterledd)))
                     resultater += ({'numLedd': numEtterledd+1,
                                     'etterledd': etterledd,
-                                    'etterleddOrdklasse': etterleddOrdklasse,
-                                    'etterleddRoot': etterleddInfo['etterleddRoot'],
+                                    'etterleddOrdklasse': etterleddInfo['ordklasse'],
+                                    'etterleddRoot': etterleddInfo['root'],
                                     'tagLine': etterleddInfo['tagLine'],
                                     'forledd-samset': False, 'fuge-s': False}
                                    for etterleddInfo in etterleddInfoList)
