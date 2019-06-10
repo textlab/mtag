@@ -1318,25 +1318,25 @@ def prepareTagTekst(tagTekst, periodeStart):
     if __debug__: logging.debug('tagTekstAfter = <<<%(tagTekst)s>>>', vars())
     return tagTekst
 
-def printTag(word, wordOrig, tagTekst):
-    wordWithoutDollar = re.sub(r'^\$(.)', r'\1', allcap2lower(word))
-    wordOrigWithoutDollar = re.sub(r'^\$(.)', r'\1', wordOrig)
-    wordOrigWithoutDollar = re.sub(r'&', r'&amp;', wordOrigWithoutDollar)
-    if wordWithoutDollar != '':
-        if re.search(r'^[^$\s]+-\s+(og|eller)(/(og|eller))?\s+\S+$', wordOrigWithoutDollar):
-            splitWordOrigWithoutDollar = re.split(r'\s+', wordOrigWithoutDollar)
-            splitWordWithoutDollar = re.split(r'\s+', wordWithoutDollar)
-            for minWordOrig, minWord in zip(splitWordOrigWithoutDollar, splitWordWithoutDollar):
-                if WXML:
-                    print('<word>{minWordOrig}</word>'.format(**vars()), file=tag_utfil)
-                if minWordOrig == 'og' or minWordOrig == 'eller':
-                    print('"<{minWord}>"\n\t"{minWord}" konj'.format(**vars()), file=tag_utfil)
-                else:
-                    print('"<{minWord}>"\n{tagTekst}'.format(**vars()), end='', file=tag_utfil)
-        else:
+def printTag(word, tagTekst):
+    if not word:
+        return
+    wordWithoutDollar = re.sub(r'^\$(.)', r'\1', word)
+    wordLower = allcap2lower(wordWithoutDollar)
+    wordOrig = re.sub(r'&', r'&amp;', wordWithoutDollar)
+
+    if re.search(r'^[^$\s]+-\s+(og|eller)(/(og|eller))?\s+\S+$', wordOrig):
+        for minWordOrig, minWord in zip(wordOrig.split(), wordLower.split()):
             if WXML:
-                print("<word>{wordOrigWithoutDollar}</word>".format(**vars()), file=tag_utfil)
-            print('"<{wordWithoutDollar}>"\n{tagTekst}'.format(**vars()), end='', file=tag_utfil)
+                print('<word>{minWordOrig}</word>'.format(**vars()), file=tag_utfil)
+            if minWordOrig == 'og' or minWordOrig == 'eller':
+                print('"<{minWord}>"\n\t"{minWord}" konj'.format(**vars()), file=tag_utfil)
+            else:
+                print('"<{minWord}>"\n{tagTekst}'.format(**vars()), end='', file=tag_utfil)
+    else:
+        if WXML:
+            print("<word>{wordOrig}</word>".format(**vars()), file=tag_utfil)
+        print('"<{wordLower}>"\n{tagTekst}'.format(**vars()), end='', file=tag_utfil)
 ####################################
 def tagTekstSkille(word, periode):
     if re.search(r'\$\.{2,20}$', word):
@@ -1429,7 +1429,6 @@ def taggPeriode(periode):
         print(periode + "\n", file=tag_periodefil)
 
     while periode != '':
-        ferdig = False
         tagTekst = ''
 
         registrerStatistikk()
@@ -1438,11 +1437,11 @@ def taggPeriode(periode):
         periodeSjekkstreng = periode.lstrip() # FIXME: lstrip not needed
         m = re.search(r'(^<.*?>)', periodeSjekkstreng)
         if m:
-            word = m.group(1)
-            count = len(word) + 1
+            sgmlTag = m.group(1)
+            count = len(sgmlTag) + 1
             periode = periode[count:]
             if WXML:
-                print(word, file=tag_utfil)
+                print(sgmlTag, file=tag_utfil)
             continue # Sjekk neste element
 
         # Sjekk om dei foerste periodeelementa utgjer anten eit tal, eit
@@ -1477,7 +1476,7 @@ def taggPeriode(periode):
                 count -= 4
 
         if tagTekst != '':
-            word = periode[0:count-1]
+            word = periode[0:count-1].strip()
             periode = periode[count:]
         else:
             ogEllerCompoundRegex = r'^([^$\s]+-\s+(og|eller)(/(og|eller))?\s+\S+)\s*'
@@ -1492,19 +1491,16 @@ def taggPeriode(periode):
                     periode = re.sub(r'(\S*)\s*', '', periode, count=1)
                 else:
                     word = ''
-        wordOrig = word
 
         # Sjekk om ordet er eit skilleteikn
         if not tagTekst:
             tagTekstSkilleStr = tagTekstSkille(word, periode)
-            if tagTekstSkilleStr != "":
-                if __debug__: logging.debug('ferdig = %(ferdig)s', vars())
-                ferdig = True
-            tagTekst += tagTekstSkilleStr
+        else:
+            tagTekstSkilleStr = ""
 
-        # Soek i databasen etter ordet
-        if not ferdig:
-            word = word.strip() # FIXME: just strip one whitespace character at each side?
+        if tagTekstSkilleStr != "":
+            tagTekst += tagTekstSkilleStr
+        else: # Søk i databasen etter ordet
             # Fordi vi godtar hermeteikn rundt ord, må vi ta dei bort før søk
             sokOrd = re.sub(q(r'^[{quots}](.*)[{quots}]$'), r'\1', word)
 #            sokOrd = re.sub(r"'([^s]+)", r'\1', sokOrd) # Dersom fnutt, og ikkje genitiv, ta bort
@@ -1569,7 +1565,7 @@ def taggPeriode(periode):
                                     tagTekst))
 
         outTagTekst = prepareTagTekst(tagTekst, periodeStart)
-        printTag(word, wordOrig, outTagTekst)
+        printTag(word, outTagTekst)
 
         if not re.search(q(r'^\$[{stroke}{quots}]'), word):
             periodeStart = False
