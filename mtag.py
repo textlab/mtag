@@ -866,7 +866,7 @@ def finnUforstaeleg(periode, periodeStart):
     antal = 0
     tagTekst = ''
 
-    m = re.search(r'(^\$" ([^($")]*) \$")', periode)
+    m = re.search(q(r'(^\$[{quots}] ([^(${quots})]*) \$[{quots}])'), periode)
     if m:
         sjekkTekst = m.group(1)
         antal = len(sjekkTekst)+1
@@ -1495,8 +1495,9 @@ def taggPeriode(periode):
             count = lengdeUforstaeleg
 
             # Må jukse litt med perioden her for å få uttrykket rett
-            periode = re.sub(r'^\$" ([^($")]*) \$"', r'"\1" ', periode, count=1)
-            count -= 4
+            periode = re.sub(q(r'^\$([{quots}]) ([^(${quots})]*) \$([{quots}])'), r'\1 \2 \3 ',
+                             periode, count=1)
+            count -= 2
 
         if tagTekst != '':
             word = periode[0:count-1].strip()
