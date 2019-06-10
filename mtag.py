@@ -910,12 +910,15 @@ def sokEtterledd(etterledd, sokOrd):
         if not tagLine: continue
         m = re.search(r'^\s*"(.*)"(?:\s*<.*?>)?\s+([^\s<>]+)\b', tagLine)
         etterleddRoot, etterleddOrdklasse = m.groups()
-        # Ta bort bindestrek fra evnt. suffiks og legg til forleddet
-        tagLine = re.sub(r'^"-?(.*)"', r'"{}\1"'.format(forledd), tagLine.strip())
+        tagLine = tagLine.strip()
         # FIXME: add (?:\s*<.*?>)? to the regex below, see how it changes the results
         wantedPOS = re.search(r'^".*"\s+(subst|verb(?! imp)|adj|det\s+kvant\s+fl|prep|sbu|adv)\b', tagLine)
         unwantedPOS = re.search(r'^".*"\s+verb\b.*\bperf-part\b', tagLine)
-        if wantedPOS and not unwantedPOS:
+        # We don't want a form of "å være" to be the last element
+        toBe = tagLine.startswith('"være" verb') or tagLine.startswith('"vere" verb')
+        # Ta bort bindestrek fra evnt. suffiks og legg til forleddet
+        tagLine = re.sub(r'^"-?(.*)"', r'"{}\1"'.format(forledd), tagLine)
+        if wantedPOS and not unwantedPOS and not toBe:
             resultTagLine = "\t" + re.sub(r'\s+samset-leks\b', '', tagLine) + " samset-analyse"
             results.append({'tagLine': resultTagLine, 'etterleddRoot': etterleddRoot,
                             'ordklasse': etterleddOrdklasse})
