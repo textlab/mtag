@@ -963,6 +963,8 @@ def analyserForledd(forledd):
 
     if re.search(r'^\d+-$', forledd):
         return [1, 'num']
+    if re.search(q(r'^[{quots}][^{quots}]*[{quots}]-$'), forledd):
+        return [1, 'subst']
     if re.search(q(r'^[{lettersla}].*-$'), forledd):
         return [1, 'subst']
     if re.search(r'^[^$\s]+-\s+(og|eller)(/(og|eller))?\s+$', forledd):
