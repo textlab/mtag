@@ -12,8 +12,9 @@ for spraak in bm nn; do
   echo "# vim: set fileencoding=utf-8 :" >>$outfile
   echo "from __future__ import unicode_literals" >>$outfile
   echo "compoundHash = {" >>$outfile
-  xzcat $infile |awk -F'\t' '{print $2}' |\
-    ruby -Ku -lne 'puts "    \"#{$_.gsub("*", "")}\": [#{$_.count("*-") + 1}],"' |\
+  xzcat $infile | ruby -Ku -F"\t" -lane '
+    next if $F[1] == ""
+    puts %Q{    "#{$F[1].gsub("*", "")}": [#{$F[1].count("*-") + 1}, "#{$F[4].gsub(/-$/, "")}", "#{$F[6]}", "#{$F[2]}"],}' |\
     sort -u >>$outfile
   echo "}" >>$outfile
 done

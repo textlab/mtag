@@ -436,8 +436,12 @@ def databaseSearch(key):
             m = re.search(r'"(.*)"', funne)
             stjerneMarkert = stor2stjerne(m.group(1))
             funne = re.sub(r'^"(.*)"', '"{}"'.format(stjerneMarkert), funne)
-            if stjerneMarkert in compoundHash:
-                funne = re.sub(r'$', ' samset-leks', funne, flags=re.MULTILINE)
+            if not COMPAT and stjerneMarkert in compoundHash:
+                numLedd, forledd, fuge, etterledd = compoundHash[stjerneMarkert]
+                fullformEtterledd = re.sub(forledd + fuge + '-?', '', key, re.IGNORECASE)
+                symbol = '-' if etterledd[0] == '-' else '+'
+                funne = re.sub(r'$', ' samset-leks <{}{}>'.format(symbol, fullformEtterledd),
+                               funne, flags=re.MULTILINE)
             tag += "\t" + funne + "\n"
 
     genKey = finnGenitivRot(key)
@@ -916,7 +920,10 @@ def sokEtterledd(etterledd, sokOrd):
         # Ta bort bindestrek fra evnt. suffiks og legg til forleddet
         tagLine = re.sub(r'^"-?(.*)"', r'"{}\1"'.format(forledd), tagLine)
         if wantedPOS and not unwantedPOS and not toBe:
-            resultTagLine = "\t" + re.sub(r'\s+samset-leks\b', '', tagLine) + " samset-analyse"
+            resultTagLine = "\t" \
+                          + re.sub(r'\s+<[+-][^>]+>', '',
+                                   re.sub(r'\s+samset-leks\b', '', tagLine)) \
+                          + " samset-analyse"
             results.append({'tagLine': resultTagLine, 'root': root,
                             'ordklasse': ordklasse})
     return results
@@ -1302,7 +1309,6 @@ def prepareTagTekst(tagTekst, periodeStart):
     tagTekst = nyTagTekst
 
     if COMPAT:
-        tagTekst = re.sub(r'^(\s*".*".*)\s+samset-leks\b', r'\1', tagTekst, flags=re.M)
         tagTekst = re.sub(r'^(\s*".*".*)\s+samset-analyse\b', r'\1 samset', tagTekst, flags=re.M)
 
     if not COMPAT:
