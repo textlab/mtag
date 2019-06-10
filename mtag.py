@@ -111,6 +111,7 @@ from collections import OrderedDict
 from io import open
 import os
 import re
+import itertools
 import time
 import argparse
 import logging
@@ -872,16 +873,14 @@ def finnUforstaeleg(periode, periodeStart):
         omhylla = m.group(2)
         if periodeStart:
             omhylla = initcap2lower(omhylla)
-        elementer = re.split(r'\s+', omhylla)
-        for element in elementer:
-            if not element: continue
+        for element in omhylla.split():
             tagTekst = sok(element) # Sjekk om ordet finns
             if tagTekst:
                 kjent += 1
             else:
                 ukjent += 1
         if ukjent > kjent:
-            tagTekst = TAG_LINE.format(omhylla, SUBST_PROP)
+            tagTekst = TAG_LINE.format(sjekkTekst, SUBST_PROP)
         else:
             tagTekst = ''
             antal = 0
@@ -1323,20 +1322,45 @@ def printTag(word, tagTekst):
     if not word:
         return
     wordWithoutDollar = re.sub(r'^\$(.)', r'\1', word)
-    wordLower = allcap2lower(wordWithoutDollar)
-    wordOrig = re.sub(r'&', r'&amp;', wordWithoutDollar)
+    def escapeAmp(word):
+        return re.sub(r'&', r'&amp;', word)
 
-    if re.search(r'^[^$\s]+-\s+(og|eller)(/(og|eller))?\s+\S+$', wordOrig):
-        for minWordOrig, minWord in zip(wordOrig.split(), wordLower.split()):
+    # Only split coordinated compounds in the compat mode, and leave other
+    # expressions as single items
+    if COMPAT:
+        multiwordExprPattern = r'^[^$\s]+-\s+(og|eller)(/(og|eller))?\s+\S+$'
+    else:
+        multiwordExprPattern = r'\s'
+    if re.search(multiwordExprPattern, wordWithoutDollar):
+        # Split on whitespace, unless it's surrounded by digits on both sides
+        wordElemList = re.split(r'(?<!\d) | (?!\d)', ' '.join(wordWithoutDollar.split()))
+        lemmaList = []
+        m = re.search(r'^\s*"(.*)"', tagTekst)
+        if m:
+            lemma = m.group(1)
+            lemmaList = re.split(r'(?<!\d) | (?!\d)', ' '.join(lemma.split()))
+        if len(lemmaList) != len(wordElemList):
+            lemmaList = [lemma] * len(wordElemList)
+        for wordElem, lemma, idx in zip(wordElemList, lemmaList, itertools.count(1)):
+            minWordOrig = escapeAmp(wordElem)
+            minWord = allcap2lower(wordElem)
+            if minWordOrig == 'og' or minWordOrig == 'eller':
+                tagTekstUttrykk = '\t"{minWord}" konj\n'.format(**vars())
+            else:
+                tagTekstUttrykk = tagTekst
+            if len(wordElemList) > 1:
+                tagTekstUttrykk = re.sub(r'(.)$', r'\1 flerord-ledd%d' % idx, tagTekstUttrykk,
+                                         flags=re.M)
+                tagTekstUttrykk = re.sub(r'^(\s*)"(.*)"', r'\1"%s"' % lemma, tagTekstUttrykk,
+                                         flags=re.M)
             if WXML:
                 print('<word>{minWordOrig}</word>'.format(**vars()), file=tag_utfil)
-            if minWordOrig == 'og' or minWordOrig == 'eller':
-                print('"<{minWord}>"\n\t"{minWord}" konj'.format(**vars()), file=tag_utfil)
-            else:
-                print('"<{minWord}>"\n{tagTekst}'.format(**vars()), end='', file=tag_utfil)
+            print('"<{minWord}>"\n{tagTekstUttrykk}'.format(**vars()), end='', file=tag_utfil)
     else:
         if WXML:
+            wordOrig = escapeAmp(wordWithoutDollar)
             print("<word>{wordOrig}</word>".format(**vars()), file=tag_utfil)
+        wordLower = allcap2lower(wordWithoutDollar)
         print('"<{wordLower}>"\n{tagTekst}'.format(**vars()), end='', file=tag_utfil)
 ####################################
 def tagTekstSkille(word, periode):
@@ -1451,11 +1475,10 @@ def taggPeriode(periode):
         tagTekstTal, lengdeTal = finnTal(periode, periodeStart)
         if __debug__:
             logging.debug('tagTekstTal = %(tagTekstTal)s, lengdeTal = %(lengdeTal)s', vars())
-        if COMPAT:
-            tagTekstUttrykk, lengdeUttrykk = finnUttrykk(periode, periodeStart)
-            tagTekstUforstaeleg, lengdeUforstaeleg = finnUforstaeleg(periode, periodeStart)
+        tagTekstUttrykk, lengdeUttrykk = finnUttrykk(periode, periodeStart)
+        tagTekstUforstaeleg, lengdeUforstaeleg = finnUforstaeleg(periode, periodeStart)
 
-        if not COMPAT or (lengdeTal >= lengdeUttrykk and lengdeTal >= lengdeUforstaeleg):
+        if lengdeTal >= lengdeUttrykk and lengdeTal >= lengdeUforstaeleg:
             if __debug__: logging.debug('going in')
             tagTekst += tagTekstTal
             count = lengdeTal
@@ -1464,17 +1487,16 @@ def taggPeriode(periode):
             if re.search(r'\$[.)]\s$', periode[0:count]):
                 periode = re.sub(r'\s\$', '', periode, count=1)
                 count -= 2
-        elif COMPAT:
-            if lengdeUttrykk >= lengdeTal and lengdeUttrykk >= lengdeUforstaeleg:
-                tagTekst += tagTekstUttrykk
-                count = lengdeUttrykk
-            elif lengdeUforstaeleg >= lengdeTal and lengdeUforstaeleg >= lengdeUttrykk:
-                tagTekst += tagTekstUforstaeleg
-                count = lengdeUforstaeleg
+        elif lengdeUttrykk >= lengdeTal and lengdeUttrykk >= lengdeUforstaeleg:
+            tagTekst += tagTekstUttrykk
+            count = lengdeUttrykk
+        elif lengdeUforstaeleg >= lengdeTal and lengdeUforstaeleg >= lengdeUttrykk:
+            tagTekst += tagTekstUforstaeleg
+            count = lengdeUforstaeleg
 
-                # Må jukse litt med perioden her for å få uttrykket rett
-                periode = re.sub(r'^\$" ([^($")]*) \$"', r'"\1" ', periode, count=1)
-                count -= 4
+            # Må jukse litt med perioden her for å få uttrykket rett
+            periode = re.sub(r'^\$" ([^($")]*) \$"', r'"\1" ', periode, count=1)
+            count -= 4
 
         if tagTekst != '':
             word = periode[0:count-1].strip()
