@@ -931,13 +931,13 @@ def rootOrdklasser(root):
                 if resultLine.lower().find('"%s"' % root.lower()) >= 0]
     if not rootTags:
         rootTags.append('andre')
-    rootWordClasses = map(lambda s: re.sub(r'^\s*".*?"\s+(\S+).*$', r'\1', s), rootTags)
+    rootWordClasses = map(lambda s: re.sub(r'^\s*".*"\s+(\S+).*$', r'\1', s), rootTags)
     return list(rootWordClasses)
 
 def alleOrdklasser(root):
     result = databaseSearch(root)
     tags = result.rstrip("\n").split("\n")
-    wordClasses = map(lambda s: re.sub(r'^\s*".*?"\s+(\S+).*$', r'\1', s), tags)
+    wordClasses = map(lambda s: re.sub(r'^\s*".*"\s+(\S+).*$', r'\1', s), tags)
     return wordClasses
 
 def analyserForledd(forledd):
