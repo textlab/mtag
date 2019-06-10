@@ -1133,15 +1133,19 @@ def analyserForleddOgEtterledd(sokOrd):
                 if etterleddOK and numEtterledd > 1.5:
                     continue
                 forleddOrdklasse = ", ".join(set(forleddAnalyse[1:]))
-                etterleddOrdklasse = ", ".join(set(alleOrdklasser(minEtterledd)))
-                resultater += ({'numLedd': numForledd+numEtterledd,
-                                'etterledd': minEtterledd,
-                                'etterleddOrdklasse': etterleddOrdklasse,
-                                'etterleddRoot': etterleddInfo['etterleddRoot'],
-                                'tagLine': etterleddInfo['tagLine'],
-                                'forledd-samset': (numForledd > 1),
-                                'fuge-s': kortEtterleddOK and etterledd.startswith('s')}
-                               for etterleddInfo in etterleddInfoList)
+                for etterleddInfo in etterleddInfoList:
+                    if minEtterledd[0] == '-' and etterleddInfo['etterleddRoot'][0] != '-':
+                        fixDashEtterledd = minEtterledd[1:]
+                    else:
+                        fixDashEtterledd = minEtterledd
+                    etterleddOrdklasse = ", ".join(set(alleOrdklasser(fixDashEtterledd)))
+                    resultater.append({'numLedd': numForledd+numEtterledd,
+                                       'etterledd': fixDashEtterledd,
+                                       'etterleddOrdklasse': etterleddOrdklasse,
+                                       'etterleddRoot': etterleddInfo['etterleddRoot'],
+                                       'tagLine': etterleddInfo['tagLine'],
+                                       'forledd-samset': (numForledd > 1),
+                                       'fuge-s': kortEtterleddOK and etterledd.startswith('s')})
                 # If two analyses have the same number of members and
                 # there is no epenthesis involved, choose the one, if
                 # any, that is a noun.
@@ -1212,7 +1216,8 @@ def analyserSammensetning(sokOrd, periodeStart):
             else:
                 isSuffix = result['etterleddRoot'][0] == '-'
                 symbol = '-' if isSuffix else '+'
-                resHash[tekst].append("<{}{}>".format(symbol, etterledd))
+                etterleddStrip = etterledd[1:] if etterledd[0] == '-' else etterledd
+                resHash[tekst].append("<{}{}>".format(symbol, etterleddStrip))
         for resultTekst in resHash.keys():
             resultTagTekst += ''.join([resultTekst,
                                        ''.join(' ' + tag for tag in resHash[resultTekst]
