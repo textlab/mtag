@@ -575,7 +575,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
         if not inputOK and muligReinPeriode is None:
             m = re.search(q(r'(.*([{letterssm}\d{specLetters}]|[{letters}\d{specLetters}]\s*[{lettersla}])[{quotsParantes}]*[{terminator}][{quotsParantes}]*)\s*$'), muligPeriode)
             needMoreData = len(periodeElementer) <= 1 # FIXME: not needed?
-            muligReinPeriode = m.group(1)
+            muligReinPeriode = m.group(1) if m else ''
             restAvMulig = ""
 
         # Sjekk om verkeleg periode
