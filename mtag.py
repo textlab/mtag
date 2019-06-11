@@ -221,14 +221,19 @@ PROG = os.path.basename(__file__)
 DIR = os.path.dirname(os.path.realpath(__file__))
 
 # Les parameterlinja
-parser = argparse.ArgumentParser(description=omTagger)
-parser.add_argument("-o", metavar='utfil')
-parser.add_argument("-l", metavar='loggfil', default=PROG+".log")
-parser.add_argument("-p", metavar='perioder')
-parser.add_argument("-bm", dest='spraak', action='store_const', const='bm', default='bm')
-parser.add_argument("-nn", dest='spraak', action='store_const', const='nn', default='bm')
-parser.add_argument('-wxml', action='store_true')
-parser.add_argument('-compat', action='store_true')
+parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
+                                 description=omTagger)
+parser.add_argument("-o", metavar='utfil', help='Specify the output file')
+parser.add_argument("-l", metavar='loggfil', default=PROG+".log", help='Specify the log file')
+parser.add_argument("-p", metavar='perioder', help='Log sentences to a file')
+parser.add_argument("-bm", dest='spraak', action='store_const', const='bm', default='bm',
+                    help='Tag Bokmål (default)')
+parser.add_argument("-nn", dest='spraak', action='store_const', const='nn', default='bm',
+                    help='Tag Nynorsk')
+parser.add_argument('-wxml', action='store_true',
+                    help='Do not strip XML tags and add <word> tags containing the original word')
+parser.add_argument('-compat', action='store_true',
+                    help='Try to be as similar as possible to the Lisp Multitagger')
 args, input_files = parser.parse_known_args()
 sys.argv = sys.argv[:1] + input_files
 
