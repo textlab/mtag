@@ -11,10 +11,10 @@ if sys.version_info.major < 3:
     sys.setdefaultencoding('utf-8')
 
 omTagger = """\
-The Oslo-Bergen Multitagger for Norwegian Bokmål and Nynorsk, v. 1.0, 4 June 2019
+The Oslo-Bergen Multitagger for Norwegian Bokmål and Nynorsk, v. 1.1, 11 June 2019
 The Python version has been written by Michał Kosek (Text Laboratory, University of Oslo).
 
-The code is partially based on Perl Multitagger v. 0.1a20, 9 February 1999,
+The code is partially based on the Perl Multitagger v. 0.1a20, 9 February 1999,
 written by Lars Jørgen Tvedt (Dokumentasjonsprosjektet, University of Oslo).
 
 The output of the multitagger reproduces the format used by the Lisp
@@ -35,6 +35,20 @@ Johannessen, J. B., & Hauglin, H. (1998). An automatic analysis of Norwegian com
 
 #Multitagger er eit program som setter inn grammatiske merker i ein tekst.
 #Teksten som skal leses skal vere normalisert norsk.
+
+#Versjon 1.1, 11. juni 2019
+#- Sammensetningsmodulen viser om etterleddet er et sammensetningsetterledd eller
+#  et suffiks (for det er egentlig ikke bare sammensetninger den analyserer, men alle
+#  morfologisk komplekse ord). Suffikser er vist som <-suffiks> og etterledd er vist
+#  som <+etterledd>.
+#- Etterleddet blir vist ikke bare for analyserte sammensetninger (samset-analyse),
+#  men også for sammensetninger som finnes i leksikonet (samset-leks).
+#- Flerordsuttrykk er delt på mellomrom, men individuelle ord får tagg til hele
+#  uttrykket, og i tillegg blir tagget som flerord-ledd1, flerord-ledd2 osv. Eneste
+#  unntak til mellomromreglen er mellomrom med tall på begge sider, dvs. "10 000" er
+#  analysert som et ord, men "10 %" som to ord (men de er fortsatt tagget som et
+#  talluttrykk).
+#- Noen av ordene som hadde blitt fjernet fra leksikonet ble lagt inn igjen.
 
 #Versjon 1.0, 4. juni 2019
 #En helt ny versjon skrevet i Python. Programmet har en ny sammensetningsmodul,
