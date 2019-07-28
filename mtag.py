@@ -427,6 +427,7 @@ def registrerStatistikk():
     ordTellar += 1
     if UTFIL is not None:
         grenseTellar += 1
+        mellomTidStart = time.time()
         if (time.time() - mellomTidStart) > 30:
             mellomTidSlutt = time.time()
             print("%d ord tagget, %.0f ord pr sekund" %
