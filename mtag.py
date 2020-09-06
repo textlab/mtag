@@ -572,7 +572,7 @@ def sjekkNamn(key, sterkSjekk=False):
 
     return erNamn
 ####################################
-def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendig):
+def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendig, headlineTerminatorPosition):
     # global: periode (rw), inputOK (ro), nestePeriode (rw)
     # my (outside the loop): periodeElementer, muligPeriode, periodeFullstendig, needMoreData
     # my (inside the loop): muligReinPeriode, restAvMulig, erPeriodeSlutt, nesteOrd
@@ -682,6 +682,10 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
             if __debug__:
                 logging.debug("before konverterSkilleteikn\n")
                 logging.debug("periode = '%(periode)s'", vars())
+            if headlineTerminatorPosition and headlineTerminatorPosition != len(periode) - 1:
+                # The headline terminator we inserted turned out to not mark the end of
+                # a headline after all, so remove it
+                periode = periode[:headlineTerminatorPosition] + periode[headlineTerminatorPosition + 1:]
             periode = konverterSkilleteikn(periode)
             periodeFullstendig = True
 
@@ -1670,6 +1674,7 @@ def main():
     while inputOK:
         periodeFullstendig = False
         periode = nestePeriode
+        headlineTerminatorPosition = None
         if __debug__: logging.debug("(neste)periode = <<<%(periode)s>>>", vars())
 
         # Ein vil alltid ha lest ei linje meir enn naudsynt.
@@ -1760,6 +1765,10 @@ def main():
                     # Periode som mangler punktum på slutten er overskrift
                     terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), periode)
                     if periode != "" and not terminatorQuoteInLine:
+                        # Mark the position of the headline terminator we are about to append
+                        # in case we need to remove it again (if it turns out this was not a
+                        # headine after all)
+                        headlineTerminatorPosition = len(periode)
                         periode += "|"
                 else:
                     # Fortsett bygginga av ein periode
@@ -1780,7 +1789,7 @@ def main():
 
             if __debug__: logging.debug("(before gaaGjennom)periode = <<<%(periode)s>>>", vars())
             needMoreData, periode, nestePeriode, periodeFullstendig = \
-                gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendig)
+                gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendig, headlineTerminatorPosition)
 
         if __debug__: logging.debug("taggPeriode(%(periode)s)", vars())
         taggPeriode(periode)
