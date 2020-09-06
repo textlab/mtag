@@ -237,6 +237,7 @@ DIR = os.path.dirname(os.path.realpath(__file__))
 # Les parameterlinja
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                  description=omTagger)
+parser.add_argument("-no-headlines", action='store_true', help='Do not try to identify headlines')
 parser.add_argument("-o", metavar='utfil', help='Specify the output file')
 parser.add_argument("-l", metavar='loggfil', default=PROG+".log", help='Specify the log file')
 parser.add_argument("-p", metavar='perioder', help='Log sentences to a file')
@@ -251,6 +252,7 @@ parser.add_argument('-compat', action='store_true',
 args, input_files = parser.parse_known_args()
 sys.argv = sys.argv[:1] + input_files
 
+NO_HEADLINES = args.no_headlines
 UTFIL = args.o
 LOGGFIL = args.l
 PERIODEFIL = args.p
@@ -1754,7 +1756,7 @@ def main():
                     if periode != "" and not re.search(q(r'[{terminator}]\s*$'), periode):
                         periode += '.'
                     periode += ' END OF FILE'
-                elif not re.search(r'\S', line): # Dersom blank linje
+                elif not NO_HEADLINES and not re.search(r'\S', line): # Dersom blank linje
                     # Periode som mangler punktum på slutten er overskrift
                     terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), periode)
                     if periode != "" and not terminatorQuoteInLine:
