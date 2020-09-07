@@ -1770,6 +1770,10 @@ def main():
                     # Periode som mangler punktum på slutten er overskrift
                     terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), periode)
                     if periode != "" and not terminatorQuoteInLine:
+                        if headlineTerminatorPosition:
+                            # It turns out the headline marker we inserted earlier did not really
+                            # mark a headline, so remove it
+                            periode = periode[:headlineTerminatorPosition] + periode[headlineTerminatorPosition + 1:]
                         # Mark the position of the headline terminator we are about to append
                         # in case we need to remove it again (if it turns out this was not a
                         # headine after all)
