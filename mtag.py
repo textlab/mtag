@@ -238,6 +238,7 @@ DIR = os.path.dirname(os.path.realpath(__file__))
 parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter,
                                  description=omTagger)
 parser.add_argument("-no-headlines", action='store_true', help='Do not try to identify headlines')
+parser.add_argument("-no-add-stop", action='store_true', help='Do not add a full stop at end of file if missing')
 parser.add_argument("-o", metavar='utfil', help='Specify the output file')
 parser.add_argument("-l", metavar='loggfil', default=PROG+".log", help='Specify the log file')
 parser.add_argument("-p", metavar='perioder', help='Log sentences to a file')
@@ -253,6 +254,7 @@ args, input_files = parser.parse_known_args()
 sys.argv = sys.argv[:1] + input_files
 
 NO_HEADLINES = args.no_headlines
+NO_ADD_STOP = args.no_add_stop
 UTFIL = args.o
 LOGGFIL = args.l
 PERIODEFIL = args.p
@@ -1763,7 +1765,7 @@ def main():
                     inputOK = False
 
                     # Terminer siste periode som mangler punktum
-                    if periode != "" and not re.search(q(r'[{terminator}]\s*$'), periode):
+                    if not NO_ADD_STOP and periode != "" and not re.search(q(r'[{terminator}]\s*$'), periode):
                         periode += '.'
                     periode += ' END OF FILE'
                 elif not NO_HEADLINES and not re.search(r'\S', line): # Dersom blank linje
