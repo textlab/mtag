@@ -687,7 +687,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
             if __debug__:
                 logging.debug("before konverterSkilleteikn\n")
                 logging.debug("periode = '%(periode)s'", vars())
-            if headlineTerminatorPosition and headlineTerminatorPosition != len(periode) - 1:
+            if headlineTerminatorPosition and (not inputOK or (headlineTerminatorPosition != len(periode) - 1)):
                 # The headline terminator we inserted turned out to not mark the end of
                 # a headline after all, so remove it
                 periode = periode[:headlineTerminatorPosition] + periode[headlineTerminatorPosition + 1:]
