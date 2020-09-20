@@ -1553,7 +1553,12 @@ def taggPeriode(periode):
 
         if tagTekst != '':
             word = periode[0:count-1].strip()
-            periode = periode[count:]
+            if tagTekstTal and periode[count-1] == '-':
+                # We found a dash separating two numbers (of which the current token is the first), 
+                # e.g. as in "6.15-6.30", so we need to split off the dash
+                periode = '$- ' + periode[count:]
+            else:
+                periode = periode[count:]
         else:
             ogEllerCompoundRegex = r'^([^$\s]+-\s+(og|eller)(/(og|eller))?\s+\S+)\s*'
             m = re.search(ogEllerCompoundRegex, periode)
