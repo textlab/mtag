@@ -303,7 +303,7 @@ lettersla="ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔ�
 konsonanter="bcdfghjklmnpqrstvwxz"
 letters = letterssm + lettersla
 vocals = "aeiouyæøåàáâãäèéêëìíîïòóôõöùúûüýAEIOUYÆØÅÀÁÂÃÄÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝ"
-terminator="\.\?\:\!\|"
+terminator="\.\?\:\!\|\u2026"
 # quots = "\x93\x94\"\'\«\»"
 quots = "\x93\x94\"«»"
 parantes = "\(\)"
@@ -520,7 +520,7 @@ def konverterSkilleteikn(periode):
 
             periodeDel = re.sub(q(r'([^$])(\.{{2,20}})([{quotsParantes}]*)'), r'\1 $\2\3 ', periodeDel)
             periodeDel = re.sub(q(r'([.|][{quotsParantes}]*)$'), r' $\1 ', periodeDel)
-            periodeDel = re.sub(q(r'([?:!][{quotsParantes}]*)'), r' $\1 ', periodeDel)
+            periodeDel = re.sub(q(r'([?:!\u2026][{quotsParantes}]*)'), r' $\1 ', periodeDel)
             # FIXME: That's the way the Perl code does it, but it's very
             # order-dependent: "word,; " is converted to "word $, $; ", and
             # "word;," is converted to "word; $, "
@@ -1417,6 +1417,8 @@ def printTag(word, tagTekst):
 def tagTekstSkille(word, periode):
     if re.search(r'\$\.{2,20}$', word):
         result = q('\t"$..." {CONSTsetningSlutt} {CONSTellipse}\n')
+    elif re.search(r'\u2026$', word):
+        result = q('\t"$..." {CONSTsetningSlutt} {CONSTellipse}\n')
     elif re.search(r'\$\|$', word):
         result = q('\t"$|" {CONSTsetningSlutt} {CONSToverskrift}\n')
     elif re.search(r'\$\.$', word):
@@ -1770,7 +1772,8 @@ def main():
                     periode += ' END OF FILE'
                 elif not NO_HEADLINES and not re.search(r'\S', line): # Dersom blank linje
                     # Periode som mangler punktum på slutten er overskrift
-                    terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), periode)
+                    terminatorQuoteInLine = re.search(q(r'[{terminator}][{quotsParantes}]*\s*$'), periode) or \
+                        re.search(q(r'\.{{2,20}}[{quotsParantes}]*\s*$'), periode)
                     if periode != "" and not terminatorQuoteInLine:
                         if headlineTerminatorPosition:
                             # It turns out the headline marker we inserted earlier did not really
