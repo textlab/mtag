@@ -530,8 +530,8 @@ def konverterSkilleteikn(periode):
             # the next re.sub? Currently we have an exact equivalent of the Perl code.
             periodeDel = re.sub(q(r'\s--([{quotsParantes}]*)\s|^--([{quotsParantes}]*)'),
                                 lambda m: r' $--{} '.format(m.group(1) or ''), periodeDel)
-            periodeDel = re.sub(q(r'\s([{stroke}][{quotsParantes}]*)\s|^([{stroke}][{quotsParantes}]*)'),
-                                lambda m: ' ${} '.format(m.group(1) or m.group(2)), periodeDel)
+            periodeDel = re.sub(q(r'\s([{stroke}][{quotsParantes}]*)\s|\s([{stroke}][{quotsParantes}]*)$|^([{stroke}][{quotsParantes}]*)'),
+                                lambda m: ' ${} '.format(m.group(1) or m.group(2) or m.group(3)), periodeDel)
             periodeDel = re.sub(q(r'([()][{quots}]*)'), r' $\1 ', periodeDel)
 
             # Ta vare paa teikn som kan vere genitiv-apostrof
