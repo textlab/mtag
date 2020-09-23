@@ -1553,7 +1553,7 @@ def taggPeriode(periode):
 
         if tagTekst != '':
             word = periode[0:count-1].strip()
-            if tagTekstTal and periode[count-1] == '-':
+            if tagTekstTal and len(periode) > count and periode[count-1] == '-':
                 # We found a dash separating two numbers (of which the current token is the first), 
                 # e.g. as in "6.15-6.30", so we need to split off the dash
                 periode = '$- ' + periode[count:]
@@ -1737,7 +1737,7 @@ def main():
 
                 # Ta hand om bindestreker paa slutten av linje
                 while line:
-                    line, subst_count = re.subn(r'(\S)-\s*$', r'\1', line)
+                    line, subst_count = re.subn(q(r'({letters}\d)-\s*$'), r'\1', line)
                     if subst_count == 0:
                         break
                     m = re.search(r'(\S+)$', line)
