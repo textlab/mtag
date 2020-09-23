@@ -613,6 +613,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
         # Les neste ord. Trengs for å avgjere periodeslutt
         # Eit ord kan vere samasett av to periodeelement
         nesteOrd = restAvMulig + ''.join(periodeElementer[0:2])
+        endOfFile = nesteOrd == "END OF FILE"
         nesteOrd = re.sub(q(r'\s*([^\s{terminator}]+).*'), r'\1', nesteOrd)
 
 
@@ -632,7 +633,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
                 if __debug__: logging.debug('ikkjeTerminerFork.get1(%(ikkjeTerminerForkKey)s)', vars())
                 if ikkjeTerminerFork.get(ikkjeTerminerForkKey):
                     if __debug__: logging.debug(' == True!')
-                    erNamn = sjekkNamn(nesteOrd)
+                    erNamn = (not endOfFile) and sjekkNamn(nesteOrd)
                     if erNamn:
                         erPeriodeSlutt = False
                         break
@@ -645,7 +646,7 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
             if __debug__: logging.debug('ikkjeTerminerFork.get2(%(count)s#%(sjekkFork)s)', vars())
             if ikkjeTerminerFork.get('%d#%s' % (count, sjekkFork)):
                 if __debug__: logging.debug(' == True!')
-                erNamn = sjekkNamn(nesteOrd)
+                erNamn = (not endOfFile) and sjekkNamn(nesteOrd)
 
                 # Sjekk om ordet framfor forkortinga er eit namn. I så fall er
                 # sannsynlegvis også ordet etter eit namn
