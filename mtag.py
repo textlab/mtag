@@ -638,8 +638,9 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
                         erPeriodeSlutt = False
                         break
                     else:
-                        if __debug__: logging.debug('Legg på terminering')
-                        muligReinPeriode += ' .' # Legg paa terminering
+                        if not NO_ADD_STOP:
+                            if __debug__: logging.debug('Legg på terminering')
+                            muligReinPeriode += ' .' # Legg paa terminering
 
             sjekkFork = muligReinPeriode[len(muligReinPeriode)-count:]
             sjekkFork = re.sub(q(r'^[{quotsParantes}]'), ' ', sjekkFork)
@@ -654,8 +655,9 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
                     erPeriodeSlutt = False
                     break
                 else:
-                    if __debug__: logging.debug('Legg på terminering')
-                    muligReinPeriode += ' .' # Legg paa terminering
+                    if not NO_ADD_STOP:
+                        if __debug__: logging.debug('Legg på terminering')
+                        muligReinPeriode += ' .' # Legg paa terminering
 
         # Sjekk om siste ordet i perioden kan vere ein tittel
         # Dersom det er ein tittel maa ein sjekke om ordet etter
@@ -678,7 +680,8 @@ def gaaGjennomPeriodeElementer(periode, inputOK, nestePeriode, periodeFullstendi
                     if erNamn:
                         erPeriodeSlutt = False
                     else:
-                        muligReinPeriode += " ." # Legg paa terminering
+                        if not NO_ADD_STOP:
+                            muligReinPeriode += " ." # Legg paa terminering
                     break
 
         if erPeriodeSlutt:
