@@ -1804,7 +1804,7 @@ def main():
             periode = re.sub(r'/\*.*?\*/', ' ', periode) # Fjern kommentarer
 
             # Sjekk overskrift
-            if muligOverskrift != "":
+            if not NO_HEADLINES and muligOverskrift != "":
                 periode = re.sub(r'({muligOverskrift})\s+([{quotsParantes}]*[-{lettersla}\d{specLetters}])'.
                                    format(muligOverskrift=muligOverskrift, quotsParantes=quotsParantes,
                                           lettersla=lettersla, specLetters=specLetters),
