@@ -955,7 +955,7 @@ def sokEtterledd(etterledd, sokOrd):
         # We don't want a form of "å være" to be the last element
         toBe = tagLine.startswith('"være" verb') or tagLine.startswith('"vere" verb')
         # Ta bort bindestrek fra evnt. suffiks og legg til forleddet
-        tagLine = re.sub(r'^"-?(.*)"', r'"{}\1"'.format(forledd), tagLine)
+        tagLine = re.sub(r'^"-?(.*)"', r'"{}\1"'.format(re.escape(forledd)), tagLine)
         if wantedPOS and not unwantedPOS and not toBe:
             resultTagLine = "\t" \
                           + re.sub(r'\s+<[+-][^>]+>', '',
@@ -1340,7 +1340,7 @@ def prepareTagTekst(tagTekst, periodeStart):
     nyTagTekst = tagTekst
     for m in re.finditer(r'^\s*"(.*)"\s+adj\b.*\b(nøyt|adv)\b', tagTekst, flags=re.M):
         baseForm = m.group(1)
-        nyTagTekst = re.sub(r'^\s*"{}"\s+adv\b.*$'.format(baseForm), '', nyTagTekst, flags=re.M)
+        nyTagTekst = re.sub(r'^\s*"{}"\s+adv\b.*$'.format(re.escape(baseForm)), '', nyTagTekst, flags=re.M)
         nyTagTekst = re.sub(r'\n+', r'\n', nyTagTekst)
         nyTagTekst = re.sub(r'^\n', '', nyTagTekst)
     tagTekst = nyTagTekst
