@@ -955,7 +955,7 @@ def sokEtterledd(etterledd, sokOrd):
         # We don't want a form of "å være" to be the last element
         toBe = tagLine.startswith('"være" verb') or tagLine.startswith('"vere" verb')
         # Ta bort bindestrek fra evnt. suffiks og legg til forleddet
-        tagLine = re.sub(r'^"-?(.*)"', r'"{}\1"'.format(re.escape(forledd)), tagLine)
+        tagLine = re.sub(r'^"-?(.*)"', r'"{}\1"'.format(forledd), tagLine)
         if wantedPOS and not unwantedPOS and not toBe:
             resultTagLine = "\t" \
                           + re.sub(r'\s+<[+-][^>]+>', '',
