@@ -1,7 +1,8 @@
 # The Oslo-Bergen Multitagger for Norwegian Bokmål and Nynorsk
 
-The Python version has been written by Michał Kosek (Text Laboratory,
-University of Oslo).
+The Python version was written by Michał Kosek (Text Laboratory,
+University of Oslo). It has been tested with Python 2 and Python 3.6.6. 
+Using version >= 3.7 may cause problems with word forms containing regular expression special characters.
 
 The code is partially based on the Perl Multitagger written by Lars Jørgen
 Tvedt (Dokumentasjonsprosjektet, University of Oslo).
