@@ -929,9 +929,17 @@ def finnUforstaeleg(periode, periodeStart):
 ####################################
 # Samansetningsmodul
 
-def sokEtterledd(etterledd, sokOrd):
+def sokEtterledd(etterledd, sokOrd, periodeStart):
     m = re.search(r'(.*){}$'.format(re.escape(etterledd)), sokOrd)
-    forledd = stor2stjerne(m.group(1))
+    # AN 23.05.22: The stor2stjerne function does not actually do anything anymore (since with CG3 we now leave
+    # capital letters in the word forms instead of replacing them with asterisks), but we still need to lowercase
+    # the lemma form.
+    #forledd = stor2stjerne(m.group(1))
+    if periodeStart:
+        forledd = m.group(1).lower()
+    else:
+        forledd = m.group(1)
+
     if etterledd.startswith('-'):
          etterledd = etterledd[1:]
          forledd += '-'
@@ -1080,7 +1088,7 @@ def databaseSearchForSuffixOrWord(string):
     else:
         return databaseSearch(string)
 
-def analyserForleddOgEtterledd(sokOrd):
+def analyserForleddOgEtterledd(sokOrd, periodeStart):
     resultater = []
     for i in range(1, len(sokOrd)):
         forledd = sokOrd[0:i]
@@ -1125,7 +1133,7 @@ def analyserForleddOgEtterledd(sokOrd):
 
         if etterleddOK and kortEtterleddOK:
             if __debug__: logging.debug('sokEtterledd1(%(etterledd)s, %(sokOrd)s)', vars())
-            etterleddInfoList = sokEtterledd(etterledd, sokOrd)
+            etterleddInfoList = sokEtterledd(etterledd, sokOrd, periodeStart)
             verbalEtterledd = any(etterleddInfo['ordklasse'] == 'verb'
                                   for etterleddInfo in etterleddInfoList)
             substantiviskEtterledd = any(etterleddInfo['ordklasse'] == 'subst'
@@ -1146,7 +1154,7 @@ def analyserForleddOgEtterledd(sokOrd):
         if forleddAnalyse and forleddAnalyse[0] and (etterleddOK or kortEtterleddOK):
             minEtterledd = etterledd if etterleddOK else kortEtterledd
             if __debug__: logging.debug("sokEtterledd2(%(minEtterledd)s, %(sokOrd)s)", vars())
-            etterleddInfoList = sokEtterledd(minEtterledd, sokOrd)
+            etterleddInfoList = sokEtterledd(minEtterledd, sokOrd, periodeStart)
 
             if etterleddInfoList:
                 etterleddRoots = set(etterleddInfo['root']
@@ -1191,7 +1199,7 @@ def analyserForleddOgEtterledd(sokOrd):
                     break
     return resultater
 
-def analyserBareEtterledd(sokOrd):
+def analyserBareEtterledd(sokOrd, periodeStart):
     # If the first member is unknown, choose the analysis with the longest last member.
     resultater = []
     # Det er mange usannsylige sammensetninger med korte ord, så vi antar at
@@ -1202,7 +1210,7 @@ def analyserBareEtterledd(sokOrd):
             searchResult = databaseSearchForSuffixOrWord(etterledd)
             if re.search(r'\b(subst|adj)\b', searchResult):
                 if __debug__: logging.debug("sokEtterledd3(%(etterledd)s, %(sokOrd)s)", vars())
-                etterleddInfoList = sokEtterledd(etterledd, sokOrd)
+                etterleddInfoList = sokEtterledd(etterledd, sokOrd, periodeStart)
                 if etterleddInfoList:
                     if etterledd in compoundHash:
                         numEtterledd = compoundHash[etterledd][0] * SAMSET_LEKS_WEIGHT
@@ -1222,11 +1230,11 @@ def analyserBareEtterledd(sokOrd):
 
 def analyserSammensetning(sokOrd, periodeStart):
     resultTagTekst = ''
-    resultater = analyserForleddOgEtterledd(sokOrd)
+    resultater = analyserForleddOgEtterledd(sokOrd, periodeStart)
 
     # Det er ikke et egennavn, så prøv å matche bare etterleddet
     if not resultater and not periodeStart:
-        resultater = analyserBareEtterledd(sokOrd)
+        resultater = analyserBareEtterledd(sokOrd, periodeStart)
 
     if resultater:
         # Choose the analysis (or analyses) with the fewest compound members
