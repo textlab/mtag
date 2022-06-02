@@ -936,7 +936,19 @@ def sokEtterledd(etterledd, sokOrd, periodeStart):
     # the lemma form.
     #forledd = stor2stjerne(m.group(1))
     if periodeStart:
-        forledd = m.group(1).lower()
+        m2 = re.match("([A-ZÆØÅ].*?)-$", m.group(1))
+        if m2:
+            # The first part starts with a capital letter and is followed by a hyphen
+            forleddMedStorBokstav = m2.group(1)
+            if forleddMedStorBokstav in fullformHash:
+                # We found the capitalized form in the full form list, so leave it alone
+                forledd = m.group(1)
+            else:
+                # Otherwise, lowercase it
+                forledd = m.group(1).lower()
+        else:
+            # Not capitalized or not followed by a hyphen
+            forledd = m.group(1).lower()
     else:
         forledd = m.group(1)
 
