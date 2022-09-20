@@ -1674,6 +1674,15 @@ def taggPeriode(periode):
 
         if not re.search(q(r'^\$[{stroke}{quots}]'), word):
             periodeStart = False
+
+####################################
+def read_line(inputfile):
+    line = inputfile.readline()
+
+    # Remove spaces before terminators
+    line = re.sub(q(r'\s+([{terminator}])'), r'\1', line)
+    return line
+
 ####################################
 def main():
     inputfile = fileinput.input()
@@ -1740,14 +1749,14 @@ def main():
         while not periodeFullstendig:
             # Bygg opp det som skal bli ein periode
             if needMoreData: # Treng meir data fraa fila
-                line = inputfile.readline()
+                line = read_line(inputfile)
                 linjeNr += 1
 
                 while re.search(r'/\*', line): # Les heile kommentarar
                     if re.search(r'/\*.*\*/', line):
                         break
                     line = re.sub(r'\n', ' ', line)
-                    line += inputfile.readline()
+                    line += read_line(inputfile)
                     linjeNr += 1
 
                 line = line.replace(remove, ' ') # Fjern ulovlege teikn (\xA0)
@@ -1767,7 +1776,7 @@ def main():
                     m = re.search(r'(\S+)$', line)
                     word = m.group(1)
                     holdLinje = line
-                    line = inputfile.readline()
+                    line = read_line(inputfile)
                     linjeNr += 1
 
                     if not line:
