@@ -1280,8 +1280,8 @@ def analyserSammensetning(sokOrd, periodeStart):
         if __debug__: logging.debug('resultater: %(resultater)s', vars())
     return resultTagTekst
 ####################################
-def abbrFeat(fult, forkortet, tt):
-    return re.sub(r'<{}([^/>]*(/til)?)(/[^>]*)?>'.format(fult), r'{}\1'.format(forkortet),
+def abbrFeat(fullt, forkortet, tt):
+    return re.sub(r'<{}([^/>]*(/til)?)(/[^>]*)?>'.format(fullt), r'{}\1'.format(forkortet),
                   tt, flags=re.IGNORECASE)
 
 def uniq_prefix(lines):
@@ -1369,9 +1369,17 @@ def prepareTagTekst(tagTekst, periodeStart):
         tagTekst = re.sub(r'^(\s*".*".*)\s+samset-analyse\b', r'\1 samset', tagTekst, flags=re.M)
 
     if not COMPAT:
+        # Remove argument structure (subcategorization) tags
         while True:
             tagTekst, subst_count = re.subn(r'^(\s*".*".*)\s+[a-z]+[0-9]+(/[a-z]+)?\b',
                                             r'\1', tagTekst, flags=re.M)
+            if subst_count == 0:
+                break
+        # Remove a few argument structure tags without numbers: n tr pa pa/til
+        tagTekst = re.sub(r'^(\s*".*".*)\s+n\b', r'\1', tagTekst, flags=re.M)
+        tagTekst = re.sub(r'^(\s*".*".*)\s+tr\b', r'\1', tagTekst, flags=re.M)
+        while True:
+            tagTekst, subst_count = re.subn(r'^(\s*".*".*)\s+pa(/til)?\b', r'\1', tagTekst, flags=re.M)
             if subst_count == 0:
                 break
 
