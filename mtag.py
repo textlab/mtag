@@ -285,12 +285,14 @@ DET_KVANT = "det kvant"
 GEN = "gen"
 
 if SPRAAK == 'bm':
-    ADJ_ORDEN = "adj <ordenstall>"
+    ADJ_ORDEN_SG = "adj ent <ordenstall>"
+    ADJ_ORDEN_PL = "adj fl <ordenstall>"
     DET_ROMER = "det <romertall>"
     EINTAL = "ent"
     FLEIRTAL = "fl"
 elif SPRAAK == 'nn':
-    ADJ_ORDEN = "adj <ordenstal>"
+    ADJ_ORDEN_SG = "adj eint <ordenstall>"
+    ADJ_ORDEN_PL = "adj fl <ordenstall>"
     DET_ROMER = "det <romartal>"
     EINTAL = "eint"
     FLEIRTAL = "fl"
@@ -764,7 +766,7 @@ def finnTal(periode, periodeStart):
         if __debug__: logging.debug('word = <<<%(word)s>>>', vars())
         antal = len(word)+1
         if word.endswith('.'):
-            tagTekst += TAG_LINE.format(word, ADJ_ORDEN)
+            tagTekst += TAG_LINE.format(word, ADJ_ORDEN_SG if word == '1.' else ADJ_ORDEN_PL)
         else:
             tag = '{} {}'.format(DET_KVANT, EINTAL if word == '1' else FLEIRTAL)
             tagTekst += TAG_LINE.format(word, tag)
