@@ -1780,7 +1780,7 @@ def main():
 
                 # Ta hand om bindestreker paa slutten av linje
                 while line:
-                    line, subst_count = re.subn(q(r'({letters}\d)-\s*$'), r'\1', line)
+                    line, subst_count = re.subn(q(r'([{letters}\d])-\s*$'), r'\1', line)
                     if subst_count == 0:
                         break
                     m = re.search(r'(\S+)$', line)
