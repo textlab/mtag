@@ -1,339 +1,336 @@
-sir:sir:subst mask appell ent ub normert
-siren:sir:subst mask appell ent be normert
-sirer:sir:subst mask appell fl ub normert
-sirene:sir:subst mask appell fl be normert
-Res.kap.:res.kap.:fork subst @TITTEL unormert
-res.kap.:res.kap.:fork subst @TITTEL normert
-vit.ass.:vit.ass.:fork subst @TITTEL normert
-stud.:stud.:fork subst mask appell @TITTEL normert
-Dr. Philos.:dr.philos.:fork subst @TITTEL unormert
-Dr. philos.:dr.philos.:fork subst @TITTEL unormert
-Dr.philos.:dr.philos.:fork subst @TITTEL unormert
-dr. philos.:dr.philos.:fork subst @TITTEL unormert
-dr.philos.:dr.philos.:fork subst @TITTEL normert
-Dr. Polit.:dr.polit.:fork subst @TITTEL unormert
-Dr. polit.:dr.polit.:fork subst @TITTEL unormert
-Dr.polit.:dr.polit.:fork subst @TITTEL unormert
-dr. polit.:dr.polit.:fork subst @TITTEL unormert
-dr.polit.:dr.polit.:fork subst @TITTEL normert
-Dr. Psychol.:dr.psychol.:fork subst @TITTEL unormert
-Dr. psychol.:dr.psychol.:fork subst @TITTEL unormert
-Dr.psychol.:dr.psychol.:fork subst @TITTEL unormert
-dr. psychol.:dr.psychol.:fork subst @TITTEL unormert
-dr.psychol.:dr.psychol.:fork subst @TITTEL normert
-Dr. Scient.:dr.scient.:fork subst @TITTEL unormert
-Dr. scient.:dr.scient.:fork subst @TITTEL unormert
-Dr.scient.:dr.scient.:fork subst @TITTEL unormert
-dr. scient.:dr.scient.:fork subst @TITTEL unormert
-dr.scient.:dr.scient.:fork subst @TITTEL normert
-Dr.pharm.:dr.pharm.:fork subst @TITTEL unormert
-dr.pharm.:dr.pharm.:fork subst @TITTEL normert
-Stud. Mag. Art.:stud.mag.art.:fork subst @TITTEL unormert
-Stud. mag. art.:stud.mag.art.:fork subst @TITTEL unormert
-Stud.mag.art.:stud.mag.art.:fork subst @TITTEL unormert
-stud. mag. art.:stud.mag.art.:fork subst @TITTEL unormert
-stud.mag.art.:stud.mag.art.:fork subst @TITTEL normert
-Stud. Odont.:stud.odont.:fork subst @TITTEL unormert
-Stud. odont.:stud.odont.:fork subst @TITTEL unormert
-Stud.odont.:stud.odont.:fork subst @TITTEL unormert
-stud. odont.:stud.odont.:fork subst @TITTEL unormert
-stud.odont.:stud.odont.:fork subst @TITTEL normert
-Stud. Oecon.:stud.oecon.:fork subst @TITTEL unormert
-Stud. oecon.:stud.oecon.:fork subst @TITTEL unormert
-Stud.oecon.:stud.oecon.:fork subst @TITTEL unormert
-stud. oecon.:stud.oecon.:fork subst @TITTEL unormert
-stud.oecon.:stud.oecon.:fork subst @TITTEL normert
-Stud. Pharm.:stud.pharm.:fork subst @TITTEL unormert
-Stud. pharm.:stud.pharm.:fork subst @TITTEL unormert
-Stud.pharm.:stud.pharm.:fork subst @TITTEL unormert
-stud. pharm.:stud.pharm.:fork subst @TITTEL unormert
-Mrs.:Mrs.:fork subst @TITTEL normert
-mrs.:Mrs.:fork subst @TITTEL unormert
-stud.pharm.:stud.pharm.:fork subst @TITTEL normert
-Stud. Philol.:stud.philol.:fork subst @TITTEL unormert
-Stud. philol.:stud.philol.:fork subst @TITTEL unormert
-Stud.philol.:stud.philol.:fork subst @TITTEL unormert
-stud. philol.:stud.philol.:fork subst @TITTEL unormert
-stud.philol.:stud.philol.:fork subst @TITTEL normert
-Stud. Polit.:stud.polit.:fork subst @TITTEL unormert
-Stud. polit.:stud.polit.:fork subst @TITTEL unormert
-Stud.polit.:stud.polit.:fork subst @TITTEL unormert
-stud. polit.:stud.polit.:fork subst @TITTEL unormert
-stud.polit.:stud.polit.:fork subst @TITTEL normert
-Stud. Psychol.:stud.psychol.:fork subst @TITTEL unormert
-Stud. psychol.:stud.psychol.:fork subst @TITTEL unormert
-Stud.psychol.:stud.psychol.:fork subst @TITTEL unormert
-stud. psychol.:stud.psychol.:fork subst @TITTEL unormert
-stud.psychol.:stud.psychol.:fork subst @TITTEL normert
-Stud. Real.:stud.real.:fork subst @TITTEL unormert
-Stud. real.:stud.real.:fork subst @TITTEL unormert
-Stud.real.:stud.real.:fork subst @TITTEL unormert
-stud. real.:stud.real.:fork subst @TITTEL unormert
-stud.real.:stud.real.:fork subst @TITTEL normert
-Stud. Scient.:stud.scient.:fork subst @TITTEL unormert
-Stud. scient.:stud.scient.:fork subst @TITTEL unormert
-Stud.scient.:stud.scient.:fork subst @TITTEL unormert
-stud. scient.:stud.scient.:fork subst @TITTEL unormert
-stud.scient.:stud.scient.:fork subst @TITTEL normert
-Kand.:kand.:fork subst @TITTEL unormert
-kand.:kand.:fork subst @TITTEL normert
-adm direktør:adm.dir.:fork adj+subst subst @TITTEL unormert
-adm. dir:adm.dir.:fork adj+subst subst @TITTEL unormert
-adm. dir.:adm.dir.:fork adj+subst subst @TITTEL unormert
-adm. direktør:adm.dir.:fork adj+subst subst @TITTEL unormert
-adm.dir:adm.dir.:fork adj+subst subst @TITTEL unormert
-adm.dir.:adm.dir.:fork adj+subst subst @TITTEL normert
-stud.jur:stud.jur.:fork subst @TITTEL unormert
-stud.jur.:stud.jur.:fork subst @TITTEL normert
-Stud. med.:stud.med.:fork subst @TITTEL unormert
-Stud.med.:stud.med.:fork subst @TITTEL unormert
-stud. med:stud.med.:fork subst @TITTEL unormert
-stud. med.:stud.med.:fork subst @TITTEL unormert
-stud.med:stud.med.:fork subst @TITTEL unormert
-stud.med.:stud.med.:fork subst @TITTEL normert
-Stud. techn.:stud.techn.:fork subst @TITTEL unormert
-Stud.techn.:stud.techn.:fork subst @TITTEL unormert
-stud. techn.:stud.techn.:fork subst @TITTEL unormert
-stud.techn:stud.techn.:fork subst @TITTEL unormert
-stud.techn.:stud.techn.:fork subst @TITTEL normert
-Stud. theol:stud.theol.:fork subst @TITTEL unormert
-Stud.theol:stud.theol.:fork subst @TITTEL unormert
-stud. theol.:stud.theol.:fork subst @TITTEL unormert
-stud.theol:stud.theol.:fork subst @TITTEL unormert
-stud.theol.:stud.theol.:fork subst @TITTEL normert
-DK:DK:fork subst @TITTEL normert
-D/S:DS:fork subst @TITTEL unormert
-DS:DS:fork subst @TITTEL normert
-T/S:TS:fork subst @TITTEL unormert
-TS:TS:fork subst @TITTEL normert
-H.K.H.:H.K.H.:fork subst @TITTEL normert
-H.k.h.:H.K.H.:fork subst @TITTEL unormert
-H.M.:H.M.:fork subst @TITTEL normert
-H.m.:H.M.:fork subst @TITTEL unormert
-Dr:dr.:fork subst @TITTEL unormert
-Dr.:dr.:fork subst @TITTEL unormert
-dr:dr.:fork subst @TITTEL unormert
-dr.:dr.:fork subst @TITTEL normert
-Dr. agric.:dr.agric.:fork subst @TITTEL unormert
-Dr.agric.:dr.agric.:fork subst @TITTEL unormert
-dr. agric:dr.agric.:fork subst @TITTEL unormert
-dr. agric.:dr.agric.:fork subst @TITTEL unormert
-dr.agric:dr.agric.:fork subst @TITTEL unormert
-dr.agric.:dr.agric.:fork subst @TITTEL normert
-Dr. Art.:dr.art.:fork subst @TITTEL unormert
-Dr. art.:dr.art.:fork subst @TITTEL unormert
-Dr.art.:dr.art.:fork subst @TITTEL unormert
-dr. art.:dr.art.:fork subst @TITTEL unormert
-dr.art.:dr.art.:fork subst @TITTEL normert
-Dr. ing.:dr.ing.:fork subst @TITTEL unormert
-Dr.ing.:dr.ing.:fork subst @TITTEL unormert
-dr. ing:dr.ing.:fork subst @TITTEL unormert
-dr. ing.:dr.ing.:fork subst @TITTEL unormert
-dr.ing:dr.ing.:fork subst @TITTEL unormert
-dr.ing.:dr.ing.:fork subst @TITTEL normert
-Dr. Jur.:dr.jur.:fork subst @TITTEL unormert
-Dr. jur.:dr.jur.:fork subst @TITTEL unormert
-Dr.jur.:dr.jur.:fork subst @TITTEL unormert
-dr.jur.:dr.jur.:fork subst @TITTEL normert
-Dr. med.:dr.med.:fork subst @TITTEL unormert
-Dr.med.:dr.med.:fork subst @TITTEL unormert
-dr. med:dr.med.:fork subst @TITTEL unormert
-dr. med.:dr.med.:fork subst @TITTEL unormert
-dr.med:dr.med.:fork subst @TITTEL unormert
-dr.med.:dr.med.:fork subst @TITTEL normert
-Dr. Med. Vet.:dr.med.vet.:fork subst @TITTEL unormert
-Dr. med. vet.:dr.med.vet.:fork subst @TITTEL unormert
-Dr.med.vet.:dr.med.vet.:fork subst @TITTEL unormert
-dr. med. vet.:dr.med.vet.:fork subst @TITTEL unormert
-dr.med.vet.:dr.med.vet.:fork subst @TITTEL normert
-Dr. Odont.:dr.odont.:fork subst @TITTEL unormert
-Dr. odont.:dr.odont.:fork subst @TITTEL unormert
-Dr.odont.:dr.odont.:fork subst @TITTEL unormert
-dr. odont.:dr.odont.:fork subst @TITTEL unormert
-dr.odont.:dr.odont.:fork subst @TITTEL normert
-Dr. Oecon.:dr.oecon.:fork subst @TITTEL unormert
-Dr. oecon.:dr.oecon.:fork subst @TITTEL unormert
-Dr.oecon.:dr.oecon.:fork subst @TITTEL unormert
-dr. oecon.:dr.oecon.:fork subst @TITTEL unormert
-dr.oecon.:dr.oecon.:fork subst @TITTEL normert
-Dr. Philos.:dr.philos.:fork subst @TITTEL unormert
-Dr. philos.:dr.philos.:fork subst @TITTEL unormert
-Dr.philos.:dr.philos.:fork subst @TITTEL unormert
-dr. philos.:dr.philos.:fork subst @TITTEL unormert
-dr.philos.:dr.philos.:fork subst @TITTEL normert
-Dr. techn.:dr.techn.:fork subst @TITTEL unormert
-Dr.techn.:dr.techn.:fork subst @TITTEL unormert
-dr. techn:dr.techn.:fork subst @TITTEL unormert
-dr. techn.:dr.techn.:fork subst @TITTEL unormert
-dr.techn:dr.techn.:fork subst @TITTEL unormert
-dr.techn.:dr.techn.:fork subst @TITTEL normert
-Dr. theol:dr.theol.:fork subst @TITTEL unormert
-Dr.theol:dr.theol.:fork subst @TITTEL unormert
-dr. theol:dr.theol.:fork subst @TITTEL unormert
-dr. theol.:dr.theol.:fork subst @TITTEL unormert
-dr.theol:dr.theol.:fork subst @TITTEL unormert
-dr.theol.:dr.theol.:fork subst @TITTEL normert
-LK:LK:fork subst @TITTEL normert
-M/S:MS:fork subst @TITTEL unormert
-MS:MS:fork subst @TITTEL normert
-M/T:MT:fork subst @TITTEL unormert
-MT:MT:fork subst @TITTEL normert
-Mlle:Mlle:fork subst @TITTEL normert
-mlle:Mlle:fork subst @TITTEL unormert
-Mme:Mme:fork subst @TITTEL normert
-mme:Mme:fork subst @TITTEL unormert
-Mr.:Mr.:fork subst @TITTEL normert
-mr.:Mr.:fork subst @TITTEL unormert
-Cand. act.:cand.act.:fork subst @TITTEL unormert
-cand. act:cand.act.:fork subst @TITTEL unormert
-cand. act.:cand.act.:fork subst @TITTEL unormert
-cand.act:cand.act.:fork subst @TITTEL unormert
-cand.act.:cand.act.:fork subst @TITTEL normert
-Cand. agric.:cand.agric.:fork subst @TITTEL unormert
-Cand.agric.:cand.agric.:fork subst @TITTEL unormert
-cand. agric:cand.agric.:fork subst @TITTEL unormert
-cand. agric.:cand.agric.:fork subst @TITTEL unormert
-cand.agric:cand.agric.:fork subst @TITTEL unormert
-cand.agric.:cand.agric.:fork subst @TITTEL normert
-Cand. jur.:cand.jur.:fork subst @TITTEL unormert
-Cand.jur.:cand.jur.:fork subst @TITTEL unormert
-cand. jur.:cand.jur.:fork subst @TITTEL unormert
-cand.jur.:cand.jur.:fork subst @TITTEL normert
-Cand. Mag.:cand.mag.:fork subst @TITTEL unormert
-Cand. mag.:cand.mag.:fork subst @TITTEL unormert
-Cand.mag.:cand.mag.:fork subst @TITTEL unormert
-cand. mag.:cand.mag.:fork subst @TITTEL unormert
-cand.mag.:cand.mag.:fork subst @TITTEL normert
-Cand. med.:cand.med.:fork subst @TITTEL unormert
-Cand.med.:cand.med.:fork subst @TITTEL unormert
-cand. med:cand.med.:fork subst @TITTEL unormert
-cand. med.:cand.med.:fork subst @TITTEL unormert
-Mag. Art.:mag.art.:fork subst @TITTEL unormert
-Mag. art.:mag.art.:fork subst @TITTEL unormert
-Mag.art:mag.art.:fork subst @TITTEL unormert
-Mag.art.:mag.art.:fork subst @TITTEL unormert
-mag. art.:mag.art.:fork subst @TITTEL unormert
-mag.art:mag.art.:fork subst @TITTEL unormert
-mag.art.:mag.art.:fork subst @TITTEL normert
-Mag. scient:mag.scient.:fork subst @TITTEL unormert
-Mag.scient:mag.scient.:fork subst @TITTEL unormert
-mag. scient:mag.scient.:fork subst @TITTEL unormert
-mag. scient.:mag.scient.:fork subst @TITTEL unormert
-mag.scient:mag.scient.:fork subst @TITTEL unormert
-mag.scient.:mag.scient.:fork subst @TITTEL normert
-Lic.:lic.:fork subst @TITTEL unormert
-lic.:lic.:fork subst @TITTEL normert
-Lic. Philos.:lic.philos.:fork subst @TITTEL unormert
-Lic. philos.:lic.philos.:fork subst @TITTEL unormert
-Lic.philos:lic.philos.:fork subst @TITTEL unormert
-lic. philos.:lic.philos.:fork subst @TITTEL unormert
-lic.philos.:lic.philos.:fork subst @TITTEL normert
-Vit. Ass.:vit.ass.:fork subst @TITTEL unormert
-Vit. ass.:vit.ass.:fork subst @TITTEL unormert
-vit. ass.:vit.ass.:fork subst @TITTEL unormert
-Cand. juris:cand.juris:fork subst @TITTEL unormert
-Cand.juris:cand.juris:fork subst @TITTEL unormert
-cand. juris:cand.juris:fork subst @TITTEL unormert
-cand.juris:cand.juris:fork subst @TITTEL normert
-Dr. Juris:dr.juris:fork subst @TITTEL unormert
-Dr. juris:dr.juris:fork subst @TITTEL unormert
-Dr.juris:dr.juris:fork subst @TITTEL unormert
-dr.juris:dr.juris:fork subst @TITTEL normert
-Stud. juris:stud.juris:fork subst @TITTEL unormert
-Stud.juris:stud.juris:fork subst @TITTEL unormert
-stud. juris:stud.juris:fork subst @TITTEL unormert
-stud.juris:stud.juris:fork subst @TITTEL normert
-Kong:kong:subst @TITTEL unormert
-kong:kong:subst @TITTEL normert
-ass. gen. sekr.:ass.gen.sekr.:fork subst @TITTEL unormert
-ass.gen.sekr.:ass.gen.sekr.:fork subst @TITTEL normert
-S/S:SS:fork subst nøyt appell ent fl ub be @TITTEL unormert
-SS:SS:fork subst nøyt appell ent fl ub be @TITTEL normert
-St.:St.:fork subst @TITTEL normert
-cand.med:cand.med.:fork subst @TITTEL unormert
-cand.med.:cand.med.:fork subst @TITTEL normert
-Can.med.vet:cand.med.vet.:fork subst @TITTEL unormert
-Cand. Med. Vet.:cand.med.vet.:fork subst @TITTEL unormert
-Cand. med. vet:cand.med.vet.:fork subst @TITTEL unormert
-Cand.med.vet:cand.med.vet.:fork subst @TITTEL unormert
-Cand.med.vet.:cand.med.vet.:fork subst @TITTEL unormert
-can.med.vet:cand.med.vet.:fork subst @TITTEL unormert
-cand. med. vet:cand.med.vet.:fork subst @TITTEL unormert
-cand.med.vet:cand.med.vet.:fork subst @TITTEL unormert
-cand.med.vet.:cand.med.vet.:fork subst @TITTEL normert
-Cand. min.:cand.min.:fork subst @TITTEL unormert
-Cand.min.:cand.min.:fork subst @TITTEL unormert
-cand. min:cand.min.:fork subst @TITTEL unormert
-cand. min.:cand.min.:fork subst @TITTEL unormert
-cand.min:cand.min.:fork subst @TITTEL unormert
-cand.min.:cand.min.:fork subst @TITTEL normert
-Cand. Odont.:cand.odont.:fork subst @TITTEL unormert
-Cand. odont.:cand.odont.:fork subst @TITTEL unormert
-Cand.odont.:cand.odont.:fork subst @TITTEL unormert
-cand. odont.:cand.odont.:fork subst @TITTEL unormert
-cand.odont.:cand.odont.:fork subst @TITTEL normert
-Cand. Oecon.:cand.oecon.:fork subst @TITTEL unormert
-Cand. oecon.:cand.oecon.:fork subst @TITTEL unormert
-Cand.oecon.:cand.oecon.:fork subst @TITTEL unormert
-cand. oecon.:cand.oecon.:fork subst @TITTEL unormert
-cand.oecon.:cand.oecon.:fork subst @TITTEL normert
-Cand. Paed.:cand.paed.:fork subst @TITTEL unormert
-Cand. paed.:cand.paed.:fork subst @TITTEL unormert
-Cand.paed.:cand.paed.:fork subst @TITTEL unormert
-cand. paed.:cand.paed.:fork subst @TITTEL unormert
-cand.paed.:cand.paed.:fork subst @TITTEL normert
-Cand. Pharm.:cand.pharm.:fork subst @TITTEL unormert
-Cand. pharm.:cand.pharm.:fork subst @TITTEL unormert
-Cand.pharm.:cand.pharm.:fork subst @TITTEL unormert
-cand. pharm.:cand.pharm.:fork subst @TITTEL unormert
-cand.pharm.:cand.pharm.:fork subst @TITTEL normert
-Cand. Philol.:cand.philol.:fork subst @TITTEL unormert
-Cand. philol.:cand.philol.:fork subst @TITTEL unormert
-Cand.philol.:cand.philol.:fork subst @TITTEL unormert
-cand. philol.:cand.philol.:fork subst @TITTEL unormert
-cand.philol.:cand.philol.:fork subst @TITTEL normert
-Cand. Polit.:cand.polit.:fork subst @TITTEL unormert
-Cand. polit.:cand.polit.:fork subst @TITTEL unormert
-Cand.polit.:cand.polit.:fork subst @TITTEL unormert
-cand. polit.:cand.polit.:fork subst @TITTEL unormert
-cand.polit.:cand.polit.:fork subst @TITTEL normert
-Cand. Psychol.:cand.psychol.:fork subst @TITTEL unormert
-Cand. psychol.:cand.psychol.:fork subst @TITTEL unormert
-Cand.psychol.:cand.psychol.:fork subst @TITTEL unormert
-cand. psychol.:cand.psychol.:fork subst @TITTEL unormert
-cand.psychol.:cand.psychol.:fork subst @TITTEL normert
-Cand. Real.:cand.real.:fork subst @TITTEL unormert
-Cand. real.:cand.real.:fork subst @TITTEL unormert
-Cand.real.:cand.real.:fork subst @TITTEL unormert
-cand. real.:cand.real.:fork subst @TITTEL unormert
-cand.real.:cand.real.:fork subst @TITTEL normert
-Cand. Scient.:cand.scient.:fork subst @TITTEL unormert
-Cand. scient.:cand.scient.:fork subst @TITTEL unormert
-cand. scient:cand.scient.:fork subst @TITTEL unormert
-cand. scient.:cand.scient.:fork subst @TITTEL unormert
-cand.scient.:cand.scient.:fork subst @TITTEL normert
-Cand. Sociol.:cand.sociol.:fork subst @TITTEL unormert
-Cand. sociol.:cand.sociol.:fork subst @TITTEL unormert
-Cand.sociol.:cand.sociol.:fork subst @TITTEL unormert
-cand. sociol.:cand.sociol.:fork subst @TITTEL unormert
-cand.sociol.:cand.sociol.:fork subst @TITTEL normert
-Cand. theol.:cand.theol.:fork subst @TITTEL unormert
-Cand.theol.:cand.theol.:fork subst @TITTEL unormert
-cand. theol:cand.theol.:fork subst @TITTEL unormert
-cand. theol.:cand.theol.:fork subst @TITTEL unormert
-cand.theol:cand.theol.:fork subst @TITTEL unormert
-cand.theol.:cand.theol.:fork subst @TITTEL normert
-frk.:frk.:fork subst @TITTEL normert
-viseadm dir:viseadm.dir.:fork adj+subst subst @TITTEL unormert
-viseadm. dir.:viseadm.dir.:fork adj+subst subst @TITTEL unormert
-viseadm. direktør:viseadm.dir.:fork adj+subst subst @TITTEL unormert
-viseadm.dir.:viseadm.dir.:fork adj+subst subst @TITTEL normert
-Cand. sosiol:cand.sosiol.:fork subst @TITTEL unormert
-Cand.sosiol:cand.sosiol.:fork subst @TITTEL unormert
-cand. sosiol:cand.sosiol.:fork subst @TITTEL unormert
-cand. sosiol.:cand.sosiol.:fork subst @TITTEL unormert
-cand.sosiol:cand.sosiol.:fork subst @TITTEL unormert
-cand.sosiol.:cand.sosiol.:fork subst @TITTEL normert
-Stud. jur.:stud.jur.:fork subst @TITTEL unormert
-Stud.jur.:stud.jur.:fork subst @TITTEL unormert
-stud. jur.:stud.jur.:fork subst @TITTEL unormert
+sir:sir:subst mask appell eint ub <tittel> normert
+Res.kap.:res.kap.:fork subst <tittel> unormert
+res.kap.:res.kap.:fork subst <tittel> normert
+vit.ass.:vit.ass.:fork subst <tittel> normert
+stud.:stud.:fork subst mask appell <tittel> normert
+Dr. Philos.:dr.philos.:fork subst <tittel> unormert
+Dr. philos.:dr.philos.:fork subst <tittel> unormert
+Dr.philos.:dr.philos.:fork subst <tittel> unormert
+dr. philos.:dr.philos.:fork subst <tittel> unormert
+dr.philos.:dr.philos.:fork subst <tittel> normert
+Dr. Polit.:dr.polit.:fork subst <tittel> unormert
+Dr. polit.:dr.polit.:fork subst <tittel> unormert
+Dr.polit.:dr.polit.:fork subst <tittel> unormert
+dr. polit.:dr.polit.:fork subst <tittel> unormert
+dr.polit.:dr.polit.:fork subst <tittel> normert
+Dr. Psychol.:dr.psychol.:fork subst <tittel> unormert
+Dr. psychol.:dr.psychol.:fork subst <tittel> unormert
+Dr.psychol.:dr.psychol.:fork subst <tittel> unormert
+dr. psychol.:dr.psychol.:fork subst <tittel> unormert
+dr.psychol.:dr.psychol.:fork subst <tittel> normert
+Dr. Scient.:dr.scient.:fork subst <tittel> unormert
+Dr. scient.:dr.scient.:fork subst <tittel> unormert
+Dr.scient.:dr.scient.:fork subst <tittel> unormert
+dr. scient.:dr.scient.:fork subst <tittel> unormert
+dr.scient.:dr.scient.:fork subst <tittel> normert
+Dr.pharm.:dr.pharm.:fork subst <tittel> unormert
+dr.pharm.:dr.pharm.:fork subst <tittel> normert
+Stud. Mag. Art.:stud.mag.art.:fork subst <tittel> unormert
+Stud. mag. art.:stud.mag.art.:fork subst <tittel> unormert
+Stud.mag.art.:stud.mag.art.:fork subst <tittel> unormert
+stud. mag. art.:stud.mag.art.:fork subst <tittel> unormert
+stud.mag.art.:stud.mag.art.:fork subst <tittel> normert
+Stud. Odont.:stud.odont.:fork subst <tittel> unormert
+Stud. odont.:stud.odont.:fork subst <tittel> unormert
+Stud.odont.:stud.odont.:fork subst <tittel> unormert
+stud. odont.:stud.odont.:fork subst <tittel> unormert
+stud.odont.:stud.odont.:fork subst <tittel> normert
+Stud. Oecon.:stud.oecon.:fork subst <tittel> unormert
+Stud. oecon.:stud.oecon.:fork subst <tittel> unormert
+Stud.oecon.:stud.oecon.:fork subst <tittel> unormert
+stud. oecon.:stud.oecon.:fork subst <tittel> unormert
+stud.oecon.:stud.oecon.:fork subst <tittel> normert
+Stud. Pharm.:stud.pharm.:fork subst <tittel> unormert
+Stud. pharm.:stud.pharm.:fork subst <tittel> unormert
+Stud.pharm.:stud.pharm.:fork subst <tittel> unormert
+stud. pharm.:stud.pharm.:fork subst <tittel> unormert
+Mrs.:Mrs.:fork subst <tittel> normert
+mrs.:Mrs.:fork subst <tittel> unormert
+stud.pharm.:stud.pharm.:fork subst <tittel> normert
+Stud. Philol.:stud.philol.:fork subst <tittel> unormert
+Stud. philol.:stud.philol.:fork subst <tittel> unormert
+Stud.philol.:stud.philol.:fork subst <tittel> unormert
+stud. philol.:stud.philol.:fork subst <tittel> unormert
+stud.philol.:stud.philol.:fork subst <tittel> normert
+Stud. Polit.:stud.polit.:fork subst <tittel> unormert
+Stud. polit.:stud.polit.:fork subst <tittel> unormert
+Stud.polit.:stud.polit.:fork subst <tittel> unormert
+stud. polit.:stud.polit.:fork subst <tittel> unormert
+stud.polit.:stud.polit.:fork subst <tittel> normert
+Stud. Psychol.:stud.psychol.:fork subst <tittel> unormert
+Stud. psychol.:stud.psychol.:fork subst <tittel> unormert
+Stud.psychol.:stud.psychol.:fork subst <tittel> unormert
+stud. psychol.:stud.psychol.:fork subst <tittel> unormert
+stud.psychol.:stud.psychol.:fork subst <tittel> normert
+Stud. Real.:stud.real.:fork subst <tittel> unormert
+Stud. real.:stud.real.:fork subst <tittel> unormert
+Stud.real.:stud.real.:fork subst <tittel> unormert
+stud. real.:stud.real.:fork subst <tittel> unormert
+stud.real.:stud.real.:fork subst <tittel> normert
+Stud. Scient.:stud.scient.:fork subst <tittel> unormert
+Stud. scient.:stud.scient.:fork subst <tittel> unormert
+Stud.scient.:stud.scient.:fork subst <tittel> unormert
+stud. scient.:stud.scient.:fork subst <tittel> unormert
+stud.scient.:stud.scient.:fork subst <tittel> normert
+Kand.:kand.:fork subst <tittel> unormert
+kand.:kand.:fork subst <tittel> normert
+adm direktør:adm.dir.:fork subst <tittel> unormert
+adm. dir:adm.dir.:fork subst <tittel> unormert
+adm. dir.:adm.dir.:fork subst <tittel> unormert
+adm. direktør:adm.dir.:fork subst <tittel> unormert
+adm.dir:adm.dir.:fork subst <tittel> unormert
+adm.dir.:adm.dir.:fork subst <tittel> normert
+stud.jur:stud.jur.:fork subst <tittel> unormert
+stud.jur.:stud.jur.:fork subst <tittel> normert
+Stud. med.:stud.med.:fork subst <tittel> unormert
+Stud.med.:stud.med.:fork subst <tittel> unormert
+stud. med:stud.med.:fork subst <tittel> unormert
+stud. med.:stud.med.:fork subst <tittel> unormert
+stud.med:stud.med.:fork subst <tittel> unormert
+stud.med.:stud.med.:fork subst <tittel> normert
+Stud. techn.:stud.techn.:fork subst <tittel> unormert
+Stud.techn.:stud.techn.:fork subst <tittel> unormert
+stud. techn.:stud.techn.:fork subst <tittel> unormert
+stud.techn:stud.techn.:fork subst <tittel> unormert
+stud.techn.:stud.techn.:fork subst <tittel> normert
+Stud. theol:stud.theol.:fork subst <tittel> unormert
+Stud.theol:stud.theol.:fork subst <tittel> unormert
+stud. theol.:stud.theol.:fork subst <tittel> unormert
+stud.theol:stud.theol.:fork subst <tittel> unormert
+stud.theol.:stud.theol.:fork subst <tittel> normert
+DK:DK:fork subst <tittel> normert
+D/S:DS:fork subst <tittel> unormert
+DS:DS:fork subst <tittel> normert
+T/S:TS:fork subst <tittel> unormert
+TS:TS:fork subst <tittel> normert
+H.K.H.:H.K.H.:fork subst <tittel> normert
+H.k.h.:H.K.H.:fork subst <tittel> unormert
+H.M.:H.M.:fork subst <tittel> normert
+H.m.:H.M.:fork subst <tittel> unormert
+Dr:dr.:fork subst <tittel> unormert
+Dr.:dr.:fork subst <tittel> unormert
+dr:dr.:fork subst <tittel> unormert
+dr.:dr.:fork subst <tittel> normert
+Dr. agric.:dr.agric.:fork subst <tittel> unormert
+Dr.agric.:dr.agric.:fork subst <tittel> unormert
+dr. agric:dr.agric.:fork subst <tittel> unormert
+dr. agric.:dr.agric.:fork subst <tittel> unormert
+dr.agric:dr.agric.:fork subst <tittel> unormert
+dr.agric.:dr.agric.:fork subst <tittel> normert
+Dr. Art.:dr.art.:fork subst <tittel> unormert
+Dr. art.:dr.art.:fork subst <tittel> unormert
+Dr.art.:dr.art.:fork subst <tittel> unormert
+dr. art.:dr.art.:fork subst <tittel> unormert
+dr.art.:dr.art.:fork subst <tittel> normert
+Dr. ing.:dr.ing.:fork subst <tittel> unormert
+Dr.ing.:dr.ing.:fork subst <tittel> unormert
+dr. ing:dr.ing.:fork subst <tittel> unormert
+dr. ing.:dr.ing.:fork subst <tittel> unormert
+dr.ing:dr.ing.:fork subst <tittel> unormert
+dr.ing.:dr.ing.:fork subst <tittel> normert
+Dr. Jur.:dr.jur.:fork subst <tittel> unormert
+Dr. jur.:dr.jur.:fork subst <tittel> unormert
+Dr.jur.:dr.jur.:fork subst <tittel> unormert
+dr.jur.:dr.jur.:fork subst <tittel> normert
+Dr. med.:dr.med.:fork subst <tittel> unormert
+Dr.med.:dr.med.:fork subst <tittel> unormert
+dr. med:dr.med.:fork subst <tittel> unormert
+dr. med.:dr.med.:fork subst <tittel> unormert
+dr.med:dr.med.:fork subst <tittel> unormert
+dr.med.:dr.med.:fork subst <tittel> normert
+Dr. Med. Vet.:dr.med.vet.:fork subst <tittel> unormert
+Dr. med. vet.:dr.med.vet.:fork subst <tittel> unormert
+Dr.med.vet.:dr.med.vet.:fork subst <tittel> unormert
+dr. med. vet.:dr.med.vet.:fork subst <tittel> unormert
+dr.med.vet.:dr.med.vet.:fork subst <tittel> normert
+Dr. Odont.:dr.odont.:fork subst <tittel> unormert
+Dr. odont.:dr.odont.:fork subst <tittel> unormert
+Dr.odont.:dr.odont.:fork subst <tittel> unormert
+dr. odont.:dr.odont.:fork subst <tittel> unormert
+dr.odont.:dr.odont.:fork subst <tittel> normert
+Dr. Oecon.:dr.oecon.:fork subst <tittel> unormert
+Dr. oecon.:dr.oecon.:fork subst <tittel> unormert
+Dr.oecon.:dr.oecon.:fork subst <tittel> unormert
+dr. oecon.:dr.oecon.:fork subst <tittel> unormert
+dr.oecon.:dr.oecon.:fork subst <tittel> normert
+Dr. Philos.:dr.philos.:fork subst <tittel> unormert
+Dr. philos.:dr.philos.:fork subst <tittel> unormert
+Dr.philos.:dr.philos.:fork subst <tittel> unormert
+dr. philos.:dr.philos.:fork subst <tittel> unormert
+dr.philos.:dr.philos.:fork subst <tittel> normert
+Dr. techn.:dr.techn.:fork subst <tittel> unormert
+Dr.techn.:dr.techn.:fork subst <tittel> unormert
+dr. techn:dr.techn.:fork subst <tittel> unormert
+dr. techn.:dr.techn.:fork subst <tittel> unormert
+dr.techn:dr.techn.:fork subst <tittel> unormert
+dr.techn.:dr.techn.:fork subst <tittel> normert
+Dr. theol:dr.theol.:fork subst <tittel> unormert
+Dr.theol:dr.theol.:fork subst <tittel> unormert
+dr. theol:dr.theol.:fork subst <tittel> unormert
+dr. theol.:dr.theol.:fork subst <tittel> unormert
+dr.theol:dr.theol.:fork subst <tittel> unormert
+dr.theol.:dr.theol.:fork subst <tittel> normert
+LK:LK:fork subst <tittel> normert
+M/S:MS:fork subst <tittel> unormert
+MS:MS:fork subst <tittel> normert
+M/T:MT:fork subst <tittel> unormert
+MT:MT:fork subst <tittel> normert
+Mlle:Mlle:fork subst <tittel> normert
+mlle:Mlle:fork subst <tittel> unormert
+Mme:Mme:fork subst <tittel> normert
+mme:Mme:fork subst <tittel> unormert
+Mr.:Mr.:fork subst <tittel> normert
+mr.:Mr.:fork subst <tittel> unormert
+Cand. act.:cand.act.:fork subst <tittel> unormert
+cand. act:cand.act.:fork subst <tittel> unormert
+cand. act.:cand.act.:fork subst <tittel> unormert
+cand.act:cand.act.:fork subst <tittel> unormert
+cand.act.:cand.act.:fork subst <tittel> normert
+Cand. agric.:cand.agric.:fork subst <tittel> unormert
+Cand.agric.:cand.agric.:fork subst <tittel> unormert
+cand. agric:cand.agric.:fork subst <tittel> unormert
+cand. agric.:cand.agric.:fork subst <tittel> unormert
+cand.agric:cand.agric.:fork subst <tittel> unormert
+cand.agric.:cand.agric.:fork subst <tittel> normert
+Cand. jur.:cand.jur.:fork subst <tittel> unormert
+Cand.jur.:cand.jur.:fork subst <tittel> unormert
+cand. jur.:cand.jur.:fork subst <tittel> unormert
+cand.jur.:cand.jur.:fork subst <tittel> normert
+Cand. Mag.:cand.mag.:fork subst <tittel> unormert
+Cand. mag.:cand.mag.:fork subst <tittel> unormert
+Cand.mag.:cand.mag.:fork subst <tittel> unormert
+cand. mag.:cand.mag.:fork subst <tittel> unormert
+cand.mag.:cand.mag.:fork subst <tittel> normert
+Cand. med.:cand.med.:fork subst <tittel> unormert
+Cand.med.:cand.med.:fork subst <tittel> unormert
+cand. med:cand.med.:fork subst <tittel> unormert
+cand. med.:cand.med.:fork subst <tittel> unormert
+Mag. Art.:mag.art.:fork subst <tittel> unormert
+Mag. art.:mag.art.:fork subst <tittel> unormert
+Mag.art:mag.art.:fork subst <tittel> unormert
+Mag.art.:mag.art.:fork subst <tittel> unormert
+mag. art.:mag.art.:fork subst <tittel> unormert
+mag.art:mag.art.:fork subst <tittel> unormert
+mag.art.:mag.art.:fork subst <tittel> normert
+Mag. scient:mag.scient.:fork subst <tittel> unormert
+Mag.scient:mag.scient.:fork subst <tittel> unormert
+mag. scient:mag.scient.:fork subst <tittel> unormert
+mag. scient.:mag.scient.:fork subst <tittel> unormert
+mag.scient:mag.scient.:fork subst <tittel> unormert
+mag.scient.:mag.scient.:fork subst <tittel> normert
+Lic.:lic.:fork subst <tittel> unormert
+lic.:lic.:fork subst <tittel> normert
+Lic. Philos.:lic.philos.:fork subst <tittel> unormert
+Lic. philos.:lic.philos.:fork subst <tittel> unormert
+Lic.philos:lic.philos.:fork subst <tittel> unormert
+lic. philos.:lic.philos.:fork subst <tittel> unormert
+lic.philos.:lic.philos.:fork subst <tittel> normert
+Vit. Ass.:vit.ass.:fork subst <tittel> unormert
+Vit. ass.:vit.ass.:fork subst <tittel> unormert
+vit. ass.:vit.ass.:fork subst <tittel> unormert
+Cand. juris:cand.juris:fork subst <tittel> unormert
+Cand.juris:cand.juris:fork subst <tittel> unormert
+cand. juris:cand.juris:fork subst <tittel> unormert
+cand.juris:cand.juris:fork subst <tittel> normert
+Dr. Juris:dr.juris:fork subst <tittel> unormert
+Dr. juris:dr.juris:fork subst <tittel> unormert
+Dr.juris:dr.juris:fork subst <tittel> unormert
+dr.juris:dr.juris:fork subst <tittel> normert
+Stud. juris:stud.juris:fork subst <tittel> unormert
+Stud.juris:stud.juris:fork subst <tittel> unormert
+stud. juris:stud.juris:fork subst <tittel> unormert
+stud.juris:stud.juris:fork subst <tittel> normert
+Kong:kong:subst <tittel> unormert
+kong:kong:subst <tittel> normert
+ass. gen. sekr.:ass.gen.sekr.:fork subst <tittel> unormert
+ass.gen.sekr.:ass.gen.sekr.:fork subst <tittel> normert
+S/S:SS:fork subst nøyt appell <tittel> unormert
+SS:SS:fork subst nøyt appell <tittel> normert
+St.:St.:fork subst <tittel> normert
+cand.med:cand.med.:fork subst <tittel> unormert
+cand.med.:cand.med.:fork subst <tittel> normert
+Can.med.vet:cand.med.vet.:fork subst <tittel> unormert
+Cand. Med. Vet.:cand.med.vet.:fork subst <tittel> unormert
+Cand. med. vet:cand.med.vet.:fork subst <tittel> unormert
+Cand.med.vet:cand.med.vet.:fork subst <tittel> unormert
+Cand.med.vet.:cand.med.vet.:fork subst <tittel> unormert
+can.med.vet:cand.med.vet.:fork subst <tittel> unormert
+cand. med. vet:cand.med.vet.:fork subst <tittel> unormert
+cand.med.vet:cand.med.vet.:fork subst <tittel> unormert
+cand.med.vet.:cand.med.vet.:fork subst <tittel> normert
+Cand. min.:cand.min.:fork subst <tittel> unormert
+Cand.min.:cand.min.:fork subst <tittel> unormert
+cand. min:cand.min.:fork subst <tittel> unormert
+cand. min.:cand.min.:fork subst <tittel> unormert
+cand.min:cand.min.:fork subst <tittel> unormert
+cand.min.:cand.min.:fork subst <tittel> normert
+Cand. Odont.:cand.odont.:fork subst <tittel> unormert
+Cand. odont.:cand.odont.:fork subst <tittel> unormert
+Cand.odont.:cand.odont.:fork subst <tittel> unormert
+cand. odont.:cand.odont.:fork subst <tittel> unormert
+cand.odont.:cand.odont.:fork subst <tittel> normert
+Cand. Oecon.:cand.oecon.:fork subst <tittel> unormert
+Cand. oecon.:cand.oecon.:fork subst <tittel> unormert
+Cand.oecon.:cand.oecon.:fork subst <tittel> unormert
+cand. oecon.:cand.oecon.:fork subst <tittel> unormert
+cand.oecon.:cand.oecon.:fork subst <tittel> normert
+Cand. Paed.:cand.paed.:fork subst <tittel> unormert
+Cand. paed.:cand.paed.:fork subst <tittel> unormert
+Cand.paed.:cand.paed.:fork subst <tittel> unormert
+cand. paed.:cand.paed.:fork subst <tittel> unormert
+cand.paed.:cand.paed.:fork subst <tittel> normert
+Cand. Pharm.:cand.pharm.:fork subst <tittel> unormert
+Cand. pharm.:cand.pharm.:fork subst <tittel> unormert
+Cand.pharm.:cand.pharm.:fork subst <tittel> unormert
+cand. pharm.:cand.pharm.:fork subst <tittel> unormert
+cand.pharm.:cand.pharm.:fork subst <tittel> normert
+Cand. Philol.:cand.philol.:fork subst <tittel> unormert
+Cand. philol.:cand.philol.:fork subst <tittel> unormert
+Cand.philol.:cand.philol.:fork subst <tittel> unormert
+cand. philol.:cand.philol.:fork subst <tittel> unormert
+cand.philol.:cand.philol.:fork subst <tittel> normert
+Cand. Polit.:cand.polit.:fork subst <tittel> unormert
+Cand. polit.:cand.polit.:fork subst <tittel> unormert
+Cand.polit.:cand.polit.:fork subst <tittel> unormert
+cand. polit.:cand.polit.:fork subst <tittel> unormert
+cand.polit.:cand.polit.:fork subst <tittel> normert
+Cand. Psychol.:cand.psychol.:fork subst <tittel> unormert
+Cand. psychol.:cand.psychol.:fork subst <tittel> unormert
+Cand.psychol.:cand.psychol.:fork subst <tittel> unormert
+cand. psychol.:cand.psychol.:fork subst <tittel> unormert
+cand.psychol.:cand.psychol.:fork subst <tittel> normert
+Cand. Real.:cand.real.:fork subst <tittel> unormert
+Cand. real.:cand.real.:fork subst <tittel> unormert
+Cand.real.:cand.real.:fork subst <tittel> unormert
+cand. real.:cand.real.:fork subst <tittel> unormert
+cand.real.:cand.real.:fork subst <tittel> normert
+Cand. Scient.:cand.scient.:fork subst <tittel> unormert
+Cand. scient.:cand.scient.:fork subst <tittel> unormert
+cand. scient:cand.scient.:fork subst <tittel> unormert
+cand. scient.:cand.scient.:fork subst <tittel> unormert
+cand.scient.:cand.scient.:fork subst <tittel> normert
+Cand. Sociol.:cand.sociol.:fork subst <tittel> unormert
+Cand. sociol.:cand.sociol.:fork subst <tittel> unormert
+Cand.sociol.:cand.sociol.:fork subst <tittel> unormert
+cand. sociol.:cand.sociol.:fork subst <tittel> unormert
+cand.sociol.:cand.sociol.:fork subst <tittel> normert
+Cand. theol.:cand.theol.:fork subst <tittel> unormert
+Cand.theol.:cand.theol.:fork subst <tittel> unormert
+cand. theol:cand.theol.:fork subst <tittel> unormert
+cand. theol.:cand.theol.:fork subst <tittel> unormert
+cand.theol:cand.theol.:fork subst <tittel> unormert
+cand.theol.:cand.theol.:fork subst <tittel> normert
+frk.:frk.:fork subst <tittel> normert
+viseadm dir:viseadm.dir.:fork subst <tittel> unormert
+viseadm. dir.:viseadm.dir.:fork subst <tittel> unormert
+viseadm. direktør:viseadm.dir.:fork subst <tittel> unormert
+viseadm.dir.:viseadm.dir.:fork subst <tittel> normert
+Cand. sosiol:cand.sosiol.:fork subst <tittel> unormert
+Cand.sosiol:cand.sosiol.:fork subst <tittel> unormert
+cand. sosiol:cand.sosiol.:fork subst <tittel> unormert
+cand. sosiol.:cand.sosiol.:fork subst <tittel> unormert
+cand.sosiol:cand.sosiol.:fork subst <tittel> unormert
+cand.sosiol.:cand.sosiol.:fork subst <tittel> normert
+Stud. jur.:stud.jur.:fork subst <tittel> unormert
+Stud.jur.:stud.jur.:fork subst <tittel> unormert
+stud. jur.:stud.jur.:fork subst <tittel> unormert

@@ -60,5 +60,3 @@ mg:mg:symb subst normert
 TWh:TWh:fork subst normert
 cal:cal:symb subst normert
 gal:gal:symb subst normert
-kg:kg:symb subst normert
-kg.:kg:symb subst unormert
