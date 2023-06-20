@@ -1,1004 +1,48 @@
-pars pro toto:pars pro toto:adv normert
-ja menn:ja menn:adv normert
-ja så menn:ja så menn:adv normert
-ja vel:ja vel:interj+adv interj @INTERJ normert
-ja visst:ja visst:interj+adj adv @ADV normert
-lit de parade:lit de parade:subst appell ubøy normert
-lite grann:lite grann:adj+subst subst @OBJ @ADV @ADV> normert
-mala fide:mala fide:adv normert
-l'art pour l'art:l'art pour l'art:interj normert
-la dolce vita:la dolce vita:subst appell ubøy normert
-quantum satis:quantum satis:adv normert
-pas de deux:pas de deux:subst mask appell ent ub normert
-pas de deuxen:pas de deux:subst mask appell ent be normert
-pas de deuxer:pas de deux:subst mask appell fl ub normert
-pas de deuxene:pas de deux:subst mask appell fl be normert
-kyrie eleison:kyrie eleison:interj normert
-studiosus perpetuus:studiosus perpetuus:subst appell ubøy normert
-nom de guerre:nom de guerre:subst nøyt appell ubøy normert
-pauli ord:pauli ord:subst nøyt appell ubøy normert
-pauvres honteux:pauvres honteux:subst appell ubøy normert
-perpetuum mobile:perpetuum mobile:subst nøyt appell ubøy normert
-nord om:nord om:prep normert
-mixed double:mixed double:subst mask appell ent ub normert
-mixed doublen:mixed double:subst mask appell ent be normert
-mixed doubler:mixed double:subst mask appell fl ub normert
-mixed doublene:mixed double:subst mask appell fl be normert
-negro spiritual:negro spiritual:subst appell ubøy normert
-poste restante:poste restante:prep normert
-med rette:med rette:adv normert
-modus vivendi:modus vivendi:subst mask appell ubøy normert
-non profit:non profit:adj pos m/f ub ent normert
-non profit:non profit:adj pos fl normert
-non profit:non profit:adj pos be ent normert
-non profit:non profit:adj pos nøyt ub ent normert
-non stop:non stop:adv normert
-petit mal:petit mal:subst appell ubøy normert
-pater familias:pater familias:subst mask appell ubøy normert
-prae ceteris:prae ceteris:subst mask appell ent ub normert
-prae ceteris:prae ceteris:subst mask appell ent ub normert
-prae ceterisen:prae ceteris:subst mask appell ent be normert
-prae ceterisen:prae ceteris:subst mask appell ent be normert
-prae ceteris:prae ceteris:subst mask appell fl ub normert
-prae ceteriser:prae ceteris:subst mask appell fl ub normert
-prae ceterisene:prae ceteris:subst mask appell fl be normert
-prae ceterisene:prae ceteris:subst mask appell fl be normert
-corps de ballet:corps de ballet:subst nøyt appell ubøy normert
-corps diplomatique:corps diplomatique:subst nøyt appell ubøy normert
-peu à peu:peu à peu:adv normert
-peu om peu:peu om peu:adv normert
-vice versa:vice versa:adv normert
-min sann:min sann:adv normert
-min sant:min sant:adv normert
-min santen:min santen:adv normert
-nature morte:nature morte:subst nøyt appell ubøy normert
-mang ei:mang en:adj+det det kvant fem ent @DET> normert
-mang en:mang en:adj+det det kvant mask ent @DET> normert
-mangt et:mang en:adj+det det kvant nøyt ent @DET> normert
-short story:short story:subst mask appell ent ub normert
-short storyen:short story:subst mask appell ent be normert
-short storyer:short story:subst mask appell fl ub normert
-short storyene:short story:subst mask appell fl be normert
-munn- og klauvsjuke:munn- og klauvsjuke:subst fem appell ent ub normert
-munn- og klauvsjuke:munn- og klauvsjuke:subst mask appell ent ub normert
-munn- og klauvsjuka:munn- og klauvsjuke:subst fem appell ent be normert
-munn- og klauvsjuken:munn- og klauvsjuke:subst mask appell ent be normert
-munn- og klauvsjuker:munn- og klauvsjuke:subst fem appell fl ub normert
-munn- og klauvsjuker:munn- og klauvsjuke:subst mask appell fl ub normert
-munn- og klauvsjukene:munn- og klauvsjuke:subst fem appell fl be normert
-munn- og klauvsjukene:munn- og klauvsjuke:subst mask appell fl be normert
-munn- og klauvsyke:munn- og klauvsyke:subst fem appell ent ub normert
-munn- og klauvsyke:munn- og klauvsyke:subst mask appell ent ub normert
-munn- og klauvsyka:munn- og klauvsyke:subst fem appell ent be normert
-munn- og klauvsyken:munn- og klauvsyke:subst mask appell ent be normert
-munn- og klauvsyker:munn- og klauvsyke:subst fem appell fl ub normert
-munn- og klauvsyker:munn- og klauvsyke:subst mask appell fl ub normert
-munn- og klauvsykene:munn- og klauvsyke:subst fem appell fl be normert
-munn- og klauvsykene:munn- og klauvsyke:subst mask appell fl be normert
-munn- og klovsjuke:munn- og klovsjuke:subst fem appell ent ub normert
-munn- og klovsjuke:munn- og klovsjuke:subst mask appell ent ub normert
-munn- og klovsjuka:munn- og klovsjuke:subst fem appell ent be normert
-munn- og klovsjuken:munn- og klovsjuke:subst mask appell ent be normert
-munn- og klovsjuker:munn- og klovsjuke:subst fem appell fl ub normert
-munn- og klovsjuker:munn- og klovsjuke:subst mask appell fl ub normert
-munn- og klovsjukene:munn- og klovsjuke:subst fem appell fl be normert
-munn- og klovsjukene:munn- og klovsjuke:subst mask appell fl be normert
-munn- og klovsyke:munn- og klovsyke:subst fem appell ent ub normert
-munn- og klovsyke:munn- og klovsyke:subst mask appell ent ub normert
-munn- og klovsyka:munn- og klovsyke:subst fem appell ent be normert
-munn- og klovsyken:munn- og klovsyke:subst mask appell ent be normert
-munn- og klovsyker:munn- og klovsyke:subst fem appell fl ub normert
-munn- og klovsyker:munn- og klovsyke:subst mask appell fl ub normert
-munn- og klovsykene:munn- og klovsyke:subst fem appell fl be normert
-munn- og klovsykene:munn- og klovsyke:subst mask appell fl be normert
-per capita:per capita:adv normert
-tipp topp:tipp topp:adj pos m/f ub ent normert
-tipp topp:tipp topp:adj pos fl normert
-tipp topp:tipp topp:adj pos be ent normert
-tipp topp:tipp topp:adj pos nøyt ub ent normert
-persona grata:persona grata:subst mask appell ubøy normert
-persona non grata:persona non grata:subst mask appell ubøy normert
-post festum:post festum:adv normert
-post meridiem:post meridiem:adv normert
-post mortem:post mortem:adv normert
-paso doble:paso doble:subst mask appell ent ub normert
-paso doblen:paso doble:subst mask appell ent be normert
-paso dobler:paso doble:subst mask appell fl ub normert
-paso doblene:paso doble:subst mask appell fl be normert
-enfant terrible:enfant terrible:subst nøyt appell ent normert
-enfants terribles:enfant terrible:subst nøyt appell ub fl normert
-science fiction:science fiction:subst appell ubøy normert
-va banque:va banque:adv normert
-up to date:up to date:adj pos m/f ub ent normert
-up to date:up to date:adj pos fl normert
-up to date:up to date:adj pos be ent normert
-up to date:up to date:adj pos nøyt ub ent normert
-status quo:status quo:subst appell ubøy normert
-primus inter pares:primus inter pares:subst appell ubøy normert
-primus motor:primus motor:subst appell ubøy normert
-sleeping partner:sleeping partner:subst mask appell ent ub normert
-sleeping partner:sleeping partner:subst mask appell ent ub unormert
-sleeping partner:sleeping partner:subst mask appell ent ub klammeform
-sleeping partneren:sleeping partner:subst mask appell ent be normert
-sleeping partneren:sleeping partner:subst mask appell ent be unormert
-sleeping partneren:sleeping partner:subst mask appell ent be klammeform
-sleeping partnere:sleeping partner:subst mask appell fl ub normert
-sleeping partnerer:sleeping partner:subst mask appell fl ub unormert
-sleeping partnerer:sleeping partner:subst mask appell fl ub klammeform
-sleeping partnerne:sleeping partner:subst mask appell fl be normert
-sleeping partnerne:sleeping partner:subst mask appell fl be unormert
-sleeping partnerne:sleeping partner:subst mask appell fl be klammeform
-super G:super G:subst mask appell ent ub normert
-super Gen:super G:subst mask appell ent be normert
-super Ger:super G:subst mask appell fl ub normert
-super Gene:super G:subst mask appell fl be normert
-straight flush:straight flush:subst mask appell ent ub normert
-straight flushen:straight flush:subst mask appell ent be normert
-straight flusher:straight flush:subst mask appell fl ub normert
-straight flushene:straight flush:subst mask appell fl be normert
-summa summarum:summa summarum:adv normert
-all right:all right:adj pos m/f ub ent normert
-all right:all right:adj pos m/f ub ent normert
-all right:all right:adj pos fl normert
-all righte:all right:adj pos fl normert
-all right:all right:adj pos be ent normert
-all righte:all right:adj pos be ent normert
-all right:all right:adj pos nøyt ub ent normert
-all right:all right:adj pos nøyt ub ent normert
-all rightere:all right:adj komp normert
-all rightere:all right:adj komp normert
-all rightest:all right:adj sup ub normert
-all rightest:all right:adj sup ub normert
-all righteste:all right:adj sup be normert
-all righteste:all right:adj sup be normert
-all round:all round:adj pos m/f ub ent normert
-all round:all round:adj pos fl normert
-all round:all round:adj pos be ent normert
-all round:all round:adj pos nøyt ub ent normert
-all round-klasse:all round-klasse:subst fem appell ent ub normert
-all round-klasse:all round-klasse:subst mask appell ent ub normert
-all round-klassa:all round-klasse:subst fem appell ent be normert
-all round-klassen:all round-klasse:subst mask appell ent be normert
-all round-klasser:all round-klasse:subst fem appell fl ub normert
-all round-klasser:all round-klasse:subst mask appell fl ub normert
-all round-klassene:all round-klasse:subst fem appell fl be normert
-all round-klassene:all round-klasse:subst mask appell fl be normert
-all round-løper:all round-løper:subst mask appell ent ub normert
-all round-løper:all round-løper:subst mask appell ent ub unormert
-all round-løper:all round-løper:subst mask appell ent ub klammeform
-all round-løperen:all round-løper:subst mask appell ent be normert
-all round-løperen:all round-løper:subst mask appell ent be unormert
-all round-løperen:all round-løper:subst mask appell ent be klammeform
-all round-løpere:all round-løper:subst mask appell fl ub normert
-all round-løperer:all round-løper:subst mask appell fl ub unormert
-all round-løperer:all round-løper:subst mask appell fl ub klammeform
-all round-løperne:all round-løper:subst mask appell fl be normert
-all round-løperne:all round-løper:subst mask appell fl be unormert
-all round-løperne:all round-løper:subst mask appell fl be klammeform
-all ting:all ting:subst normert
-all verden:all verden:det+subst subst normert
-alle sjelers dag:alle sjelers dag:subst mask appell ubøy normert
-alle vegne:alle vegne:pron+subst adv @ADV normert
-sex appeal:sex appeal:subst mask appell ent ub normert
-sex appealen:sex appeal:subst mask appell ent be normert
-sex appealer:sex appeal:subst mask appell fl ub normert
-sex appealene:sex appeal:subst mask appell fl be normert
-under vær:under vær:prep+subst adv @S-PRED normert
-tonic water:tonic water:subst appell ubøy normert
-ved like:ved like:prep+adv adv @O-PRED normert
-i hu:i hu:prep+subst adv @ADV normert
-taps- og vinningskonto:taps- og vinningskonto:subst mask appell ent ub normert
-taps- og vinningskonto:taps- og vinningskonto:subst mask appell ent ub normert
-taps- og vinningskontoen:taps- og vinningskonto:subst mask appell ent be normert
-taps- og vinningskontoen:taps- og vinningskonto:subst mask appell ent be normert
-taps- og vinningskonti:taps- og vinningskonto:subst mask appell fl ub normert
-taps- og vinningskontoer:taps- og vinningskonto:subst mask appell fl ub normert
-taps- og vinningskontiene:taps- og vinningskonto:subst mask appell fl be normert
-taps- og vinningskontoene:taps- og vinningskonto:subst mask appell fl be normert
-world cup-renn:world cup-renn:subst nøyt appell ent ub normert
-world cup-rennet:world cup-renn:subst nøyt appell ent be normert
-world cup-rennet:world cup-renn:subst nøyt appell ent be normert
-world cup-renn:world cup-renn:subst nøyt appell fl ub normert
-world cup-renn:world cup-renn:subst nøyt appell fl ub normert
-world cup-rennene:world cup-renn:subst nøyt appell fl be normert
-world cup-renna:world cup-renn:subst nøyt appell fl be normert
-crème de la crème:crème de la crème:subst appell ubøy normert
-da capo:da capo:subst mask appell ent ub normert
-da capoen:da capo:subst mask appell ent be normert
-da capoer:da capo:subst mask appell fl ub normert
-da capoene:da capo:subst mask appell fl be normert
-desktop publishing:desktop publishing:subst appell ubøy normert
-frå borde:frå borde:prep+subst adv @ADV normert
-nomen actionis:nomen actionis:subst appell ubøy normert
-still going strong:still going strong:adj @S-PRED normert
-til og med:til og med:prep+konj+prep prep @ADV normert
-blant anna:blant anna:prep+adj adv @ADV normert
-blant annet:blant annet:prep+adj adv @ADV normert
-eau de parfume:eau de parfume:subst appell ubøy normert
-enkelt sagt:enkelt sagt:adj+verb adv @ADV normert
-for eksempel:for eksempel:prep+subst adv @ADV normert
-fra barnsbein av:fra barnsbein av:prep+subst+prep adv @ADV normert
-fra barnsben av:fra barnsben av:prep+subst+prep adv @ADV normert
-fra oven:fra oven:prep+subst adv @ADV normert
-gjøren og laden:gjøren og laden:subst+konj+subst subst normert
-gjøren og laten:gjøren og laten:subst+konj+subst subst normert
-glipp av:glipp av:subst+prep prep @ADV normert
-has på:has på:subst+prep prep normert
-hipp som happ:hipp som happ: subst+prep+subst adv @S-PRED normert
-hulter til bulter:hulter til bulter: subst+prep+subst adv @ADV normert
-hummer og kanari:hummer og kanari:subst+konj+subst subst normert
-hurten og sturten:hurten og sturten:subst+konj+subst adv @ADV normert
-hva i huleste:hva i huleste:pron+prep+adj interj @INTERJ normert
-i beknip:i beknip:prep+subst adv @ADV normert
-i bero:i bero:prep+subst adv @ADV normert
-i beste velgående:i beste velgående:prep+adj+adj adv @ADV normert
-i bløt:i bløt:prep+subst adv @ADV normert
-i bløyt:i bløyt:prep+subst adv @ADV normert
-i embeds medfør:i embeds medfør:prep+subst+subst adv @ADV normert
-i embets medfør:i embets medfør:prep+subst+subst adv @ADV normert
-i en fyk og en fei:i en fyk og en fei:prep+det+subst+konj+det+subst adv @ADV normert
-i en ruff:i en ruff:prep+det+subst adv @ADV normert
-i forvaring:i forvaring:prep+subst adv @ADV normert
-i fyk og fei:i fyk og fei:prep+subst+konj+subst adv @ADV normert
-i glemme:i glemme:prep+subst adv @ADV normert
-i glømme:i glømme:prep+subst adv @ADV normert
-i halve dag:i halve dag:prep+adj+subst adv @ADV normert
-i halve fjor:i halve fjor: prep+adj+subst adv @ADV normert
-i halve forfjor:i halve forfjor:prep+adj+subst adv @ADV normert
-i halve forgårs:i halve forgårs:prep+adj+subst adv @ADV normert
-i halve går:i halve går:prep+adj+subst adv @ADV normert
-i halve morgen:i halve morgen:prep+adj+subst adv @ADV normert
-i hartkorn:i hartkorn:prep+subst adv @ADV normert
-i hele dag:i hele dag:prep+adj+subst adv @ADV normert
-i hele fjor:i hele fjor: prep+adj+subst adv @ADV normert
-i hele forfjor:i hele forfjor:prep+adj+subst adv @ADV normert
-i hele forgårs:i hele forgårs:prep+adj+subst adv @ADV normert
-i hele går:i hele går:prep+adj+subst adv @ADV normert
-i hele morgen:i hele morgen:prep+adj+subst adv @ADV normert
-i hui og hast:i hui og hast:prep+subst+konj+subst adv @ADV normert
-i hutaheiti:i hutaheiti:prep+subst adv @ADV normert
-i hytt og pine:i hytt og pine:prep+subst+konj+subst adv @ADV normert
-i hytt og vær:i hytt og vær:prep+subst+konj+subst adv @ADV normert
-i kraft av:i kraft av:prep+subst+prep prep @ADV normert
-i påvente av:i påvente av:prep+subst+prep prep @ADV normert
-i ro og mak:i ro og mak:prep+subst+konj+subst adv @ADV normert
-i senk:i senk:prep+subst adv @ADV normert
-i smug:i smug:prep+subst adv @ADV normert
-i stampe:i stampe:prep+subst adv @ADV normert
-i sus og dus:i sus og dus:prep+subst+konj+subst adv @ADV normert
-i ulage:i ulage:prep+subst adv @S-PRED normert
-i urede:i urede:prep+subst adv @S-PRED normert
-i ustand:i ustand:prep+subst adv @S-PRED normert
-i villrede:i villrede:prep+subst adv @S-PRED normert
-il duce:il duce:subst appell ubøy normert
-jo da:jo da:interj+adv interj @INTERJ normert
-klabb og babb:klabb og babb:subst+konj+subst subst normert
-kort fortalt:kort fortalt:adj+verb adv @ADV normert
-kort sagt:kort sagt:adj+verb adv @ADV normert
-kost og mask:kost og mask:subst+konj+subst subst normert
-kreti og pleti:kreti og pleti:subst+konj+subst subst normert
-langveges fra:langveges fra:prep+prep adv @ADV normert
-langvegs fra:langvegs fra:prep+prep adv @ADV normert
-langveis fra:langveis fra:prep+prep adv @ADV normert
-last og brast:last og brast:subst+konj+subst subst @ADV normert
-med bibehold av:med bibehold av:prep+subst+prep prep @ADV normert
-nattens dronning:nattens dronning:subst fem appell ent ub normert
-nattens dronning:nattens dronning:subst mask appell ent ub normert
-nattens dronninga:nattens dronning:subst fem appell ent be normert
-nattens dronningen:nattens dronning:subst mask appell ent be normert
-nattens dronninger:nattens dronning:subst fem appell fl ub normert
-nattens dronninger:nattens dronning:subst mask appell fl ub normert
-nattens dronningene:nattens dronning:subst fem appell fl be normert
-nattens dronningene:nattens dronning:subst mask appell fl be normert
-ad hoc-komité:ad hoc-komité:subst mask appell ent ub normert
-ad hoc-komité:ad hoc-komité:subst mask appell ent ub normert
-ad hoc-komiteen:ad hoc-komité:subst mask appell ent be normert
-ad hoc-komitéen:ad hoc-komité:subst mask appell ent be normert
-ad hoc-komiteer:ad hoc-komité:subst mask appell fl ub normert
-ad hoc-komitéer:ad hoc-komité:subst mask appell fl ub normert
-ad hoc-komiteene:ad hoc-komité:subst mask appell fl be normert
-ad hoc-komitéene:ad hoc-komité:subst mask appell fl be normert
-skinn- og benfri:skinn- og benfri:adj pos m/f ub ent normert
-skinn- og benfrie:skinn- og benfri:adj pos fl normert
-skinn- og benfrie:skinn- og benfri:adj pos be ent normert
-skinn- og benfritt:skinn- og benfri:adj pos nøyt ub ent normert
-skinn- og benfriere:skinn- og benfri:adj komp normert
-skinn- og benfriest:skinn- og benfri:adj sup ub normert
-skinn- og benfrieste:skinn- og benfri:adj sup be normert
-wild west:wild west:subst appell ubøy normert
-world cup:world cup:subst mask appell ent ub normert
-world cupen:world cup:subst mask appell ent be normert
-world cuper:world cup:subst mask appell fl ub normert
-world cupene:world cup:subst mask appell fl be normert
-world cup-renn:world cup-renn:subst nøyt appell ent ub normert
-på folkemunne:på folkemunne:prep+subst adv @ADV normert
-i mellomtida:i mellomtida:prep+subst adv @ADV normert
-i mellomtiden:i mellomtiden:prep+subst adv @ADV normert
-coitus interruptus:coitus interruptus:subst appell ubøy normert
-close race:close race:subst nøyt appell ubøy normert
-cocker spaniel:cocker spaniel:subst mask appell ent ub normert
-cocker spanielen:cocker spaniel:subst mask appell ent be normert
-cocker spanieler:cocker spaniel:subst mask appell fl ub normert
-cocker spanielene:cocker spaniel:subst mask appell fl be normert
-epiteton ornans:epiteton ornans:subst appell ubøy normert
-hokus pokus:hokus pokus:interj normert
-bona fide:bona fide:adv normert
-natters tid:natters tid:adv normert
-alle tiders:alle tiders:adj pos m/f ub ent normert
-alle tiders:alle tiders:adj pos fl normert
-alle tiders:alle tiders:adj pos be ent normert
-alle tiders:alle tiders:adj pos nøyt ub ent normert
-til tider:til tider:adj pos m/f ub ent unormert
-til tider:til tider:adj pos fl unormert
-til tider:til tider:adj pos be ent unormert
-til tider:til tider:adj pos nøyt ub ent unormert
-eo ipso:eo ipso:adv normert
-slow motion:slow motion:subst mask appell ubøy normert
-deus ex machina:deus ex machina:subst mask appell ubøy normert
-SALT I:SALT I:subst prop normert
-SALT II:SALT II:subst prop normert
-SALT III:SALT III:subst prop normert
-Rio de Janeiro:Rio de Janeiro:subst prop normert
-Horda Tidend:Horda Tidend:subst prop normert
-Dash 7:Dash 7:subst prop normert
-på vegne av:på vegne av:prep+subst+prep prep @ADV normert
-til fjells:til fjells:prep+subst prep @ADV normert
-på glid:på glid:prep+subst adv @ADV normert
-på gli:på gli:prep+subst adv @ADV normert
-til beins:til beins:prep+subst adv @ADV normert
-til verks:til verks:prep+subst adv @ADV normert
-til sengs:til sengs:prep+subst prep @ADV normert
-hakk i hæl:hakk i hæl:adv+prep+subst prep @ADV normert
-til sjøs:til sjøs:prep+subst prep @ADV normert
-til seters:til seters:prep+subst prep @ADV normert
-til himmels:til himmels:prep+subst prep @ADV normert
-til værs:til værs:prep+subst prep @ADV normert
-til fots:til fots:prep+subst adv @ADV normert
-til lands:til lands:prep+subst prep @ADV normert
-til vanns:til vanns:prep+subst prep @ADV normert
-til minnes:til minnes:prep+subst adv @ADV normert
-til alters:til alters:prep+subst prep @ADV normert
-til gards:til gards:prep+subst prep @ADV normert
-til gårds:til gårds:prep+subst prep @ADV normert
-'n:'n:pron pers 3 ent mask hum nom unormert
-'n:'n:pron pers 3 ent mask hum akk unormert
-på avveier:på avveier:prep+subst adv @ADV normert
-på avveger:på avveger:prep+subst adv @ADV normert
-på avveie:på avveie:prep+subst adv @ADV normert
-mix double:mix double:subst mask appell ubøy normert
-knock out:knock out:subst mask appell ent ub normert
-knock out-en:knock out:subst mask appell ent be normert
-knock out-er:knock out:subst mask appell fl ub normert
-knock out-ene:knock out:subst mask appell fl be normert
-heavy metal:heavy metal:subst mask appell ubøy normert
-bossa nova:bossa nova:subst mask appell ent ub normert
-bossa novaen:bossa nova:subst mask appell ent be normert
-bossa novaer:bossa nova:subst mask appell fl ub normert
-bossa novaene:bossa nova:subst mask appell fl be normert
-rock'n roll:rock'n roll:subst mask appell ent ub normert
-rock'n rollen:rock'n roll:subst mask appell ent be normert
-rock'n roller:rock'n roll:subst mask appell fl ub normert
-rock'n rollene:rock'n roll:subst mask appell fl be normert
-fly forbanna:fly forbanna:adv+adj adj normert
-fly forbannet:fly forbannet:adv+adj adj normert
-i det fri:i det fri:prep+det+subst @ADV normert
-en bloc:en bloc:adv normert
-en detail:en detail:adv normert
-en face:en face:adv normert
-en gros:en gros:adv normert
-en passant:en passant:adv normert
-en vogue:en vogue:adj pos m/f ub ent normert
-en vogue:en vogue:adj pos fl normert
-en vogue:en vogue:adj pos be ent normert
-en vogue:en vogue:adj pos nøyt ub ent normert
-black metal:black metal:subst mask appell ubøy normert
-doom metal:doom metal:subst mask appell ubøy normert
-prog metal:prog metal:subst mask appell ubøy normert
-hip hop:hip hop:subst mask appell ent ub normert
-hip hop-en:hip hop:subst mask appell ent be normert
-hip hop-er:hip hop:subst mask appell fl ub normert
-hip hop-ene:hip hop:subst mask appell fl be normert
-designer drugs:designer drugs:subst appell ubøy normert
-i steden:i steden:adv normert
-offroad sykkel:offroad sykkel:subst mask appell ent ub normert
-offroad sykkelen:offroad sykkel:subst mask appell ent be normert
-offroad sykler:offroad sykkel:subst mask appell fl ub normert
-offroad syklene:offroad sykkel:subst mask appell fl be normert
-i vilden sky:i vilden sky:prep+adj+subst adv @ADV normert
-i villen:i villen:prep+adj adv @ADV normert
-i villen sky:i villen sky:prep+adj+subst adv @ADV normert
-på fersken:på fersken:prep+subst adv @ADV normert
-på rømmen:på rømmen:prep+subst adv @ADV normert
-bamse brakar:bamse brakar:subst appell ubøy normert
-da capo:da capo:subst nøyt appell ent ub normert
-da capo:da capo:subst nøyt appell ent ub normert
-da capo:da capo:subst nøyt appell ent ub normert
-da capo:da capo:subst nøyt appell ent ub normert
-da capoet:da capo:subst nøyt appell ent be normert
-da capoet:da capo:subst nøyt appell ent be normert
-da capoet:da capo:subst nøyt appell ent be normert
-da capoet:da capo:subst nøyt appell ent be normert
-da capoer:da capo:subst nøyt appell fl ub normert
-da capo:da capo:subst nøyt appell fl ub normert
-da capoer:da capo:subst nøyt appell fl ub normert
-da capo:da capo:subst nøyt appell fl ub normert
-da capoene:da capo:subst nøyt appell fl be normert
-da capoene:da capo:subst nøyt appell fl be normert
-da capoa:da capo:subst nøyt appell fl be normert
-da capoa:da capo:subst nøyt appell fl be normert
-da capo:da capo:adv normert
-til syvende og sist:til syvende og sist:adv prep+adj+konj+adj normert
-null og niks:null og niks:adj pos m/f ub ent normert
-null og niks:null og niks:adj pos fl normert
-null og niks:null og niks:adj pos be ent normert
-null og niks:null og niks:adj pos nøyt ub ent normert
-Allhærs Gud:Allhærs Gud:subst mask prop normert
-i en fei:i en fei:adv normert
-i ulag:i ulag:prep+subst adv @S-PRED normert
-baste og binde:baste og binde:verb inf normert
-bastet og bundet:bastet og bundet:verb perf-part normert
-bastet og bundet:bastet og bundet:verb pret normert
-ender og da:ender og da:adv normert
-ender og gang:ender og gang:adv normert
-de skrå bredder:de skrå bredder:det+adj+subst subst mask appell fl ub normert
-Maria budskapsdag:Maria budskapsdag:subst mask prop normert
-trøste og bære:trøste og bære:interj normert
-pro et contra:pro et contra:prep normert
-på direkten:på direkten:prep+subst adv @ADV normert
-sus og dus:sus og dus:subst+konj+subst subst normert
-i eininga:i eininga:prep+subst adv @ADV normert
-i einingen:i einingen:prep+subst adv @ADV normert
-i eninga:i eninga:prep+subst adv @ADV normert
-i eningen:i eningen:prep+subst adv @ADV normert
-til felles:til felles:prep+subst adv @ADV normert
-fengslig forvaring:fengslig forvaring:adj+subst subst normert
-i forbifarten:i forbifarten:prep+subst adv @ADV normert
-i forvegen:i forvegen:prep+subst adv @ADV normert
-i forveien:i forveien:prep+subst adv @ADV normert
-på frifot:på frifot:prep+subst adv @ADV normert
-på lykke og fromme:på lykke og fromme:prep+subst+konj+subst adv @ADV normert
-i glemmeboka:i glemmeboka:prep-subst adv @ADV normert
-i glømmeboka:i glømmeboka:prep-subst adv @ADV normert
-på hekta:på hekta:prep+subst adv @ADV normert
-på latsiden:på latsiden:prep+subst adv @ADV normert
-på latsida:på latsida:prep+subst adv @ADV normert
-på likstrå:på likstrå:prep+subst adv @ADV normert
-med velberådd hu:med velberådd hu:prep+adj+subst adv @ADV normert
-edder og galle:edder og galle:subst+konj+subst subst normert
-til rette:til rette:prep+subst adv @ADV normert
-akk og ve:akk og ve:interj normert
-på nippet:på nippet:prep+subst adv @ADV normert
-på nippen:på nippen:prep+subst adv @ADV normert
-på nære nippet:på nære nippet:prep+adj+subst adv @ADV normert
-på nære nippen:på nære nippen:prep+adj+subst adv @ADV normert
-skitt au:skitt au:interj normert
-fra arilds tid:fra arilds tid:prep+subst+subst adv @ADV normert
-på borg:på borg:prep+subst adv @ADV normert
-på ert:på ert:prep+subst adv @ADV normert
-på ferde:på ferde:prep+subst adv @ADV normert
-til føye:til føye:prep+subst adv @ADV normert
-i hør og heim:i hør og heim:prep+subst+konj+subst adv @ADV normert
-på tro og love:på tro og love:prep+subst+konj+subst adv @ADV normert
-på lur:på lur:prep+subst adv @ADV normert
-til skamme:til skamme:prep+subst adv @ADV normert
-store stå:store stå:subst appell ubøy normert
-til syne:til syne:prep+subst adv @ADV normert
-til pass:til pass:prep+subst adv @ADV normert
-etter sigende:etter sigende:prep+subst adv @ADV normert
-per stykk:per stykk:prep+subst adv @ADV normert
-pr stykk:pr stykk:prep+subst adv @ADV normert
-pr. stykk:pr. stykk:prep+subst adv @ADV normert
-vask og legg:vask og legg:subst mask appell ubøy normert
-ansikts sved:ansikts sved:subst+subst subst normert
-alma mater:alma mater:subst appell ubøy normert
-alter ego:alter ego:subst nøyt appell ubøy normert
-alders tid:alders tid:adv normert
-best som:best som:sbu normert
-bortsett fra:bortsett fra:prep @ADV normert
-bill mrk:bill. mrk.:fork @LØS-NP normert
-bill. mrk:bill. mrk.:fork @LØS-NP normert
-bill. mrk.:bill. mrk.:fork @LØS-NP normert
-Hare Krishna:Hare Krishna:subst prop normert
-de Cuellar:de Cuellar:subst prop normert
-cerebral parese:cerebral parese:subst mask appell ent ub normert
-cerebral paresen:cerebral parese:subst mask appell ent be normert
-cerebral pareser:cerebral parese:subst mask appell fl ub normert
-cerebral paresene:cerebral parese:subst mask appell fl be normert
-cerebral parese-pasient:cerebral parese-pasient:subst mask appell ent ub normert
-cerebral parese-pasienten:cerebral parese-pasient:subst mask appell ent be normert
-cerebral parese-pasienter:cerebral parese-pasient:subst mask appell fl ub normert
-cerebral parese-pasientene:cerebral parese-pasient:subst mask appell fl be normert
-cerebral parese-ramma:cerebral parese-ramma:adj pos m/f ub ent normert
-cerebral parese-ramma:cerebral parese-ramma:adj pos fl normert
-cerebral parese-ramma:cerebral parese-ramma:adj pos be ent normert
-cerebral parese-ramma:cerebral parese-ramma:adj pos nøyt ub ent normert
-cerebral parese-rammet:cerebral parese-rammet:adj pos m/f ub ent normert
-cerebral parese-rammet:cerebral parese-rammet:adj pos m/f ub ent normert
-cerebral parese-rammede:cerebral parese-rammet:adj pos fl normert
-cerebral parese-rammete:cerebral parese-rammet:adj pos fl normert
-cerebral parese-rammede:cerebral parese-rammet:adj pos be ent normert
-cerebral parese-rammete:cerebral parese-rammet:adj pos be ent normert
-cerebral parese-rammet:cerebral parese-rammet:adj pos nøyt ub ent normert
-cerebral parese-rammet:cerebral parese-rammet:adj pos nøyt ub ent normert
-cerebral parese-rammetere:cerebral parese-rammet:adj komp normert
-cerebral parese-rammetere:cerebral parese-rammet:adj komp normert
-cerebral parese-rammetest:cerebral parese-rammet:adj sup ub normert
-cerebral parese-rammetest:cerebral parese-rammet:adj sup ub normert
-cerebral parese-rammeteste:cerebral parese-rammet:adj sup be normert
-cerebral parese-rammeteste:cerebral parese-rammet:adj sup be normert
-far vel:far vel:interj normert
-ad absurdum:ad absurdum:adv normert
-ad acta:ad acta:adv normert
-ad hoc:ad hoc:adv normert
-ad hoc-definisjon:ad hoc-definisjon:subst mask appell ent ub normert
-ad hoc-definisjonen:ad hoc-definisjon:subst mask appell ent be normert
-ad hoc-definisjoner:ad hoc-definisjon:subst mask appell fl ub normert
-ad hoc-definisjonene:ad hoc-definisjon:subst mask appell fl be normert
-ad infinitum:ad infinitum:adv normert
-ad notam:ad notam:adv normert
-ad undas:ad undas:adv normert
-dark horse:dark horse:subst mask appell ubøy normert
-ex animo:ex animo:adv normert
-ex auditorio:ex auditorio:adv normert
-ex cathedra:ex cathedra:adv normert
-ex libris:ex libris:subst nøyt appell ent ub normert
-ex libris:ex libris:subst nøyt appell ent ub normert
-ex libris:ex libris:subst nøyt appell ent ub normert
-ex libris:ex libris:subst nøyt appell ent ub normert
-ex libriset:ex libris:subst nøyt appell ent be normert
-ex libriset:ex libris:subst nøyt appell ent be normert
-ex libriset:ex libris:subst nøyt appell ent be normert
-ex libriset:ex libris:subst nøyt appell ent be normert
-ex libriser:ex libris:subst nøyt appell fl ub normert
-ex libris:ex libris:subst nøyt appell fl ub normert
-ex libriser:ex libris:subst nøyt appell fl ub normert
-ex libris:ex libris:subst nøyt appell fl ub normert
-ex librisene:ex libris:subst nøyt appell fl be normert
-ex librisene:ex libris:subst nøyt appell fl be normert
-ex librisa:ex libris:subst nøyt appell fl be normert
-ex librisa:ex libris:subst nøyt appell fl be normert
-ex officio:ex officio:adv normert
-examen artium:examen artium:subst appell ubøy normert
-examen philosophicum:examen philosophicum:subst appell ubøy normert
-hei sann:hei sann:interj normert
-Basedows sjukdom:Basedows sjukdom:subst mask appell ent ub normert
-Basedows sjukdommen:Basedows sjukdom:subst mask appell ent be normert
-Basedows sjukdommer:Basedows sjukdom:subst mask appell fl ub normert
-Basedows sjukdommene:Basedows sjukdom:subst mask appell fl be normert
-Basedows sykdom:Basedows sykdom:subst mask appell ent ub normert
-Basedows sykdommen:Basedows sykdom:subst mask appell ent be normert
-Basedows sykdommer:Basedows sykdom:subst mask appell fl ub normert
-Basedows sykdommene:Basedows sykdom:subst mask appell fl be normert
-den gang:den gang:det+subst adv @ADV normert
-på tvers:på tvers:prep+subst adv @ADV normert
-liv laga:liv laga:subst+perf-part adj normert
-på tide:på tide:prep+subst adv @ADV normert
-ende fram:ende fram:prep normert
-ende frem:ende frem:prep normert
-angina pectoris:angina pectoris:subst appell ubøy normert
-abortus provocatus:abortus provocatus:subst appell ubøy normert
-don juan:don juan:subst mask appell ent ub normert
-don juanen:don juan:subst mask appell ent be normert
-don juaner:don juan:subst mask appell fl ub normert
-don juanene:don juan:subst mask appell fl be normert
-Downs syndrom:Downs syndrom:subst nøyt appell ent ub normert
-Downs syndrom:Downs syndrom:subst nøyt appell ent ub normert
-Downs syndrom:Downs syndrom:subst nøyt appell ent ub normert
-Downs syndrom:Downs syndrom:subst nøyt appell ent ub normert
-Downs syndromet:Downs syndrom:subst nøyt appell ent be normert
-Downs syndromet:Downs syndrom:subst nøyt appell ent be normert
-Downs syndromet:Downs syndrom:subst nøyt appell ent be normert
-Downs syndromet:Downs syndrom:subst nøyt appell ent be normert
-Downs syndromer:Downs syndrom:subst nøyt appell fl ub normert
-Downs syndrom:Downs syndrom:subst nøyt appell fl ub normert
-Downs syndromer:Downs syndrom:subst nøyt appell fl ub normert
-Downs syndrom:Downs syndrom:subst nøyt appell fl ub normert
-Downs syndromene:Downs syndrom:subst nøyt appell fl be normert
-Downs syndromene:Downs syndrom:subst nøyt appell fl be normert
-Downs syndroma:Downs syndrom:subst nøyt appell fl be normert
-Downs syndroma:Downs syndrom:subst nøyt appell fl be normert
-et cetera:et cetera:adv normert
-fait accompli:fait accompli:subst nøyt appell ubøy normert
-duc d'albe:duc d'albe:subst mask appell ent ub normert
-duc d'alben:duc d'albe:subst mask appell ent be normert
-duc d'alber:duc d'albe:subst mask appell fl ub normert
-duc d'albene:duc d'albe:subst mask appell fl be normert
-flying start:flying start:subst mask appell ubøy normert
-agnus Dei:agnus Dei:subst nøyt appell ubøy normert
-bent fram:bent fram:prep normert
-bent frem:bent frem:prep normert
-al fresco:al fresco:adv normert
-al secco:al secco:adv normert
-delirium tremens:delirium tremens:subst appell ubøy normert
-crêpe de chine:crêpe de chine:subst mask appell ubøy normert
-crêpe georgette:crêpe georgette:subst mask appell ent ub normert
-crêpe georgetten:crêpe georgette:subst mask appell ent be normert
-crêpe georgetter:crêpe georgette:subst mask appell fl ub normert
-crêpe georgettene:crêpe georgette:subst mask appell fl be normert
-etter at:etter at:sbu normert
-etter som:etter som:sbu normert
-bort imot:bort imot:prep normert
-bort mot:bort mot:prep normert
-carte blanche:carte blanche:subst appell ubøy normert
-case study:case study:subst mask appell ubøy normert
-cash and carry:cash and carry:subst appell ubøy normert
-riktig nok:riktig nok:adv normert
-dit hen:dit hen:prep normert
-der borte:der borte:prep normert
-der hen:der hen:prep normert
-der inne:der inne:prep normert
-der oppe:der oppe:prep normert
-heim att:heim att:subst+prep adv @ADV normert
-doctor honoris causa:doctor honoris causa:subst appell ubøy normert
-de facto:de facto:adv normert
-de jure:de jure:adv normert
-de luxe:de luxe:subst mask appell ubøy normert
-de luxe-modell:de luxe-modell:subst mask appell ent ub normert
-de luxe-modellen:de luxe-modell:subst mask appell ent be normert
-de luxe-modeller:de luxe-modell:subst mask appell fl ub normert
-de luxe-modellene:de luxe-modell:subst mask appell fl be normert
-de luxe-utgave:de luxe-utgave:subst fem appell ent ub normert
-de luxe-utgave:de luxe-utgave:subst mask appell ent ub normert
-de luxe-utgava:de luxe-utgave:subst fem appell ent be normert
-de luxe-utgaven:de luxe-utgave:subst mask appell ent be normert
-de luxe-utgaver:de luxe-utgave:subst fem appell fl ub normert
-de luxe-utgaver:de luxe-utgave:subst mask appell fl ub normert
-de luxe-utgavene:de luxe-utgave:subst fem appell fl be normert
-de luxe-utgavene:de luxe-utgave:subst mask appell fl be normert
-fra borde:fra borde:prep+subst adv @ADV normert
-helse- og velferdssentral:helse- og velferdssentral:subst mask appell ent ub normert
-helse- og velferdssentralen:helse- og velferdssentral:subst mask appell ent be normert
-helse- og velferdssentraler:helse- og velferdssentral:subst mask appell fl ub normert
-helse- og velferdssentralene:helse- og velferdssentral:subst mask appell fl be normert
-går kveld:går kveld:subst+subst subst @<P-UTFYLL normert
-går morges:går morges:subst+subst subst @<P-UTFYLL normert
-går natt:går natt:subst+subst subst @<P-UTFYLL normert
-displaced persons:displaced person:subst mask appell fl ub normert
-femme fatale:femme fatale:subst mask appell ubøy normert
-displaced person:displaced person:subst mask appell ent ub normert
-indian summer:indian summer:subst mask appell ubøy normert
-eau de cologne:eau de cologne:subst mask appell ent ub normert
-eau de colognen:eau de cologne:subst mask appell ent be normert
-eau de cologner:eau de cologne:subst mask appell fl ub normert
-eau de colognene:eau de cologne:subst mask appell fl be normert
-eau de vie:eau de vie:subst mask appell ent ub normert
-eau de vien:eau de vie:subst mask appell ent be normert
-eau de vier:eau de vie:subst mask appell fl ub normert
-eau de viene:eau de vie:subst mask appell fl be normert
-hands up:hands up:interj normert
-gud skje lov:gud skje lov:subst+v+subst interj @INTERJ normert
-hopp sann:hopp sann:interj normert
-hang glider:hang glider:subst mask appell ent ub normert
-hang glider:hang glider:subst mask appell ent ub unormert
-hang glider:hang glider:subst mask appell ent ub klammeform
-hang glideren:hang glider:subst mask appell ent be normert
-hang glideren:hang glider:subst mask appell ent be unormert
-hang glideren:hang glider:subst mask appell ent be klammeform
-hang glidere:hang glider:subst mask appell fl ub normert
-hang gliderer:hang glider:subst mask appell fl ub unormert
-hang gliderer:hang glider:subst mask appell fl ub klammeform
-hang gliderne:hang glider:subst mask appell fl be normert
-hang gliderne:hang glider:subst mask appell fl be unormert
-hang gliderne:hang glider:subst mask appell fl be klammeform
-hang gliding:hang gliding:subst mask appell ent ub normert
-hang glidingen:hang gliding:subst mask appell ent be normert
-hang glidinger:hang gliding:subst mask appell fl ub normert
-hang glidingene:hang gliding:subst mask appell fl be normert
-happy end:happy end:subst mask appell ubøy normert
-happy ending:happy ending:subst mask appell ubøy normert
-id est:id est:adv normert
-fin de siècle:fin de siècle:subst appell ubøy normert
-free on board:free on board:adv normert
-free on rail:free on rail:adv normert
-for di:for di:sbu normert
-for hånden:for hånden:prep+subst adv @ADV normert
-for lengst:for lengst:adv normert
-for resten:for resten:adv normert
-for så vidt:for så vidt:adv normert
-for tida:for tida:prep+subst adv @ADV normert
-for tiden:for tiden:prep+subst adv @ADV normert
-for visst:for visst:adv normert
-for øvrig:for øvrig:adv normert
-gentlemen's agreement:gentlemen's agreement:subst nøyt appell ubøy normert
-flygende tallerken:flygende tallerken:subst mask appell ent ub normert
-flygende tallerkenen:flygende tallerken:subst mask appell ent be normert
-flygende tallerkener:flygende tallerken:subst mask appell fl ub normert
-flygende tallerkenene:flygende tallerken:subst mask appell fl be normert
-gefundenes fressen:gefundenes fressen:subst appell ubøy normert
-god dag:god dag:adj+subst interj @INTERJ normert
-god kveld:god kveld:adj+subst interj @INTERJ normert
-god morgen:god morgen:adj+subst interj @INTERJ normert
-god natt:god natt:adj+subst interj @INTERJ normert
-labrador retriever:labrador retriever:subst mask appell ent ub normert
-labrador retriever:labrador retriever:subst mask appell ent ub unormert
-labrador retriever:labrador retriever:subst mask appell ent ub klammeform
-labrador retrieveren:labrador retriever:subst mask appell ent be normert
-labrador retrieveren:labrador retriever:subst mask appell ent be unormert
-labrador retrieveren:labrador retriever:subst mask appell ent be klammeform
-labrador retrievere:labrador retriever:subst mask appell fl ub normert
-labrador retrieverer:labrador retriever:subst mask appell fl ub unormert
-labrador retrieverer:labrador retriever:subst mask appell fl ub klammeform
-labrador retrieverne:labrador retriever:subst mask appell fl be normert
-labrador retrieverne:labrador retriever:subst mask appell fl be unormert
-labrador retrieverne:labrador retriever:subst mask appell fl be klammeform
-haute couture:haute couture:subst appell ubøy normert
-hvor hen:hvor hen:prep normert
-in vivo:in vivo:adv normert
-irish coffee:irish coffee:subst mask appell ubøy normert
-opp ad dage:opp ad dage:prep+prep+subst adv @ADV normert
-i tide og utide:i tide og utide:prep+subst+konj+subst adv @ADV normert
-på kryss og tvers:på kryss og tvers:prep+subst+konj+subst adv @ADV normert
-for fote:for fote:prep+subst adv @ADV normert
-til veie:til veie:prep+subst adv @ADV normert
-i våres:i våres:prep+subst adv @ADV normert
-tilslørte bondepiker:tilslørte bondepiker:adj+subst subst normert
-high fidelity:high fidelity:subst appell ubøy normert
-futurum exactum:futurum exactum:subst appell ubøy normert
-i aften:i aften:prep+subst adv @ADV normert
-i aftes:i aftes:prep+subst adv @ADV normert
-i alle fall:i alle fall:adv normert
-i fall:i fall:sbu normert
-i fjor:i fjor:prep+subst adv @ADV normert
-i fleng:i fleng:prep+subst adv @ADV normert
-i forfjor:i forfjor:prep+subst adv @ADV normert
-i forgårs:i forgårs:prep+subst adv @ADV normert
-i gjerde:i gjerde:prep+subst adv @ADV normert
-i gjære:i gjære:prep+subst adv @ADV normert
-i grunnen:i grunnen:prep+subst adv @ADV normert
-i går:i går:prep+subst adv @ADV normert
-i går kveld:i går kveld:prep+subst+subst adv @ADV normert
-i hende:i hende:prep+subst adv @ADV normert
-i hjel:i hjel:prep+subst adv @O-PRED normert
-i hop:i hop:prep+subst adv @ADV normert
-i hug:i hug:prep+subst adv @ADV normert
-i huleste:i huleste:prep+adj interj @INTERJ normert
-i hvert fall:i hvert fall:prep+det+subst adv @ADV normert
-i koll:i koll:prep+subst adv @ADV normert
-i kraft:i kraft:prep+subst adv @ADV normert
-i kveld:i kveld:prep+subst adv @ADV normert
-i lag:i lag:prep+subst adv @ADV normert
-jo menn:jo menn:adv normert
-jo visst:jo visst:interj+adv adv @ADV normert
-old boys:old boys:subst mask appell ent ub normert
-old boysen:old boys:subst mask appell ent be normert
-old boys:old boys:subst mask appell fl ub normert
-old boysene:old boys:subst mask appell fl be normert
-old boys-klasse:old boys-klasse:subst fem appell ent ub normert
-old boys-klasse:old boys-klasse:subst mask appell ent ub normert
-old boys-klassa:old boys-klasse:subst fem appell ent be normert
-old boys-klassen:old boys-klasse:subst mask appell ent be normert
-old boys-klasser:old boys-klasse:subst fem appell fl ub normert
-old boys-klasser:old boys-klasse:subst mask appell fl ub normert
-old boys-klassene:old boys-klasse:subst fem appell fl be normert
-old boys-klassene:old boys-klasse:subst mask appell fl be normert
-à jour:à jour:adv normert
-à la:à la:prep normert
-à la carte:à la carte:adv normert
-à la carte-servering:à la carte-servering:subst fem appell ent ub normert
-à la carte-servering:à la carte-servering:subst mask appell ent ub normert
-à la carte-serveringa:à la carte-servering:subst fem appell ent be normert
-à la carte-serveringen:à la carte-servering:subst mask appell ent be normert
-à la carte-serveringer:à la carte-servering:subst fem appell fl ub normert
-à la carte-serveringer:à la carte-servering:subst mask appell fl ub normert
-à la carte-serveringene:à la carte-servering:subst fem appell fl be normert
-à la carte-serveringene:à la carte-servering:subst mask appell fl be normert
-à la grecque:à la grecque:adv normert
-à la mode:à la mode:adv normert
-må hende:må hende:verb+verb adv @ADV normert
-må vite:må vite:verb+verb adv @ADV normert
-over bord:over bord:prep+subst adv @ADV normert
-over ende:over ende:prep+subst adv @S-PRED @O-PRED normert
-over kors:over kors:prep+subst adv @O-PRED normert
-over skrevs:over skrevs:prep+subst adv @ADV normert
-over styr:over styr:prep+subst adv @ADV normert
-over tvert:over tvert:prep+adj adv @ADV normert
-honoris causa:honoris causa:adv normert
-hjerte- og karsjukdom:hjerte- og karsjukdom:subst mask appell ent ub normert
-hjerte- og karsjukdommen:hjerte- og karsjukdom:subst mask appell ent be normert
-hjerte- og karsjukdommer:hjerte- og karsjukdom:subst mask appell fl ub normert
-hjerte- og karsjukdommene:hjerte- og karsjukdom:subst mask appell fl be normert
-hjerte- og karsykdom:hjerte- og karsykdom:subst mask appell ent ub normert
-hjerte- og karsykdommen:hjerte- og karsykdom:subst mask appell ent be normert
-hjerte- og karsykdommer:hjerte- og karsykdom:subst mask appell fl ub normert
-hjerte- og karsykdommene:hjerte- og karsykdom:subst mask appell fl be normert
-homo sapiens:homo sapiens:subst appell ubøy normert
-public relations:public relations:subst appell ubøy normert
-quo vadis:quo vadis:interj normert
-quod erat demonstrandum:quod erat demonstrandum:interj normert
-sans phrase:sans phrase:adv normert
-ut over:ut over:prep normert
-peau de pêche:peau de pêche:subst mask appell ent ub normert
-peau de pêchen:peau de pêche:subst mask appell ent be normert
-peau de pêcher:peau de pêche:subst mask appell fl ub normert
-peau de pêchene:peau de pêche:subst mask appell fl be normert
-lille julaften:lille julaften:subst mask appell ent ub normert
-lille julaftenen:lille julaften:subst mask appell ent be normert
-lille julaftener:lille julaften:subst mask appell fl ub normert
-lille julaftenene:lille julaften:subst mask appell fl be normert
-nomen agentis:nomen agentis:subst appell ubøy normert
-runner up:runner up:subst mask appell ubøy normert
-om att:om att:adv normert
-om bord:om bord:prep+subst prep @ADV normert
-om enn:om enn:sbu normert
-om gangen:om gangen:prep+subst adv @ADV normert
-om igjen:om igjen:adv normert
-om kapp:om kapp:prep+subst adv @ADV normert
-om kull:om kull:prep+subst adv @ADV normert
-om lag:om lag:prep+subst adv @ADV> normert
-om senn:om senn:prep+subst adv @ADV normert
-sine anno:sine anno:adv normert
-sine qua non:sine qua non:subst appell ubøy normert
-hundre og én:hundre og én:det kvant mask ent normert
-hundre og éi:hundre og én:det kvant fem ent normert
-hundre og étt:hundre og én:det kvant nøyt ent normert
-au pair:au pair:subst mask appell ubøy normert
-au pair-arbeid:au pair-arbeid:subst nøyt appell ent ub normert
-au pair-arbeid:au pair-arbeid:subst nøyt appell ent ub normert
-au pair-arbeid:au pair-arbeid:subst nøyt appell ent ub normert
-au pair-arbeid:au pair-arbeid:subst nøyt appell ent ub normert
-au pair-arbeidet:au pair-arbeid:subst nøyt appell ent be normert
-au pair-arbeidet:au pair-arbeid:subst nøyt appell ent be normert
-au pair-arbeidet:au pair-arbeid:subst nøyt appell ent be normert
-au pair-arbeidet:au pair-arbeid:subst nøyt appell ent be normert
-au pair-arbeider:au pair-arbeid:subst nøyt appell fl ub normert
-au pair-arbeid:au pair-arbeid:subst nøyt appell fl ub normert
-au pair-arbeider:au pair-arbeid:subst nøyt appell fl ub normert
-au pair-arbeid:au pair-arbeid:subst nøyt appell fl ub normert
-au pair-arbeidene:au pair-arbeid:subst nøyt appell fl be normert
-au pair-arbeidene:au pair-arbeid:subst nøyt appell fl be normert
-au pair-arbeida:au pair-arbeid:subst nøyt appell fl be normert
-au pair-arbeida:au pair-arbeid:subst nøyt appell fl be normert
-au pair-jente:au pair-jente:subst fem appell ent ub normert
-au pair-jente:au pair-jente:subst mask appell ent ub normert
-au pair-jente:au pair-jente:subst mask appell ent ub klammeform
-au pair-jenta:au pair-jente:subst fem appell ent be normert
-au pair-jenten:au pair-jente:subst mask appell ent be normert
-au pair-jenten:au pair-jente:subst mask appell ent be klammeform
-au pair-jenter:au pair-jente:subst fem appell fl ub normert
-au pair-jenter:au pair-jente:subst mask appell fl ub normert
-au pair-jenter:au pair-jente:subst mask appell fl ub klammeform
-au pair-jentene:au pair-jente:subst fem appell fl be normert
-au pair-jentene:au pair-jente:subst mask appell fl be normert
-au pair-jentene:au pair-jente:subst mask appell fl be klammeform
-au revoir:au revoir:interj normert
-jam session:jam session:subst appell ubøy normert
-jern- og metallarbeider:jern- og metallarbeider:subst mask appell ent ub normert
-jern- og metallarbeider:jern- og metallarbeider:subst mask appell ent ub unormert
-jern- og metallarbeider:jern- og metallarbeider:subst mask appell ent ub klammeform
-jern- og metallarbeideren:jern- og metallarbeider:subst mask appell ent be normert
-jern- og metallarbeideren:jern- og metallarbeider:subst mask appell ent be unormert
-jern- og metallarbeideren:jern- og metallarbeider:subst mask appell ent be klammeform
-jern- og metallarbeidere:jern- og metallarbeider:subst mask appell fl ub normert
-jern- og metallarbeiderer:jern- og metallarbeider:subst mask appell fl ub unormert
-jern- og metallarbeiderer:jern- og metallarbeider:subst mask appell fl ub klammeform
-jern- og metallarbeiderne:jern- og metallarbeider:subst mask appell fl be normert
-jern- og metallarbeiderne:jern- og metallarbeider:subst mask appell fl be unormert
-jern- og metallarbeiderne:jern- og metallarbeider:subst mask appell fl be klammeform
-hat trick:hat trick:subst nøyt appell ent ub normert
-hat trick:hat trick:subst nøyt appell ent ub normert
-hat tricket:hat trick:subst nøyt appell ent be normert
-hat tricket:hat trick:subst nøyt appell ent be normert
-hat trick:hat trick:subst nøyt appell fl ub normert
-hat trick:hat trick:subst nøyt appell fl ub normert
-hat trickene:hat trick:subst nøyt appell fl be normert
-hat tricka:hat trick:subst nøyt appell fl be normert
-lingua franca:lingua franca:subst nøyt appell ubøy normert
-fighting spirit:fighting spirit:subst mask appell ubøy normert
-notarius publicus:notarius publicus:subst mask appell ubøy normert
-opp att:opp att:adv normert
-opp imot:opp imot:prep normert
-opp ned:opp ned:adv normert
-like ens:like ens:adj+adj adj @ADV @S-PRED @O-PRED normert
-like til:like til:adv+prep prep @ADV normert
-mon tro:mon tro:verb+verb interj @INTERJ normert
-mon tru:mon tru:verb+verb interj @INTERJ normert
-punch drunk:punch drunk:adj normert
-pro anno:pro anno:adv normert
-pro persona:pro persona:adv normert
-pro tempore:pro tempore:adv normert
-pommes frites:pommes frites:subst mask appell ent ub normert
-pommes fritesen:pommes frites:subst mask appell ent be normert
-pommes friteser:pommes frites:subst mask appell fl ub normert
-pommes fritesene:pommes frites:subst mask appell fl be normert
-skinn- og beinfri:skinn- og beinfri:adj pos m/f ub ent normert
-skinn- og beinfrie:skinn- og beinfri:adj pos fl normert
-skinn- og beinfrie:skinn- og beinfri:adj pos be ent normert
-skinn- og beinfritt:skinn- og beinfri:adj pos nøyt ub ent normert
-skinn- og beinfriere:skinn- og beinfri:adj komp normert
-skinn- og beinfriest:skinn- og beinfri:adj sup ub normert
-skinn- og beinfrieste:skinn- og beinfri:adj sup be normert
-sub rosa:sub rosa:adv normert
-rock and roll:rock and roll:subst mask appell ent ub normert
-rock and rollen:rock and roll:subst mask appell ent be normert
-rock and roller:rock and roll:subst mask appell fl ub normert
-rock and rollene:rock and roll:subst mask appell fl be normert
-pø om pø:pø om pø:adv normert
-til dels:til dels:prep+subst adv @ADV normert
-til dømes:til dømes:prep+subst adv @ADV normert
-til fals:til fals:prep+subst adv @ADV normert
-til like:til like:prep+adj adv @ADV normert
-til live:til live:prep+subst adv @ADV normert
-til livs:til livs:prep+subst adv @ADV normert
-til orde:til orde:prep+subst adv @ADV normert
-til overs:til overs:prep+subst adv @S-PRED normert
-til stede:til stede:prep+subst adv @ADV normert
-visst nok:visst nok:adv normert
-enn si:enn si:adv+adj adv @ADV normert
-enn videre:enn videre:sbu+adj adv @ADV normert
-enn ytterligere:enn ytterligere:sbu+adj adv @ADV normert
-i ny og ne:i ny og ne:prep+subst+konj+subst adv @ADV normert
-takket være:takket være:prep @ADV normert
-etter hvert som:etter hvert som:prep+det+sbu sbu @ADV normert
-til tross for at:til tross for at:prep+subst+prep+sbu sbu @ADV normert
-rett og slett:rett og slett:adv normert
-i de dage:i de dage:prep+det+subst adv @ADV normert
-&:&:konj normert
-$:$:subst normert
-i drømme:i drømme:prep+subst adv @ADV normert
-for moro skyld:for moro skyld:prep+subst+subst adv @ADV normert
-gud hjelpe:gud hjelpe:interj normert
-fy faen:fy faen:interj normert
-ditt og datt:ditt og datt:pron normert
-ditten og datten:ditten og datten:pron normert
-hokuspokus filiokus:hokuspokus filiokus:interj normert
-til gagns:til gagns:prep+subst adv @ADV normert
-uff a meg:uff a meg:interj normert
-huff a meg:huff a meg:interj normert
-renminbi yüan:renminbi yüan:subst mask appell ent ub normert
-renminbi yüanen:renminbi yüan:subst mask appell ent be normert
-renminbi yüan:renminbi yüan:subst mask appell fl ub normert
-renminbi yüanene:renminbi yüan:subst mask appell fl be normert
-i vilden:i vilden:prep+adj adv @ADV normert
-mann av huse:mann av huse:subst+prep+subst adv @ADV normert
-dann og vann:dann og vann:adv normert
-noe sterkt:noe sterkt:det+adj subst normert
-en sterk en:en sterk en:det+adj+det subst normert
-bel canto:bel canto:subst mask appell ent ub normert
-bel cantoen:bel canto:subst mask appell ent be normert
-bel cantoer:bel canto:subst mask appell fl ub normert
-bel cantoene:bel canto:subst mask appell fl be normert
-columbi egg:columbi egg:subst nøyt appell ent ub normert
-columbi egg:columbi egg:subst nøyt appell ent ub normert
-columbi egget:columbi egg:subst nøyt appell ent be normert
-columbi egget:columbi egg:subst nøyt appell ent be normert
-columbi egg:columbi egg:subst nøyt appell fl ub normert
-columbi egg:columbi egg:subst nøyt appell fl ub normert
-columbi eggene:columbi egg:subst nøyt appell fl be normert
-columbi egga:columbi egg:subst nøyt appell fl be normert
-comme il faut:comme il faut:adj normert
-commedia dell'arte:commedia dell'arte:subst appell ubøy normert
-Big Ben:Big Ben:subst prop normert
-Parkinsons sjukdom:Parkinsons sjukdom:subst mask appell ent ub normert
-Parkinsons sjukdommen:Parkinsons sjukdom:subst mask appell ent be normert
-Parkinsons sjukdommer:Parkinsons sjukdom:subst mask appell fl ub normert
-Parkinsons sjukdommene:Parkinsons sjukdom:subst mask appell fl be normert
-Parkinsons sykdom:Parkinsons sykdom:subst mask appell ent ub normert
-Parkinsons sykdommen:Parkinsons sykdom:subst mask appell ent be normert
-Parkinsons sykdommer:Parkinsons sykdom:subst mask appell fl ub normert
-Parkinsons sykdommene:Parkinsons sykdom:subst mask appell fl be normert
 a cappella:a cappella:adv normert
 a cappella-kor:a cappella-kor:subst nøyt appell ent ub normert
-a cappella-kor:a cappella-kor:subst nøyt appell ent ub normert
-a cappella-koret:a cappella-kor:subst nøyt appell ent be normert
-a cappella-koret:a cappella-kor:subst nøyt appell ent be normert
 a cappella-kor:a cappella-kor:subst nøyt appell fl ub normert
-a cappella-kor:a cappella-kor:subst nøyt appell fl ub normert
-a cappella-korene:a cappella-kor:subst nøyt appell fl be normert
 a cappella-kora:a cappella-kor:subst nøyt appell fl be normert
+a cappella-korene:a cappella-kor:subst nøyt appell fl be normert
+a cappella-koret:a cappella-kor:subst nøyt appell ent be normert
 a cappella-sang:a cappella-sang:subst mask appell ent ub normert
 a cappella-sangen:a cappella-sang:subst mask appell ent be normert
-a cappella-sanger:a cappella-sang:subst mask appell fl ub normert
 a cappella-sangene:a cappella-sang:subst mask appell fl be normert
-a conto:a conto:adv unormert
+a cappella-sanger:a cappella-sang:subst mask appell fl ub normert
+a conto:a conto:adv normert
+à jour:à jour:adv normert
 a konto:a konto:adv normert
 a konto-betaling:a konto-betaling:subst fem appell ent ub normert
 a konto-betaling:a konto-betaling:subst mask appell ent ub normert
 a konto-betalinga:a konto-betaling:subst fem appell ent be normert
 a konto-betalingen:a konto-betaling:subst mask appell ent be normert
-a konto-betalinger:a konto-betaling:subst fem appell fl ub normert
-a konto-betalinger:a konto-betaling:subst mask appell fl ub normert
 a konto-betalingene:a konto-betaling:subst fem appell fl be normert
 a konto-betalingene:a konto-betaling:subst mask appell fl be normert
+a konto-betalinger:a konto-betaling:subst fem appell fl ub normert
+a konto-betalinger:a konto-betaling:subst mask appell fl ub normert
+a la:a la:prep normert
+à la:à la:prep normert
+à la carte:à la carte:adv normert
+a la carte:a la carte:adv normert
+à la carte-servering:à la carte-servering:subst fem appell ent ub normert
+à la carte-servering:à la carte-servering:subst mask appell ent ub normert
+à la carte-serveringa:à la carte-servering:subst fem appell ent be normert
+à la carte-serveringen:à la carte-servering:subst mask appell ent be normert
+à la carte-serveringene:à la carte-servering:subst fem appell fl be normert
+à la carte-serveringene:à la carte-servering:subst mask appell fl be normert
+à la carte-serveringer:à la carte-servering:subst fem appell fl ub normert
+à la carte-serveringer:à la carte-servering:subst mask appell fl ub normert
+a la carte-servering:a la carte-servering:subst fem appell ent ub normert
+a la carte-servering:a la carte-servering:subst mask appell ent ub normert
+a la carte-serveringa:a la carte-servering:subst fem appell ent be normert
+a la carte-serveringen:a la carte-servering:subst mask appell ent be normert
+a la carte-serveringene:a la carte-servering:subst fem appell fl be normert
+a la carte-serveringene:a la carte-servering:subst mask appell fl be normert
+a la carte-serveringer:a la carte-servering:subst fem appell fl ub normert
+a la carte-serveringer:a la carte-servering:subst mask appell fl ub normert
+à la grecque:à la grecque:adv normert
+a la grecque:a la grecque:adv normert
+à la mode:à la mode:adv normert
+a la mode:à la mode:adv normert
 a posteriori:a posteriori:adv normert
 a prima vista:a prima vista:adv normert
 a priori:a priori:adv normert
@@ -1006,22 +50,370 @@ a tempo:a tempo:adv normert
 a verbo:a verbo:adv normert
 a viso:a viso:adv normert
 a vista:a vista:adv normert
-Sankt Elms eld:Sankt Elms eld:subst mask prop normert
-Sankt Elms ild:Sankt Elms ild:subst mask prop normert
+abortus provocatus:abortus provocatus:subst appell ubøy normert
 accent aigu:accent aigu:subst mask appell ent ub normert
 accent aiguen:accent aigu:subst mask appell ent be normert
-accent aiguer:accent aigu:subst mask appell fl ub normert
 accent aiguene:accent aigu:subst mask appell fl be normert
+accent aiguer:accent aigu:subst mask appell fl ub normert
 accent circonflexe:accent circonflexe:subst mask appell ent ub normert
 accent circonflexen:accent circonflexe:subst mask appell ent be normert
-accent circonflexer:accent circonflexe:subst mask appell fl ub normert
 accent circonflexene:accent circonflexe:subst mask appell fl be normert
+accent circonflexer:accent circonflexe:subst mask appell fl ub normert
 accent grave:accent grave:subst mask appell ent ub normert
 accent graven:accent grave:subst mask appell ent be normert
-accent graver:accent grave:subst mask appell fl ub normert
 accent gravene:accent grave:subst mask appell fl be normert
-déjà vu:déjà vu:subst appell ubøy normert
+accent graver:accent grave:subst mask appell fl ub normert
+acid jazz:acid jazz:subst appell ubøy normert
+ad absurdum:ad absurdum:adv normert
+ad acta:ad acta:adv normert
+ad hoc:ad hoc:adv normert
+ad hoc-definisjon:ad hoc-definisjon:subst mask appell ent ub normert
+ad hoc-definisjonen:ad hoc-definisjon:subst mask appell ent be normert
+ad hoc-definisjonene:ad hoc-definisjon:subst mask appell fl be normert
+ad hoc-definisjoner:ad hoc-definisjon:subst mask appell fl ub normert
+ad hoc-komité:ad hoc-komité:subst mask appell ent ub normert
+ad hoc-komité:ad hoc-komité:subst mask appell ent ub normert
+ad hoc-komiteen:ad hoc-komité:subst mask appell ent be normert
+ad hoc-komitéen:ad hoc-komité:subst mask appell ent be normert
+ad hoc-komiteene:ad hoc-komité:subst mask appell fl be normert
+ad hoc-komitéene:ad hoc-komité:subst mask appell fl be normert
+ad hoc-komiteer:ad hoc-komité:subst mask appell fl ub normert
+ad hoc-komitéer:ad hoc-komité:subst mask appell fl ub normert
+ad infinitum:ad infinitum:adv normert
+ad libitum:ad libitum:adv normert
+ad litteram:ad litteram:adv normert
+ad notam:ad notam:adv normert
+ad undas:ad undas:adv normert
+agnus Dei:agnus Dei:subst nøyt appell ubøy normert
+akk og ve:akk og ve:interj normert
+air condition:air condition:subst mask appell ent ub unormert
+air conditioning:air conditioning:subst mask appell ent ub unormert
+al fresco:al fresco:adv normert
+al secco:al secco:adv normert
+all right:all right:adj pos be ent normert
+all right:all right:adj pos fl normert
+all right:all right:adj pos m/f ub ent normert
+all right:all right:adj pos nøyt ub ent normert
+all round:all round:adj pos be ent normert
+all round:all round:adj pos fl normert
+all round:all round:adj pos m/f ub ent normert
+all round:all round:adj pos nøyt ub ent normert
+all round-klassa:all round-klasse:subst fem appell ent be normert
+all round-klassene:all round-klasse:subst mask appell fl be normert
+all round-klasser:all round-klasse:subst mask appell fl ub normert
+all round-klasse:all round-klasse:subst fem appell ent ub normert
+all round-klasse:all round-klasse:subst mask appell ent ub normert
+all round-klassen:all round-klasse:subst mask appell ent be normert
+all round-klassene:all round-klasse:subst fem appell fl be normert
+all round-klasser:all round-klasse:subst fem appell fl ub normert
+all round-løper:all round-løper:subst mask appell ent ub normert
+all round-løperene:all round-løper:subst mask appell fl be normert
+all round-løpere:all round-løper:subst mask appell fl ub normert
+all round-løperen:all round-løper:subst mask appell ent be normert
+alma mater:alma mater:subst appell ubøy normert
+alter ego:alter ego:subst nøyt appell ubøy normert
+angina pectoris:angina pectoris:subst appell ubøy normert
+anorexia nervosa:anorexia nervosa:subst appell ubøy normert
+art noveau:art noveau:subst appell ubøy normert
+au pair:au pair:subst mask appell ubøy normert
+au pair-arbeid:au pair-arbeid:subst nøyt appell ent ub normert
+au pair-arbeid:au pair-arbeid:subst nøyt appell fl ub normert
+au pair-arbeida:au pair-arbeid:subst nøyt appell fl be normert
+au pair-arbeidene:au pair-arbeid:subst nøyt appell fl be normert
+au pair-arbeider:au pair-arbeid:subst nøyt appell fl ub normert
+au pair-arbeidet:au pair-arbeid:subst nøyt appell ent be normert
+au pair-jenta:au pair-jente:subst fem appell ent be normert
+au pair-jente:au pair-jente:subst fem appell ent ub normert
+au pair-jente:au pair-jente:subst mask appell ent ub normert
+au pair-jenten:au pair-jente:subst mask appell ent be normert
+au pair-jentene:au pair-jente:subst fem appell fl be normert
+au pair-jentene:au pair-jente:subst mask appell fl be normert
+au pair-jenter:au pair-jente:subst fem appell fl ub normert
+au pair-jenter:au pair-jente:subst mask appell fl ub normert
+au revoir:au revoir:interj normert
+back on track:back on track:prep normert
+back to basics:back to basics:prep normert
+bel canto:bel canto:subst mask appell ent ub normert
+bel cantoen:bel canto:subst mask appell ent be normert
+bel cantoene:bel canto:subst mask appell fl be normert
+bel cantoer:bel canto:subst mask appell fl ub normert
+bill mrk:bill. mrk.:fork normert
+bill. mrk:bill. mrk.:fork normert
+bill. mrk.:bill. mrk.:fork normert
+black metal:black metal:subst mask appell ubøy normert
+bona fide:bona fide:adv normert
+bossa nova:bossa nova:subst mask appell ent ub unormert
+bossa novaen:bossa nova:subst mask appell ent be unormert
+bossa novaene:bossa nova:subst mask appell fl be unormert
+bossa novaer:bossa nova:subst mask appell fl ub unormert
+carte blanche:carte blanche:subst appell ubøy normert
+case study:case study:subst mask appell ubøy normert
+cash and carry:cash and carry:subst appell ubøy normert
+cerebral parese:cerebral parese:subst mask appell ent ub normert
+cerebral paresen:cerebral parese:subst mask appell ent be normert
+cerebral paresene:cerebral parese:subst mask appell fl be normert
+cerebral parese-pasient:cerebral parese-pasient:subst mask appell ent ub normert
+cerebral parese-pasienten:cerebral parese-pasient:subst mask appell ent be normert
+cerebral parese-pasientene:cerebral parese-pasient:subst mask appell fl be normert
+cerebral parese-pasienter:cerebral parese-pasient:subst mask appell fl ub normert
+cerebral pareser:cerebral parese:subst mask appell fl ub normert
+cerebral parese-ramma:cerebral parese-ramma:adj pos be ent normert
+cerebral parese-ramma:cerebral parese-ramma:adj pos fl normert
+cerebral parese-ramma:cerebral parese-ramma:adj pos m/f ub ent normert
+cerebral parese-ramma:cerebral parese-ramma:adj pos nøyt ub ent normert
+cerebral parese-rammede:cerebral parese-rammet:adj pos be ent normert
+cerebral parese-rammede:cerebral parese-rammet:adj pos fl normert
+cerebral parese-rammet:cerebral parese-rammet:adj pos m/f ub ent normert
+cerebral parese-rammet:cerebral parese-rammet:adj pos nøyt ub ent normert
+cerebral parese-rammete:cerebral parese-rammet:adj pos be ent normert
+cerebral parese-rammete:cerebral parese-rammet:adj pos fl normert
+chargé d'affaires:chargé d'affaires:subst mask appell ent ub normert
+chargé d'affairesen:chargé d'affaires:subst mask appell ent be normert
+chargés d'affaires:chargé d'affaires:subst mask appell fl be normert
+chargés d'affaires:chargé d'affaires:subst mask appell fl ub normert
+close race:close race:subst nøyt appell ubøy normert
+cocker spaniel:cocker spaniel:subst mask appell ent ub normert
+cocker spanielen:cocker spaniel:subst mask appell ent be normert
+cocker spanielene:cocker spaniel:subst mask appell fl be normert
+cocker spanieler:cocker spaniel:subst mask appell fl ub normert
+coitus interruptus:coitus interruptus:subst appell ubøy normert
+columbi egg:columbi egg:subst nøyt appell ent ub normert
+columbi egg:columbi egg:subst nøyt appell fl ub normert
+columbi egga:columbi egg:subst nøyt appell fl be normert
+columbi eggene:columbi egg:subst nøyt appell fl be normert
+columbi egget:columbi egg:subst nøyt appell ent be normert
+comme il faut:comme il faut:adj normert
+commedia dell'arte:commedia dell'arte:subst appell ubøy normert
+corps de ballet:corps de ballet:subst nøyt appell ubøy normert
+corps diplomatique:corps diplomatique:subst nøyt appell ubøy normert
+cottage cheese:cottage cheese:subst mask appell ent ub normert
+cottage cheese-en:cottage cheese:subst mask appell ent be normert
+cottage cheese-ene:cottage cheese:subst mask appell fl be normert
+cottage cheese-er:cottage cheese:subst mask appell fl ub normert
+country and western:country and western:subst appell ubøy normert
+cover charge:cover charge:subst mask appell ent ub normert
+cover chargen:cover charge:subst mask appell ent be normert
+cover chargene:cover charge:subst mask appell fl be normert
+cover charger:cover charge:subst mask appell fl ub normert
+creme de la creme:creme de la creme:subst appell ubøy normert
+crème de la crème:crème de la crème:subst appell ubøy normert
+creme fraiche:creme fraiche:subst mask appell ent ub normert
+creme fraichen:creme fraiche:subst mask appell ent be normert
+creme fraicher:creme fraiche:subst mask appell fl ub normert
+creme fraichene:creme fraiche:subst mask appell fl be normert
+crème fraîche:crème fraîche:subst mask appell ent ub normert
+crème fraîchen:crème fraîche:subst mask appell ent be normert
+crème fraîcher:crème fraîche:subst mask appell fl ub normert
+crème fraîchene:crème fraîche:subst mask appell fl be normert
+crêpe de chine:crêpe de chine:subst mask appell ubøy normert
+crêpe georgette:crêpe georgette:subst mask appell ent ub normert
+crêpe georgetten:crêpe georgette:subst mask appell ent be normert
+crêpe georgettene:crêpe georgette:subst mask appell fl be normert
+crêpe georgetter:crêpe georgette:subst mask appell fl ub normert
+curriculum vitae:curriculum vitae:subst nøyt appell ent ub normert
+curriculum vitae:curriculum vitae:subst mask appell ent ub normert
+curriculum vitae:curriculum vitae:subst nøyt appell fl ub normert
+curriculum vitaen:curriculum vitae:subst mask appell ent be normert
+curriculum vitaene:curriculum vitae:subst mask appell fl be normert
+curriculum vitaene:curriculum vitae:subst nøyt appell fl be normert
+curriculum vitaer:curriculum vitae:subst mask appell fl ub normert
+curriculum vitaer:curriculum vitae:subst nøyt appell fl ub normert
+curriculum vitaet:curriculum vitae:subst nøyt appell ent be normert
+da capo:da capo:adv normert
+da capo:da capo:subst mask appell ent ub normert
+da capo:da capo:subst nøyt appell ent ub normert
+da capo:da capo:subst nøyt appell fl ub normert
+da capoa:da capo:subst nøyt appell fl be normert
+da capoen:da capo:subst mask appell ent be normert
+da capoene:da capo:subst mask appell fl be normert
+da capoer:da capo:subst mask appell fl ub normert
+da capoet:da capo:subst nøyt appell ent be normert
+dann og vann:dann og vann: adv normert
+dark horse:dark horse:subst mask appell ubøy normert
+de facto:de facto:adv normert
+de jure:de jure:adv normert
+de luxe:de luxe:subst mask appell ubøy normert
+de luxe-modell:de luxe-modell:subst mask appell ent ub normert
+de luxe-modellen:de luxe-modell:subst mask appell ent be normert
+de luxe-modellene:de luxe-modell:subst mask appell fl be normert
+de luxe-modeller:de luxe-modell:subst mask appell fl ub normert
+de luxe-utgava:de luxe-utgave:subst fem appell ent be normert
+de luxe-utgave:de luxe-utgave:subst fem appell ent ub normert
+de luxe-utgave:de luxe-utgave:subst mask appell ent ub normert
+de luxe-utgaven:de luxe-utgave:subst mask appell ent be normert
+de luxe-utgavene:de luxe-utgave:subst fem appell fl be normert
+de luxe-utgavene:de luxe-utgave:subst mask appell fl be normert
+de luxe-utgaver:de luxe-utgave:subst fem appell fl ub normert
+de luxe-utgaver:de luxe-utgave:subst mask appell fl ub normert
+deja vu:deja vu:subst appell ubøy normert
+déjà vu:déjà vu: subst appell ubøy normert
+delirium tremens:delirium tremens:subst appell ubøy normert
+designer drugs:designer drugs:subst appell ubøy normert
+desktop publishing:desktop publishing:subst appell ubøy normert
+deus ex machina:deus ex machina:subst mask appell ubøy normert
+displaced person:displaced person:subst mask appell ent ub normert
+displaced persons:displaced person:subst mask appell fl ub normert
+doctor honoris causa:doctor honoris causa:subst appell ubøy normert
+dolce far niente:dolce far niente:subst appell ubøy normert
+don juan:don juan:subst mask appell ent ub normert
+don juanen:don juan:subst mask appell ent be normert
+don juanene:don juan:subst mask appell fl be normert
+don juaner:don juan:subst mask appell fl ub normert
+doom metal:doom metal:subst mask appell ubøy normert
+duc d'albe:duc d'albe:subst mask appell ent ub normert
+duc d'alben:duc d'albe:subst mask appell ent be normert
+duc d'albene:duc d'albe:subst mask appell fl be normert
+duc d'alber:duc d'albe:subst mask appell fl ub normert
+eau de cologne:eau de cologne:subst mask appell ent ub normert
+eau de colognen:eau de cologne:subst mask appell ent be normert
+eau de colognene:eau de cologne:subst mask appell fl be normert
+eau de cologner:eau de cologne:subst mask appell fl ub normert
+eau de parfume:eau de parfume:subst appell ubøy normert
+eau de vie:eau de vie:subst mask appell ent ub normert
+eau de vien:eau de vie:subst mask appell ent be normert
+eau de viene:eau de vie:subst mask appell fl be normert
+eau de vier:eau de vie:subst mask appell fl ub normert
+en bloc:en bloc:adv normert
+en detail:en detail:adv normert
+en face:en face:adv normert
+en garde:en garde:adv normert
+en gros:en gros:adv normert
+en passant:en passant:adv normert
+en vogue:en vogue:adj pos be ent normert
+en vogue:en vogue:adj pos fl normert
+en vogue:en vogue:adj pos m/f ub ent normert
+en vogue:en vogue:adj pos nøyt ub ent normert
+enfant terrible:enfant terrible:subst nøyt appell ent normert
+enfants terribles:enfant terrible:subst nøyt appell ub fl normert
+eo ipso:eo ipso:adv normert
+epiteton ornans:epiteton ornans:subst appell ubøy normert
+et cetera:et cetera:adv normert
+ex animo:ex animo:adv normert
+ex auditorio:ex auditorio:adv normert
+ex cathedra:ex cathedra:adv normert
+ex libris:ex libris:subst nøyt appell ent ub normert
+ex libris:ex libris:subst nøyt appell fl ub normert
+ex librisa:ex libris:subst nøyt appell fl be normert
+ex librisene:ex libris:subst nøyt appell fl be normert
+ex libriser:ex libris:subst nøyt appell fl ub normert
+ex libriset:ex libris:subst nøyt appell ent be normert
+ex officio:ex officio:adv normert
+ex. phil.:ex. phil.:fork subst appell ubøy normert
+examen artium:examen artium:subst appell ubøy normert
+examen philosophicum:examen philosophicum:subst appell ubøy normert
+fair play:fair play:subst appell ubøy normert
+fait accompli:fait accompli:subst nøyt appell ubøy normert
+far vel:far vel:interj normert
+fata morgana:fata morgana:subst nøyt appell ent ub normert
+fata morgana:fata morgana:subst nøyt appell fl be normert
+fata morganaer:fata morgana:subst nøyt appell fl be normert
+fata morganaene:fata morgana:subst nøyt appell fl be normert
+fata morganaet:fata morgana:subst nøyt appell ent be normert
+femme fatale:femme fatale:subst mask appell ubøy normert
+fighting spirit:fighting spirit:subst mask appell ubøy normert
+fin de siecle:fin de siecle:subst appell ubøy normert
+fin de siècle:fin de siècle:subst appell ubøy normert
+flying start: flying start: subst appell ubøy
+force majeure:force majeure:subst mask appell ubøy normert
+free on board:free on board:adv normert
+free on rail:free on rail:adv normert
+futurum exactum:futurum exactum:subst appell ubøy normert
+fy faen:fy faen:interj normert
+gefundenes fressen:gefundenes fressen:subst appell ubøy normert
+gentlemen's agreement:gentlemen's agreement:subst nøyt appell ubøy normert
+golden retriever:golden retriever:subst mask appell ent ub normert
+golden retrievere:golden retriever:subst mask appell fl ub normert
+golden retrieveren:golden retriever:subst mask appell ent be normert
+golden retrieverer:golden retriever:subst mask appell fl ub unormert
+golden retrieverne:golden retriever:subst mask appell fl be normert
+grand danois:grand danois:subst mask appell ent ub normert
+grand danoisen:grand danois:subst mask appell ent be normert
+grand danoisene:grand danois:subst mask appell fl be normert
+grand danoiser:grand danois:subst mask appell fl ub normert
+grand mal:grand mal:subst appell ubøy normert
+grand old man:grand old man:subst mask appell ubøy normert
+grand prix:grand prix:subst mask appell ent ub normert
+grand prixen:grand prix:subst mask appell ent be normert
+grand prixene:grand prix:subst mask appell fl be normert
+grand prixer:grand prix:subst mask appell fl ub normert
+grand prix-artist:grand prix-artist:subst mask appell ent ub normert
+grand prix-artisten:grand prix-artist:subst mask appell ent be normert
+grand prix-artistene:grand prix-artist:subst mask appell fl be normert
+grand prix-artister:grand prix-artist:subst mask appell fl ub normert
+grand prix-bidrag:grand prix-bidrag:subst nøyt appell ent ub normert
+grand prix-bidraget:grand prix-bidrag:subst nøyt appell ent be normert
+grand prix-bidrag:grand prix-bidrag:subst nøyt appell fl ub normert
+grand prix-bidragene:grand prix-bidrag:subst nøyt appell fl be normert
+grand prix-bidraga:grand prix-bidrag:subst nøyt appell fl be normert
+grand prix-finale:grand prix-finale:subst mask appell ent ub normert
+grand prix-finalen:grand prix-finale:subst mask appell ent be normert
+grand prix-finalene:grand prix-finale:subst mask appell fl be normert
+grand prix-finaler:grand prix-finale:subst mask appell fl ub normert
+grand prix-konkurranse:grand prix-konkurranse:subst mask appell ent ub normert
+grand prix-konkurransen:grand prix-konkurranse:subst mask appell ent be normert
+grand prix-konkurransene:grand prix-konkurranse:subst mask appell fl be normert
+grand prix-konkurranser:grand prix-konkurranse:subst mask appell fl ub normert
+grand prix-låt:grand prix-låt:subst mask appell ent ub normert
+grand prix-låten:grand prix-låt:subst mask appell ent be normert
+grand prix-låtene:grand prix-låt:subst mask appell fl be normert
+grand prix-låter:grand prix-låt:subst mask appell fl ub normert
+grand prix-melodi:grand prix-melodi:subst mask appell ent ub normert
+grand prix-melodien:grand prix-melodi:subst mask appell ent be normert
+grand prix-melodiene:grand prix-melodi:subst mask appell fl be normert
+grand prix-melodier:grand prix-melodi:subst mask appell fl ub normert
+grand prix-show:grand prix-show:subst nøyt appell ent ub normert
+grand prix-showet:grand prix-show:subst nøyt appell ent be normert
+grand prix-show:grand prix-show:subst nøyt appell fl ub normert
+grand prix-showene:grand prix-show:subst nøyt appell fl be normert
+grand prix-showa:grand prix-show:subst nøyt appell fl be normert
+grand prix-seier:grand prix-seier:subst mask appell ent ub normert
+grand prix-seiere:grand prix-seier:subst mask appell fl ub normert
+grand prix-seieren:grand prix-seier:subst mask appell ent be normert
+grand prix-seierer:grand prix-seier:subst mask appell fl ub unormert
+grand prix-seierne:grand prix-seier:subst mask appell fl be normert
+grand prix-vinner:grand prix-vinner:subst mask appell ent ub normert
+grand prix-vinnere:grand prix-vinner:subst mask appell fl ub normert
+grand prix-vinneren:grand prix-vinner:subst mask appell ent be normert
+grand prix-vinnerer:grand prix-vinner:subst mask appell fl ub unormert
+grand prix-vinnerne:grand prix-vinner:subst mask appell fl be normert
+gud hjelpe:gud hjelpe:interj normert
+gud skje lov:gud skje lov: interj normert
+guilty pleasure:guilty pleasure:subst appell ubøy normert
+hands up:hands up:interj normert
+hang glider:hang glider:subst mask appell ent ub normert
+hang glidere:hang glider:subst mask appell fl ub normert
+hang glideren:hang glider:subst mask appell ent be normert
+hang gliderer:hang glider:subst mask appell fl ub unormert
+hang gliderne:hang glider:subst mask appell fl be normert
+hang gliding:hang gliding:subst mask appell ent ub normert
+hang glidingen:hang gliding:subst mask appell ent be normert
+hang glidingene:hang gliding:subst mask appell fl be normert
+hang glidinger:hang gliding:subst mask appell fl ub normert
+happy end:happy end:subst mask appell ubøy normert
+happy ending:happy ending:subst mask appell ubøy normert
+hat trick:hat trick:subst nøyt appell ent ub normert
+hat trick:hat trick:subst nøyt appell fl ub normert
+hat tricka:hat trick:subst nøyt appell fl be normert
+hat trickene:hat trick:subst nøyt appell fl be normert
+hat tricket:hat trick:subst nøyt appell ent be normert
+haute couture:haute couture:subst appell ubøy normert
+heavy metal:heavy metal:subst mask appell ubøy normert
+high fidelity:high fidelity:subst appell ubøy normert
+hip hop:hip hop:subst mask appell ent ub normert
+hip hop-en:hip hop:subst mask appell ent be normert
+hip hop-ene:hip hop:subst mask appell fl be normert
+hip hop-er:hip hop:subst mask appell fl ub normert
+hokus pokus:hokus pokus:interj normert
+hokuspokus filiokus:hokuspokus filiokus:interj normert
+hold up:hold up:subst nøyt appell ubøy normert
+Homo sapiens:Homo sapiens:subst prop
+homo sapiens:homo sapiens:subst appell ubøy normert
+honoris causa:honoris causa:adv normert
+hopp sann:hopp sann:interj normert
 hors d'oeuvre:hors d'oeuvre:subst mask appell ubøy normert
+huff a meg:huff a meg:interj normert
+id est:id est:adv normert
+il duce:il duce:subst appell ubøy normert
 in absentia:in absentia:adv normert
 in absurdum:in absurdum:adv normert
 in blanko:in blanko:adv normert
@@ -1040,205 +432,243 @@ in nuce:in nuce:adv normert
 in persona:in persona:adv normert
 in quarto:in quarto:adv normert
 in saldo:in saldo:adv normert
-in salvo:in salvo:adv @S-PRED @O-PRED normert
+in salvo:in salvo:adv normert
 in situ:in situ:adv normert
 in solidum:in solidum:adv normert
 in spe:in spe:adv normert
 in triplo:in triplo:adv normert
 in vitro:in vitro:adv normert
-hold up:hold up:subst nøyt appell ent ub normert
-hold up:hold up:subst nøyt appell ent ub normert
-hold upet:hold up:subst nøyt appell ent be normert
-hold upet:hold up:subst nøyt appell ent be normert
-hold up:hold up:subst nøyt appell fl ub normert
-hold up:hold up:subst nøyt appell fl ub normert
-hold upene:hold up:subst nøyt appell fl be normert
-hold upa:hold up:subst nøyt appell fl be normert
-lev vel:lev vel:interj normert
-golden retriever:golden retriever:subst mask appell ent ub normert
-golden retriever:golden retriever:subst mask appell ent ub unormert
-golden retriever:golden retriever:subst mask appell ent ub klammeform
-golden retrieveren:golden retriever:subst mask appell ent be normert
-golden retrieveren:golden retriever:subst mask appell ent be unormert
-golden retrieveren:golden retriever:subst mask appell ent be klammeform
-golden retrievere:golden retriever:subst mask appell fl ub normert
-golden retrieverer:golden retriever:subst mask appell fl ub unormert
-golden retrieverer:golden retriever:subst mask appell fl ub klammeform
-golden retrieverne:golden retriever:subst mask appell fl be normert
-golden retrieverne:golden retriever:subst mask appell fl be unormert
-golden retrieverne:golden retriever:subst mask appell fl be klammeform
+in vivo:in vivo:adv normert
+indian summer:indian summer:subst mask appell ubøy normert
 inside information:inside information:subst appell ubøy normert
-chargé d'affaires:chargé d'affaires:subst mask appell ent ub normert
-chargé d'affairesen:chargé d'affaires:subst mask appell ent be normert
-chargés d'affaires:chargé d'affaires:subst mask appell fl be normert
-chargés d'affaires:chargé d'affaires:subst mask appell fl ub normert
-par avion:par avion:adv normert
-par excellence:par excellence:adv normert
-så framt:så framt:sbu normert
-så fremt:så fremt:sbu normert
-så menn:så menn:adv+subst adv @ADV normert
-så nær som:så nær som:adv+adj+prep prep @ADV normert
-så pass:så pass:adv normert
-så som:så som:adv+prep prep @ADV normert
-så vel som:så vel som:adv+adv+prep prep @ADV normert
-så vidt:så vidt:adv+adj adv @ADV normert
-beint fram:beint fram:prep normert
-anorexia nervosa:anorexia nervosa:subst appell ubøy normert
-mene tekel:mene tekel:subst nøyt appell ent ub normert
-mene tekel:mene tekel:subst nøyt appell ent ub normert
-mene tekelet:mene tekel:subst nøyt appell ent be normert
-mene tekelet:mene tekel:subst nøyt appell ent be normert
-mene tekel:mene tekel:subst nøyt appell fl ub normert
-mene tekel:mene tekel:subst nøyt appell fl ub normert
-mene tekelene:mene tekel:subst nøyt appell fl be normert
-mene tekela:mene tekel:subst nøyt appell fl be normert
-dolce far niente:dolce far niente:subst appell ubøy normert
-av dage:av dage:prep+subst adv @ADV normert
-av lage:av lage:prep+subst adv @ADV normert
-av sted:av sted:prep+subst prep @ADV normert
-av syne:av syne:prep+subst adv @ADV normert
-M 87:M 87:fork subst normert
-New York:New York:subst prop normert
-TV 2:TV 2:subst prop normert
-TV2:TV 2:subst prop normert
-den dag i dag:den dag i dag:det+subst+prep+subst adv @ADV normert
+irish coffee:irish coffee:subst mask appell ubøy normert
+jam session:jam session:subst appell ubøy unormert
+ja menn:ja menn:adv normert
+ja så menn:ja så menn:adv normert
+jo menn:jo menn:adv normert
 joint venture:joint venture:subst appell ubøy normert
-år 2000:år 2000:subst+kvant subst normert
-§:§:subst normert
-øs pøs:øs pøs:adj normert
-he he:he he:interj normert
-force majeure:force majeure:subst mask appell ubøy normert
-i like måte:i like måte:prep+adj+subst adv @ADV normert
-i live:i live:prep+subst adv @S-PRED @O-PRED normert
-i mak:i mak:prep+subst adv @ADV normert
-i mente:i mente:prep+subst adv @ADV normert
-i miss:i miss:prep+subst adv @ADV normert
-i mist:i mist:prep+subst adv @ADV normert
-i morgen:i morgen:prep+subst adv @ADV normert
-i morges:i morges:prep+subst adv @ADV normert
-i møte:i møte:prep+subst adv @ADV normert
-i natt:i natt:prep+subst adv @ADV normert
-i overmorgen:i overmorgen:prep+subst adv @ADV normert
-i rette:i rette:prep+subst adv @ADV normert
-i sammen:i sammen:prep+adv adv @ADV normert
-i senn:i senn:prep+subst adv @ADV normert
-i sinne:i sinne:prep+subst adv @ADV normert
-i stand:i stand:prep+subst adv @S-PRED @O-PRED normert
-i stedet:i stedet:adv normert
-i stedet for:i stedet for:prep+subst+prep prep @ADV normert
-i stykker:i stykker:prep+subst adv @S-PRED @O-PRED normert
-i stå:i stå:prep+subst adv @S-PRED @O-PRED normert
-i sund:i sund:prep+subst adv @S-PRED @O-PRED normert
-i svime:i svime:prep+subst adv @ADV @O-PRED normert
-i så fall:i så fall:prep+adv+subst adv @ADV normert
-i så måte:i så måte:prep+adv+subst adv @ADV normert
-i søvne:i søvne:prep+subst adv @ADV normert
-i tide:i tide:prep+subst adv @ADV normert
-i tilfelle:i tilfelle:prep+subst sbu @ADV normert
-i tu:i tu:prep+subst adv @S-PRED @O-PRED normert
-i utide:i utide:prep+subst adv @ADV normert
-i vare:i vare:prep+subst adv @ADV normert
-i veg:i veg:prep+subst adv @ADV normert
-i vei:i vei:prep+subst adv @ADV normert
-i vente:i vente:prep+subst adv @ADV normert
-i verk:i verk:prep+subst adv @O-PRED normert
+jom kippur:jom kippur:subst appell ubøy normert
+kerrs pink:kerrs pink:subst appell ubøy normert
+knock out:knock out:subst mask appell ent ub unormert
+knock out-en:knock out:subst mask appell ent be unormert
+knock out-ene:knock out:subst mask appell fl be unormert
+knock out-er:knock out:subst mask appell fl ub unormert
+kyrie eleison:kyrie eleison:interj normert
+l'art pour l'art:l'art pour l'art:interj normert
+la dolce vita:la dolce vita:subst appell ubøy normert
+labrador retriever:labrador retriever:subst mask appell ent ub normert
+labrador retrieverne:labrador retriever:subst mask appell fl be normert
+labrador retrievere:labrador retriever:subst mask appell fl ub normert
+labrador retrieveren:labrador retriever:subst mask appell ent be normert
 laissez faire:laissez faire:subst mask appell ubøy normert
 laissez faire-politikk:laissez faire-politikk:subst mask appell ent ub normert
 laissez faire-politikken:laissez faire-politikk:subst mask appell ent be normert
-laissez faire-politikker:laissez faire-politikk:subst mask appell fl ub normert
 laissez faire-politikkene:laissez faire-politikk:subst mask appell fl be normert
+laissez faire-politikker:laissez faire-politikk:subst mask appell fl ub normert
+lingua franca:lingua franca:subst nøyt appell ubøy normert
+lit de parade:lit de parade:subst appell ubøy normert
+mala fide:mala fide:adv normert
+mene tekel:mene tekel:subst nøyt appell ent ub normert
+mene tekel:mene tekel:subst nøyt appell fl ub normert
+mene tekela:mene tekel:subst nøyt appell fl be normert
+mene tekelene:mene tekel:subst nøyt appell fl be normert
+mene tekelet:mene tekel:subst nøyt appell ent be normert
+min sann:min sann:adv normert
+min sant:min sant:adv normert
+min santen:min santen:adv normert
+mix double:mix double:subst mask appell ubøy normert
+mixed double:mixed double:subst mask appell ent ub normert
+modus vivendi:modus vivendi:subst mask appell ubøy normert
+natters tid:natters tid: subst appell ubøy normert
+natters tider:natters tid: subst appell ubøy normert
+nature morte:nature morte:subst nøyt appell ubøy normert
+negro spiritual:negro spiritual:subst appell ubøy normert
+never mind:never mind:interj normert
+nom de guerre:nom de guerre:subst nøyt appell ubøy normert
+nomen actionis:nomen actionis:subst appell ubøy normert
+nomen agentis:nomen agentis:subst appell ubøy normert
+non profit:non profit:adj pos be ent unormert
+non profit:non profit:adj pos fl unormert
+non profit:non profit:adj pos m/f ub ent unormert
+non profit:non profit:adj pos nøyt ub ent unormert
+non stop:non stop:adv normert
+notarius publicus:notarius publicus:subst mask appell ubøy normert
+old boys:old boys:subst mask appell ent ub normert
+old boys:old boys:subst mask appell fl ub normert
+old boysen:old boys:subst mask appell ent be normert
+old boysene:old boys:subst mask appell fl be normert
+old boys-klassa:old boys-klasse:subst fem appell ent be normert
+old boys-klasse:old boys-klasse:subst fem appell ent ub normert
+old boys-klasse:old boys-klasse:subst mask appell ent ub normert
+old boys-klassen:old boys-klasse:subst mask appell ent be normert
+old boys-klassene:old boys-klasse:subst fem appell fl be normert
+old boys-klassene:old boys-klasse:subst mask appell fl be normert
+old boys-klasser:old boys-klasse:subst fem appell fl ub normert
+old boys-klasser:old boys-klasse:subst mask appell fl ub normert
+opere citato:opere citato:adv normert
+opus citatum:opus citatum:subst normert
+oratio obliqua:oratio obliqua:subst normert
+oratio recta:oratio recta:subst normert
+oratio tecta:oratio tecta:subst normert
+øs pøs:øs pøs:adj normert
+par avion:par avion:adv normert
+par excellence:par excellence:adv normert
+pars pro toto:pars pro toto:adv normert
+pas de deux:pas de deux:subst mask appell ent ub normert
+paso doble:paso doble:subst mask appell ent ub normert
+paso doblen:paso doble:subst mask appell ent be normert
+paso doblene:paso doble:subst mask appell fl be normert
+paso dobler:paso doble:subst mask appell fl ub normert
+pater familias:pater familias:subst mask appell ubøy normert
+pauli ord: pauli ord: subst appell ubøy normert
+pauvres honteux:pauvres honteux:subst appell ubøy normert
+peau de peche:peau de peche:subst mask appell ent ub normert
+peau de pechen:peau de peche:subst mask appell ent be normert
+peau de pechene:peau de peche:subst mask appell fl be normert
+peau de pecher:peau de peche:subst mask appell fl ub normert
+peau de pêche:peau de pêche:subst mask appell ent ub normert
+peau de pêchen:peau de pêche:subst mask appell ent be normert
+peau de pêchene:peau de pêche:subst mask appell fl be normert
+peau de pêcher:peau de pêche:subst mask appell fl ub normert
+per capita:per capita:adv normert
+perpetuum mobile:perpetuum mobile:subst nøyt appell ubøy normert
+persona grata:persona grata:subst mask appell ubøy normert
+persona non grata:persona non grata:subst mask appell ubøy normert
+petit mal:petit mal:subst appell ubøy normert
+peu à peu:peu à peu:adv normert
+peu om peu:peu om peu:adv normert
+pø om pø:pø om pø:adv normert
+pommes frites:pommes frites:subst mask appell ent ub normert
+pommes fritesen:pommes frites:subst mask appell ent be normert
+pommes fritesene:pommes frites:subst mask appell fl be normert
+pommes friteser:pommes frites:subst mask appell fl ub normert
+post factum:post factum:adv normert
+post festum:post festum:adv normert
+post meridiem:post meridiem:adv normert
+post mortem:post mortem:adv normert
+poste restante:poste restante:prep normert
+prae ceteris:prae ceteris:subst mask appell ent ub normert
+prae ceteris:prae ceteris:subst mask appell fl ub normert
+prae ceterisen:prae ceteris:subst mask appell ent be normert
+prae ceterisene:prae ceteris:subst mask appell fl be normert
+prae ceteriser:prae ceteris:subst mask appell fl ub normert
 prima vista:prima vista:adv normert
-cottage cheese:cottage cheese:subst mask appell ent ub normert
-cottage cheese-en:cottage cheese:subst mask appell ent be normert
-cottage cheese-er:cottage cheese:subst mask appell fl ub normert
-cottage cheese-ene:cottage cheese:subst mask appell fl be normert
-country and western:country and western:subst appell ubøy normert
-cover charge:cover charge:subst mask appell ent ub normert
-cover chargen:cover charge:subst mask appell ent be normert
-cover charger:cover charge:subst mask appell fl ub normert
-cover chargene:cover charge:subst mask appell fl be normert
-grand danois:grand danois:subst mask appell ent ub normert
-grand danoisen:grand danois:subst mask appell ent be normert
-grand danoiser:grand danois:subst mask appell fl ub normert
-grand danoisene:grand danois:subst mask appell fl be normert
-grand mal:grand mal:subst appell ubøy normert
-grand old man:grand old man:subst mask appell ubøy normert
-grand prix:grand prix:subst mask appell ent ub normert
-grand prixen:grand prix:subst mask appell ent be normert
-grand prixer:grand prix:subst mask appell fl ub normert
-grand prixene:grand prix:subst mask appell fl be normert
-grand prix-melodi:grand prix-melodi:subst mask appell ent ub normert
-grand prix-melodien:grand prix-melodi:subst mask appell ent be normert
-grand prix-melodier:grand prix-melodi:subst mask appell fl ub normert
-grand prix-melodiene:grand prix-melodi:subst mask appell fl be normert
-grand prix-vinner:grand prix-vinner:subst mask appell ent ub normert
-grand prix-vinner:grand prix-vinner:subst mask appell ent ub unormert
-grand prix-vinner:grand prix-vinner:subst mask appell ent ub klammeform
-grand prix-vinneren:grand prix-vinner:subst mask appell ent be normert
-grand prix-vinneren:grand prix-vinner:subst mask appell ent be unormert
-grand prix-vinneren:grand prix-vinner:subst mask appell ent be klammeform
-grand prix-vinnere:grand prix-vinner:subst mask appell fl ub normert
-grand prix-vinnerer:grand prix-vinner:subst mask appell fl ub unormert
-grand prix-vinnerer:grand prix-vinner:subst mask appell fl ub klammeform
-grand prix-vinnerne:grand prix-vinner:subst mask appell fl be normert
-grand prix-vinnerne:grand prix-vinner:subst mask appell fl be unormert
-grand prix-vinnerne:grand prix-vinner:subst mask appell fl be klammeform
-kerrs pink:kerrs pink:subst appell ubøy normert
-med brask og bram:med brask og bram:prep+subst+konj+subst adv @ADV normert
-med føye:med føye:prep+subst adv @ADV normert
-med henblikk på:med henblikk på:prep+subst+prep prep @ADV normert
-ned fra:ned fra:prep+prep prep @ADV normert
-ned over:ned over:prep+prep prep @ADV normert
-nei vel:nei vel:interj+adv interj @INTERJ normert
-nei visst:nei visst:interj+adj interj @INTERJ normert
-pomp og prakt:pomp og prakt:subst+konj+subst subst normert
-pr def:pr. def.:fork prep+subst adv @ADV normert
-pr. def.:pr. def.:fork prep+subst adv @ADV normert
-pr.def.:pr. def.:fork prep+subst adv @ADV unormert
-pr definisjon:pr. definisjon:prep+subst adv @ADV normert
-pr. definisjon:pr. definisjon:prep+subst adv @ADV normert
-på forhand:på forhand:prep+subst adv @ADV normert
-på forhånd:på forhånd:prep+subst adv @ADV normert
-på førehand:på førehand:prep+subst adv @ADV normert
-på gjørs:på gjørs:prep+subst adv @ADV normert
-på hils:på hils:prep+subst adv @S-PRED normert
-på huk:på huk:prep+subst adv @ADV normert
-på leit:på leit:prep+subst adv @ADV normert
-på måfå:på måfå:prep+subst adv @ADV normert
-på ny frisk:på ny frisk:prep+adj+adj adv @ADV normert
-på rams:på rams:prep+subst adv @ADV normert
-på røde rappen:på røde rappen:prep+adj+subst adv @ADV normert
-på si:på si:prep+subst adv @ADV normert
-på skakke:på skakke:prep+subst adv @ADV normert
-på svøm:på svøm:prep+subst adv @ADV normert
-på tverke:på tverke:prep+subst adv @ADV normert
-på vidvank:på vidvank:prep+subst adv @ADV normert
-på vidvanke:på vidvanke:prep+subst adv @ADV normert
-ride ranke:ride ranke:verb+subst subst normert
-rist eller ro:rist eller ro:subst+konj+subst subst @OBJ normert
-rubb og rake:rubb og rake:subst+konj+subst subst normert
-rubb og stubb:rubb og stubb:subst+konj+subst subst normert
-rubbel og bit:rubbel og bit:subst+konj+subst subst normert
-sjakk matt:sjakk matt:subst+subst subst @S-PRED @O-PRED normert
-smitt og smule:smitt og smule:subst+konj+subst subst normert
-stopp en hal:stopp en hal:verb+det+subst interj @INTERJ normert
-stopp en halv:stopp en halv:verb+det+subst interj @INTERJ normert
-stort sett:stort sett:adj+verb adv @ADV normert
-så pass:så pass:adv+subst interj @INTERJ normert
-takk i like måte:takk i like måte:subst+prep+adj+subst interj @INTERJ normert
-takk, i like måte:takk i like måte:subst+prep+adj+subst interj @INTERJ normert
-til pers:til pers:prep+subst adv @ADV normert
-til punkt og prikke:til punkt og prikke:prep+subst+konj+subst adv @ADV normert
-til spille:til spille:prep+subst adv @ADV normert
-til spott og spe:til spott og spe:prep+subst+konj+subst adv @ADV normert
-tort og svie:tort og svie:subst+konj+subst subst normert
-under fund:under fund:prep+subst adv @ADV normert
-under vær med:under vær med:prep+subst+prep prep @S-PRED normert
-varg i veum:varg i veum:subst+prep+subst subst normert
-i ferd med:i ferd med:prep+subst+prep prep @S-PRED normert
-%:%:subst normert
-først og fremst:først og fremst:adj+kon+adj adv @ADV normert
-ved hjelp av:ved hjelp av:prep+subst+prep prep @ADV normert
-blott til lyst:blott til lyst:adj+prep+subst adv @ADV @S-PRED normert
-saga blott:saga blott:subst+adj subst @S-PRED normert
-art noveau:art noveau:subst appell ubøy normert
+primus inter pares:primus inter pares:subst appell ubøy normert
+primus motor:primus motor:subst mask appell ent ub normert
+primus motorene:primus motor:subst mask appell fl be normert
+primus motorer:primus motor:subst mask appell fl ub normert
+primus motoren:primus motor:subst mask appell ent be normert
+pro anno:pro anno:adv normert
+pro et contra:pro et contra:prep normert
+pro persona:pro persona:adv normert
+pro rata:pro rata:adv normert
+pro tempore:pro tempore:adv normert
+præ ceteris:præ ceteris:subst mask appell ent ub
+præ ceterisene:præ ceteris:subst mask appell fl be
+præ ceteriser:præ ceteris:subst mask appell fl ub
+præ ceterisen:præ ceteris:subst mask appell ent be
+prog metal:prog metal:subst mask appell ubøy normert
+public relations:public relations:subst appell ubøy normert
+punch drunk:punch drunk:adj normert
+pytt sann:pytt sann:interj normert
+pø om pø:pø om pø:adv normert
+quantum satis:quantum satis:adv normert
+quo vadis:quo vadis:interj normert
+quod est:quod est:sbu normert
+quod erat demonstrandum:quod erat demonstrandum:interj normert
+renminbi yüan:renminbi yüan:subst mask appell ent ub normert
+renminbi yüan:renminbi yüan:subst mask appell fl ub normert
+renminbi yüanen:renminbi yüan:subst mask appell ent be normert
+renminbi yüanene:renminbi yüan:subst mask appell fl be normert
+Rio de Janeiro:Rio de Janeiro:subst prop normert
+rock and roll:rock and roll:subst mask appell ent ub normert
+rock and rollen:rock and roll:subst mask appell ent be normert
+rock'n roll:rock'n roll:subst mask appell ent ub normert
+rock'n rollen:rock'n roll:subst mask appell ent be normert
+royal straight flush:royal straight flush:subst mask appell ubøy normert
+runner up:runner up:subst mask appell ubøy normert
+sans phrase:sans phrase:adv normert
+science fiction:science fiction:subst mask appell ent ub normert
+science fictionene:science fiction:subst mask appell fl be normert
+science fictioner:science fiction:subst mask appell fl ub normert
+science fictionen:science fiction:subst mask appell ent be normert
+science fiction-roman:science fiction-roman:subst mask appell ent ub normert
+science fiction-romanene:science fiction-roman:subst mask appell fl be normert
+science fiction-romaner:science fiction-roman:subst mask appell fl ub normert
+science fiction-romanen:science fiction-roman:subst mask appell ent be normert
+sex appeal:sex appeal:subst mask appell ent ub normert
+sex appealen:sex appeal:subst mask appell ent be normert
+sex appealene:sex appeal:subst mask appell fl be normert
+sex appealer:sex appeal:subst mask appell fl ub normert
+short story:short story:subst mask appell ent ub normert
+short storyen:short story:subst mask appell ent be normert
+short storyer:short story:subst mask appell fl ub normert
+short storyene:short story:subst mask appell fl be normert
+short story-forfatter:short story-forfatter:subst mask appell ent ub normert
+short story-forfatterne:short story-forfatter:subst mask appell fl be normert
+short story-forfattere:short story-forfatter:subst mask appell fl ub normert
+short story-forfatteren:short story-forfatter:subst mask appell ent be normert
+show business:show business:subst mask appell ent ub normert
+show businessene:show business:subst mask appell fl be normert
+show businesser:show business:subst mask appell fl ub normert
+show businessen:show business:subst mask appell ent be normert
+sine anno:sine anno:adv normert
+sine loco:sine loco:adv normert
+sine qua non:sine qua non:subst appell ubøy normert
+skitt au:skitt au:interj normert
+sleeping partner:sleeping partner:subst mask appell ent ub unormert
+sleeping partnere:sleeping partner:subst mask appell fl ub unormert
+sleeping partneren:sleeping partner:subst mask appell ent be unormert
+sleeping partnerer:sleeping partner:subst mask appell fl ub unormert
+sleeping partnerne:sleeping partner:subst mask appell fl be unormert
+slow motion:slow motion:subst mask appell ubøy normert
+solar plexus:solar plexus:subst mask appell ent ub normert
+solar plexusen:solar plexus:subst mask appell ent be normert
+solar plexuser:solar plexus:subst mask appell fl ub normert
+solar plexusene:solar plexus:subst mask appell fl be normert
+status quo:status quo:subst appell ubøy normert
+still going strong:still going strong:adj no|rmert
+straight flush:straight flush:subst mask appell ent ub normert
+straight flushen:straight flush:subst mask appell ent be normert
+straight flushene:straight flush:subst mask appell fl be normert
+straight flusher:straight flush:subst mask appell fl ub normert
+studiosus perpetuus:studiosus perpetuus:subst mask appell ent ub normert
+studiosus perpetuusene:studiosus perpetuus:subst mask appell fl be normert
+studiosus perpetuuser:studiosus perpetuus:subst mask appell fl ub normert
+studiosus perpetuusen:studiosus perpetuus:subst mask appell ent be normert
+sub rosa:sub rosa:adv normert
+sudden death:sudden death:subst mask appell ubøy normert 
+summa summarum:summa summarum:adv normert
+super G:super G:subst mask appell ent ub normert
+så menn:så menn:adv normert
+så pass:så pass:adv normert
+tabula gratulatoria:tabula gratulatoria:subst mask appell ubøy normert
+tabula rasa:tabula rasa:subst mask appell ubøy normert
+takket være:takket være:prep normert
+tipp topp:tipp topp:adj pos be ent normert
+tipp topp:tipp topp:adj pos fl normert
+tipp topp:tipp topp:adj pos m/f ub ent normert
+tipp topp:tipp topp:adj pos nøyt ub ent normert
+tonic water:tonic water:subst appell ubøy normert
+TV 2:TV 2:subst prop normert
+uff a meg:uff a meg:interj normert
+up to date:up to date:adj pos be ent normert
+up to date:up to date:adj pos fl normert
+up to date:up to date:adj pos m/f ub ent normert
+up to date:up to date:adj pos nøyt ub ent normert
+va banque:va banque:adv normert
+vice versa:vice versa:adv normert
+wild west:wild west:subst appell ubøy normert
+wild west-film:wild west-film:subst mask appell ent ub normert
+wild west-filmene:wild west-film:subst mask appell fl be normert
+wild west-filmer:wild west-film:subst mask appell fl ub normert
+wild west-filmen:wild west-film:subst mask appell ent be normert
+world cup:world cup:subst mask appell ent ub normert
+world cupane:world cup:subst mask appell fl be normert
+world cupar:world cup:subst mask appell fl ub normert
+world cupen:world cup:subst mask appell ent be normert
+world cup-renn:world cup-renn:subst nøyt appell ent ub normert
+world cup-rennet:world cup-renn:subst nøyt appell ent be normert
+world cup-renn:world cup-renn:subst nøyt appell fl ub normert
+world cup-renna:world cup-renn:subst nøyt appell fl be normert
+world cup-rennene:world cup-renn:subst nøyt appell fl be normert

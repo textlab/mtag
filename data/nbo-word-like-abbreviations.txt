@@ -1,7 +1,7 @@
-sign.:sign.:fork adj @ADV normert
+sign.:sign.:fork adj normert
 sign.:sign.:fork subst appell normert
 rek.:rek.:fork adj normert
-ult.:ult.:fork prep @ADV normert
+ult.:ult.:fork prep normert
 bet.:bet.:fork adj normert
 bot.:bot.:fork adj normert
 bot.:bot.:fork subst appell normert
@@ -15,16 +15,18 @@ jan.:jan.:fork subst normert
 litt.:litt.:fork adj normert
 pass.:pass.:fork subst normert
 red.:red.:fork subst normert
-red.:red.:fork verb perf-part @IV normert
+red.:red.:fork verb perf-part normert
 pol.:pol.:fork adj normert
+pop.:pop.:fork adj normert
 mus.:mus.:fork subst normert
 mus.:mus.:fork adj normert
 bet.:bet.:fork subst appell normert
 da.:da.:fork adj normert
 eks.:eks.:fork subst appell normert
+man.:man.:fork subst appell mask
 mat.:mat.:fork adj normert
 mat.:mat.:fork subst appell normert
-min.:min.:fork adv @ADV normert
+min.:min.:fork adv normert
 jur.:jur.:fork adj. normert
 fred.:fred.:fork subst mask appell normert
 alm.:alm.:fork adj normert
@@ -37,7 +39,8 @@ el.:el.:fork konj normert
 dim.:dim.:fork subst normert
 lat.:lat.:fork adj normert
 lat.:lat.:fork subst appell normert
-sen.:sen.:fork subst @<SUBST normert
-sr:sen.:fork subst @<SUBST unormert
-sr.:sen.:fork subst @<SUBST normert
+sen.:sen.:fork subst normert
+sr:sen.:fork subst unormert
+sr.:sen.:fork subst normert
 art.:art.:fork subst normert
+tv.:t.v.: fork adv normert
